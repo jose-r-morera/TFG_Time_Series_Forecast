@@ -1,1 +1,1 @@
-# TFG_Pronostico_secuencias_temporales
+# Predicción de series temporales mediante técnicas de aprendizaje profundo 
