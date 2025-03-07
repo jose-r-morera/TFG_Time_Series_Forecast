@@ -1,0 +1,2362 @@
+[
+    {
+        "id": "0aa48377ddcd5855",
+        "type": "tab",
+        "label": "Base simple",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "64bb2efd04062020",
+        "type": "tab",
+        "label": "MedicionesArico",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fade52e8d499cd1f",
+        "type": "tab",
+        "label": "MedicionesGranadilla",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8cd2cf77b786c1f7",
+        "type": "tab",
+        "label": "MedicionesGrafcan",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9721d9eccaf0927b",
+        "type": "tab",
+        "label": "OpenMeteo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ef80ffeec55eb865",
+        "type": "tab",
+        "label": "Tomorrow.io",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2ec8cf47e791e8c7",
+        "type": "group",
+        "z": "9721d9eccaf0927b",
+        "name": "",
+        "style": {
+            "fill": "#ffefbf",
+            "label": true
+        },
+        "nodes": [
+            "7226ee275627f9e7",
+            "0cd558f0c9f65ad4",
+            "ca06cdab70d1437f",
+            "cb66b46ee08123f6",
+            "3f4896ba84e37157"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 712,
+        "h": 142
+    },
+    {
+        "id": "5898edbb3f072736",
+        "type": "group",
+        "z": "9721d9eccaf0927b",
+        "name": "",
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "196e3abf306dd69e",
+            "e5b31c8760db4f14",
+            "5fef72f540c8bec5",
+            "187c7140eafaac43"
+        ],
+        "x": 14,
+        "y": 199,
+        "w": 552,
+        "h": 142
+    },
+    {
+        "id": "95be1cdf72319762",
+        "type": "sqlitedb",
+        "db": "/data/datalog.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "1c25415d.b8427f",
+        "type": "sqlitedb",
+        "db": "/home/pi/sqlite/nodered"
+    },
+    {
+        "id": "2136aee6ef4e9b7a",
+        "type": "sqlitedb",
+        "db": "/home/jrmorera/Escritorio/node-red/data/meteo",
+        "mode": "RWC"
+    },
+    {
+        "id": "e985c4fd8e8ea693",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "156af96f.f8fd27",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "home",
+        "order": "1"
+    },
+    {
+        "id": "1e3fe400.0baf5c",
+        "type": "ui_tab",
+        "name": "Reports",
+        "icon": "dashboard",
+        "order": 9
+    },
+    {
+        "id": "27c3d951.18a4e6",
+        "type": "ui_group",
+        "name": "MiFlora",
+        "tab": "156af96f.f8fd27",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "bd903d6.d9fc7c",
+        "type": "ui_group",
+        "name": "Report",
+        "tab": "1e3fe400.0baf5c",
+        "order": 2,
+        "disp": true,
+        "width": "18"
+    },
+    {
+        "id": "1e17cd0b.862863",
+        "type": "ui_group",
+        "name": "Selection",
+        "tab": "1e3fe400.0baf5c",
+        "order": 1,
+        "disp": true,
+        "width": "5"
+    },
+    {
+        "id": "fc4b3273bea1e560",
+        "type": "inject",
+        "z": "0aa48377ddcd5855",
+        "name": "meteo_arico",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT * FROM meteo_arico;",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "96b84cc6cf92868a"
+            ]
+        ]
+    },
+    {
+        "id": "de9f0391cf6a9f90",
+        "type": "debug",
+        "z": "0aa48377ddcd5855",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "96b84cc6cf92868a",
+        "type": "sqlite",
+        "z": "0aa48377ddcd5855",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 640,
+        "y": 220,
+        "wires": [
+            [
+                "de9f0391cf6a9f90"
+            ]
+        ]
+    },
+    {
+        "id": "ea3eaf64e0b427a5",
+        "type": "inject",
+        "z": "0aa48377ddcd5855",
+        "name": "open_meteo",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT * FROM open_meteo;",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 340,
+        "wires": [
+            [
+                "14a655e8070c6f8e"
+            ]
+        ]
+    },
+    {
+        "id": "14a655e8070c6f8e",
+        "type": "sqlite",
+        "z": "0aa48377ddcd5855",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 630,
+        "y": 320,
+        "wires": [
+            [
+                "de9f0391cf6a9f90"
+            ]
+        ]
+    },
+    {
+        "id": "1c37b66b390aedac",
+        "type": "inject",
+        "z": "0aa48377ddcd5855",
+        "name": "tomorrow_meteo",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT * FROM tomorrow_meteo;",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 440,
+        "wires": [
+            [
+                "759607609c721b1a"
+            ]
+        ]
+    },
+    {
+        "id": "759607609c721b1a",
+        "type": "sqlite",
+        "z": "0aa48377ddcd5855",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 610,
+        "y": 420,
+        "wires": [
+            [
+                "de9f0391cf6a9f90"
+            ]
+        ]
+    },
+    {
+        "id": "2124df3b899639b8",
+        "type": "inject",
+        "z": "0aa48377ddcd5855",
+        "name": "grafcan",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT * FROM grafcan;",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 580,
+        "wires": [
+            [
+                "f73285759cc46d5e"
+            ]
+        ]
+    },
+    {
+        "id": "f73285759cc46d5e",
+        "type": "sqlite",
+        "z": "0aa48377ddcd5855",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 580,
+        "y": 540,
+        "wires": [
+            [
+                "de9f0391cf6a9f90"
+            ]
+        ]
+    },
+    {
+        "id": "b598d574df704947",
+        "type": "inject",
+        "z": "0aa48377ddcd5855",
+        "name": "meteo_granadilla",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT * FROM meteo_granadilla;",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "15414cf0b47260cf"
+            ]
+        ]
+    },
+    {
+        "id": "15414cf0b47260cf",
+        "type": "sqlite",
+        "z": "0aa48377ddcd5855",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 650,
+        "y": 140,
+        "wires": [
+            [
+                "de9f0391cf6a9f90"
+            ]
+        ]
+    },
+    {
+        "id": "67e0fe2e00f685cc",
+        "type": "http request",
+        "z": "64bb2efd04062020",
+        "name": "peticionAPI",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://datos.tenerife.es/api/meteo/latest/readings/station/{{{station}}}/sensor/{{{sensor}}}/from/{{{dateFrom}}}/to/{{{dateTo}}}/{{{page}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 340,
+        "wires": [
+            [
+                "21ee7d11b9407e12"
+            ]
+        ]
+    },
+    {
+        "id": "14cb51a0e4f3ae59",
+        "type": "join",
+        "z": "64bb2efd04062020",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": false,
+        "timeout": "",
+        "count": "6",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1090,
+        "y": 340,
+        "wires": [
+            [
+                "275d670d4e89ee51"
+            ]
+        ]
+    },
+    {
+        "id": "321d26ab17792710",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorWSP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "280",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "WSP",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 200,
+        "wires": [
+            [
+                "67e0fe2e00f685cc"
+            ]
+        ]
+    },
+    {
+        "id": "a8063ba9712fb8a7",
+        "type": "inject",
+        "z": "64bb2efd04062020",
+        "name": "ActualizarBD",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "page",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "p": "station",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "d20f70c9f82f3918"
+            ]
+        ]
+    },
+    {
+        "id": "2b4b5ead0da7bb0e",
+        "type": "function",
+        "z": "64bb2efd04062020",
+        "name": "Fechas",
+        "func": "let now = new Date();\nlet year = now.getFullYear();\nlet month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-based\nlet day = String(now.getDate()).padStart(2, '0');\n\nconst hoursToSubtract = 6; // change this value as needed\nconst fromDate = new Date(now.getTime() - hoursToSubtract * 60 * 60 * 1000);\nlet fromYear = fromDate.getFullYear();\nlet fromMonth = String(fromDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based\nlet fromDay = String(fromDate.getDate()).padStart(2, '0');\n\nmsg.dateFrom = `${fromYear}-${fromMonth}-${fromDay}`;\nmsg.dateTo = `${year}-${month}-${day}`; /// Ahora\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 280,
+        "wires": [
+            [
+                "321d26ab17792710",
+                "5ca49bc0f149c46e",
+                "9864e6deb07bc4ab",
+                "d09a2aeedb9d4c9c",
+                "e812ad2c0c922dda",
+                "85d162717224281d"
+            ]
+        ]
+    },
+    {
+        "id": "275d670d4e89ee51",
+        "type": "function",
+        "z": "64bb2efd04062020",
+        "name": "peticionSQL",
+        "func": "let outputs = [];\nlet table = \"meteo_arico\";\n\n// Assume all arrays have the same length\nlet arr_size = Object.values(msg.payload)[0].length;\n\n\n// Helper function to check the value and return a SQL-ready string.\n// If the value is empty, it returns \"NULL\" (without quotes).\n// If it's a string value (e.g., a date), it wraps it in double quotes.\nfunction getSQLValue(value, isString) {\n    if (value === undefined || value === null || value === \"\") {\n        return \"NULL\";\n    }\n    return isString ? '\"' + value + '\"' : value;\n}\n\n// Inserción sin sobreescribir\nlet sql = \"INSERT OR IGNORE INTO \" + table + \" (time, WSP, WDR, TEMP, HUM, RAIN, RAD) VALUES \";\n\nfor (let i = 0; i < arr_size; i++) {\n    // Get each value; note that for date we pass 'true' to wrap it in quotes.\n    let observation_date = getSQLValue(msg.payload.WSP[i].observation_date, true);\n    let wsp = getSQLValue(msg.payload.WSP[i].observation_value, false);\n    let wdr = getSQLValue(msg.payload.WDR[i].observation_value, false);\n    let temp = getSQLValue(msg.payload.TEMP[i].observation_value, false);\n    let hum = getSQLValue(msg.payload.HUM[i].observation_value, false);\n    let rain = getSQLValue(msg.payload.RAIN[i].observation_value, false);\n    let rad = getSQLValue(msg.payload.RAD[i].observation_value, false);\n\n    // Build the SQL value group for this record\n    sql += \"(\" + observation_date + \", \" + wsp + \", \" + wdr + \", \" +\n        temp + \", \" + hum + \", \" + rain + \", \" + rad + \"),\";\n}\n\n// Remove the trailing comma and end the SQL statement with a semicolon\nsql = sql.slice(0, -1) + \";\";\n\nmsg.topic = sql;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 340,
+        "wires": [
+            [
+                "be7abdbf80dd20c1"
+            ]
+        ]
+    },
+    {
+        "id": "5ca49bc0f149c46e",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorWDR",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "281",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "WDR",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 260,
+        "wires": [
+            [
+                "67e0fe2e00f685cc"
+            ]
+        ]
+    },
+    {
+        "id": "9864e6deb07bc4ab",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorHUM",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "283",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "HUM",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 380,
+        "wires": [
+            [
+                "67e0fe2e00f685cc"
+            ]
+        ]
+    },
+    {
+        "id": "d09a2aeedb9d4c9c",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorRAIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "285",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "RAIN",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "67e0fe2e00f685cc"
+            ]
+        ]
+    },
+    {
+        "id": "e812ad2c0c922dda",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorRAD",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "288",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "RAD",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 500,
+        "wires": [
+            [
+                "67e0fe2e00f685cc"
+            ]
+        ]
+    },
+    {
+        "id": "85d162717224281d",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorTEMP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "282",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "TEMP",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "67e0fe2e00f685cc"
+            ]
+        ]
+    },
+    {
+        "id": "865441c63430ec9d",
+        "type": "http request",
+        "z": "64bb2efd04062020",
+        "name": "peticionAPI",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://datos.tenerife.es/api/meteo/latest/readings/station/{{{station}}}/sensor/{{{sensor}}}/from/{{{dateFrom}}}/to/{{{dateTo}}}/{{{page}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 670,
+        "y": 980,
+        "wires": [
+            [
+                "91f5c286aa17b796"
+            ]
+        ]
+    },
+    {
+        "id": "cff9a6cb1eab04f0",
+        "type": "join",
+        "z": "64bb2efd04062020",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": false,
+        "timeout": "",
+        "count": "6",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 990,
+        "y": 980,
+        "wires": [
+            [
+                "ceca2ccc75f763ff"
+            ]
+        ]
+    },
+    {
+        "id": "1e38ad9665489f3b",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorWSP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "280",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "WSP",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 840,
+        "wires": [
+            [
+                "865441c63430ec9d"
+            ]
+        ]
+    },
+    {
+        "id": "a5482aa89c2bf5bf",
+        "type": "inject",
+        "z": "64bb2efd04062020",
+        "name": "HistoricoBD",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "page",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "p": "station",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "p": "dateFrom",
+                "v": "2025-02-08",
+                "vt": "str"
+            },
+            {
+                "p": "dateTo",
+                "v": "2025-02-10",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 980,
+        "wires": [
+            [
+                "40d121e9097bea55"
+            ]
+        ]
+    },
+    {
+        "id": "91f5c286aa17b796",
+        "type": "function",
+        "z": "64bb2efd04062020",
+        "name": "readings",
+        "func": "msg.timestamp = msg.payload.readings.sensors[0].values\nmsg.payload = msg.payload.readings.sensors[0].values\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 980,
+        "wires": [
+            [
+                "cff9a6cb1eab04f0"
+            ]
+        ]
+    },
+    {
+        "id": "9ee6c9b2bfd93671",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorWDR",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "281",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "WDR",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 900,
+        "wires": [
+            [
+                "865441c63430ec9d"
+            ]
+        ]
+    },
+    {
+        "id": "95d0d5cd63330617",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorHUM",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "283",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "HUM",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 1020,
+        "wires": [
+            [
+                "865441c63430ec9d"
+            ]
+        ]
+    },
+    {
+        "id": "ff7a6888d467e8c4",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorRAIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "285",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "RAIN",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 1080,
+        "wires": [
+            [
+                "865441c63430ec9d"
+            ]
+        ]
+    },
+    {
+        "id": "d38b2ebc980faca7",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorRAD",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "288",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "RAD",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 1140,
+        "wires": [
+            [
+                "865441c63430ec9d"
+            ]
+        ]
+    },
+    {
+        "id": "ec244c62494f2a97",
+        "type": "change",
+        "z": "64bb2efd04062020",
+        "name": "setSensorTEMP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "282",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "TEMP",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 960,
+        "wires": [
+            [
+                "865441c63430ec9d"
+            ]
+        ]
+    },
+    {
+        "id": "40d121e9097bea55",
+        "type": "function",
+        "z": "64bb2efd04062020",
+        "name": "manageBatches",
+        "func": "const startDate = new Date(msg.dateFrom);\nconst endDate = new Date(msg.dateTo);\n\nconst timeDifference = +endDate - +startDate;\n\n// Convert milliseconds to days\nconst daysDifference = timeDifference / (1000 * 3600 * 24);\n\n// Each batch covers 10 days\nconst batches = Math.ceil(daysDifference/10);\n\nmsg.page = msg.page + 1;\n\nif (msg.page <= batches) {\n    return msg;  // Continue loop\n} else {\n    return null; // Stop loop\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 840,
+        "wires": [
+            [
+                "1e38ad9665489f3b",
+                "9ee6c9b2bfd93671",
+                "ec244c62494f2a97",
+                "95d0d5cd63330617",
+                "ff7a6888d467e8c4",
+                "d38b2ebc980faca7",
+                "715167e3b45eb9d7"
+            ]
+        ]
+    },
+    {
+        "id": "715167e3b45eb9d7",
+        "type": "delay",
+        "z": "64bb2efd04062020",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 210,
+        "y": 1120,
+        "wires": [
+            [
+                "40d121e9097bea55"
+            ]
+        ]
+    },
+    {
+        "id": "ceca2ccc75f763ff",
+        "type": "function",
+        "z": "64bb2efd04062020",
+        "name": "queries",
+        "func": "let outputs = [];\nlet table = \"meteo_arico\";\n\n// Assume all arrays have the same length\nlet arr_size = Object.values(msg.payload)[0].length;\n\n// console.log(\n//     msg.page,\n//     msg.payload.WSP.length,\n//     msg.payload.WDR.length,\n//     msg.payload.TEMP.length,\n//     msg.payload.HUM.length,\n//     msg.payload.RAIN.length,\n//     msg.payload.RAD.length\n// );\n\n// Helper function to check the value and return a SQL-ready string.\n// If the value is empty, it returns \"NULL\" (without quotes).\n// If it's a string value (e.g., a date), it wraps it in double quotes.\nfunction getSQLValue(value, isString) {\n    if (value === undefined || value === null || value === \"\") {\n        return \"NULL\";\n    }\n    return isString ? '\"' + value + '\"' : value;\n}\n\nlet sql = \"INSERT INTO \" + table + \" (date, WSP, WDR, TEMP, HUM, RAIN, RAD) VALUES \";\n\nfor (let i = 0; i < arr_size; i++) {\n    // Get each value; note that for date we pass 'true' to wrap it in quotes.\n    let observation_date = getSQLValue(msg.payload.WSP[i].observation_date, true);\n    let wsp = getSQLValue(msg.payload.WSP[i].observation_value, false);\n    let wdr = getSQLValue(msg.payload.WDR[i].observation_value, false);\n    let temp = getSQLValue(msg.payload.TEMP[i].observation_value, false);\n    let hum = getSQLValue(msg.payload.HUM[i].observation_value, false);\n    let rain = getSQLValue(msg.payload.RAIN[i].observation_value, false);\n    let rad = getSQLValue(msg.payload.RAD[i].observation_value, false);\n\n    // Build the SQL value group for this record\n    sql += \"(\" + observation_date + \", \" + wsp + \", \" + wdr + \", \" +\n        temp + \", \" + hum + \", \" + rain + \", \" + rad + \"),\";\n}\n\n// Remove the trailing comma and end the SQL statement with a semicolon\nsql = sql.slice(0, -1) + \";\";\n\nmsg.topic = sql;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 980,
+        "wires": [
+            [
+                "af886ea3291e1840",
+                "9c50a1952a94bd58"
+            ]
+        ]
+    },
+    {
+        "id": "af886ea3291e1840",
+        "type": "debug",
+        "z": "64bb2efd04062020",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "be7abdbf80dd20c1",
+        "type": "sqlite",
+        "z": "64bb2efd04062020",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1520,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c50a1952a94bd58",
+        "type": "sqlite",
+        "z": "64bb2efd04062020",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1480,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "103ac76972c1da24",
+        "type": "comment",
+        "z": "64bb2efd04062020",
+        "name": "Actualizar mediciones cada 6h",
+        "info": "",
+        "x": 160,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d20f70c9f82f3918",
+        "type": "trigger",
+        "z": "64bb2efd04062020",
+        "name": "cada6h",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-6",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "hr",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 260,
+        "y": 280,
+        "wires": [
+            [
+                "2b4b5ead0da7bb0e"
+            ]
+        ]
+    },
+    {
+        "id": "21ee7d11b9407e12",
+        "type": "function",
+        "z": "64bb2efd04062020",
+        "name": "readings",
+        "func": "msg.timestamp = msg.payload.readings.sensors[0].values\nmsg.payload = msg.payload.readings.sensors[0].values\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 340,
+        "wires": [
+            [
+                "14cb51a0e4f3ae59"
+            ]
+        ]
+    },
+    {
+        "id": "a644f8a2be9568a2",
+        "type": "http request",
+        "z": "fade52e8d499cd1f",
+        "name": "peticionAPI",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://datos.tenerife.es/api/meteo/latest/readings/station/{{{station}}}/sensor/{{{sensor}}}/from/{{{dateFrom}}}/to/{{{dateTo}}}/{{{page}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 280,
+        "wires": [
+            [
+                "4bc04b5be9f7d0ef"
+            ]
+        ]
+    },
+    {
+        "id": "2783e1412acbe830",
+        "type": "change",
+        "z": "fade52e8d499cd1f",
+        "name": "setSensorWSP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "335",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "WSP",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "a644f8a2be9568a2"
+            ]
+        ]
+    },
+    {
+        "id": "499b21467a575627",
+        "type": "inject",
+        "z": "fade52e8d499cd1f",
+        "name": "ActualizarBD",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "page",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "p": "station",
+                "v": "78",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 220,
+        "wires": [
+            [
+                "9632c7606a904733"
+            ]
+        ]
+    },
+    {
+        "id": "c7bba44f97a742ef",
+        "type": "change",
+        "z": "fade52e8d499cd1f",
+        "name": "setSensorHUM",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "338",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "HUM",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "a644f8a2be9568a2"
+            ]
+        ]
+    },
+    {
+        "id": "8eb7a62407b744e6",
+        "type": "change",
+        "z": "fade52e8d499cd1f",
+        "name": "setSensorRAIN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "340",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "RAIN",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 380,
+        "wires": [
+            [
+                "a644f8a2be9568a2"
+            ]
+        ]
+    },
+    {
+        "id": "6fe16697ec39e425",
+        "type": "change",
+        "z": "fade52e8d499cd1f",
+        "name": "setSensorRAD",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "343",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "RAD",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "a644f8a2be9568a2"
+            ]
+        ]
+    },
+    {
+        "id": "6e0ab941c0d8e1c2",
+        "type": "change",
+        "z": "fade52e8d499cd1f",
+        "name": "setSensorTEMP",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sensor",
+                "pt": "msg",
+                "to": "337",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "TEMP",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 260,
+        "wires": [
+            [
+                "a644f8a2be9568a2"
+            ]
+        ]
+    },
+    {
+        "id": "9f68ecbce528491a",
+        "type": "sqlite",
+        "z": "fade52e8d499cd1f",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1380,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "889eea9aa2d7e2b6",
+        "type": "join",
+        "z": "fade52e8d499cd1f",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": false,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1090,
+        "y": 280,
+        "wires": [
+            [
+                "91e2847124584cb7"
+            ]
+        ]
+    },
+    {
+        "id": "4bc04b5be9f7d0ef",
+        "type": "function",
+        "z": "fade52e8d499cd1f",
+        "name": "readings",
+        "func": "msg.timestamp = msg.payload.readings.sensors[0].values\nmsg.payload = msg.payload.readings.sensors[0].values\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 280,
+        "wires": [
+            [
+                "889eea9aa2d7e2b6"
+            ]
+        ]
+    },
+    {
+        "id": "91e2847124584cb7",
+        "type": "function",
+        "z": "fade52e8d499cd1f",
+        "name": "peticionSQL",
+        "func": "let outputs = [];\nlet table = \"meteo_granadilla\";\n\n// Assume all arrays have the same length\nlet arr_size = Object.values(msg.payload)[0].length;\n\n\n// Helper function to check the value and return a SQL-ready string.\n// If the value is empty, it returns \"NULL\" (without quotes).\n// If it's a string value (e.g., a date), it wraps it in double quotes.\nfunction getSQLValue(value, isString) {\n    if (value === undefined || value === null || value === \"\") {\n        return \"NULL\";\n    }\n    return isString ? '\"' + value + '\"' : value;\n}\n\n// Inserción sin sobreescribir\nlet sql = \"INSERT OR IGNORE INTO \" + table + \" (time, WSP, TEMP, HUM, RAIN, RAD) VALUES \";\n\nfor (let i = 0; i < arr_size; i++) {\n    // Get each value; note that for date we pass 'true' to wrap it in quotes.\n    let observation_date = getSQLValue(msg.payload.WSP[i].observation_date, true);\n    let wsp = getSQLValue(msg.payload.WSP[i].observation_value, false);\n    let temp = getSQLValue(msg.payload.TEMP[i].observation_value, false);\n    let hum = getSQLValue(msg.payload.HUM[i].observation_value, false);\n    let rain = getSQLValue(msg.payload.RAIN[i].observation_value, false);\n    let rad = getSQLValue(msg.payload.RAD[i].observation_value, false);\n\n    // Build the SQL value group for this record\n    sql += \"(\" + observation_date + \", \" + wsp + \", \" +\n        temp + \", \" + hum + \", \" + rain + \", \" + rad + \"),\";\n}\n\n// Remove the trailing comma and end the SQL statement with a semicolon\nsql = sql.slice(0, -1) + \";\";\n\nmsg.topic = sql;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 280,
+        "wires": [
+            [
+                "9f68ecbce528491a"
+            ]
+        ]
+    },
+    {
+        "id": "8a4e49b9ee371447",
+        "type": "function",
+        "z": "fade52e8d499cd1f",
+        "name": "Fechas",
+        "func": "let now = new Date();\nlet year = now.getFullYear();\nlet month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-based\nlet day = String(now.getDate()).padStart(2, '0');\n\nconst hoursToSubtract = 6; // change this value as needed\nconst fromDate = new Date(now.getTime() - hoursToSubtract * 60 * 60 * 1000);\nlet fromYear = fromDate.getFullYear();\nlet fromMonth = String(fromDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based\nlet fromDay = String(fromDate.getDate()).padStart(2, '0');\n\nmsg.dateFrom = `${fromYear}-${fromMonth}-${fromDay}`;\nmsg.dateTo = `${year}-${month}-${day}`; /// Ahora\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "2783e1412acbe830",
+                "6e0ab941c0d8e1c2",
+                "c7bba44f97a742ef",
+                "8eb7a62407b744e6",
+                "6fe16697ec39e425"
+            ]
+        ]
+    },
+    {
+        "id": "9632c7606a904733",
+        "type": "trigger",
+        "z": "fade52e8d499cd1f",
+        "name": "cada6h",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-6",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "hr",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 240,
+        "y": 220,
+        "wires": [
+            [
+                "8a4e49b9ee371447"
+            ]
+        ]
+    },
+    {
+        "id": "61b9c5c616d85c1b",
+        "type": "http request",
+        "z": "8cd2cf77b786c1f7",
+        "name": "peticionAPI",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://sensores.grafcan.es/api/v1.0/observations/?datastream__thing={{{thing_id}}}&datastream__observed_property=3&result_time_after={{{dateFrom}}}&result_time_before={{{dateTo}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "accept",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Authorization",
+                "valueType": "other",
+                "valueValue": "Api-Key t96Ff6lD.gMd1FS8ZBeEjoNgbKKfwH4bA1dnmi6TR"
+            }
+        ],
+        "x": 690,
+        "y": 200,
+        "wires": [
+            [
+                "83ec15c60f80e252"
+            ]
+        ]
+    },
+    {
+        "id": "bae4cffc9e3837d5",
+        "type": "change",
+        "z": "8cd2cf77b786c1f7",
+        "name": "EstacionRasca",
+        "rules": [
+            {
+                "t": "set",
+                "p": "thing_id",
+                "pt": "msg",
+                "to": "44",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "PresionRasca",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "61b9c5c616d85c1b"
+            ]
+        ]
+    },
+    {
+        "id": "e1ee94ce3893f763",
+        "type": "inject",
+        "z": "8cd2cf77b786c1f7",
+        "name": "ActualizarBD",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 200,
+        "wires": [
+            [
+                "6001974189159e1d"
+            ]
+        ]
+    },
+    {
+        "id": "10e4d32b8f42f83a",
+        "type": "function",
+        "z": "8cd2cf77b786c1f7",
+        "name": "IntervaloFechas",
+        "func": "const hoursToSubtract = 6; // change this value as needed\nconst now = new Date();\nconst past = new Date(now.getTime() - hoursToSubtract * 60 * 60 * 1000);\n\n\nmsg.dateFrom = encodeURIComponent(past.toISOString().substring(0, 16) + '+00:00');\nmsg.dateTo = encodeURIComponent(now.toISOString().substring(0, 16) + '+00:00');\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "bae4cffc9e3837d5",
+                "352f7949b57ffc6a"
+            ]
+        ]
+    },
+    {
+        "id": "c449a4ed6f5acd07",
+        "type": "sqlite",
+        "z": "8cd2cf77b786c1f7",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1260,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6001974189159e1d",
+        "type": "trigger",
+        "z": "8cd2cf77b786c1f7",
+        "name": "cada6h",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-6",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "hr",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "10e4d32b8f42f83a"
+            ]
+        ]
+    },
+    {
+        "id": "352f7949b57ffc6a",
+        "type": "change",
+        "z": "8cd2cf77b786c1f7",
+        "name": "EstacionCristianos",
+        "rules": [
+            {
+                "t": "set",
+                "p": "thing_id",
+                "pt": "msg",
+                "to": "47",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "PresionCristianos",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 260,
+        "wires": [
+            [
+                "61b9c5c616d85c1b"
+            ]
+        ]
+    },
+    {
+        "id": "83ec15c60f80e252",
+        "type": "join",
+        "z": "8cd2cf77b786c1f7",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 830,
+        "y": 200,
+        "wires": [
+            [
+                "4b3ef838dace3c08"
+            ]
+        ]
+    },
+    {
+        "id": "4b3ef838dace3c08",
+        "type": "function",
+        "z": "8cd2cf77b786c1f7",
+        "name": "peticionSQL",
+        "func": "let stations = Object.keys(msg.payload);\nlet columns = \"time, \" + stations.join(', ');\n\nlet length = msg.payload[stations[0]]['results'].length;\n\nlet values = Array.from({ length }).map((_, index) => {\n        return `(\"${msg.payload[stations[0]]['results'][index]['resultTime']}\", ${stations.map(s => \n            msg.payload[s]['results'][index]['result']\n        ).join(', ')})`;\n    }).join(',');\n\n// Construir la consulta completa\nmsg.topic = `INSERT INTO grafcan (${columns}) \n                   VALUES ${values} \n                   ON CONFLICT(time) DO UPDATE SET \n                   ${stations.map(s => `${s} = excluded.${s}`).join(', ')};`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 200,
+        "wires": [
+            [
+                "c449a4ed6f5acd07"
+            ]
+        ]
+    },
+    {
+        "id": "7226ee275627f9e7",
+        "type": "inject",
+        "z": "9721d9eccaf0927b",
+        "g": "2ec8cf47e791e8c7",
+        "name": "Predicciones2dias",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "0cd558f0c9f65ad4",
+                "3f4896ba84e37157"
+            ]
+        ]
+    },
+    {
+        "id": "0cd558f0c9f65ad4",
+        "type": "change",
+        "z": "9721d9eccaf0927b",
+        "g": "2ec8cf47e791e8c7",
+        "name": "Ubicación",
+        "rules": [
+            {
+                "t": "set",
+                "p": "latitude",
+                "pt": "msg",
+                "to": "28.073",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "longitude",
+                "pt": "msg",
+                "to": "-16.513",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 120,
+        "wires": [
+            [
+                "cb66b46ee08123f6"
+            ]
+        ]
+    },
+    {
+        "id": "3d6653683137322e",
+        "type": "http request",
+        "z": "9721d9eccaf0927b",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1070,
+        "y": 140,
+        "wires": [
+            [
+                "cb4d645a6136310c"
+            ]
+        ]
+    },
+    {
+        "id": "ca06cdab70d1437f",
+        "type": "comment",
+        "z": "9721d9eccaf0927b",
+        "g": "2ec8cf47e791e8c7",
+        "name": "Predicciones horarias ",
+        "info": "",
+        "x": 180,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b4cb0c6d57013c4f",
+        "type": "template",
+        "z": "9721d9eccaf0927b",
+        "name": "ConstruirPeticion",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.open-meteo.com/v1/forecast?latitude={{{latitude}}}&longitude={{{longitude}}}&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,surface_pressure,cloud_cover,wind_speed_80m,wind_direction_80m,shortwave_radiation&timezone=GMT&start_date={{{startDate}}}&end_date={{{endDate}}}",
+        "output": "str",
+        "x": 870,
+        "y": 140,
+        "wires": [
+            [
+                "3d6653683137322e"
+            ]
+        ]
+    },
+    {
+        "id": "cb4d645a6136310c",
+        "type": "function",
+        "z": "9721d9eccaf0927b",
+        "name": "ActualizarBD",
+        "func": "let data = {};\n\nfor (let key in msg.payload.hourly) {\n    data[key] = msg.payload.hourly[key];\n}\n\nlet keys = Object.keys(data);\nlet length = data[keys[0]].length;\n\nif (keys.every(key => data[key].length === length)) {\n    \n    // Construir la parte de las columnas (en formato SQL)\n    let columns = keys.join(', ');\n\n    // Construir la parte de los valores para la consulta\n    let values = Array.from({ length }).map((_, index) => {\n        return `(${keys.map(key => \n            // Si el valor es una cadena, agregar comillas\n            typeof data[key][index] === 'string' ? `\"${data[key][index]}\"` : data[key][index]\n        ).join(', ')})`;\n    }).join(',');\n\n    // Construir la consulta completa\n    msg.topic = `INSERT INTO open_meteo (${columns}) \n                   VALUES ${values} \n                   ON CONFLICT(time) DO UPDATE SET \n                   ${keys.map(key => `${key} = excluded.${key}`).join(', ')};`;\n\n} else {\n    msg.topic = \"Error: Los arrays no tienen la misma longitud.\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 140,
+        "wires": [
+            [
+                "686652059f341833"
+            ]
+        ]
+    },
+    {
+        "id": "196e3abf306dd69e",
+        "type": "comment",
+        "z": "9721d9eccaf0927b",
+        "g": "5898edbb3f072736",
+        "name": "Histórico de predicciones horarias",
+        "info": "",
+        "x": 220,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e5b31c8760db4f14",
+        "type": "change",
+        "z": "9721d9eccaf0927b",
+        "g": "5898edbb3f072736",
+        "name": "Fechas",
+        "rules": [
+            {
+                "t": "set",
+                "p": "startDate",
+                "pt": "msg",
+                "to": "2024-12-30",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "endDate",
+                "pt": "msg",
+                "to": "2024-12-31",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "b4cb0c6d57013c4f"
+            ]
+        ]
+    },
+    {
+        "id": "5fef72f540c8bec5",
+        "type": "inject",
+        "z": "9721d9eccaf0927b",
+        "g": "5898edbb3f072736",
+        "name": "PrediccionesHistóricas",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 300,
+        "wires": [
+            [
+                "187c7140eafaac43"
+            ]
+        ]
+    },
+    {
+        "id": "cb66b46ee08123f6",
+        "type": "function",
+        "z": "9721d9eccaf0927b",
+        "g": "2ec8cf47e791e8c7",
+        "name": "Fechas",
+        "func": "let now = new Date();\nlet year = now.getFullYear();\nlet month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-based\nlet day = String(now.getDate()).padStart(2, '0');\n\nmsg.startDate = `${year}-${month}-${day}`;\n\n// Definir el intervalo en días\nlet interval = 2; \n\nlet endDate = new Date(now);\nendDate.setDate(now.getDate() + interval);\nlet endYear = endDate.getFullYear();\nlet endMonth = String(endDate.getMonth() + 1).padStart(2, '0');\nlet endDay = String(endDate.getDate()).padStart(2, '0');\n\nmsg.endDate = `${endYear}-${endMonth}-${endDay}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 120,
+        "wires": [
+            [
+                "b4cb0c6d57013c4f"
+            ]
+        ]
+    },
+    {
+        "id": "686652059f341833",
+        "type": "sqlite",
+        "z": "9721d9eccaf0927b",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1520,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "187c7140eafaac43",
+        "type": "change",
+        "z": "9721d9eccaf0927b",
+        "g": "5898edbb3f072736",
+        "name": "Ubicación",
+        "rules": [
+            {
+                "t": "set",
+                "p": "latitude",
+                "pt": "msg",
+                "to": "28.073",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "longitude",
+                "pt": "msg",
+                "to": "-16.513",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 300,
+        "wires": [
+            [
+                "e5b31c8760db4f14"
+            ]
+        ]
+    },
+    {
+        "id": "3f4896ba84e37157",
+        "type": "trigger",
+        "z": "9721d9eccaf0927b",
+        "g": "2ec8cf47e791e8c7",
+        "name": "cada6horas",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-6",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "hr",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 330,
+        "y": 120,
+        "wires": [
+            [
+                "0cd558f0c9f65ad4"
+            ]
+        ]
+    },
+    {
+        "id": "f67a893dc020d7db",
+        "type": "function",
+        "z": "ef80ffeec55eb865",
+        "name": "ConstruirPeticion",
+        "func": "// AUXILIAR\nfunction buildQueryString(params) {\n    const queryString = [];\n    for (const key in params) {\n        if (params.hasOwnProperty(key)) {\n            const value = params[key];\n            // If the value is an array, join it with commas\n            if (Array.isArray(value)) {\n                value.forEach(val => queryString.push(`${encodeURIComponent(key)}=${encodeURIComponent(val)}`));\n            } else {\n                queryString.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);\n            }\n        }\n    }\n    return queryString.join('&');\n}\n////////////////////////////////////////\n\nconst getTimelineURL = \"https://api.tomorrow.io/v4/timelines\";\nconst apikey = \"J8wVvEJyZd0j0qjlRdfQw91fVGRijW1u\";\nconst location = \"28.073,\" + \"16.513\"; // latlong pair\n\n// Variables\nconst fields = [\n  \"temperature\",\n  \"pressureSurfaceLevel\",\n  \"solarGHI\",\n  // rain?\n  \"precipitationIntensity\",\n  // solar irradiance\n  \"windSpeed\",\n  \"windDirection\",\n  \"humidity\",\n  \n  // Añadidas por mí\n  \"cloudCover\",\n  \"temperatureApparent\"\n];\n\nconst units = \"metric\"; // choose the unit system, either metric or imperial\n\n// set the timesteps, like \"current\", \"1h\" and \"1d\"\n// const timesteps = [\"current\", \"1h\", \"1d\"];\nconst timesteps = ['1h'];\n\n// configure the time frame up to 6 hours back and 15 days out\nconst interval = 48; // hours interval\n\nconst today = new Date();\nconst startTime = today.toISOString(); // start time is now\nconst endTime = new Date(today.setHours(today.getHours() + interval)).toISOString(); // end time is 24 hours later\n\n// specify the timezone, using standard IANA timezone format\nconst timezone = \"Atlantic/Canary\";\n\n// request the timelines with all the query string parameters as options\nconst getTimelineParameters = buildQueryString({\n  apikey,\n  location,\n  fields,\n  units,\n  timesteps,\n  startTime,\n  endTime,\n  timezone\n});\n\nmsg.payload = getTimelineURL + \"?\" + getTimelineParameters;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 360,
+        "wires": [
+            [
+                "d304fc5d43be2619"
+            ]
+        ]
+    },
+    {
+        "id": "44c58a49b7db4c25",
+        "type": "inject",
+        "z": "ef80ffeec55eb865",
+        "name": "Predicciones2Dias",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 360,
+        "wires": [
+            [
+                "aa4c4e7fd64ebd76"
+            ]
+        ]
+    },
+    {
+        "id": "d304fc5d43be2619",
+        "type": "http request",
+        "z": "ef80ffeec55eb865",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 710,
+        "y": 360,
+        "wires": [
+            [
+                "bc6ca623fadf659a"
+            ]
+        ]
+    },
+    {
+        "id": "bc6ca623fadf659a",
+        "type": "function",
+        "z": "ef80ffeec55eb865",
+        "name": "ActualizarBD",
+        "func": "let data = msg.payload.data.timelines[0].intervals;\n\n\nlet keys = Object.keys(data[0]['values']); // variables meteorológicas\nlet columns = \"time, \" + keys.join(', ');\n\n// Construir la parte de los valores para la consulta\nlet values = Array.from({ length: data.length }).map((_, index) => {\n    return `( \"${data[index]['startTime']}\",\n        ${keys.map(key => \n        // Si el valor es una cadena, agregar comillas\n        typeof data[index]['values'][key] === 'string' ? `\"${data[index]['values'][key]}\"` : data[index]['values'][key]\n    ).join(', ')})`;\n}).join(',');\n\n// Construir la consulta completa\nmsg.topic = `INSERT INTO tomorrow_meteo (${columns}) \n                   VALUES ${values} \n                   ON CONFLICT(time) DO UPDATE SET \n                   ${keys.map(key => `${key} = excluded.${key}`).join(', ')};`;\n                   \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 360,
+        "wires": [
+            [
+                "3c4cb848441920c5"
+            ]
+        ]
+    },
+    {
+        "id": "3c4cb848441920c5",
+        "type": "sqlite",
+        "z": "ef80ffeec55eb865",
+        "mydb": "2136aee6ef4e9b7a",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1140,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa4c4e7fd64ebd76",
+        "type": "trigger",
+        "z": "ef80ffeec55eb865",
+        "name": "cada6h",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-6",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "hr",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 320,
+        "y": 360,
+        "wires": [
+            [
+                "f67a893dc020d7db"
+            ]
+        ]
+    }
+]

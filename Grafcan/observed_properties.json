@@ -1,0 +1,61 @@
+{
+  "count": 9,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 5,
+      "name": "Air temperature",
+      "definition": "http://dbpedia.org/page/Temperature",
+      "description": "Objective comparative measure of hot or cold"
+    },
+    {
+      "id": 3,
+      "name": "Atmospheric pressure",
+      "definition": "http://dbpedia.org/page/Atmospheric_pressure",
+      "description": "The force of the unit of area exerted by air on the earth's surface"
+    },
+    {
+      "id": 6,
+      "name": "Dew point",
+      "definition": "http://dbpedia.org/page/Dew_point",
+      "description": "The highest temperature at which airborne water vapor will condense to form liquid dew"
+    },
+    {
+      "id": 8,
+      "name": "Precipitation intensity",
+      "definition": "http://dbpedia.org/page/Precipitation",
+      "description": "Measure of the amount of rain that falls over time"
+    },
+    {
+      "id": 7,
+      "name": "Rain",
+      "definition": "http://dbpedia.org/page/Rain",
+      "description": "The amount of precipitation on a point on the earth's surface"
+    },
+    {
+      "id": 4,
+      "name": "Relative humidity",
+      "definition": "http://dbpedia.org/page/Relative_humidity",
+      "description": "Ratio of the partial pressure of water vapor to the equilibrium vapor pressure of water at given temperature"
+    },
+    {
+      "id": 9,
+      "name": "Solar irradiance",
+      "definition": "http://dbpedia.org/page/Solar_irradiance",
+      "description": "Solar irradiance is the rate at which radiant power is incident on a surface per unit area of surface"
+    },
+    {
+      "id": 2,
+      "name": "Wind direction",
+      "definition": "http://dbpedia.org/page/Wind_direction",
+      "description": "Wind direction is reported by the direction from which it originates"
+    },
+    {
+      "id": 1,
+      "name": "Wind speed",
+      "definition": "http://dbpedia.org/page/Wind_speed",
+      "description": "The rate at which air is moving in a particular area"
+    }
+  ]
+}
