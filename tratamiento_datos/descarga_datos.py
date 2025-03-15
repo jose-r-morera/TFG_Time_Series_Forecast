@@ -46,7 +46,11 @@ def export_table_to_csv(table_name: str):
 # export_table_to_csv("openmeteo_cuesta_icon")
 # export_table_to_csv("openmeteo_orotava_arpege")
 # export_table_to_csv("openmeteo_orotava_icon")
+#export_table_to_csv("openmeteo_arona_arpege")
+#export_table_to_csv("openmeteo_arona_icon")
 
-export_table_to_csv("grafcan_cristianos")
-#export_table_to_csv("grafcan_cuesta")
-
+#export_table_to_csv("grafcan_cristianos")
+# #export_table_to_csv("grafcan_cuesta")
+# export_table_to_csv("grafcan_cuesta")
+# export_table_to_csv("grafcan_orotava")
+export_table_to_csv("grafcan_arona")
