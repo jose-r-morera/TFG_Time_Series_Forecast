@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  24 FEB 2025 23:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  24 MAR 2025 23:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -624,9 +624,6 @@ Package: listings 2024/09/23 1.10c (Carsten Heinz)
 LaTeX Warning: Label `chapter:intro' multiply defined.
 
 
-LaTeX Warning: Label `chapter:intro' multiply defined.
-
-
 LaTeX Warning: Label `chapter:presupuesto' multiply defined.
 
 )
@@ -750,7 +747,7 @@ Package gensymb Info: Using \textmu for \micro on input line 102.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count357
-<images/escuela-ingenieria-tecnologia-original.png, id=100, 434.1018pt x 158.994pt>
+<images/escuela-ingenieria-tecnologia-original.png, id=104, 434.1018pt x 158.994pt>
 File: images/escuela-ingenieria-tecnologia-original.png Graphic file (type png)
 <use images/escuela-ingenieria-tecnologia-original.png>
 Package pdftex.def Info: images/escuela-ingenieria-tecnologia-original.png  used on input line 121.
@@ -786,7 +783,7 @@ LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 
 
 [3]
-<images/by-nc-sa_88x31.png, id=119, 88.33pt x 31.11626pt>
+<images/by-nc-sa_88x31.png, id=123, 88.33pt x 31.11626pt>
 File: images/by-nc-sa_88x31.png Graphic file (type png)
 <use images/by-nc-sa_88x31.png>
 Package pdftex.def Info: images/by-nc-sa_88x31.png  used on input line 207.
@@ -975,7 +972,7 @@ l.37 \newpage
               [1
 
 ]
-<images/figura_1.png, id=183, 513.41812pt x 496.10344pt>
+<images/figura_1.png, id=189, 513.41812pt x 496.10344pt>
 File: images/figura_1.png Graphic file (type png)
 <use images/figura_1.png>
 Package pdftex.def Info: images/figura_1.png  used on input line 41.
@@ -990,11 +987,11 @@ l.296 \newpage
               {\pagestyle{empty}} [2 <./images/figura_1.png>]
 Cap\'{\i }tulo 2.
 (./cap2.tex
-<images/by-nd_88x31.png, id=188, 88.33pt x 31.11626pt>
-File: images/by-nd_88x31.png Graphic file (type png)
-<use images/by-nd_88x31.png>
-Package pdftex.def Info: images/by-nd_88x31.png  used on input line 10.
-(pdftex.def)             Requested size: 241.84843pt x 85.19815pt.
+<images/mapa_estaciones.png, id=195, 578.16pt x 505.13719pt>
+File: images/mapa_estaciones.png Graphic file (type png)
+<use images/mapa_estaciones.png>
+Package pdftex.def Info: images/mapa_estaciones.png  used on input line 33.
+(pdftex.def)             Requested size: 290.22107pt x 253.56227pt.
 )
 
 
@@ -1004,40 +1001,42 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has b
 l.305 \newpage
               {\pagestyle{empty}} [3
 
- <./images/by-nd_88x31.png>]
-Cap\'{\i }tulo 3.
-(./cap3.tex)
+]
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.314 \newpage
-              {\pagestyle{empty}} [4
+l.308 \chapter
+              {\LARGE Título del Capítulo 3} [4 <./images/mapa_estaciones.png>]
+Cap\'{\i }tulo 3.
+(./cap3.tex)
+
+[5
 
 ]
 Cap\'{\i }tulo 4.
 (./cap4.tex)
 
-[5
+[6
 
 ]
 Cap\'{\i }tulo 5.
 (./cap5.tex)
 
-[6
+[7
 
 ]
 Cap\'{\i }tulo 6.
 (./cap6.tex)
 
-[7
+[8
 
 ]
 Cap\'{\i }tulo 7.
 (./cap7.tex)
 
-[8
+[9
 
 ]
 Ap\'endice A.
@@ -1056,20 +1055,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[9
+[10
 
 
 ])
 
-[10]
+[11]
 Ap\'endice B.
 (./apendice2.tex)
 
-[11
+[12
 
 ]
 
-[12
+[13
 
 ] (./memtfg.aux)
  ***********
@@ -1084,21 +1083,21 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `memtfg.out' has not changed.
-(rerunfilecheck)             Checksum: 092F88AEEB91F64466B513C9CD8D1848;3829.
+(rerunfilecheck)             Checksum: 5BA1EE87E760118A68E53B13ADBC76E2;3937.
  ) 
 Here is how much of TeX's memory you used:
- 21754 strings out of 473254
- 352973 string characters out of 5717961
- 907349 words of memory out of 5000000
- 44409 multiletter control sequences out of 15000+600000
- 616550 words of font info for 155 fonts, out of 8000000 for 9000
+ 21780 strings out of 473254
+ 353251 string characters out of 5717961
+ 907346 words of memory out of 5000000
+ 44411 multiletter control sequences out of 15000+600000
+ 618351 words of font info for 170 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1075b,851s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (21 pages, 90739 bytes).
+Output written on memtfg.pdf (22 pages, 582837 bytes).
 PDF statistics:
- 266 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 500000)
- 63701 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 63709 words of extra memory for PDF output out of 74296 (max. 10000000)
 
