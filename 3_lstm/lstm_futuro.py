@@ -15,7 +15,7 @@ import gc # garbage collector
 ######################################################################
 
 # VARIABLES #
-DATA_PATH = "paquetes_futuro.pkl"
+DATA_PATH = "paquetes_futuro_s6.pkl"
 
 BATCH_SIZE = 64
 SHUFFLE = False
@@ -97,24 +97,6 @@ EPOCHS = 700
 
 ####################################################
 
-class Attention(tf.keras.layers.Layer):
-    def __init__(self, units):
-        super(Attention, self).__init__()
-        # These are trainable layers that compute the attention score
-        self.W = tf.keras.layers.Dense(units)
-        self.V = tf.keras.layers.Dense(1)
-        
-    def call(self, inputs):
-        # inputs shape: (batch_size, time_steps, hidden_units)
-        # Compute score for each time step
-        score = tf.nn.tanh(self.W(inputs))             # (batch_size, time_steps, units)
-        attention_weights = tf.nn.softmax(self.V(score), axis=1)  # (batch_size, time_steps, 1)
-        # Multiply each hidden state by its attention weight and sum over time steps
-        context_vector = tf.reduce_sum(attention_weights * inputs, axis=1)  # (batch_size, hidden_units)
-        return context_vector
-
-################################################
-
 def build_model(hp):
     K.clear_session() # clear memory
     gc.collect() # garbage collector
@@ -142,7 +124,7 @@ def build_model(hp):
             layers.LSTM(units_1, return_sequences=use_second_lstm or use_attention_1) 
         ) (past_input)
     else:
-        past_layers = layers.LSTM(units_1, return_sequences=use_second_lstm or use_attention_1 or use_attention_2)(past_input)
+        past_layers = layers.LSTM(units_1, return_sequences=use_second_lstm or use_attention_1)(past_input)
     past_out_dim = units_1 # save past data dimesion
     
     # --- Optional second LSTM layer ---
@@ -152,7 +134,7 @@ def build_model(hp):
         bidir_2 = hp.Boolean('bidir_2', default=False)
         
         if bidir_2:
-            past_layers = layers.Bidirectional(layers.LSTM(units_2, return_sequences=use_attention_1 or use_attention_2))(past_layers)
+            past_layers = layers.Bidirectional(layers.LSTM(units_2, return_sequences=use_attention_1))(past_layers)
         else:
             past_layers = layers.LSTM(units_2, return_sequences=use_attention_1)(past_layers)
 
@@ -215,22 +197,22 @@ def build_model(hp):
     return model
 
 # Create a tuner instance
-# tuner = kt.Hyperband(
-#     build_model,
-#     objective='val_mse',
-#     max_epochs=EPOCHS,
-#     executions_per_trial=3,
-#     factor=3,
-#     directory='tuner',
-#     project_name='lstm_tuner'
-# )
-tuner = kt.BayesianOptimization(
+tuner = kt.Hyperband(
     build_model,
     objective='val_mse',
+    max_epochs=EPOCHS,
     executions_per_trial=3,
-    directory='tuner',
-    project_name='lstm_future_bayesian'
+    factor=3,
+    directory='../output/tuner',
+    project_name='lstm_tuner'
 )
+# tuner = kt.BayesianOptimization(
+#     build_model,
+#     objective='val_mse',
+#     executions_per_trial=3,
+#     directory='../output/tuner',
+#     project_name='lstm_future_bayesian'
+# )
 
 # Define tunable patience and min_delta for ReduceLROnPlateau
 def get_callbacks(hp):

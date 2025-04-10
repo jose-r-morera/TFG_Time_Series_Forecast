@@ -8,10 +8,10 @@ DATASET_PATH = "../1_tratamiento_datos/processed_data/" + FILE_NAME
 
 past_n = 30 # Number of past time steps to use as input
 future_n = 3 # Number of future time steps to predict
-STEP = 1 # Number of time steps to skip between each input sequence
+STEP = 6 # Number of time steps to skip between each input sequence
 
 # Output is stored as JSON
-OUTPUT_PATH = "../2_paquetes_datos/paquetes_futuro.pkl"
+OUTPUT_PATH = "paquetes_futuro_s6.pkl"
 
 #############
 # Load data #
