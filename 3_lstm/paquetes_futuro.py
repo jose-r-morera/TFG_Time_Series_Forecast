@@ -60,13 +60,17 @@ def create_dataset(target, features, past_n=1, future_n=1, step=1):
   x_train = []
   future_train = []
   y_train_multi = []
+  counter = 0
   for i in range(0, len(train_data) - past_n - future_n + 1, step):
+    counter += 1
     x_window = train_data.iloc[i:i + past_n][features].values
     x_train.append(x_window)
     future_n_window = normalized_features.iloc[label_start + i:label_start + i + future_n][features].drop(columns=[target]).values
     future_train.append(future_n_window)
     y_window = y_train_full.iloc[i:i + future_n].values
     y_train_multi.append(y_window)
+    
+  print("windows:", counter)
   x_train = np.array(x_train)
   future_train = np.array(future_train)
   y_train_multi = np.array(y_train_multi)
@@ -78,13 +82,17 @@ def create_dataset(target, features, past_n=1, future_n=1, step=1):
   x_val = []
   future_val = []
   y_val_multi = []
+  counter = 0
   for i in range(0, len(val_data) - past_n - future_n + 1, step):
+    counter += 1
     x_window = val_data.iloc[i:i + past_n][features].values
     x_val.append(x_window)
     future_n_window = normalized_features.iloc[val_label_start + i:val_label_start + i + future_n][features].drop(columns=[target]).values
     future_val.append(future_n_window)
     y_window = normalized_features.iloc[val_label_start + i: val_label_start + i + future_n][target].values
     y_val_multi.append(y_window)
+  
+  print("windows:", counter)
   x_val = np.array(x_val)
   future_val = np.array(future_val)
   y_val_multi = np.array(y_val_multi)
