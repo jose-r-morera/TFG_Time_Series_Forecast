@@ -1,4 +1,5 @@
 *.h5
 *.csv
 *.snapshot
+*.json
 /trial*
