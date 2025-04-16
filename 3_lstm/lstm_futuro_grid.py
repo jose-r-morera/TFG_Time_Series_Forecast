@@ -104,10 +104,6 @@ def build_model(hp):
     ### MODEL DEFINITION ####
     # General parameters
     use_second_lstm = hp.Boolean('use_second_lstm', default=False) # Second lstm on past data
-    use_attention_1 = hp.Boolean('use_attention_1', default=False) # Attention on past data
-    use_attention_2 = False # Attention on merged data
-    if not use_attention_1:
-        use_attention_2 = hp.Boolean('use_attention_2', default=False)
     
     #################################
     # --- PAST DATA Input layer --- #
@@ -121,10 +117,10 @@ def build_model(hp):
     if bidir_1:
         units_1 //= 2  # Halve the units for bidirectional LSTM
         past_layers = layers.Bidirectional(
-            layers.LSTM(units_1, return_sequences=use_second_lstm or use_attention_1) 
+            layers.LSTM(units_1, return_sequences=use_second_lstm) 
         ) (past_input)
     else:
-        past_layers = layers.LSTM(units_1, return_sequences=use_second_lstm or use_attention_1)(past_input)
+        past_layers = layers.LSTM(units_1, return_sequences=use_second_lstm)(past_input)
     past_out_dim = units_1 # save past data dimesion
     
     # --- Optional second LSTM layer ---
@@ -134,18 +130,9 @@ def build_model(hp):
         bidir_2 = hp.Boolean('bidir_2', default=False)
         
         if bidir_2:
-            past_layers = layers.Bidirectional(layers.LSTM(units_2, return_sequences=use_attention_1))(past_layers)
+            past_layers = layers.Bidirectional(layers.LSTM(units_2))(past_layers)
         else:
-            past_layers = layers.LSTM(units_2, return_sequences=use_attention_1)(past_layers)
-
-    # --- Optional Attention Layer ---
-    if use_attention_1:
-        if use_second_lstm:
-            attn_units_1 = hp.Int('attn_units_1', min_value=units_2//2, max_value=units_2*2, step=24)
-        else:
-            attn_units_1 = hp.Int('attn_units_1', min_value=units_1//2, max_value=units_1*2, step=24)
-        past_out_dim = attn_units_1
-        past_layers = Attention(attn_units_1)(past_layers)  # Apply attention before dense layer
+            past_layers = layers.LSTM(units_2, return_sequences=False)(past_layers)
  
     ##################
     # --- FUTURE --- #
@@ -167,17 +154,12 @@ def build_model(hp):
     # --- MERGE --- #
     #################
     merged = layers.Concatenate(name='concatenate')([past_layers, future_layers])
-    merged_dim = past_out_dim + units_f # past + future units
-
-    if use_attention_2:
-        merged = layers.Reshape((1, -1), name="att_reshape")(merged)
-        attn_units_2 = hp.Int('attn_units_2', min_value=merged_dim//2, max_value=round(merged_dim*1.5), step=24)
-        merged = Attention(attn_units_2)(merged)
+    # merged_dim = past_out_dim + units_f # past + future units
     
-    dense_2 = hp.Boolean('dense_2', default=False)
-    if dense_2: 
-        units_dense_2 = hp.Int('units_dense_2', min_value=merged_dim//4, max_value=round(merged_dim*1.5), step=24)
-        merged = layers.Dense(units_dense_2, activation="relu")(merged)
+    # dense_2 = hp.Boolean('dense_2', default=False)
+    # if dense_2: 
+    #     units_dense_2 = hp.Int('units_dense_2', min_value=merged_dim//4, max_value=round(merged_dim*1.5), step=24)
+    #     merged = layers.Dense(units_dense_2, activation="relu")(merged)
 
     # --- Dense output layer ---
     output = layers.Dense(output_dim)(merged)
