@@ -15,7 +15,7 @@ import gc # garbage collector
 ######################################################################
 
 # VARIABLES #
-DATA_PATH = "paquetes_futuro_s6.pkl"
+DATA_PATH = "./paquetes_futuro_s6.pkl"
 
 BATCH_SIZE = 64
 SHUFFLE = False
@@ -111,35 +111,29 @@ def build_model(hp):
     past_input = layers.Input(shape=(past_data_shape), name ="past")
     
     # --- First LSTM layer ---
-    units_1 = hp.Int('units_1', min_value=16, max_value=640, step=24)
-    bidir_1 = hp.Boolean('bidir_1', default=False)
+    units_1 = hp.Int('units_1', min_value=16, max_value=256, step=24)
     
-    if bidir_1:
-        units_1 //= 2  # Halve the units for bidirectional LSTM
-        past_layers = layers.Bidirectional(
-            layers.LSTM(units_1, return_sequences=use_second_lstm) 
-        ) (past_input)
-    else:
-        past_layers = layers.LSTM(units_1, return_sequences=use_second_lstm)(past_input)
-    past_out_dim = units_1 # save past data dimesion
+    past_layers = layers.Bidirectional(
+        layers.LSTM(units_1, return_sequences=use_second_lstm) 
+    ) (past_input)
     
     # --- Optional second LSTM layer ---
     if use_second_lstm:
-        units_2 = hp.Int('units_2', min_value=16, max_value=640, step=24)
-        past_out_dim = units_2
+        units_2 = hp.Int('units_2', min_value=16, max_value=512, step=24)
         bidir_2 = hp.Boolean('bidir_2', default=False)
         
         if bidir_2:
-            past_layers = layers.Bidirectional(layers.LSTM(units_2))(past_layers)
+            units_2 //= 2
+            past_layers = layers.Bidirectional(layers.LSTM(units_2, return_sequences=False))(past_layers)
         else:
             past_layers = layers.LSTM(units_2, return_sequences=False)(past_layers)
- 
+
     ##################
     # --- FUTURE --- #
     ##################
     future_input = layers.Input(shape=(future_data_shape), name ="future_data")
 
-    units_f = hp.Int('units_f', min_value=16, max_value=640, step=24)
+    units_f = hp.Int('units_f', min_value=16, max_value=512, step=24)
     bidir_f = hp.Boolean('bidir_f', default=False)
     
     if bidir_f:
@@ -154,12 +148,6 @@ def build_model(hp):
     # --- MERGE --- #
     #################
     merged = layers.Concatenate(name='concatenate')([past_layers, future_layers])
-    # merged_dim = past_out_dim + units_f # past + future units
-    
-    # dense_2 = hp.Boolean('dense_2', default=False)
-    # if dense_2: 
-    #     units_dense_2 = hp.Int('units_dense_2', min_value=merged_dim//4, max_value=round(merged_dim*1.5), step=24)
-    #     merged = layers.Dense(units_dense_2, activation="relu")(merged)
 
     # --- Dense output layer ---
     output = layers.Dense(output_dim)(merged)
@@ -167,7 +155,7 @@ def build_model(hp):
     ########################################################
     model = keras.Model(inputs=[past_input, future_input], outputs=output, name='past_future_model')
     # --- Learning rate tuning ---
-    learning_rate = hp.Float('learning_rate', min_value=1e-5, max_value=1e-2, sampling='LOG')
+    learning_rate = 0.005
     
     model.compile(
         optimizer=keras.optimizers.Adam(learning_rate=learning_rate),
@@ -196,18 +184,10 @@ tuner = kt.Hyperband(
 #     project_name='lstm_future_bayesian'
 # )
 
-class CleanupCallback(tf.keras.callbacks.Callback):
-    def on_train_end(self, logs=None):
-        # Clean up the TF session and do garbage collection
-        tf.keras.backend.clear_session()
-        gc.collect()
-        print("Cleaned up TensorFlow session and garbage collected.")
-
-
 # Define tunable patience and min_delta for ReduceLROnPlateau
 def get_callbacks(hp):
-    patience = hp.Int('reduce_lr_patience', min_value=2, max_value=5, step=1)
-    factor = hp.Choice('reduce_lr_factor', values=[0.4, 0.5, 0.6, 0.7])
+    patience = 4
+    factor = 0.4
 
     reduce_lr_callback = tf.keras.callbacks.ReduceLROnPlateau(
         min_delta=0.0001,  # Minimum change to be considered an improvement
@@ -219,9 +199,8 @@ def get_callbacks(hp):
     )
     
     es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0.0001, patience=10, restore_best_weights=True)
-    
 
-    return [reduce_lr_callback, es_callback, CleanupCallback()]
+    return [reduce_lr_callback, es_callback]
 
 
 ###############################################################################
