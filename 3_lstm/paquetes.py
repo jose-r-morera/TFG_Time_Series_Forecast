@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import random
+import math
 
 # VARIABLES #
 FILES = ["grafcan_arona_features.csv", "grafcan_la_laguna_features.csv", "grafcan_la_orotava_features.csv", 
@@ -11,35 +12,50 @@ DATASETS_PATH = "../1_tratamiento_datos/processed_data/"
 past_n = 30 # Number of past time steps to use as input
 future_n = 3 # Number of future time steps to predict
 STEP = 6 # Number of time steps to skip between each input sequence
+TRAIN_SPLIT = 0.9 # Percentage of data to use for training (0.85 = 85% train, 15% test)
 
 # Output is stored as JSON
-OUTPUT_PATH = "paquetes_futuro_s6.pkl"
+OUTPUT_PATH = "paquetes_futuro_s6_TEST.pkl"
 
 ####################################################################################################
-def create_df_windows(df, features, target, train_split=0.85):
+def create_df_windows(df, past_features, future_features, target, past_n, future_n, step, train_split=0.85):
   label_start = past_n
   y = df.iloc[label_start:][target]
 
-  train_past_variables, test_past_variables = [], []
-  train_future_variables, test_future_variables = [], []
-  train_y, test_y = [], []
-  i = 0
-  while (i  < len(df) - past_n - future_n + 1):
-    if random.random() < train_split: 
-      train_past_variables.append(df.iloc[i:i + past_n][features].values)
-      future_n_window = df.iloc[label_start + i:label_start + i + future_n][features].drop(columns=[target]).values
-      train_future_variables.append(future_n_window)
-      train_y.append(y.iloc[i:i + future_n].values)
-      i += STEP
-    else: 
-      # Test data
-      test_past_variables.append(df.iloc[i:i + past_n][features].values)
-      future_n_window = df.iloc[label_start + i:label_start + i + future_n][features].drop(columns=[target]).values
-      test_future_variables.append(future_n_window)
-      test_y.append(y.iloc[i:i + future_n].values)
-      # Avoid train / test data leakage
-      i += past_n + future_n 
-      
+  past_variables_windows = []
+  future_variables_windows = []
+  y_windows = []
+  
+  for i in range(0, len(df) - past_n - future_n + 1, step):
+    past_variables_windows.append(df.iloc[i:i + past_n][past_features].values)
+    future_n_window = df.iloc[label_start + i:label_start + i + future_n][future_features].values
+    future_variables_windows.append(future_n_window)
+    y_windows.append(y.iloc[i:i + future_n].values)
+    
+  total_windows = len(past_variables_windows)
+  overlap_windows = math.ceil((past_n + future_n)/step)
+  test_indexes = random.sample(range(total_windows), int(total_windows * (1 - train_split)))
+  
+  forbidden = set()
+  for idx in test_indexes:
+      # forbid idx itself and the next `overlap_windows - 1` windows
+      for j in range(0, overlap_windows):
+          forbidden.add(idx + j)
+
+  # Clip to valid window numbers
+  forbidden = sorted(i for i in forbidden if 0 <= i < total_windows)
+  train_idxs = sorted(set(range(total_windows)) - set(forbidden))
+
+  # Gather train/test splits
+  train_past_variables = [past_variables_windows[i] for i in train_idxs]
+  train_future_variables = [future_variables_windows[i] for i in train_idxs]
+  train_y = [y_windows[i] for i in train_idxs]
+
+  test_past_variables = [past_variables_windows[i] for i in test_indexes]
+  test_future_variables = [future_variables_windows[i] for i in test_indexes]
+  test_y = [y_windows[i] for i in test_indexes]
+    
+  # Convert to numpy arrays and store in dictionary
   train = {
     "past": np.array(train_past_variables),
     "future": np.array(train_future_variables),
@@ -67,7 +83,8 @@ for file in FILES:
   
   for target in targets:
     features = ["sin_day", "cos_day", "sin_year", "cos_year", target]
-    train, test = create_df_windows(df, features, target)
+    future_features = ["sin_day", "cos_day", "sin_year", "cos_year"]
+    train, test = create_df_windows(df, features, future_features, target, past_n, future_n, STEP, TRAIN_SPLIT)
     # Store data
     data[target][file] = {}
     data[target][file]["train"] = train
