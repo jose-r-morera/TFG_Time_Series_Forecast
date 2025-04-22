@@ -3,3 +3,4 @@
 *.snapshot
 *.json
 /trial*
+*.pkl
