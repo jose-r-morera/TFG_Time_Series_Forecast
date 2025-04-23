@@ -1,28 +1,31 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
-
-from scipy.spatial.distance import euclidean
-from scipy.stats import pearsonr, spearmanr, kendalltau
+import math
 from sklearn.metrics import mean_squared_error
-
-# ARIMA model
 from statsmodels.tsa.arima.model import ARIMA
 ###################################################
 
 
-FILE_NAME = "grafcan_cuesta_features.csv"
-DATASET_PATH = "../1_tratamiento_datos/processed_data/" + FILE_NAME
+FILE_NAME = "grafcan_la_laguna_features.csv"
+DATASET_PATH = "../1_data_preprocessing/processed_data/" + FILE_NAME
 df = pd.read_csv(DATASET_PATH, parse_dates=['time'])
 
-target_day = '2025-02-01'
-indices = df[df['time'].dt.date == pd.to_datetime(target_day).date()].index
+TEST_SPLIT_DAY = '2025-02-01'  # Test data starts from this date
+
+ARIMA_P = 4  # Autoregressive order
+ARIMA_D = 0  # Integrated order
+ARIMA_Q = 0  # Moving average order
+
+FORECAST_STEPS = 3  # Number of steps to forecast
+
+####################
+indices = df[df['time'].dt.date == pd.to_datetime(TEST_SPLIT_DAY).date()].index
 first_2025_day_index = indices[0]
 
 train = df.iloc[0:first_2025_day_index]["air_temperature"]
 test = df.iloc[first_2025_day_index:]["air_temperature"].reset_index(drop=True)
 #####################################
-model_temp = ARIMA(train, order=(4,0,0))
+model_temp = ARIMA(train, order=(ARIMA_P, ARIMA_D, ARIMA_Q))
 model_fit = model_temp.fit()
 
 # summary of fit model
@@ -42,21 +45,20 @@ predictions = list()
 true_vals = list()
 
 # walk-forward validation
-for t in range(0, len(test)-2, 3):
+for t in range(0, len(test)-FORECAST_STEPS+1, FORECAST_STEPS):
     print("it number: ", t)
     model = ARIMA(history, order=(4, 0, 0))
     model_fit = model.fit()
 
-    output = model_fit.forecast(steps=3)
+    output = model_fit.forecast(steps=FORECAST_STEPS)
     predictions.extend(output)
-    true_vals.extend(test.iloc[t:t+3])
-    
-    # Add next 3 real values to history
-    history.extend(test.iloc[t:t+3])
+    true_vals.extend(test.iloc[t:t+FORECAST_STEPS])
 
-    
+    # Add next 3 real values to history
+    history.extend(test.iloc[t:t+FORECAST_STEPS])
+
+
 # evaluate forecasts
-import math 
 rmse = math.sqrt(mean_squared_error(true_vals, predictions))
 
 print('Test RMSE: %.3f' % rmse)
@@ -68,4 +70,3 @@ plt.show()
 plt.plot(test[:72])
 plt.plot(predictions[:73], color='red')
 plt.show()
-

@@ -153,8 +153,9 @@ for target in targets:
   for i in range(len(train_data[target]["past_variables"])):
     if random.random() < RANDOM_SAMPLE_RATE:
       # Noise uses normal distribution centered around 0, like the normalized data
-      noise = np.random.normal(0, RANDOM_STD, train_data[target]["past_variables"][i].shape)
-      new_sample = train_data[target]["past_variables"][i] + noise
+      noise = np.random.normal(0, RANDOM_STD, train_data[target]["past_variables"][i][-1].shape)
+      new_sample = train_data[target]["past_variables"][i]
+      new_sample[-1] += noise
       # Do the same for y
       noise = np.random.normal(0, RANDOM_STD, train_data[target]["y"][i].shape)
       new_y = train_data[target]["y"][i] + noise
