@@ -1,0 +1,6 @@
+air_temperature mean: [19.73975819]
+air_temperature std: [4.2260901]
+relative_humidity mean: [19.76250077]
+relative_humidity std: [4.23450749]
+atmospheric_pressure mean: [19.71643013]
+atmospheric_pressure std: [4.21025694]

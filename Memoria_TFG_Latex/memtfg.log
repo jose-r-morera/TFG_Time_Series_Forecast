@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  24 MAR 2025 23:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  23 APR 2025 23:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -968,26 +968,33 @@ LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.37 \newpage
+l.40 \newpage
               [1
 
 ]
-<images/figura_1.png, id=189, 513.41812pt x 496.10344pt>
-File: images/figura_1.png Graphic file (type png)
-<use images/figura_1.png>
-Package pdftex.def Info: images/figura_1.png  used on input line 41.
-(pdftex.def)             Requested size: 386.95897pt x 373.91615pt.
-)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
+l.40 \newpage
+              [2]
+<images/figura_1.png, id=191, 513.41812pt x 496.10344pt>
+File: images/figura_1.png Graphic file (type png)
+<use images/figura_1.png>
+Package pdftex.def Info: images/figura_1.png  used on input line 44.
+(pdftex.def)             Requested size: 386.95897pt x 373.91615pt.
+)
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
 l.296 \newpage
-              {\pagestyle{empty}} [2 <./images/figura_1.png>]
+              {\pagestyle{empty}} [3 <./images/figura_1.png>]
 Cap\'{\i }tulo 2.
 (./cap2.tex
-<images/mapa_estaciones.png, id=195, 578.16pt x 505.13719pt>
+<images/mapa_estaciones.png, id=197, 578.16pt x 505.13719pt>
 File: images/mapa_estaciones.png Graphic file (type png)
 <use images/mapa_estaciones.png>
 Package pdftex.def Info: images/mapa_estaciones.png  used on input line 33.
@@ -995,48 +1002,43 @@ Package pdftex.def Info: images/mapa_estaciones.png  used on input line 33.
 )
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.305 \newpage
-              {\pagestyle{empty}} [3
-
-]
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.308 \chapter
-              {\LARGE Título del Capítulo 3} [4 <./images/mapa_estaciones.png>]
+l.305 \newpage
+              {\pagestyle{empty}} [4
+
+]
+
+[5 <./images/mapa_estaciones.png>]
 Cap\'{\i }tulo 3.
 (./cap3.tex)
 
-[5
+[6
 
 ]
 Cap\'{\i }tulo 4.
 (./cap4.tex)
 
-[6
+[7
 
 ]
 Cap\'{\i }tulo 5.
 (./cap5.tex)
 
-[7
+[8
 
 ]
 Cap\'{\i }tulo 6.
 (./cap6.tex)
 
-[8
+[9
 
 ]
 Cap\'{\i }tulo 7.
 (./cap7.tex)
 
-[9
+[10
 
 ]
 Ap\'endice A.
@@ -1055,20 +1057,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[10
+[11
 
 
 ])
 
-[11]
+[12]
 Ap\'endice B.
 (./apendice2.tex)
 
-[12
+[13
 
 ]
 
-[13
+[14
 
 ] (./memtfg.aux)
  ***********
@@ -1083,21 +1085,21 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `memtfg.out' has not changed.
-(rerunfilecheck)             Checksum: 5BA1EE87E760118A68E53B13ADBC76E2;3937.
+(rerunfilecheck)             Checksum: 4C47F68410529957C0FA1538CF7379E7;4144.
  ) 
 Here is how much of TeX's memory you used:
- 21780 strings out of 473254
- 353251 string characters out of 5717961
- 907346 words of memory out of 5000000
+ 21787 strings out of 473254
+ 353312 string characters out of 5717961
+ 907352 words of memory out of 5000000
  44411 multiletter control sequences out of 15000+600000
- 618351 words of font info for 170 fonts, out of 8000000 for 9000
+ 618829 words of font info for 174 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,13n,93p,1075b,851s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,13n,93p,1075b,849s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (22 pages, 582837 bytes).
+Output written on memtfg.pdf (23 pages, 583514 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
  63709 words of extra memory for PDF output out of 74296 (max. 10000000)
 

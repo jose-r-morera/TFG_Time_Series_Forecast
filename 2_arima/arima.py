@@ -46,17 +46,16 @@ true_vals = list()
 
 # walk-forward validation
 for t in range(0, len(test)-FORECAST_STEPS+1, FORECAST_STEPS):
-    print("it number: ", t)
-    model = ARIMA(history, order=(4, 0, 0))
+    print("iteration", t%FORECAST_STEPS, "of", len(test)//FORECAST_STEPS)
+    model = ARIMA(history, order=(ARIMA_P, ARIMA_D, ARIMA_Q))
     model_fit = model.fit()
 
     output = model_fit.forecast(steps=FORECAST_STEPS)
     predictions.extend(output)
     true_vals.extend(test.iloc[t:t+FORECAST_STEPS])
 
-    # Add next 3 real values to history
+    # Add next forecast_steps real values to history
     history.extend(test.iloc[t:t+FORECAST_STEPS])
-
 
 # evaluate forecasts
 rmse = math.sqrt(mean_squared_error(true_vals, predictions))

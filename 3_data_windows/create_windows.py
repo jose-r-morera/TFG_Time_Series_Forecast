@@ -14,10 +14,13 @@ future_n = 3 # Number of future time steps to predict
 STEP = 6 # Number of time steps to skip between each input sequence
 TRAIN_SPLIT = 0.9 # Percentage of data to use for training (0.85 = 85% train, 15% test)
 
+USE_COVARIATES = False # Use other features as covariates (ej, temperature and pressure to predict humidity)
+
 RANDOM_SAMPLE_RATE = 0.5 # Probability of adding a new synthetic sample to the training set
 RANDOM_STD = 0.1 # Standard deviation of the noise to add to the samples
 
 # Output is stored as JSON
+#OUTPUT_PATH = "paquetes_s6_covariates_augmented.pkl"
 OUTPUT_PATH = "paquetes_s6_augmented.pkl"
 
 ##########################
@@ -89,7 +92,10 @@ for file in FILES:
   df = pd.read_csv(DATASETS_PATH + file, parse_dates=['time']).drop(columns=['artificial_value_flag', 'outlier_flag'])
   
   for target in targets:
-    features = ["sin_day", "cos_day", "sin_year", "cos_year", target]
+    if USE_COVARIATES:
+      features = ["sin_day", "cos_day", "sin_year", "cos_year", *targets]
+    else: 
+      features = ["sin_day", "cos_day", "sin_year", "cos_year", target]
     future_features = ["sin_day", "cos_day", "sin_year", "cos_year"]
     train, test = create_df_windows(df, features, future_features, target, past_n, future_n, STEP, TRAIN_SPLIT)
     # Store data
