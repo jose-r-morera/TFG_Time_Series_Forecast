@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  24 APR 2025 00:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  27 APR 2025 13:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1075,14 +1075,14 @@ Package rerunfilecheck Info: File `memtfg.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  21782 strings out of 473254
- 352787 string characters out of 5717961
+ 352790 string characters out of 5717961
  906877 words of memory out of 5000000
  44376 multiletter control sequences out of 15000+600000
  620980 words of font info for 192 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1075b,851s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (22 pages, 556573 bytes).
+Output written on memtfg.pdf (22 pages, 556586 bytes).
 PDF statistics:
  281 PDF objects out of 1000 (max. 8388607)
  240 compressed objects within 3 object streams

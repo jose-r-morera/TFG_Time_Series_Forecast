@@ -13,7 +13,7 @@ import tensorflow as tf
 # VARIABLES #
 #DATA_PATH = "./paquetes_s6.pkl"
 #DATA_PATH = "../3_data_windows/paquetes_s6_augmented.pkl"
-DATA_PATH = "../3_data_windows/paquetes_s6_covariates_p13.pkl"
+DATA_PATH = "../3_data_windows/paquetes_s6_covariates_p28.pkl"
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -88,7 +88,7 @@ EPOCHS = 700
 
 # Encoder part (LSTM for past data)
 past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-#x = tf.keras.layers.SpatialDropout1D(0.05, name="spatial_dropout")(past_data_layer)
+# x = tf.keras.layers.SpatialDropout1D(0.2, name="spatial_dropout")(past_data_layer)
 encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(78, return_sequences=False))(past_data_layer)
 #encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(300, return_sequences=True, recurrent_dropout=0.1))(past_data_layer)
 # encoder_lstm = tf.keras.layers.LSTM(21, return_sequences=False)(encoder_lstm)

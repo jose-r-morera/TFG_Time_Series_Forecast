@@ -6,17 +6,22 @@ import math
 import matplotlib.pyplot as plt
 
 # VARIABLES #
-#FILES = ["openmeteo_la_laguna_features.csv", "grafcan_la_laguna_features.csv"]
-# FILES = ["grafcan_arona_features.csv", "grafcan_la_laguna_features.csv", "grafcan_la_orotava_features.csv", 
-#        "openmeteo_arona_features.csv", "openmeteo_la_laguna_features.csv", "openmeteo_la_orotava_features.csv"]
+FILES = {
+  "santa_cruz": ["grafcan_santa_cruz_features.csv"],
+}
+# FILES = {
+#   "arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
+#   "la_laguna": ["grafcan_la_laguna_features.csv","openmeteo_la_laguna_features.csv"],
+#   "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"]
+# }
 
-FILES = 
+# FILES =
 DATASETS_PATH = "../1_data_preprocessing/processed_data/"
 
-past_n = 13 # Number of past time steps to use as input
-future_n = 3 # Number of future time steps to predict
+PAST_N = 13 # Number of past time steps to use as input
+FUTURE_N = 3 # Number of future time steps to predict
 STEP = 6 # Number of time steps to skip between each input sequence
-TRAIN_SPLIT = 0.88 # Percentage of data to use for training (0.85 = 85% train, 15% test)
+TRAIN_SPLIT = 0.90 # Percentage of data to use for training (0.85 = 85% train, 15% test)
 
 USE_COVARIATES = True # Use other features as covariates (ej, temperature and pressure to predict humidity)
 
@@ -24,7 +29,7 @@ NOISE_SAMPLE_RATE = 0 # Probability of adding a new synthetic sample to the trai
 NOISE_STD = 0.02 # Standard deviation of the noise to add to the samples
 
 # Output is stored as JSON
-OUTPUT_PATH = "paquetes_s6_covariates_augmented_p24.pkl"
+OUTPUT_PATH = "paquetes_s6_sc_covariates_"
 #OUTPUT_PATH = "paquetes_s6_augmented.pkl"
 
 ##########################
@@ -33,7 +38,7 @@ np.random.seed(17)
 random.seed(17)
 
 ####################################################################################################
-def create_df_windows(df, past_features, future_features, target, past_n, future_n, step, train_split=0.85):
+def create_df_windows(df, past_features, future_features, target, past_n, future_n, step):
   label_start = past_n
   
   past_variables_windows = []
@@ -45,126 +50,155 @@ def create_df_windows(df, past_features, future_features, target, past_n, future
     future_n_window = df.iloc[label_start + i:label_start + i + future_n][future_features].values
     future_variables_windows.append(future_n_window)
     y_windows.append(df.iloc[label_start + i:label_start+ i + future_n][target].values)
-    
-  total_windows = len(past_variables_windows)
-  overlap_windows = math.ceil((past_n + future_n)/step)
-  test_indexes = random.sample(range(total_windows), int(total_windows * (1 - train_split)))
   
-  forbidden = set()
-  for idx in test_indexes:
-      # forbid idx itself and the next `overlap_windows - 1` windows
-      for j in range(0, overlap_windows):
-          forbidden.add(idx + j)
-
-  # Clip to valid window numbers
-  forbidden = sorted(i for i in forbidden if 0 <= i < total_windows)
-  train_idxs = sorted(set(range(total_windows)) - set(forbidden))
-
-  # Gather train/test splits
-  train_past_variables = [past_variables_windows[i] for i in train_idxs]
-  train_future_variables = [future_variables_windows[i] for i in train_idxs]
-  train_y = [y_windows[i] for i in train_idxs]
-
-  test_past_variables = [past_variables_windows[i] for i in test_indexes]
-  test_future_variables = [future_variables_windows[i] for i in test_indexes]
-  test_y = [y_windows[i] for i in test_indexes]
-    
-  # Convert to numpy arrays and store in dictionary
-  train = {
-    "past": np.array(train_past_variables),
-    "future": np.array(train_future_variables),
-    "y": np.array(train_y)
+  data = {
+    "past_variables": past_variables_windows,
+    "future_variables": future_variables_windows,
+    "y": y_windows
   }
-  test = {
-    "past": np.array(test_past_variables),
-    "future": np.array(test_future_variables),
-    "y": np.array(test_y)
-  }
-      
-  return train, test
+  return data
 #####################################################################################################
   
+def create_windows(past_n, future_n, step, train_split, use_covariates):
+  # Data structure #
+  targets = ["air_temperature", "relative_humidity", "atmospheric_pressure"]
+  data = {}
+  for target in targets:
+    data[target] = {}
 
-# Data structure #
-targets = ["air_temperature", "relative_humidity", "atmospheric_pressure"]
-data = {}
-for target in targets:
-  data[target] = {}
+  # Load data #
+  for location in FILES:
+    for i in range(len(targets)):
+      target = targets[i]
+      data[target][location] = []    
+      for dataset in FILES[location]:
+        df = pd.read_csv(DATASETS_PATH + dataset, parse_dates=['time']).drop(columns=['artificial_value_flag', 'outlier_flag'])
 
-# Load data #
-for file in FILES:
-  df = pd.read_csv(DATASETS_PATH + file, parse_dates=['time']).drop(columns=['artificial_value_flag', 'outlier_flag'])
-  
-  for i in range(len(targets)):
-    target = targets[i]
-    if USE_COVARIATES:
-      # set target as the last feature
-      features = ["sin_day", "cos_day", "sin_year", "cos_year", *(targets[:i] + targets[i+1:]), targets[i]]
-    else: 
-      features = ["sin_day", "cos_day", "sin_year", "cos_year", target]
-    future_features = ["sin_day", "cos_day", "sin_year", "cos_year"]
-    train, test = create_df_windows(df, features, future_features, target, past_n, future_n, STEP, TRAIN_SPLIT)
-    # Store data
-    data[target][file] = {}
-    data[target][file]["train"] = train
-    data[target][file]["test"] = test
+        if USE_COVARIATES: # set target as last feature
+          features = ["sin_day", "cos_day", "sin_year", "cos_year", *(targets[:i] + targets[i+1:]), targets[i]]
+        else: 
+          features = ["sin_day", "cos_day", "sin_year", "cos_year", target]
+        future_features = ["sin_day", "cos_day", "sin_year", "cos_year"]
+        windows_data = create_df_windows(df, features, future_features, target, PAST_N, FUTURE_N, STEP)
+        
+        # Store data
+        data[target][location].append(windows_data)
+        
+  #####################
+  # Split by location #
+  #####################
+  split_data = {}
 
-#######################
-# Dataset Aggregation #
-#######################
-train_data = {}
-test_data = {}
-template = {
-      "past_variables": [],
-      "future_variables": [],
-      "y": [],
-    }
+  for target in targets:
+    split_data[target] = {}
+    for location in FILES:
+      split_data[target][location] = {}
+      location_data = data[target][location]
+      total_windows = len(location_data[0]["past_variables"])
+      overlap_windows = math.ceil((PAST_N + FUTURE_N)/STEP) # number of windows that overlap with the current one
+      test_indexes = random.sample(range(total_windows), int(total_windows * (1 - TRAIN_SPLIT)))
+    
+      forbidden = set()
+      for idx in test_indexes:
+          # forbid idx itself and the next `overlap_windows - 1` windows
+          for j in range(0, overlap_windows):
+              forbidden.add(idx + j)
 
-for target in targets:
-  # Initialize empty (avoid copying because of reference)
-  train_data[target] = {key: [] for key in template}
-  test_data[target] =  {key: [] for key in template}
-  for dataset, samples in data[target].items():
-    train_data[target]["past_variables"].extend(samples["train"]["past"])
-    train_data[target]["future_variables"].extend(samples["train"]["future"])
-    train_data[target]["y"].extend(samples["train"]["y"])
-    # Test data
-    test_data[target]["past_variables"].extend(samples["test"]["past"])
-    test_data[target]["future_variables"].extend(samples["test"]["future"])
-    test_data[target]["y"].extend(samples["test"]["y"])
+      # Clip to valid window numbers
+      forbidden = sorted(i for i in forbidden if 0 <= i < total_windows)
+      train_idxs = sorted(set(range(total_windows)) - set(forbidden))
 
-print("Data shape:")
-for target in targets:
-  # Convert to numpy array
-  train_data[target]["past_variables"] = np.array(train_data[target]["past_variables"])
-  train_data[target]["future_variables"] = np.array(train_data[target]["future_variables"])
-  train_data[target]["y"] = np.array(train_data[target]["y"])
-  # Test
-  test_data[target]["past_variables"] = np.array(test_data[target]["past_variables"])
-  test_data[target]["future_variables"] = np.array(test_data[target]["future_variables"])
-  test_data[target]["y"] = np.array(test_data[target]["y"])
-  print(f"Train {target}: {train_data[target]['past_variables'].shape} samples")
-  print(f"TEST {target}: {test_data[target]['past_variables'].shape} samples")
+      template = {
+        "past_variables": [],
+        "future_variables": [],
+        "y": [],
+      }
+      train_split = {key: [] for key in template}
+      test_split = {key: [] for key in template}
+      for dataset in range(len(location_data)):
+        past_variables_windows = location_data[dataset]["past_variables"]
+        future_variables_windows = location_data[dataset]["future_variables"]
+        y_windows = location_data[dataset]["y"]
+        # Gather train/test splits
+        train_past_variables = np.array([past_variables_windows[i] for i in train_idxs])
+        train_future_variables = np.array([future_variables_windows[i] for i in train_idxs])
+        train_y = np.array([y_windows[i] for i in train_idxs])
 
-# Normalization
-TARGET_INDEX = 4 # 0,1,2,3 = sin/cos
-COVARIATES_INDEXES = [5, 6] # we are using 3 features
-if USE_COVARIATES:
-  normalization_indexes = [TARGET_INDEX] + COVARIATES_INDEXES
-else:
-  normalization_indexes = [TARGET_INDEX] 
-for target in targets:
-  # Mean across every window and every timestep
-  mean = train_data[target]["past_variables"][:, :, normalization_indexes].mean(axis=(0,1))
-  std = train_data[target]["past_variables"][:, :, normalization_indexes].std(axis=(0,1))
-  train_data[target]["past_variables"][:, :, normalization_indexes] = (train_data[target]["past_variables"][:, :, normalization_indexes] - mean) / std
-  test_data[target]["past_variables"][:, :, normalization_indexes] = (test_data[target]["past_variables"][:, :, normalization_indexes] - mean) / std
-  # For target use the data of the last feature, which is the target variable
-  train_data[target]["y"] = (train_data[target]["y"] - mean[-1]) / std[-1]
-  test_data[target]["y"] = (test_data[target]["y"] - mean[-1]) / std[-1]
-  # Save data
-  train_data[target]["mean"] = mean
-  train_data[target]["std"] = std
+        test_past_variables = np.array([past_variables_windows[i] for i in test_indexes])
+        test_future_variables = np.array([future_variables_windows[i] for i in test_indexes])
+        test_y = np.array([y_windows[i] for i in test_indexes])
+        
+        train_split["past_variables"].extend(train_past_variables)
+        train_split["future_variables"].extend(train_future_variables)
+        train_split["y"].extend(train_y)
+        
+        test_split["past_variables"].extend(test_past_variables)
+        test_split["future_variables"].extend(test_future_variables)
+        test_split["y"].extend(test_y)
+      
+      split_data[target][location]["train"] = train_split
+      split_data[target][location]["test"] = test_split
+        
+      
+
+  #######################
+  # Dataset Aggregation #
+  #######################
+  train_data = {}
+  test_data = {}
+  template = {
+        "past_variables": [],
+        "future_variables": [],
+        "y": [],
+      }
+
+  for target in targets:
+    # Initialize empty (avoid copying because of reference)
+    train_data[target] = {key: [] for key in template}
+    test_data[target] =  {key: [] for key in template}
+    for location, samples in split_data[target].items():
+      train_data[target]["past_variables"].extend(samples["train"]["past_variables"])
+      train_data[target]["future_variables"].extend(samples["train"]["future_variables"])
+      train_data[target]["y"].extend(samples["train"]["y"])
+      # Test data
+      test_data[target]["past_variables"].extend(samples["test"]["past_variables"])
+      test_data[target]["future_variables"].extend(samples["test"]["future_variables"])
+      test_data[target]["y"].extend(samples["test"]["y"])
+
+  print("Data shape:")
+  for target in targets:
+    # Convert to numpy array
+    train_data[target]["past_variables"] = np.array(train_data[target]["past_variables"])
+    train_data[target]["future_variables"] = np.array(train_data[target]["future_variables"])
+    train_data[target]["y"] = np.array(train_data[target]["y"])
+    # Test
+    test_data[target]["past_variables"] = np.array(test_data[target]["past_variables"])
+    test_data[target]["future_variables"] = np.array(test_data[target]["future_variables"])
+    test_data[target]["y"] = np.array(test_data[target]["y"])
+    print(f"Train {target}: {train_data[target]['past_variables'].shape} samples")
+    print(f"TEST {target}: {test_data[target]['past_variables'].shape} samples")
+
+  #################
+  # Normalization #
+  #################
+  TARGET_INDEX = 4 # 0,1,2,3 = sin/cos
+  COVARIATES_INDEXES = [5, 6] # we are using 3 features
+  if USE_COVARIATES:
+    normalization_indexes = [TARGET_INDEX] + COVARIATES_INDEXES
+  else:
+    normalization_indexes = [TARGET_INDEX] 
+  for target in targets:
+    # Mean across every window and every timestep
+    mean = train_data[target]["past_variables"][:, :, normalization_indexes].mean(axis=(0,1))
+    std = train_data[target]["past_variables"][:, :, normalization_indexes].std(axis=(0,1))
+    train_data[target]["past_variables"][:, :, normalization_indexes] = (train_data[target]["past_variables"][:, :, normalization_indexes] - mean) / std
+    test_data[target]["past_variables"][:, :, normalization_indexes] = (test_data[target]["past_variables"][:, :, normalization_indexes] - mean) / std
+    # For target use the data of the last feature, which is the target variable
+    train_data[target]["y"] = (train_data[target]["y"] - mean[-1]) / std[-1]
+    test_data[target]["y"] = (test_data[target]["y"] - mean[-1]) / std[-1]
+    # Save data
+    train_data[target]["mean"] = mean
+    train_data[target]["std"] = std
   
 #####################
 # Data Augmentation #
@@ -202,18 +236,23 @@ for target in targets:
         
 
 
-# print shapes
-print("Data shape after augmentation:")
-for target in targets:
-  print(f"Train {target}: {train_data[target]['past_variables'].shape} samples")
-  print(f"TEST {target}: {test_data[target]['past_variables'].shape} samples")
+  # print shapes
+  print("Data shape after augmentation:")
+  for target in targets:
+    print(f"Train {target}: {train_data[target]['past_variables'].shape} samples")
+    print(f"TEST {target}: {test_data[target]['past_variables'].shape} samples")
+    
+  # print mean and std
+  for target in targets:
+    print(f"{target} mean: {train_data[target]['mean']}")
+    print(f"{target} std: {train_data[target]['std']}")
+    
+  # Save train and test data
+  out_path = OUTPUT_PATH + "p"+ str(past_n) + ".pkl"
+  with open(out_path, "wb") as f:
+    pickle.dump({"train": train_data, "test": test_data}, f)
+  print(f"Data saved to {out_path}")
   
-# print mean and std
-for target in targets:
-  print(f"{target} mean: {train_data[target]['mean']}")
-  print(f"{target} std: {train_data[target]['std']}")
-  
-# Save train and test data
-with open(OUTPUT_PATH, "wb") as f:
-  pickle.dump({"train": train_data, "test": test_data}, f)
-print(f"Data saved to {OUTPUT_PATH}")
+for past_n in range(13, 14):
+  print("Generating windows for past_n = ", past_n)
+  create_windows(past_n, FUTURE_N, STEP, TRAIN_SPLIT, USE_COVARIATES)
