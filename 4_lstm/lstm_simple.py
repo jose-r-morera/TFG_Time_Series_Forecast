@@ -84,9 +84,9 @@ EPOCHS = 700
 # Encoder part (LSTM for past data)
 past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
 #past_data_layer = layers.SpatialDropout1D(0.1)(past_data_layer)
-past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(300, return_sequences=True))(past_data_layer)
+past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(30, return_sequences=True))(past_data_layer)
 #past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(300, return_sequences=True, recurrent_dropout=0.1))(past_data_layer)
-past_lstm = tf.keras.layers.LSTM(160, return_sequences=False)(past_lstm)
+past_lstm = tf.keras.layers.LSTM(16, return_sequences=False)(past_lstm)
 # dropout
 #past_lstm = tf.keras.layers.Dropout(0.2)(past_lstm)
 

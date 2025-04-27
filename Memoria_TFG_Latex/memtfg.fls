@@ -187,8 +187,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/gensymb/gensymb.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/gensymb/gensymb.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/eurosym/eurosym.sty
@@ -357,10 +355,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/bera/fveb8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fveb8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/bera/fveb8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fveb8r.tfm
-INPUT ./images/figura_1.png
-INPUT ./images/figura_1.png
-INPUT ./images/figura_1.png
-INPUT ./images/figura_1.png
 INPUT ./cap2.tex
 INPUT ./cap2.tex
 INPUT cap2.tex

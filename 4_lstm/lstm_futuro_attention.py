@@ -15,7 +15,7 @@ import gc # garbage collector
 ######################################################################
 
 # VARIABLES #
-DATA_PATH = "paquetes_futuro_s6.pkl"
+DATA_PATH = "../3_data_windows/paquetes_s6_covariates_augmented.pkl"
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -106,19 +106,19 @@ class Attention(tf.keras.layers.Layer):
 
 # Encoder part (LSTM for past data)
 past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(300, return_sequences=True))(past_data_layer)
-encoder_lstm = tf.keras.layers.LSTM(140, return_sequences=True)(encoder_lstm)
+past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(21, return_sequences=True))(past_data_layer)
+past_lstm = tf.keras.layers.LSTM(4, return_sequences=True)(past_lstm)
 
 # Decoder part (LSTM for future exogenous features)
 future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
-#decoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(256))(future_data_layer)
-decoder_lstm = tf.keras.layers.LSTM(140, return_sequences=True)(future_data_layer)
+#future_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(256))(future_data_layer)
+future_lstm = tf.keras.layers.LSTM(4, return_sequences=True)(future_data_layer)
 
 # Combine the outputs of encoder and decoder (you can concatenate or merge them)
-merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm], axis=1)
+merged = tf.keras.layers.concatenate([past_lstm, future_lstm], axis=1)
 #merged_lstm = tf.keras.layers.Reshape((1, -1))(merged)  # Reshape to (batch, timesteps=1, features) for LSTM
 #merged = tf.keras.layers.LSTM(512)(merged_lstm) # DOES NOT MAKE SENSE AFTER MERGING
-merged = Attention(300)(merged)
+merged = Attention(8)(merged)
 
 #merged = tf.keras.layers.Dense(288*2, activation="relu")(merged)
 

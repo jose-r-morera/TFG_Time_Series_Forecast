@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  23 APR 2025 23:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  24 APR 2025 00:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -487,9 +487,6 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip78
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
-Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
-\@enLab=\toks37
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/gensymb/gensymb.sty
 Package: gensymb 2022/10/17 v1.0.2 (KJH)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/eurosym/eurosym.sty
@@ -535,8 +532,8 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \abovetabulinesep=\dimen278
 \belowtabulinesep=\dimen279
 \tabustrutrule=\dimen280
-\tabu@thebody=\toks38
-\tabu@footnotes=\toks39
+\tabu@thebody=\toks37
+\tabu@footnotes=\toks38
 \tabu@box=\box73
 \tabu@arstrutbox=\box74
 \tabu@hleads=\box75
@@ -545,7 +542,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2023/05/20 line numbers on paragraphs v5.3
 \linenopenalty=\count332
-\output=\toks40
+\output=\toks39
 \linenoprevgraf=\count333
 \linenumbersep=\dimen281
 \linenumberwidth=\dimen282
@@ -576,7 +573,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen291
 \Gm@layouthoffset=\dimen292
 \Gm@layoutvoffset=\dimen293
-\Gm@dimlist=\toks41
+\Gm@dimlist=\toks40
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/bera/bera.sty
 Package: bera 2004/01/31 (WaS)
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
@@ -598,7 +595,7 @@ Package: beramono 2004/01/31 (WaS)
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count343
 \lst@gtempboxa=\box78
-\lst@token=\toks42
+\lst@token=\toks41
 \lst@length=\count344
 \lst@currlwidth=\dimen294
 \lst@column=\count345
@@ -620,9 +617,6 @@ File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
  (./memtfg.aux
-
-LaTeX Warning: Label `chapter:intro' multiply defined.
-
 
 LaTeX Warning: Label `chapter:presupuesto' multiply defined.
 
@@ -684,12 +678,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 \scratchbox=\box80
 \nofMPsegments=\count352
 \nofMParguments=\count353
-\everyMPshowfont=\toks43
+\everyMPshowfont=\toks42
 \MPscratchCnt=\count354
 \MPscratchDim=\dimen301
 \MPnumerator=\count355
 \makeMPintoPDFobject=\count356
-\everyMPtoPDFconversion=\toks44
+\everyMPtoPDFconversion=\toks43
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -968,8 +962,8 @@ LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.40 \newpage
-              [1
+l.32 
+      [1
 
 ]
 
@@ -977,21 +971,8 @@ l.40 \newpage
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.40 \newpage
-              [2]
-<images/figura_1.png, id=191, 513.41812pt x 496.10344pt>
-File: images/figura_1.png Graphic file (type png)
-<use images/figura_1.png>
-Package pdftex.def Info: images/figura_1.png  used on input line 44.
-(pdftex.def)             Requested size: 386.95897pt x 373.91615pt.
-)
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.296 \newpage
-              {\pagestyle{empty}} [3 <./images/figura_1.png>]
+l.51 \newpage
+              [2])
 Cap\'{\i }tulo 2.
 (./cap2.tex
 <images/mapa_estaciones.png, id=197, 578.16pt x 505.13719pt>
@@ -1002,43 +983,48 @@ Package pdftex.def Info: images/mapa_estaciones.png  used on input line 33.
 )
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.305 \newpage
-              {\pagestyle{empty}} [4
+              {\pagestyle{empty}} [3
 
 ]
 
-[5 <./images/mapa_estaciones.png>]
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.308 \chapter
+              {\LARGE Modelos de predicción} [4 <./images/mapa_estaciones.png>]
 Cap\'{\i }tulo 3.
 (./cap3.tex)
 
-[6
+[5
 
 ]
 Cap\'{\i }tulo 4.
 (./cap4.tex)
 
-[7
+[6
 
 ]
 Cap\'{\i }tulo 5.
 (./cap5.tex)
 
-[8
+[7
 
 ]
 Cap\'{\i }tulo 6.
 (./cap6.tex)
 
-[9
+[8
 
 ]
 Cap\'{\i }tulo 7.
 (./cap7.tex)
 
-[10
+[9
 
 ]
 Ap\'endice A.
@@ -1057,20 +1043,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[11
+[10
 
 
 ])
 
-[12]
+[11]
 Ap\'endice B.
 (./apendice2.tex)
 
-[13
+[12
 
 ]
 
-[14
+[13
 
 ] (./memtfg.aux)
  ***********
@@ -1088,18 +1074,18 @@ Package rerunfilecheck Info: File `memtfg.out' has not changed.
 (rerunfilecheck)             Checksum: 4C47F68410529957C0FA1538CF7379E7;4144.
  ) 
 Here is how much of TeX's memory you used:
- 21787 strings out of 473254
- 353312 string characters out of 5717961
- 907352 words of memory out of 5000000
- 44411 multiletter control sequences out of 15000+600000
- 618829 words of font info for 174 fonts, out of 8000000 for 9000
+ 21782 strings out of 473254
+ 352787 string characters out of 5717961
+ 906877 words of memory out of 5000000
+ 44376 multiletter control sequences out of 15000+600000
+ 620980 words of font info for 192 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,13n,93p,1075b,849s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,13n,93p,1075b,851s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (23 pages, 583514 bytes).
+Output written on memtfg.pdf (22 pages, 556573 bytes).
 PDF statistics:
  281 PDF objects out of 1000 (max. 8388607)
- 237 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 63709 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 240 compressed objects within 3 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 63704 words of extra memory for PDF output out of 74296 (max. 10000000)
 

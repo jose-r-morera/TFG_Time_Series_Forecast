@@ -16,8 +16,8 @@ import gc # garbage collector
 
 # VARIABLES #
 #DATA_PATH = "./paquetes_s6.pkl"
-DATA_PATH = "../3_data_windows/paquetes_s6_augmented.pkl"
-#DATA_PATH = "../3_data_windows/paquetes_s6_covariates_augmented.pkl"
+#DATA_PATH = "../3_data_windows/paquetes_s6_augmented.pkl"
+DATA_PATH = "../3_data_windows/paquetes_s6_covariates_augmented.pkl"
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -91,22 +91,21 @@ EPOCHS = 700
 
 # Encoder part (LSTM for past data)
 past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-#past_data_layer = layers.SpatialDropout1D(0.1)(past_data_layer)
-encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(300, return_sequences=True))(past_data_layer)
+encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(21, return_sequences=True))(past_data_layer)
 #encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(300, return_sequences=True, recurrent_dropout=0.1))(past_data_layer)
-encoder_lstm = tf.keras.layers.LSTM(160, return_sequences=True)(encoder_lstm)
+encoder_lstm = tf.keras.layers.LSTM(4, return_sequences=True)(encoder_lstm)
 # dropout
 #encoder_lstm = tf.keras.layers.Dropout(0.2)(encoder_lstm)
 
 # Decoder part (LSTM for future exogenous features)
 future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
 #decoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(256))(future_data_layer)
-decoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(80, return_sequences=True))(future_data_layer)
+decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=True)(future_data_layer)
 
 # Combine the outputs of encoder and decoder (you can concatenate or merge them)
 merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm], axis=1)
 #merged = tf.keras.layers.Reshape((1, -1))(merged)  # Reshape to (batch, timesteps=1, features) for LSTM
-merged = tf.keras.layers.LSTM(250)(merged) # DOES NOT MAKE SENSE AFTER MERGING
+merged = tf.keras.layers.LSTM(64)(merged) # DOES NOT MAKE SENSE AFTER MERGING
 
 #merged = tf.keras.layers.Dense(60, activation="relu")(merged)
 
