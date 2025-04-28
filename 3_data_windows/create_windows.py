@@ -6,19 +6,19 @@ import math
 import matplotlib.pyplot as plt
 
 # VARIABLES #
-FILES = {
-  "santa_cruz": ["grafcan_santa_cruz_features.csv"],
-}
 # FILES = {
-#   "arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
-#   "la_laguna": ["grafcan_la_laguna_features.csv","openmeteo_la_laguna_features.csv"],
-#   "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"]
+#   "santa_cruz": ["grafcan_santa_cruz_features.csv"],
 # }
+FILES = {
+  "arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
+  "la_laguna": ["grafcan_la_laguna_features.csv","openmeteo_la_laguna_features.csv"],
+  "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"]
+}
 
 # FILES =
 DATASETS_PATH = "../1_data_preprocessing/processed_data/"
 
-PAST_N = 13 # Number of past time steps to use as input
+#PAST_N = 13 # Number of past time steps to use as input
 FUTURE_N = 3 # Number of future time steps to predict
 STEP = 6 # Number of time steps to skip between each input sequence
 TRAIN_SPLIT = 0.90 # Percentage of data to use for training (0.85 = 85% train, 15% test)
@@ -29,7 +29,7 @@ NOISE_SAMPLE_RATE = 0 # Probability of adding a new synthetic sample to the trai
 NOISE_STD = 0.02 # Standard deviation of the noise to add to the samples
 
 # Output is stored as JSON
-OUTPUT_PATH = "paquetes_s6_sc_covariates_"
+OUTPUT_PATH = "processed_windows/paquetes_s6_covariates_"
 #OUTPUT_PATH = "paquetes_s6_augmented.pkl"
 
 ##########################
@@ -38,18 +38,16 @@ np.random.seed(17)
 random.seed(17)
 
 ####################################################################################################
-def create_df_windows(df, past_features, future_features, target, past_n, future_n, step):
-  label_start = past_n
-  
+def df_raw_windows(df, past_features, future_features, target, past_n, future_n, step):
   past_variables_windows = []
   future_variables_windows = []
   y_windows = []
   
   for i in range(0, len(df) - past_n - future_n + 1, step):
     past_variables_windows.append(df.iloc[i:i + past_n][past_features].values)
-    future_n_window = df.iloc[label_start + i:label_start + i + future_n][future_features].values
+    future_n_window = df.iloc[past_n + i:past_n + i + future_n][future_features].values
     future_variables_windows.append(future_n_window)
-    y_windows.append(df.iloc[label_start + i:label_start+ i + future_n][target].values)
+    y_windows.append(df.iloc[past_n + i:past_n+ i + future_n][target].values)
   
   data = {
     "past_variables": past_variables_windows,
@@ -59,7 +57,7 @@ def create_df_windows(df, past_features, future_features, target, past_n, future
   return data
 #####################################################################################################
   
-def create_windows(past_n, future_n, step, train_split, use_covariates):
+def create_windows(past_n, future_n, step, train_percent, use_covariates):
   # Data structure #
   targets = ["air_temperature", "relative_humidity", "atmospheric_pressure"]
   data = {}
@@ -69,17 +67,18 @@ def create_windows(past_n, future_n, step, train_split, use_covariates):
   # Load data #
   for location in FILES:
     for i in range(len(targets)):
+      # print(f"Loading {FILES[location]} for {targets[i]} in {location}")
       target = targets[i]
       data[target][location] = []    
       for dataset in FILES[location]:
         df = pd.read_csv(DATASETS_PATH + dataset, parse_dates=['time']).drop(columns=['artificial_value_flag', 'outlier_flag'])
 
-        if USE_COVARIATES: # set target as last feature
+        if use_covariates: # set target as last feature
           features = ["sin_day", "cos_day", "sin_year", "cos_year", *(targets[:i] + targets[i+1:]), targets[i]]
         else: 
           features = ["sin_day", "cos_day", "sin_year", "cos_year", target]
         future_features = ["sin_day", "cos_day", "sin_year", "cos_year"]
-        windows_data = create_df_windows(df, features, future_features, target, PAST_N, FUTURE_N, STEP)
+        windows_data = df_raw_windows(df, features, future_features, target, past_n, future_n, step)
         
         # Store data
         data[target][location].append(windows_data)
@@ -95,13 +94,13 @@ def create_windows(past_n, future_n, step, train_split, use_covariates):
       split_data[target][location] = {}
       location_data = data[target][location]
       total_windows = len(location_data[0]["past_variables"])
-      overlap_windows = math.ceil((PAST_N + FUTURE_N)/STEP) # number of windows that overlap with the current one
-      test_indexes = random.sample(range(total_windows), int(total_windows * (1 - TRAIN_SPLIT)))
+      overlap_windows = math.ceil((past_n + future_n)/step) # number of windows that overlap with the current one
+      test_indexes = random.sample(range(total_windows), int(total_windows * (1 - train_percent)))
     
       forbidden = set()
       for idx in test_indexes:
           # forbid idx itself and the next `overlap_windows - 1` windows
-          for j in range(0, overlap_windows):
+          for j in range(0, overlap_windows + 1):
               forbidden.add(idx + j)
 
       # Clip to valid window numbers
@@ -253,6 +252,8 @@ def create_windows(past_n, future_n, step, train_split, use_covariates):
     pickle.dump({"train": train_data, "test": test_data}, f)
   print(f"Data saved to {out_path}")
   
-for past_n in range(13, 14):
+for past_n in range(7, 31):
+  np.random.seed(17)
+  random.seed(17)
   print("Generating windows for past_n = ", past_n)
   create_windows(past_n, FUTURE_N, STEP, TRAIN_SPLIT, USE_COVARIATES)
