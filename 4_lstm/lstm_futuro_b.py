@@ -6,19 +6,21 @@ import pickle
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow as tf
-
+from custom_attention import CustomAttention
 
 ######################################################################
 
 # VARIABLES #
-#DATA_PATH = "./paquetes_s6.pkl"
-#DATA_PATH = "../3_data_windows/paquetes_s6_augmented.pkl"
-DATA_PATH = "../3_data_windows/paquetes_s6_covariates_p28.pkl"
+DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_cov_p17.pkl"
 
 BATCH_SIZE = 64
 SHUFFLE = True
 
 PRINT = False
+
+# Model #
+learning_rate = 0.002
+EPOCHS = 700
 
 #################################################################
 # Avoid memory issues with TensorFlow
@@ -33,121 +35,120 @@ if gpus:
 #############
 # Load data #
 #############
-with open(DATA_PATH, "rb") as f:
-    data = pickle.load(f)
+def load_data(dataset):
+    with open(DATA_PATH, "rb") as f:
+        data = pickle.load(f)
 
-x_train = data["train"]["air_temperature"]["past_variables"]
-future_train = data["train"]["air_temperature"]["future_variables"]
-y_train = data["train"]["air_temperature"]["y"]
+    x_train = data["train"][dataset]["past_variables"]
+    future_train = data["train"][dataset]["future_variables"]
+    y_train = data["train"][dataset]["y"]
 
-x_val = data["test"]["air_temperature"]["past_variables"]
-future_val = data["test"]["air_temperature"]["future_variables"]
-y_val = data["test"]["air_temperature"]["y"]
+    x_val = data["test"][dataset]["past_variables"]
+    future_val = data["test"][dataset]["future_variables"]
+    y_val = data["test"][dataset]["y"]
 
-#############
-# BATCH AND SHUFFLE
-#############
-dataset_train = tf.data.Dataset.from_tensor_slices(((x_train, future_train), y_train))
-if SHUFFLE:
-  dataset_train = dataset_train.shuffle(buffer_size=15000)
-dataset_train = dataset_train.batch(BATCH_SIZE)
+    # BATCH AND SHUFFLE
+    dataset_train = tf.data.Dataset.from_tensor_slices(((x_train, future_train), y_train))
+    if SHUFFLE:
+        dataset_train = dataset_train.shuffle(buffer_size=dataset_train.cardinality())
+    dataset_train = dataset_train.batch(BATCH_SIZE)
 
-dataset_val = tf.data.Dataset.from_tensor_slices(((x_val, future_val), y_val))
-if SHUFFLE:
-  dataset_val = dataset_val.shuffle(buffer_size=15000)
-dataset_val = dataset_val.batch(BATCH_SIZE)
+    dataset_val = tf.data.Dataset.from_tensor_slices(((x_val, future_val), y_val))
+    if SHUFFLE:
+        dataset_val = dataset_val.shuffle(buffer_size=dataset_val.cardinality())
+    dataset_val = dataset_val.batch(BATCH_SIZE)
 
-if PRINT:
-    for batch_inputs, batch_y in dataset_train.take(1):  # Take the first batch
-        batch_x, batch_future = batch_inputs
-        print("First batch X:", batch_x.numpy()[:2])
-        print("First batch future:", batch_future.numpy()[:2])
-        print("First batch Y:", batch_y.numpy()[:2])
-    for batch_inputs, batch_y in dataset_val.take(1):  # Take the first batch
-        batch_x, batch_future = batch_inputs
-        print("First batch X:", batch_x.numpy()[:2])
-        print("First batch future:", batch_future.numpy()[:2])
-        print("First batch Y:", batch_y.numpy()[:2])
+    if PRINT:
+        for batch_inputs, batch_y in dataset_train.take(1):  # Take the first batch
+            batch_x, batch_future = batch_inputs
+            print("First batch X:", batch_x.numpy()[:2])
+            print("First batch future:", batch_future.numpy()[:2])
+            print("First batch Y:", batch_y.numpy()[:2])
+        for batch_inputs, batch_y in dataset_val.take(1):  # Take the first batch
+            batch_x, batch_future = batch_inputs
+            print("First batch X:", batch_x.numpy()[:2])
+            print("First batch future:", batch_future.numpy()[:2])
+            print("First batch Y:", batch_y.numpy()[:2])
+    return dataset_train, dataset_val
+
+#####################################################
+def build_and_train_model(dataset_train, dataset_val):
+    # Define the model
+    for batch in dataset_train.take(1):
+        inputs, targets = batch
+        past_data, future_data = inputs
         
-############################################
+    past_data_shape = (past_data.shape[1], past_data.shape[2])
+    future_data_shape = (future_data.shape[1], future_data.shape[2])    
+    output_units = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
+    ########################################################################################
+    past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
+    past_lstm = tf.keras.layers.LSTM(65, return_sequences=False)(past_data_layer)
+    # past_lstm = CustomAttention(64)(past_lstm)
+    # past_lstm = tf.keras.layers.MultiHeadAttention(
+    # num_heads=3,
+    # key_dim=16,               # so that 4*32 = 128 dims total
+    # name="past_self_attn"
+    # )(query=past_lstm, value=past_lstm, key=past_lstm)
+    # past_lstm = tf.keras.layers.Flatten()(past_lstm) 
+     
+    future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
+    future_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
+    #future_lstm = tf.keras.layers.Flatten()(future_data_layer)
+    #future_lstm = tf.keras.layers.Dense(4, activation='relu')(future_lstm)
+    #future_lstm = tf.keras.layers.Flatten()(future_lstm)
 
-for batch in dataset_train.take(1):
-    inputs, targets = batch
-    past_data, future_data = inputs
-    
-# Define the model
-past_data_shape = (past_data.shape[1], past_data.shape[2])
-future_data_shape = (future_data.shape[1], future_data.shape[2])    
-target_shape = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
+    merged = tf.keras.layers.concatenate([past_lstm, future_lstm])
+    #merged= tf.keras.layers.Reshape((1, -1))(merged)
 
+    outputs = tf.keras.layers.Dense(output_units)(merged)
 
-learning_rate = 0.002
-EPOCHS = 700
+    model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
+    model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
+    # model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="huber", metrics=['mse'])
 
-####################################################
+    path_checkpoint = "lstm_future_checkpoint.weights.h5"
+    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=10)
+    modelckpt_callback = tf.keras.callbacks.ModelCheckpoint(
+        monitor="val_loss",
+        filepath=path_checkpoint,
+        verbose=1,
+        save_weights_only=True,
+        save_best_only=True,
+    )
+    reduce_lr_callback = tf.keras.callbacks.ReduceLROnPlateau(
+        monitor='val_loss', 
+        factor=0.4,         
+        patience=3,         
+        verbose=0,
+        min_lr=1e-7
+    )
 
-# Encoder part (LSTM for past data)
-past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-# x = tf.keras.layers.SpatialDropout1D(0.2, name="spatial_dropout")(past_data_layer)
-encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(78, return_sequences=False))(past_data_layer)
-#encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(300, return_sequences=True, recurrent_dropout=0.1))(past_data_layer)
-# encoder_lstm = tf.keras.layers.LSTM(21, return_sequences=False)(encoder_lstm)
+    history = model.fit(
+        dataset_train,
+        epochs=EPOCHS,
+        validation_data=dataset_val,
+        callbacks=[modelckpt_callback, reduce_lr_callback, es_callback],
+        verbose=1
+    )
+    best_val_loss = min(history.history["val_loss"])
+    return best_val_loss
+#######################################################
 
-# dropout
-#encoder_lstm = tf.keras.layers.Dropout(0.2)(encoder_lstm)
+# train_data, val_data = load_data("atmospheric_pressure")
+train_data, val_data = load_data("relative_humidity")
+# Ejecutar n veces y promediar el val_loss
+n_runs = 10
+val_losses = []
 
-# Decoder part (LSTM for future exogenous features)
-future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
-#decoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(256))(future_data_layer)
-decoder_lstm = tf.keras.layers.LSTM(10, return_sequences=False)(future_data_layer)
+for i in range(n_runs):
+    print(f"Run {i+1}/{n_runs}")
+    val_loss = build_and_train_model(train_data, val_data)
+    val_losses.append(val_loss)
+    print(f"Best val_loss in run {i+1}: {val_loss:.6f}")
 
-# Combine the outputs of encoder and decoder (you can concatenate or merge them)
-merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])
-#merged = tf.keras.layers.BatchNormalization()(merged)
-#merged = tf.keras.layers.Reshape((1, -1))(merged)  # Reshape to (batch, timesteps=1, features) for LSTM
-#merged = tf.keras.layers.LSTM(250)(merged) # DOES NOT MAKE SENSE AFTER MERGING
-
-# dropout 
-# merged = tf.keras.layers.Dropout(0.1)(merged)
-# merged = tf.keras.layers.Dense(9, activation="relu")(merged)
-
-
-# Final output layer
-output_units = target_shape # Output shape should match the target sequence
-#merged = tf.keras.layers.Dense(output_units * 4)(merged)
-outputs = tf.keras.layers.Dense(output_units)(merged)
-
-# Create the model
-model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
-
-# Compile the model
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
-model.summary()
-
-# Define the callbacks
-path_checkpoint = "lstm_future_checkpoint.weights.h5"
-es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=10)
-
-modelckpt_callback = tf.keras.callbacks.ModelCheckpoint(
-    monitor="val_loss",
-    filepath=path_checkpoint,
-    verbose=1,
-    save_weights_only=True,
-    save_best_only=True,
-)
-
-reduce_lr_callback = tf.keras.callbacks.ReduceLROnPlateau(
-    monitor='val_loss', 
-    factor=0.4,         
-    patience=3,         
-    verbose=1,
-    min_lr=1e-7
-)
-
-# Train the model
-history = model.fit(
-    dataset_train,
-    epochs=EPOCHS,
-    validation_data=dataset_val,
-    callbacks=[modelckpt_callback, reduce_lr_callback, es_callback],
-)
+avg_val_loss = np.mean(val_losses)
+std_val_loss = np.std(val_losses)
+min_val_loss = np.min(val_losses)
+print(f"\nAverage val_loss over {n_runs} runs: {avg_val_loss:.6f} ± {std_val_loss:.6f}")
+print(f"Minimum val_loss over {n_runs} runs: {min_val_loss:.6f}")

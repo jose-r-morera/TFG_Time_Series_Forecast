@@ -21,22 +21,23 @@ reduce_lr = tf.keras.callbacks.ReduceLROnPlateau(
 
 def build_model(past_shape, future_shape, target_dim):
     """Returns a compiled Keras model (fresh weights)."""
-    past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
-    future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
+    past_data_layer   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
+    future_data_layer = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
-    # encoder
-    e = tf.keras.layers.Bidirectional(
-        tf.keras.layers.LSTM(78, return_sequences=False)
-    )(past_in)
+    x1 = tf.keras.layers.Conv1D(63, 2, activation='relu', padding='causal')(past_data_layer)
+    #x1 = tf.keras.layers.AveragePooling1D(pool_size=2)(x1)
+    x1 = tf.keras.layers.Flatten()(x1)
 
-    # decoder
-    d = tf.keras.layers.LSTM(10, return_sequences=False)(future_in)
+    # Future data: Flatten + Dense compression
+    x2 = tf.keras.layers.Flatten()(future_data_layer)
+    x2 = tf.keras.layers.Dense(4, activation='relu')(x2)
 
-    # merge & output
-    m = tf.keras.layers.concatenate([e, d])
-    out = tf.keras.layers.Dense(target_dim)(m)
+    # Combine and predict
+    y = tf.keras.layers.concatenate([x1, x2])
+    outputs = tf.keras.layers.Dense(target_dim, name='outputs')(y)
 
-    model = tf.keras.Model([past_in, future_in], out)
+
+    model = tf.keras.Model([past_data_layer, future_data_layer], outputs)
     model.compile(
         optimizer=tf.keras.optimizers.Adam(LEARNING_RATE),
         loss="mse"
@@ -116,9 +117,9 @@ def evaluate_with_trials(data_path, min_file, max_file, trials=5):
 
 if __name__ == "__main__":
     # list your datasets here:
-    DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_covariates_p"
-    min_i = 7
-    max_i = 30
+    DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_cov_p"
+    min_i = 5
+    max_i = 29
     best_ds, all_scores = evaluate_with_trials(DATA_PATH, min_i, max_i)
     print(f"Best dataset: {best_ds}")
     print(f"All scores: {all_scores}")

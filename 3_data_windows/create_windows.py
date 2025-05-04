@@ -6,6 +6,7 @@ import math
 import matplotlib.pyplot as plt
 
 # VARIABLES #
+
 # FILES = {
 #   "santa_cruz": ["grafcan_santa_cruz_features.csv"],
 # }
@@ -21,7 +22,7 @@ DATASETS_PATH = "../1_data_preprocessing/processed_data/"
 #PAST_N = 13 # Number of past time steps to use as input
 FUTURE_N = 3 # Number of future time steps to predict
 STEP = 6 # Number of time steps to skip between each input sequence
-TRAIN_SPLIT = 0.90 # Percentage of data to use for training (0.85 = 85% train, 15% test)
+TRAIN_SPLIT = 0.9 # Percentage of data to use for training (0.85 = 85% train, 15% test)
 
 USE_COVARIATES = True # Use other features as covariates (ej, temperature and pressure to predict humidity)
 
@@ -29,7 +30,7 @@ NOISE_SAMPLE_RATE = 0 # Probability of adding a new synthetic sample to the trai
 NOISE_STD = 0.02 # Standard deviation of the noise to add to the samples
 
 # Output is stored as JSON
-OUTPUT_PATH = "processed_windows/paquetes_s6_covariates_"
+OUTPUT_PATH = "processed_windows/paquetes_s6_cov_"
 #OUTPUT_PATH = "paquetes_s6_augmented.pkl"
 
 ##########################
@@ -252,7 +253,7 @@ def create_windows(past_n, future_n, step, train_percent, use_covariates):
     pickle.dump({"train": train_data, "test": test_data}, f)
   print(f"Data saved to {out_path}")
   
-for past_n in range(7, 31):
+for past_n in range(5, 30):
   np.random.seed(17)
   random.seed(17)
   print("Generating windows for past_n = ", past_n)

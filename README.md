@@ -35,3 +35,5 @@ Coordenadas: -16.716917942488553, 28.057623302788404
 Openmeteo
 models=meteofrance_arpege_europe
 &models=icon_global
+
+NOTA: Solo existen registros desde el 24/11/2022
