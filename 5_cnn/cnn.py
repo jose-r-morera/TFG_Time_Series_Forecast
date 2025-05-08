@@ -9,7 +9,7 @@ import tensorflow as tf
 ######################################################################
 
 # VARIABLES #
-DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_cov_p17.pkl"
+DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_cov_p20.pkl"
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -81,7 +81,9 @@ def build_and_train_model(dataset_train, dataset_val):
     output_units = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
     ########################################################################################
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    x1 = tf.keras.layers.Conv1D(63, 2, activation='relu', padding='causal')(past_data_layer)
+    x1 = tf.keras.layers.Conv1D(42, 3, activation='relu', padding='causal')(past_data_layer)
+    #x1 = tf.keras.layers.Conv1D(8, 2, activation='relu', padding='causal')(x1)
+    
     #x1 = tf.keras.layers.AveragePooling1D(pool_size=3)(x1)
     x1 = tf.keras.layers.Flatten()(x1)
 

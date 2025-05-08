@@ -11,7 +11,8 @@ from custom_attention import CustomAttention
 ######################################################################
 
 # VARIABLES #
-DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_cov_p17.pkl"
+DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_p20.pkl"
+DATASET = "temperature"  # atmospheric_pressure or relative_humidity or air_temperature
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -72,7 +73,7 @@ def load_data(dataset):
     return dataset_train, dataset_val
 
 #####################################################
-def build_and_train_model(dataset_train, dataset_val):
+def build_and_train_model(dataset_train):
     # Define the model
     for batch in dataset_train.take(1):
         inputs, targets = batch
@@ -83,7 +84,8 @@ def build_and_train_model(dataset_train, dataset_val):
     output_units = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
     ########################################################################################
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    past_lstm = tf.keras.layers.LSTM(65, return_sequences=False)(past_data_layer)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
+    
     # past_lstm = CustomAttention(64)(past_lstm)
     # past_lstm = tf.keras.layers.MultiHeadAttention(
     # num_heads=3,
@@ -93,59 +95,59 @@ def build_and_train_model(dataset_train, dataset_val):
     # past_lstm = tf.keras.layers.Flatten()(past_lstm) 
      
     future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
-    future_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
-    #future_lstm = tf.keras.layers.Flatten()(future_data_layer)
-    #future_lstm = tf.keras.layers.Dense(4, activation='relu')(future_lstm)
+    future_lstm = tf.keras.layers.LSTM(6, return_sequences=False)(future_data_layer)
+    # future_lstm = tf.keras.layers.Flatten()(future_data_layer)
+    # future_lstm = tf.keras.layers.Dense(4, activation='relu')(future_lstm)
     #future_lstm = tf.keras.layers.Flatten()(future_lstm)
 
     merged = tf.keras.layers.concatenate([past_lstm, future_lstm])
     #merged= tf.keras.layers.Reshape((1, -1))(merged)
 
+    merged = tf.keras.layers.Dense(2*output_units)(merged)
+
     outputs = tf.keras.layers.Dense(output_units)(merged)
 
     model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
-    # model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="huber", metrics=['mse'])
+    
+    return model
 
-    path_checkpoint = "lstm_future_checkpoint.weights.h5"
-    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=10)
-    modelckpt_callback = tf.keras.callbacks.ModelCheckpoint(
-        monitor="val_loss",
-        filepath=path_checkpoint,
-        verbose=1,
-        save_weights_only=True,
-        save_best_only=True,
-    )
-    reduce_lr_callback = tf.keras.callbacks.ReduceLROnPlateau(
-        monitor='val_loss', 
-        factor=0.4,         
-        patience=3,         
-        verbose=0,
-        min_lr=1e-7
-    )
-
-    history = model.fit(
-        dataset_train,
-        epochs=EPOCHS,
-        validation_data=dataset_val,
-        callbacks=[modelckpt_callback, reduce_lr_callback, es_callback],
-        verbose=1
-    )
-    best_val_loss = min(history.history["val_loss"])
-    return best_val_loss
 #######################################################
 
 # train_data, val_data = load_data("atmospheric_pressure")
-train_data, val_data = load_data("relative_humidity")
+train_data, val_data = load_data(DATASET)
 # Ejecutar n veces y promediar el val_loss
 n_runs = 10
 val_losses = []
 
+## Callbacks
+path_checkpoint = "lstm_future_checkpoint.weights.h5"
+es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=10, restore_best_weights=True)
+reduce_lr_callback = tf.keras.callbacks.ReduceLROnPlateau(
+    monitor='val_loss', 
+    factor=0.4,         
+    patience=3,         
+    verbose=0,
+    min_lr=1e-7
+)
+
 for i in range(n_runs):
     print(f"Run {i+1}/{n_runs}")
-    val_loss = build_and_train_model(train_data, val_data)
-    val_losses.append(val_loss)
-    print(f"Best val_loss in run {i+1}: {val_loss:.6f}")
+    model = build_and_train_model(train_data)
+    history = model.fit(
+        train_data,
+        epochs=EPOCHS,
+        validation_data=val_data,
+        callbacks=[reduce_lr_callback, es_callback],
+        verbose=1
+    )
+    train_val_loss = min(history.history["val_loss"])
+    val_losses.append(train_val_loss)
+    print(f"Best val_loss in run {i+1}: {train_val_loss:.6f}")
+    if i == 0 or train_val_loss < best_val_loss:
+        best_val_loss = train_val_loss
+        model.save_weights(path_checkpoint)
+        print(f"Model saved with val_loss: {best_val_loss:.6f}")
 
 avg_val_loss = np.mean(val_losses)
 std_val_loss = np.std(val_losses)

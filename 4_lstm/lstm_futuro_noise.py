@@ -15,7 +15,7 @@ import tensorflow as tf
 #DATA_PATH = "../3_data_windows/paquetes_s6_augmented.pkl"
 DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_cov_90_p17.pkl"
 
-BATCH_SIZE = 64
+BATCH_SIZE = 128
 
 PLOT = False  # If plotting, set shuffle to False
 SHUFFLE = True
@@ -25,7 +25,7 @@ PRINT = False
 learning_rate = 0.002
 EPOCHS = 700
 
-NOISE_STD = 0.0
+NOISE_STD = 0.15
 print("NOISE_STD", NOISE_STD)
 
 #################################################################
@@ -43,14 +43,15 @@ if gpus:
 #############
 with open(DATA_PATH, "rb") as f:
     data = pickle.load(f)
+    
+dataset = "relative_humidity"  # Change this to the dataset you want to use
+x_train = data["train"][dataset]["past_variables"]
+future_train = data["train"][dataset]["future_variables"]
+y_train = data["train"][dataset]["y"]
 
-x_train = data["train"]["air_temperature"]["past_variables"]
-future_train = data["train"]["air_temperature"]["future_variables"]
-y_train = data["train"]["air_temperature"]["y"]
-
-x_val = data["test"]["air_temperature"]["past_variables"]
-future_val = data["test"]["air_temperature"]["future_variables"]
-y_val = data["test"]["air_temperature"]["y"]
+x_val = data["test"][dataset]["past_variables"]
+future_val = data["test"][dataset]["future_variables"]
+y_val = data["test"][dataset]["y"]
 
 #############
 # BATCH AND SHUFFLE
@@ -181,10 +182,10 @@ output_units = target_shape # Output shape should match the target sequence
 def build_and_train_model():
     # Reconstruye el modelo y entrena (todo igual que antes)
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
-
+    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(64, return_sequences=False))(past_data_layer)
+    
     future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
-    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
+    decoder_lstm = tf.keras.layers.LSTM(10, return_sequences=False)(future_data_layer)
 
     merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])
     outputs = tf.keras.layers.Dense(output_units)(merged)

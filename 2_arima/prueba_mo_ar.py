@@ -41,9 +41,10 @@ def determinar_orden_ar_pacf(serie, max_lags=20, alpha=0.05):
 # np.random.seed(123)
 # serie = sm.tsa.arma_generate_sample(ar=[1, -0.75, 0.3], ma=[1], nsample=100)  # Simula una serie AR(2)
 
-FILE_NAME = "grafcan_cuesta_features.csv"
-DATASET_PATH = "../1_tratamiento_datos/processed_data/" + FILE_NAME
-serie = pd.read_csv(DATASET_PATH, parse_dates=['time'])["air_temperature"].values
+FILE_NAME = "grafcan_la_laguna_features.csv"
+DATASET_PATH = "../1_data_preprocessing/processed_data/" + FILE_NAME
+DATASET = "relative_humidity"
+serie = pd.read_csv(DATASET_PATH, parse_dates=['time'])[DATASET].values
 
 plt.figure(1)
 plt.plot(serie)

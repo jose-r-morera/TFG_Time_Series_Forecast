@@ -27,22 +27,21 @@ if __name__ == "__main__":
     # n = 100
     # time_series = np.cumsum(np.random.randn(n))  # Serie no estacionaria (caminata aleatoria)
     
-    # df = pd.DataFrame({"value": time_series})
-    FILE_NAME = "grafcan_cuesta_features.csv"
-    DATASET_PATH = "../1_tratamiento_datos/processed_data/" + FILE_NAME
-    value = "air_temperature"
+    FILE_NAME = "grafcan_la_laguna_features.csv"
+    DATASET_PATH = "../1_data_preprocessing/processed_data/"  + FILE_NAME
+    DATASET = "relative_humidity"
     df = pd.read_csv(DATASET_PATH, parse_dates=['time'])
 
     
     # Visualización de la serie original
     plt.figure(figsize=(10, 4))
-    plt.plot(df[value], label="Serie Original")
+    plt.plot(df[DATASET], label="Serie Original")
     plt.title("Serie Temporal No Estacionaria")
     plt.legend()
     plt.show()
     
     # Aplicar la diferenciación para hacerla estacionaria
-    stationary_series, d = make_stationary(df[value])
+    stationary_series, d = make_stationary(df[DATASET])
     
     # Visualización de la serie diferenciada
     plt.figure(figsize=(10, 4))

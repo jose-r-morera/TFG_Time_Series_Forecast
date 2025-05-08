@@ -12,6 +12,8 @@ SHUFFLE       = True
 LEARNING_RATE = 0.002
 EPOCHS        = 700
 
+DATASET = "air_temperature"  # "atmospheric_pressure" or "relative_humidity"
+
 es_callback = tf.keras.callbacks.EarlyStopping(
     monitor="val_loss", patience=10, restore_best_weights=True
 )
@@ -26,14 +28,15 @@ def build_model(past_shape, future_shape, target_dim):
 
     # encoder
     e = tf.keras.layers.Bidirectional(
-        tf.keras.layers.LSTM(78, return_sequences=False)
+        tf.keras.layers.LSTM(64, return_sequences=False)
     )(past_in)
 
     # decoder
-    d = tf.keras.layers.LSTM(10, return_sequences=False)(future_in)
+    d = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
 
     # merge & output
     m = tf.keras.layers.concatenate([e, d])
+    m = tf.keras.layers.Dense(2*target_dim)(m)
     out = tf.keras.layers.Dense(target_dim)(m)
 
     model = tf.keras.Model([past_in, future_in], out)
@@ -48,20 +51,20 @@ def load_dataset(path):
     with open(path, "rb") as f:
         data = pickle.load(f)
 
-    x_tr  = data["train"]["air_temperature"]["past_variables"]
-    f_tr  = data["train"]["air_temperature"]["future_variables"]
-    y_tr  = data["train"]["air_temperature"]["y"]
+    x_tr  = data["train"][DATASET]["past_variables"]
+    f_tr  = data["train"][DATASET]["future_variables"]
+    y_tr  = data["train"][DATASET]["y"]
 
-    x_val = data["test"]["air_temperature"]["past_variables"]
-    f_val = data["test"]["air_temperature"]["future_variables"]
-    y_val = data["test"]["air_temperature"]["y"]
+    x_val = data["test"][DATASET]["past_variables"]
+    f_val = data["test"][DATASET]["future_variables"]
+    y_val = data["test"][DATASET]["y"]
 
     ds_tr = tf.data.Dataset.from_tensor_slices(((x_tr,f_tr), y_tr))
     ds_val= tf.data.Dataset.from_tensor_slices(((x_val,f_val), y_val))
 
     if SHUFFLE:
-        ds_tr  = ds_tr.shuffle(15000)
-        ds_val = ds_val.shuffle(15000)
+        ds_tr  = ds_tr.shuffle(ds_tr.cardinality())
+        ds_val = ds_val.shuffle(ds_val.cardinality())
 
     return ds_tr.batch(BATCH_SIZE), ds_val.batch(BATCH_SIZE)
 
@@ -116,9 +119,9 @@ def evaluate_with_trials(data_path, min_file, max_file, trials=5):
 
 if __name__ == "__main__":
     # list your datasets here:
-    DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_covariates_p"
-    min_i = 7
-    max_i = 30
+    DATA_PATH = "../3_data_windows/f12/paquetes_s6_cov_p"
+    min_i = 6
+    max_i = 50
     best_ds, all_scores = evaluate_with_trials(DATA_PATH, min_i, max_i)
     print(f"Best dataset: {best_ds}")
     print(f"All scores: {all_scores}")
