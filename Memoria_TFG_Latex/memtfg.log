@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  27 APR 2025 13:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  11 MAY 2025 12:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -741,7 +741,7 @@ Package gensymb Info: Using \textmu for \micro on input line 102.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count357
-<images/escuela-ingenieria-tecnologia-original.png, id=104, 434.1018pt x 158.994pt>
+<images/escuela-ingenieria-tecnologia-original.png, id=100, 434.1018pt x 158.994pt>
 File: images/escuela-ingenieria-tecnologia-original.png Graphic file (type png)
 <use images/escuela-ingenieria-tecnologia-original.png>
 Package pdftex.def Info: images/escuela-ingenieria-tecnologia-original.png  used on input line 121.
@@ -777,7 +777,7 @@ LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 
 
 [3]
-<images/by-nc-sa_88x31.png, id=123, 88.33pt x 31.11626pt>
+<images/by-nc-sa_88x31.png, id=119, 88.33pt x 31.11626pt>
 File: images/by-nc-sa_88x31.png Graphic file (type png)
 <use images/by-nc-sa_88x31.png>
 Package pdftex.def Info: images/by-nc-sa_88x31.png  used on input line 207.
@@ -954,15 +954,13 @@ Cap\'{\i }tulo 1.
 (./cap1.tex
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 (Font)              scaled to size 15.55188pt on input line 1.
-LaTeX Font Info:    Font shape `T1/fve/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 2.
 
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 
+l.23 
       [1
 
 ]
@@ -971,11 +969,11 @@ l.32
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.51 \newpage
+l.43 \newpage
               [2])
 Cap\'{\i }tulo 2.
 (./cap2.tex
-<images/mapa_estaciones.png, id=197, 578.16pt x 505.13719pt>
+<images/mapa_estaciones.png, id=193, 578.16pt x 505.13719pt>
 File: images/mapa_estaciones.png Graphic file (type png)
 <use images/mapa_estaciones.png>
 Package pdftex.def Info: images/mapa_estaciones.png  used on input line 33.
@@ -1071,21 +1069,21 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `memtfg.out' has not changed.
-(rerunfilecheck)             Checksum: 4C47F68410529957C0FA1538CF7379E7;4144.
+(rerunfilecheck)             Checksum: DFC0AAE72D0AB1D1F546A5A290586C02;4019.
  ) 
 Here is how much of TeX's memory you used:
- 21782 strings out of 473254
- 352790 string characters out of 5717961
- 906877 words of memory out of 5000000
- 44376 multiletter control sequences out of 15000+600000
- 620980 words of font info for 192 fonts, out of 8000000 for 9000
+ 21773 strings out of 473254
+ 352672 string characters out of 5717961
+ 906875 words of memory out of 5000000
+ 44373 multiletter control sequences out of 15000+600000
+ 617356 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1075b,851s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (22 pages, 556586 bytes).
+Output written on memtfg.pdf (22 pages, 557192 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
+ 277 PDF objects out of 1000 (max. 8388607)
+ 236 compressed objects within 3 object streams
  56 named destinations out of 1000 (max. 500000)
- 63704 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 59600 words of extra memory for PDF output out of 61914 (max. 10000000)
 

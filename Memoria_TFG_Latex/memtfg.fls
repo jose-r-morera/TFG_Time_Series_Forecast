@@ -350,9 +350,6 @@ INPUT ./cap1.tex
 INPUT ./cap1.tex
 INPUT cap1.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fveb8t.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fveb8t.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/bera/fveb8t.vf
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fveb8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/bera/fveb8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fveb8r.tfm
 INPUT ./cap2.tex

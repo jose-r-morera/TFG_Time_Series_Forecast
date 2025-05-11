@@ -13,12 +13,12 @@ import tensorflow as tf
 # VARIABLES #
 #DATA_PATH = "./paquetes_s6.pkl"
 #DATA_PATH = "../3_data_windows/paquetes_s6_augmented.pkl"
-DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_cov_90_p17.pkl"
+DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_p17.pkl"
 
 BATCH_SIZE = 128
 
-PLOT = False  # If plotting, set shuffle to False
-SHUFFLE = True
+PLOT = True  # If plotting, set shuffle to False
+SHUFFLE = False
 
 PRINT = False
 

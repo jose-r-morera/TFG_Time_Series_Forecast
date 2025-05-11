@@ -1,23 +1,25 @@
-rain air_temperature: (12156, 17, 7) samples
-TEST air_temperature: (2044, 17, 7) samples
-Train relative_humidity: (12033, 17, 7) samples
-TEST relative_humidity: (2044, 17, 7) samples
-Train atmospheric_pressure: (11976, 17, 7) samples
-TEST atmospheric_pressure: (2044, 17, 7) samples
+Generating windows for past_n =  17
+Data shape:
+Train air_temperature: (3440, 17, 7) samples
+TEST air_temperature: (584, 17, 7) samples
+Train relative_humidity: (3454, 17, 7) samples
+TEST relative_humidity: (584, 17, 7) samples
+Train atmospheric_pressure: (3506, 17, 7) samples
+TEST atmospheric_pressure: (584, 17, 7) samples
 Data shape after augmentation:
-Train air_temperature: (12156, 17, 7) samples
-TEST air_temperature: (2044, 17, 7) samples
-Train relative_humidity: (12033, 17, 7) samples
-TEST relative_humidity: (2044, 17, 7) samples
-Train atmospheric_pressure: (11976, 17, 7) samples
-TEST atmospheric_pressure: (2044, 17, 7) samples
-air_temperature mean: [ 68.62407315 977.81566426  20.03658744]
-air_temperature std: [16.88153454 35.66943439  4.2192601 ]
-relative_humidity mean: [ 20.18229378 977.95772614  68.43680835]
-relative_humidity std: [ 4.21333935 35.56318143 17.35860024]
-atmospheric_pressure mean: [ 20.2031679   68.28089547 977.84885403]
-atmospheric_pressure std: [ 4.2460548  17.26449907 35.56868062]
-Data saved to f3/paquetes_s6_cov_sc_p17.pkl
+Train air_temperature: (3440, 17, 7) samples
+TEST air_temperature: (584, 17, 7) samples
+Train relative_humidity: (3454, 17, 7) samples
+TEST relative_humidity: (584, 17, 7) samples
+Train atmospheric_pressure: (3506, 17, 7) samples
+TEST atmospheric_pressure: (584, 17, 7) samples
+air_temperature mean: [  66.97065812 1008.08745559   22.06754267]
+air_temperature std: [12.04377021  3.8056737   3.10654659]
+relative_humidity mean: [  22.24264742 1008.08652756   66.95901753]
+relative_humidity std: [ 3.0778041   3.81042604 12.52214911]
+atmospheric_pressure mean: [  22.13997018   67.00468323 1008.00579096]
+atmospheric_pressure std: [ 3.05788453 12.29655294  3.82143294]
+Data saved to f3/paquetes_s6_cov_scp17.pkl
 
 Generating windows for past_n =  17
 Data shape:
