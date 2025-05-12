@@ -7,9 +7,18 @@ import matplotlib.pyplot as plt
 
 # VARIABLES #
 
-FILES = {
-  "santa_cruz": ["grafcan_santa_cruz_features.csv", "openmeteo_santa_cruz_features.csv"],
-}
+# FILES = { "santa_cruz": ["grafcan_santa_cruz_features.csv", "openmeteo_santa_cruz_features.csv"]}
+# FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],}
+# FILES = {"la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],}
+# FILES = {"la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],}
+# FILES = {"punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],}
+
+FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
+        "la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],
+         "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],
+         "punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],
+         }
+
 # FILES = {
 #   "arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
 #   "la_laguna": ["grafcan_la_laguna_features.csv","openmeteo_la_laguna_features.csv"],
@@ -32,7 +41,7 @@ NOISE_SAMPLE_RATE = 0 # Probability of adding a new synthetic sample to the trai
 NOISE_STD = 0.02 # Standard deviation of the noise to add to the samples
 
 # Output is stored as JSON
-OUTPUT_PATH = "f3/paquetes_s6_cov_sc"
+OUTPUT_PATH = "f3/paquetes_s6_cov_full_"
 #OUTPUT_PATH = "paquetes_s6_augmented.pkl"
 
 ##########################

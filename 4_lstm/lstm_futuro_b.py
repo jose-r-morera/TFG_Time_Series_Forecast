@@ -11,7 +11,7 @@ from custom_attention import CustomAttention
 ######################################################################
 
 # VARIABLES #
-DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_p17.pkl"
+DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p17.pkl"
 DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
 
 BATCH_SIZE = 64
@@ -85,7 +85,7 @@ def build_and_train_model(dataset_train):
     ########################################################################################
     # Encoder part (LSTM for past data)
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
+    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(66, return_sequences=False))(past_data_layer)
 
     # Decoder part (LSTM for future exogenous features)
     future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")

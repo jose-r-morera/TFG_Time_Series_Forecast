@@ -17,7 +17,7 @@ import gc # garbage collector
 # VARIABLES #
 #DATA_PATH = "./paquetes_s6.pkl"
 #DATA_PATH = "../3_data_windows/paquetes_s6_augmented.pkl"
-DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_cov_p17.pkl"
+DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p17.pkl"
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -95,7 +95,7 @@ def build_model(hp):
     gc.collect() # garbage collector
     # Encoder part (LSTM for past data)
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    past_units = hp.Int('past_units', min_value=24, max_value=100, step=1)
+    past_units = hp.Int('past_units', min_value=55, max_value=100, step=1)
     #past_units = 65
     encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(past_units, return_sequences=False))(past_data_layer)
 
@@ -140,9 +140,9 @@ tuner = kt.GridSearch(
     build_model,
     objective='val_mse',
     max_trials=500,
-    executions_per_trial=15,
+    executions_per_trial=10,
     directory='../output/tuner',
-    project_name='lstm_fut_grid3'
+    project_name='lstm_fut_grid'
 )
 
 # Define tunable patience and min_delta for ReduceLROnPlateau

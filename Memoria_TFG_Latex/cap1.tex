@@ -3,12 +3,12 @@ La predicción de series temporales es un campo de estudio que ha cobrado gran r
 La capacidad de anticipar eventos futuros a partir de datos históricos es fundamental en diversas áreas, como la economía, la meteorología, la salud y la ingeniería. 
 En este contexto, el uso de redes neuronales ha demostrado ser una herramienta poderosa para abordar problemas complejos de predicción.
 
-El campo de la meteorología, en particular, ha aumentado su relevancia en los útlimos años debido al creciente aumento de fenómenos climáticos extremos y su impacto en la sociedad.
-
-As shown in \cite{smith2023}, the results are promising.
+El campo de la meteorología, en particular, ha aumentado su relevancia en los útlimos años debido al aumento de fenómenos climáticos extremos y su impacto en la sociedad.
 
 \section{Planteamineto}
-En este trabajo se pretende emplear datos de múltiples estaciones de medición de la isla de Tenerife con el fin de desarrollar un modelo de predicción climatológica capaz de generalizar más allá de las estaciones de entrenamiento.
+En este trabajo se pretende emplear mediciones de múltiples estaciones meteorológicas de la isla de Tenerife con el fin de desarrollar un modelo de predicción climatológica a corto plazo.
+Se busca que dicho modelo sea capaz de generalizar más allá de las estaciones de entrenamiento. Esto es, que a partir de mediciones meteorológicas de cualuqier origen, el modelo sea generar predicciones de gran calidad.
+
 Se establece un especial énfasis en el tratamiento de los datos, estudiándose exhaustivamente diversas técnicas y alternativas
 
 Este trabajo consiste en el despliegue de una infraestructura tecnológica para la captura y el procesamiento de datos públicos, 
@@ -18,14 +18,23 @@ basadas en modelos de aprendizaje automático, con el fin de optimizar y automat
 
 \section{Antecedentes y estado del arte}
 
-El uso de redes neuronales y técnicas de deep learning para la predicción de series temporales tiene sus orígenes en la década de 1940. Aunque el término deep learning ha ganado relevancia en los últimos años, los conceptos fundamentales y algunas de las técnicas más empleadas han existido desde hace mucho tiempo, evolucionando y perfeccionándose con el avance de la tecnología.
-En 1943, Warren McCulloch y Walter Pitts fueron pioneros en desarrollar un modelo computacional para redes neuronales, estableciendo las bases de lo que hoy conocemos como inteligencia artificial basada en redes neuronales. Más adelante, en 1949, Donald Hebb introdujo la famosa Teoría Hebbiana, una hipótesis que proponía un mecanismo de aprendizaje basado en la plasticidad neuronal. Este principio se aplicó a modelos computacionales, impulsando la investigación en la simulación del aprendizaje humano.
+El uso de redes neuronales y técnicas de deep learning (aprendizaje profundo) para la predicción de series temporales tiene sus orígenes en la década de 1940. Aunque el término deep learning ha ganado relevancia en los últimos años, los conceptos fundamentales y algunas de las técnicas más empleadas han existido desde hace mucho tiempo, evolucionando y perfeccionándose con el avance de la tecnología.
+En 1943, Warren McCulloch y Walter Pitts fueron pioneros en desarrollar un modelo computacional para redes neuronales \cite{mcculloch1943}, 
+estableciendo las bases de lo que hoy conocemos como inteligencia artificial basada en redes neuronales. 
+Más adelante, en 1949, Donald Hebb introdujo la famosa Teoría Hebbiana, una hipótesis que proponía un mecanismo de aprendizaje basado en la plasticidad neuronal \cite{hebb1949}. 
+Este principio se aplicó a modelos computacionales, impulsando la investigación en la simulación del aprendizaje humano.
 
 
-En 1958, Frank Rosenblatt avanzó en este campo con la creación del perceptrón, un algoritmo pionero de reconocimiento de patrones basado en una red de aprendizaje de computadora de dos capas. Este modelo simple operaba mediante operaciones de adición y sustracción, sentando las bases para el desarrollo de redes neuronales más complejas.
-Durante las siguientes décadas, la investigación en redes neuronales experimentó un estancamiento debido a limitaciones técnicas y a la falta de métodos eficaces para el entrenamiento de redes con múltiples capas. Sin embargo, en 1982, un gran avance revitalizó este campo: la introducción del algoritmo de propagación hacia atrás (backpropagation), que resolvía el problema del entrenamiento eficiente de redes neuronales profundas, permitiendo la formación de redes multicapa de manera más rápida y eficaz.
-Desde entonces, las redes neuronales han continuado evolucionando, impulsadas en gran parte por los avances en la potencia de cálculo de las GPU y el desarrollo del deep learning. Hoy en día, esta tecnología es fundamental y revolucionaria, capaz de realizar predicciones de series temporales con notable rapidez y precisión.
-La investigación en este ámbito sigue siendo prolífica. Una búsqueda rápida en internet revela la continua producción de proyectos y estudios enfocados en perfeccionar las técnicas de predicción temporal mediante aprendizaje profundo. Estos trabajos se caracterizan por un análisis exhaustivo y la exploración de nuevos métodos, todos con el objetivo de optimizar la precisión y la eficacia de las previsiones en aplicaciones prácticas.
+En 1958, Frank Rosenblatt avanzó en este campo con la creación del perceptrón \cite{rosenblatt1958}, un algoritmo pionero de reconocimiento de patrones basado en una red de aprendizaje de computadora de dos capas.
+Este modelo simple operaba mediante operaciones de adición y sustracción, sentando las bases para el desarrollo de redes neuronales más complejas.
+Durante las siguientes décadas, la investigación en redes neuronales experimentó un estancamiento debido a limitaciones técnicas y a la falta de métodos eficaces para el entrenamiento de redes con múltiples capas. 
+Sin embargo, en 1982, un gran avance revitalizó este campo: la introducción del algoritmo de propagación hacia atrás (backpropagation) \cite{werbos1982}, que resolvía el problema del entrenamiento eficiente de redes neuronales profundas, 
+permitiendo la formación de redes multicapa de manera más rápida y eficaz.
+Desde entonces, las redes neuronales han continuado evolucionando, impulsadas en gran parte por los avances en la potencia de cálculo de las GPU y el desarrollo del deep learning.
+Hoy en día, esta tecnología es fundamental y revolucionaria, capaz de realizar predicciones de series temporales con notable rapidez y precisión.
+La investigación en este ámbito sigue siendo prolífica. Una búsqueda rápida en internet revela la continua producción de proyectos y estudios enfocados 
+en perfeccionar las técnicas de predicción temporal mediante aprendizaje profundo. Estos trabajos se caracterizan por un análisis exhaustivo y la exploración de nuevos métodos, 
+todos con el objetivo de optimizar la precisión y la eficacia de las previsiones en aplicaciones prácticas.
 
 \section{Objetivos}
 
