@@ -1,20 +1,31 @@
 \section{Motivación del proyecto}
 La predicción de series temporales es un campo de estudio que ha cobrado gran relevancia en los últimos años, especialmente en el ámbito del aprendizaje automático y el aprendizaje profundo. 
 La capacidad de anticipar eventos futuros a partir de datos históricos es fundamental en diversas áreas, como la economía, la meteorología, la salud y la ingeniería. 
-En este contexto, el uso de redes neuronales ha demostrado ser una herramienta poderosa para abordar problemas complejos de predicción.
 
-El campo de la meteorología, en particular, ha aumentado su relevancia en los útlimos años debido al aumento de fenómenos climáticos extremos y su impacto en la sociedad.
+El campo de la meteorología, en particular, ha aumentado su relevancia en los útlimos años debido al aumento de fenómenos climáticos extremos y su impacto en la sociedad. 
+Prever con antelación la evolución de variables meteorológicas no solo permite planificar recursos, sino también contribuir a la prevención de desastres naturales.
+
+En este contexto, el uso de redes neuronales ha demostrado ser una herramienta poderosa para abordar problemas complejos de predicción.
+Gracias a los avances en capacidad de cómputo y la disponibilidad de grandes volúmenes de datos, arquitecturas como LSTM, GRU y Transformers se han consolidado como soluciones de alto rendimiento. 
+Estas redes no solo capturan patrones temporales de manera eficiente, sino que también pueden adaptarse dinámicamente a cambios en el comportamiento de la serie, mejorando la precisión y la robustez de las predicciones.
+
 
 \section{Planteamineto}
 En este trabajo se pretende emplear mediciones de múltiples estaciones meteorológicas de la isla de Tenerife con el fin de desarrollar un modelo de predicción climatológica a corto plazo.
-Se busca que dicho modelo sea capaz de generalizar más allá de las estaciones de entrenamiento. Esto es, que a partir de mediciones meteorológicas de cualuqier origen, el modelo sea generar predicciones de gran calidad.
+Se busca que dicho modelo sea capaz de generalizar más allá de las estaciones de entrenamiento. Esto es, que a partir de mediciones meteorológicas de cualquier origen, el modelo sea capaz de 
+generar predicciones a corto plazo (3, 6 o 12 horas) de gran calidad.
+Se deciden considerar 3 variables meteorológicas: temperatura, humedad y presión atmosférica.
+La elección de estas variables se basa en su relevancia para la predicción del clima y la existencia de registros en las estaciones meteorológicas de Tenerife.
 
-Se establece un especial énfasis en el tratamiento de los datos, estudiándose exhaustivamente diversas técnicas y alternativas
+Se establece un especial énfasis en el tratamiento de los datos, estudiándose exhaustivamente diversas técnicas.
 
-Este trabajo consiste en el despliegue de una infraestructura tecnológica para la captura y el procesamiento de datos públicos, 
-junto con el diseño, desarrollo y validación de un modelo predictivo que permita extraer información valiosa a partir de dichos datos.
-Este enfoque integrará tanto aspectos técnicos relacionados con la gestión y el análisis de datos como la aplicación de técnicas predictivas
-basadas en modelos de aprendizaje automático, con el fin de optimizar y automatizar la toma de decisiones en un contexto específico.
+La idea principal pasa por la creación de ventanas de información, que son secuencias de datos consecutivos agrupados 
+
+Como parte del trabajo se contempla el despliegue de una infraestructura tecnológica que permita la captura y el procesamiento de datos públicos,
+ así como la creación de un modelo predictivo que extraiga información valiosa a partir de estos datos.    
+
+Así mismo, se plantea desplegar los modelos en un entorno de producción, permitiendo su uso en aplicaciones prácticas. 
+De esta forma, cualquier usuario podrá suministrar mediciones de la variable que desee durante las últimas horas y obtener un pronóstico.
 
 \section{Antecedentes y estado del arte}
 

@@ -85,16 +85,18 @@ def build_and_train_model(dataset_train):
     ########################################################################################
     # Encoder part (LSTM for past data)
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(66, return_sequences=False))(past_data_layer)
+    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
 
     # Decoder part (LSTM for future exogenous features)
     future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
     decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
 
     # Combine the outputs of encoder and decoder (you can concatenate or merge them)
-    merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])
+    future_residue = tf.keras.layers.Flatten()(future_data_layer)
+    merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm, future_residue])
 
     # Final output layer
+    #merged = tf.keras.layers.Dense(2* output_units)(merged)
     outputs = tf.keras.layers.Dense(output_units)(merged)
 
     model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
@@ -107,7 +109,7 @@ def build_and_train_model(dataset_train):
 # train_data, val_data = load_data("atmospheric_pressure")
 train_data, val_data = load_data(DATASET)
 # Ejecutar n veces y promediar el val_loss
-n_runs = 10
+n_runs = 50
 val_losses = []
 
 ## Callbacks

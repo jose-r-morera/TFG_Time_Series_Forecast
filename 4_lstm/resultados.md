@@ -125,3 +125,26 @@ BEST = 42 lstm simple; probadas unidades futuro; best = 4 (probado dense y lstm;
     return model
 
     4332
+    -------------------------
+    2852 tempf3
+Average val_loss over 10 runs: 0.028951 ± 0.000268
+Minimum val_loss over 10 runs: 0.028525
+
+        past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
+    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
+
+    # Decoder part (LSTM for future exogenous features)
+    future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
+    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
+
+    # Combine the outputs of encoder and decoder (you can concatenate or merge them)
+    future_residue = tf.keras.layers.Flatten()(future_data_layer)
+    merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm, future_residue])
+
+    # Final output layer
+    #merged = tf.keras.layers.Dense(2* output_units)(merged)
+    outputs = tf.keras.layers.Dense(output_units)(merged)
+
+    model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
+    model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
+
