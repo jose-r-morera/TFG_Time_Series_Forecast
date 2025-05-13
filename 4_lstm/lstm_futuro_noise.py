@@ -11,21 +11,19 @@ import tensorflow as tf
 ######################################################################
 
 # VARIABLES #
-#DATA_PATH = "./paquetes_s6.pkl"
-#DATA_PATH = "../3_data_windows/paquetes_s6_augmented.pkl"
-DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_p17.pkl"
+DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p17.pkl"
+dataset = "air_temperature"  # Change this to the dataset you want to use
 
-BATCH_SIZE = 128
+BATCH_SIZE = 64
 
-PLOT = True  # If plotting, set shuffle to False
-SHUFFLE = False
-
+PLOT = False  # If plotting, set shuffle to False
+SHUFFLE = True
 PRINT = False
 
 learning_rate = 0.002
 EPOCHS = 700
 
-NOISE_STD = 0.15
+NOISE_STD = 0.05
 print("NOISE_STD", NOISE_STD)
 
 #################################################################
@@ -44,7 +42,6 @@ if gpus:
 with open(DATA_PATH, "rb") as f:
     data = pickle.load(f)
     
-dataset = "relative_humidity"  # Change this to the dataset you want to use
 x_train = data["train"][dataset]["past_variables"]
 future_train = data["train"][dataset]["future_variables"]
 y_train = data["train"][dataset]["y"]
@@ -62,8 +59,6 @@ if SHUFFLE:
 dataset_train = dataset_train.batch(BATCH_SIZE)
 
 dataset_val = tf.data.Dataset.from_tensor_slices(((x_val, future_val), y_val))
-if SHUFFLE:
-  dataset_val = dataset_val.shuffle(buffer_size=dataset_val.cardinality())
 dataset_val = dataset_val.batch(BATCH_SIZE)
 
 if PRINT:
@@ -167,7 +162,7 @@ if PLOT:
         break   # only do it
 ####################################
 
-for batch in dataset_train.take(1):
+for batch in dataset_train_noisy.take(1):
     inputs, targets = batch
     past_data, future_data = inputs
     
@@ -182,10 +177,10 @@ output_units = target_shape # Output shape should match the target sequence
 def build_and_train_model():
     # Reconstruye el modelo y entrena (todo igual que antes)
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(64, return_sequences=False))(past_data_layer)
+    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
     
     future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
-    decoder_lstm = tf.keras.layers.LSTM(10, return_sequences=False)(future_data_layer)
+    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
 
     merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])
     outputs = tf.keras.layers.Dense(output_units)(merged)
@@ -211,7 +206,7 @@ def build_and_train_model():
     )
 
     history = model.fit(
-        dataset_train,
+        dataset_train_noisy,
         epochs=EPOCHS,
         validation_data=dataset_val,
         callbacks=[modelckpt_callback, reduce_lr_callback, es_callback],
@@ -221,7 +216,7 @@ def build_and_train_model():
     return best_val_loss
 
 # Ejecutar n veces y promediar el val_loss
-n_runs = 5
+n_runs = 10
 val_losses = []
 
 for i in range(n_runs):

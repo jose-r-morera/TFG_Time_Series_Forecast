@@ -55,8 +55,6 @@ def load_data(dataset):
     dataset_train = dataset_train.batch(BATCH_SIZE)
 
     dataset_val = tf.data.Dataset.from_tensor_slices(((x_val, future_val), y_val))
-    if SHUFFLE:
-        dataset_val = dataset_val.shuffle(buffer_size=dataset_val.cardinality())
     dataset_val = dataset_val.batch(BATCH_SIZE)
 
     if PRINT:
@@ -94,7 +92,8 @@ def build_and_train_model(dataset_train):
     # Combine the outputs of encoder and decoder (you can concatenate or merge them)
     future_residue = tf.keras.layers.Flatten()(future_data_layer)
     merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm, future_residue])
-
+    #merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])
+    
     # Final output layer
     #merged = tf.keras.layers.Dense(2* output_units)(merged)
     outputs = tf.keras.layers.Dense(output_units)(merged)

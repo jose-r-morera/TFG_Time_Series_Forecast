@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  12 MAY 2025 23:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  13 MAY 2025 23:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -741,7 +741,7 @@ Package gensymb Info: Using \textmu for \micro on input line 102.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count357
-<images/escuela-ingenieria-tecnologia-original.png, id=100, 434.1018pt x 158.994pt>
+<images/escuela-ingenieria-tecnologia-original.png, id=124, 434.1018pt x 158.994pt>
 File: images/escuela-ingenieria-tecnologia-original.png Graphic file (type png)
 <use images/escuela-ingenieria-tecnologia-original.png>
 Package pdftex.def Info: images/escuela-ingenieria-tecnologia-original.png  used on input line 121.
@@ -777,7 +777,7 @@ LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 
 
 [3]
-<images/by-nc-sa_88x31.png, id=119, 88.33pt x 31.11626pt>
+<images/by-nc-sa_88x31.png, id=143, 88.33pt x 31.11626pt>
 File: images/by-nc-sa_88x31.png Graphic file (type png)
 <use images/by-nc-sa_88x31.png>
 Package pdftex.def Info: images/by-nc-sa_88x31.png  used on input line 207.
@@ -989,42 +989,79 @@ l.32     \item \textbf
                       {Santa Cruz de Tenerife}: Camino de Chasna, 812m. [4
 
 ]
-<images/mapa_estaciones.png, id=210, 578.16pt x 505.13719pt>
+<images/mapa_estaciones.png, id=252, 578.16pt x 505.13719pt>
 File: images/mapa_estaciones.png Graphic file (type png)
 <use images/mapa_estaciones.png>
 Package pdftex.def Info: images/mapa_estaciones.png  used on input line 40.
 (pdftex.def)             Requested size: 290.22107pt x 253.56227pt.
-)
+LaTeX Font Info:    Font shape `T1/fve/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 58.
+<images/node-red_grafcan.png, id=254, 1927.2pt x 1084.05pt>
+File: images/node-red_grafcan.png Graphic file (type png)
+<use images/node-red_grafcan.png>
+Package pdftex.def Info: images/node-red_grafcan.png  used on input line 63.
+(pdftex.def)             Requested size: 483.69687pt x 272.07048pt.
+
 
 [5 <./images/mapa_estaciones.png>]
+<images/node-red_open-meteo.png, id=261, 1927.2pt x 1084.05pt>
+File: images/node-red_open-meteo.png Graphic file (type png)
+<use images/node-red_open-meteo.png>
+Package pdftex.def Info: images/node-red_open-meteo.png  used on input line 77.
+(pdftex.def)             Requested size: 483.69687pt x 272.07048pt.
+
+
+[6 <./images/node-red_grafcan.png>]
+<images/visualizacion_1.png, id=270, 620.7993pt x 395.3169pt>
+File: images/visualizacion_1.png Graphic file (type png)
+<use images/visualizacion_1.png>
+Package pdftex.def Info: images/visualizacion_1.png  used on input line 105.
+(pdftex.def)             Requested size: 483.69687pt x 308.01416pt.
+<images/visualizacion_2.png, id=271, 617.9085pt x 395.3169pt>
+File: images/visualizacion_2.png Graphic file (type png)
+<use images/visualizacion_2.png>
+Package pdftex.def Info: images/visualizacion_2.png  used on input line 111.
+(pdftex.def)             Requested size: 483.69687pt x 309.44978pt.
+<images/visualizacion_3.png, id=272, 607.7907pt x 395.3169pt>
+File: images/visualizacion_3.png Graphic file (type png)
+<use images/visualizacion_3.png>
+Package pdftex.def Info: images/visualizacion_3.png  used on input line 117.
+(pdftex.def)             Requested size: 483.69687pt x 314.6072pt.
+)
+
+[7 <./images/node-red_open-meteo.png>]
+
+[8 <./images/visualizacion_1.png> <./images/visualizacion_2.png>]
+
+[9 <./images/visualizacion_3.png>]
 Cap\'{\i }tulo 3.
 (./cap3.tex)
 
-[6
+[10
 
 ]
 Cap\'{\i }tulo 4.
 (./cap4.tex)
 
-[7
+[11
 
 ]
 Cap\'{\i }tulo 5.
 (./cap5.tex)
 
-[8
+[12
 
 ]
 Cap\'{\i }tulo 6.
 (./cap6.tex)
 
-[9
+[13
 
 ]
 Cap\'{\i }tulo 7.
 (./cap7.tex)
 
-[10
+[14
 
 ]
 Ap\'endice A.
@@ -1043,20 +1080,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[11
+[15
 
 
 ])
 
-[12]
+[16]
 Ap\'endice B.
 (./apendice2.tex)
 
-[13
+[17
 
 ]
 
-[14
+[18
 
 ] (./memtfg.aux)
  ***********
@@ -1071,21 +1108,21 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `memtfg.out' has not changed.
-(rerunfilecheck)             Checksum: DFC0AAE72D0AB1D1F546A5A290586C02;4019.
+(rerunfilecheck)             Checksum: 78347F0F31B7C2221EF6E6228AA4B127;5102.
  ) 
 Here is how much of TeX's memory you used:
- 21822 strings out of 473254
- 353338 string characters out of 5717961
- 907875 words of memory out of 5000000
- 44388 multiletter control sequences out of 15000+600000
- 619950 words of font info for 207 fonts, out of 8000000 for 9000
+ 21907 strings out of 473254
+ 355200 string characters out of 5717961
+ 908875 words of memory out of 5000000
+ 44439 multiletter control sequences out of 15000+600000
+ 624530 words of font info for 219 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,13n,93p,1075b,849s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,13n,93p,1075b,851s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (23 pages, 562609 bytes).
+Output written on memtfg.pdf (27 pages, 1331350 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
- 250 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 59600 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 371 PDF objects out of 1000 (max. 8388607)
+ 314 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 63769 words of extra memory for PDF output out of 74296 (max. 10000000)
 

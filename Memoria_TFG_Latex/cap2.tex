@@ -48,13 +48,94 @@ del servicio Grafcan y las de Open-Meteo, lo que podría afectar la calidad de l
 
 \bigskip
 
-\section{Proceso de adquisición}
+\section{Proceso de adquisición y almacenamiento}
 
-Para automatizar la adquisición de datos, se emplea la herramienta de ---- node-red. En dicha herramienta se desarrollan dos panelea, uno para cada fuente de datos. 
-Así mismo, dentro de cada panel se desarrollan dos flujos, uno para la adquisición de datos en un intervalo dado, y otro para la adquisición de datos en tiempo real.
+Para automatizar la adquisición de datos, se emplea la herramienta de orquestación node-red, que permite crear flujos de información mediante nodos que realizan tareas específicas o ejecutan códgio de JavaScript.
+En dicha herramienta se desarrollan dos paneles, uno para cada fuente de datos. 
+Así mismo, dentro de cada panel se desarrollan dos flujos, uno para la adquisición de datos en un intervalo dado, y otro para la adquisición de datos en tiempo real, en particular, 
+se establece la recogida de datos cada 6 horas.
 
+\subsection{Flujos de adquisición de Grafcan}
+Debido al funcionamiento de la API de Grafcan, se debe realizar una llamada para obtener la serie temporal de cada variable meteorológica de cada estación.
+Posteriormente, se unen las series de cada estación en una única serie, que se almacena en una base de datos PostgreSQL. Este flujo está reflejado en la figura \ref{grafcan_flows}.
+\begin{figure}[htb]
+   \centering
+   \includegraphics[width=1\linewidth]{images/node-red_grafcan.png}
+   \caption{Flujo de adquisición de datos de Grafcan en node-red.}
+   \label{grafcan_flows}
+\end{figure}
 
+Las mediciones de Grafcan se recogen apróximamente cada 10 minutos, si bien la frecuencia no es consistente y en ocasiones es mayor. Para manejar esta variabilidad, 
+en este nivel los datos se agregan cada 10 minutos, usando la media de las mediciones del intervalo.
+
+\subsection{Flujos de adquisición de Open-Meteo}
+Existe una rama para obtener los datos del modelo ICON y otra para el modelo ARPEGE. Se establecen las coordenadas de cada ubicación como las de la estación de Grafcan seleccionada 
+y se realiza una llamada a la API por cada localización y cada modelo, como se observa en la figura \ref{open-meteo_flows}. 
+Los resultados se almacenan en una base de datos PostgreSQL.
+\begin{figure}[htb]
+   \centering
+   \includegraphics[width=1\linewidth]{images/node-red_open-meteo.png}
+   \caption{Flujo de adquisición de datos de Open-Meteo en node-red.}
+   \label{open-meteo_flows}
+\end{figure}
+
+\subsection{Almacenamiento}
 Se estudian distintas alternativas para el almacenamiento de los datos.
 Se opta por emplear TimescaleDB, una extensión del popular sistema PostgreSQL
 de bases de datos relacionales, especialmente adaptada para el manejo de series temporales. 
+
+Se establece un servidor TimescaleDB en un contenedor Docker. Se configura una tabla para cada estación y cada fuente: Grafcan, Open-Meteo ICON y Open-Meteo ARPEGE. 
+Cada tabla emplea como índice y clave primaria la fecha y hora de la medición, así como su zona horaria. Las otras columnas se corresponden a la temperatura media del aire
+ en grados Celsius, la humedad relativa en porcentaje y la presión atmosférica en superficie medida en hPa.
+
+Es importante señalar que las mediciones de Grafcan y Open-Meteo codifican las horas en UTC, en vez de la hora local, puesto que UTC es independiente a los cambios de horario
+y de esta forma se mantiene la consistencia de los datos.
+
+\section{Preprocesado}
+
+Se desarrolla un cuaderno de Jupyter para realizar el preprocesado de los datos. Este proceso se aplica para cada estación.
+
+En primer lugar, se obtienen las series temporales de las 3 fuentes, Grafcan y los dos modelos de Open-Meteo, para el período entre el 1 de marzo de 2023 y el 28 de febrero de 2025.
+Se agrgan los datos con frecuencia horaria mediante la media.
+
+\subsection{Visualización}
+Se visualizan los datos de cada variable para cada año. Podemos ver ejemplos en las figuras \ref{visualizacion_1}, \ref{visualizacion_2} y \ref{visualizacion_3}.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/visualizacion_1.png}
+    \caption{Visualización de la temperatura del aire en San Cristóbal de La Laguna.}
+    \label{visualizacion_1}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/visualizacion_2.png}
+    \caption{Visualización de la temperatura del aire en San Cristóbal de La Laguna.}
+    \label{visualizacion_2}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/visualizacion_3.png}
+    \caption{Visualización de la temperatura del aire en San Cristóbal de La Laguna.}
+    \label{visualizacion_3}
+\end{figure}
+
+Cabe destacar que en la variable de humedad relativa se observa una gran variabilidad entre los datos de las distintas fuentes, lo que puede ser ??????
+
+\subsection{Manejo de datos faltantes}
+Se detectan los datos faltantes para cada fuente. Las estadísticas se muestran en la tabla \ref{tabla_datos_faltantes}.
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Estación & Grafcan & Open-Meteo ICON & Open-Meteo ARPEGE \\
+        \hline
+        La Cuesta & 0.2\% & 0.1\% & 0.1\% \\
+        La Punta del Hidalgo & 0.3\% & 0.2\% & 0.2\% \\
+        Camino de Chasna & 0.4\% & 0.3\% & 0.3\% \\
+        Punta de Rasca & 0.5\% & 0.4\% & 0.4\% \\
+        \hline
+    \end{tabular}
+    \caption{Datos faltantes por estación y fuente de datos (en horas)}
+    \label{tabla_datos_faltantes} 
+\end{table}
 

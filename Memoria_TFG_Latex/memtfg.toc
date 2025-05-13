@@ -6,20 +6,26 @@
 \contentsline {section}{\numberline {1.4}Objetivos}{2}{section.1.4}%
 \contentsline {chapter}{\numberline {2}\LARGE Adquisición y preprocesado de datos}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Fuentes de los datos}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Proceso de adquisición}{5}{section.2.2}%
-\contentsline {chapter}{\numberline {3}\LARGE Modelos de predicción}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Primera sección de este capítulo}{6}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Segundo apartado de este capítulo}{6}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Tercer apartado de este capítulo}{6}{section.3.3}%
-\contentsline {chapter}{\numberline {4}\LARGE Título del Capítulo 4}{7}{chapter.4}%
-\contentsline {chapter}{\numberline {5}\LARGE Conclusiones y líneas futuras}{8}{chapter.5}%
-\contentsline {chapter}{\numberline {6}\LARGE Summary and Conclusions}{9}{chapter.6}%
-\contentsline {chapter}{\numberline {7}\LARGE Presupuesto}{10}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Sección Uno}{10}{section.7.1}%
-\contentsline {chapter}{\numberline {A}\LARGE Título del Apéndice 1}{11}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Algoritmo XXX}{11}{section.Alph1.1}%
-\contentsline {section}{\numberline {A.2}Algoritmo YYY}{11}{section.Alph1.2}%
-\contentsline {section}{\numberline {A.3}Algoritmo ZZZ}{12}{section.Alph1.3}%
-\contentsline {chapter}{\numberline {B}\LARGE Título del Apéndice 2}{13}{appendix.Alph2}%
-\contentsline {section}{\numberline {B.1}Otro apéndice: Sección 1}{13}{section.Alph2.1}%
-\contentsline {section}{\numberline {B.2}Otro apéndice: Sección 2}{13}{section.Alph2.2}%
+\contentsline {section}{\numberline {2.2}Proceso de adquisición y almacenamiento}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Flujos de adquisición de Grafcan}{5}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Flujos de adquisición de Open-Meteo}{6}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Almacenamiento}{6}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Preprocesado}{7}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Visualización}{7}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Manejo de datos faltantes}{7}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}\LARGE Modelos de predicción}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Primera sección de este capítulo}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Segundo apartado de este capítulo}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Tercer apartado de este capítulo}{10}{section.3.3}%
+\contentsline {chapter}{\numberline {4}\LARGE Despliegue}{11}{chapter.4}%
+\contentsline {chapter}{\numberline {5}\LARGE Conclusiones y líneas futuras}{12}{chapter.5}%
+\contentsline {chapter}{\numberline {6}\LARGE Summary and Conclusions}{13}{chapter.6}%
+\contentsline {chapter}{\numberline {7}\LARGE Presupuesto}{14}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Sección Uno}{14}{section.7.1}%
+\contentsline {chapter}{\numberline {A}\LARGE Título del Apéndice 1}{15}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Algoritmo XXX}{15}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Algoritmo YYY}{15}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Algoritmo ZZZ}{16}{section.Alph1.3}%
+\contentsline {chapter}{\numberline {B}\LARGE Título del Apéndice 2}{17}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Otro apéndice: Sección 1}{17}{section.Alph2.1}%
+\contentsline {section}{\numberline {B.2}Otro apéndice: Sección 2}{17}{section.Alph2.2}%
