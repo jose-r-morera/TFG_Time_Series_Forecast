@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  13 MAY 2025 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  14 MAY 2025 01:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -986,7 +986,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has b
 <to be read again> 
                    \relax 
 l.32     \item \textbf
-                      {Santa Cruz de Tenerife}: Camino de Chasna, 812m. [4
+                      {Santa Cruz de Tenerife}: Polígono Costa Sur, 92m. [4
 
 ]
 <images/mapa_estaciones.png, id=252, 578.16pt x 505.13719pt>
@@ -1015,23 +1015,28 @@ Package pdftex.def Info: images/node-red_open-meteo.png  used on input line 77.
 <images/visualizacion_1.png, id=270, 620.7993pt x 395.3169pt>
 File: images/visualizacion_1.png Graphic file (type png)
 <use images/visualizacion_1.png>
-Package pdftex.def Info: images/visualizacion_1.png  used on input line 105.
-(pdftex.def)             Requested size: 483.69687pt x 308.01416pt.
-<images/visualizacion_2.png, id=271, 617.9085pt x 395.3169pt>
+Package pdftex.def Info: images/visualizacion_1.png  used on input line 111.
+(pdftex.def)             Requested size: 386.95897pt x 246.41495pt.
+<images/visualizacion_2.png, id=271, 607.7907pt x 395.3169pt>
 File: images/visualizacion_2.png Graphic file (type png)
 <use images/visualizacion_2.png>
-Package pdftex.def Info: images/visualizacion_2.png  used on input line 111.
-(pdftex.def)             Requested size: 483.69687pt x 309.44978pt.
-<images/visualizacion_3.png, id=272, 607.7907pt x 395.3169pt>
+Package pdftex.def Info: images/visualizacion_2.png  used on input line 117.
+(pdftex.def)             Requested size: 386.95897pt x 251.68695pt.
+<images/visualizacion_3.png, id=272, 617.9085pt x 395.3169pt>
 File: images/visualizacion_3.png Graphic file (type png)
 <use images/visualizacion_3.png>
-Package pdftex.def Info: images/visualizacion_3.png  used on input line 117.
-(pdftex.def)             Requested size: 483.69687pt x 314.6072pt.
-)
+Package pdftex.def Info: images/visualizacion_3.png  used on input line 123.
+(pdftex.def)             Requested size: 386.95897pt x 247.56104pt.
+
+Overfull \hbox (22.53487pt too wide) in paragraph at lines 134--146
+ [][] 
+ []
+
+
 
 [7 <./images/node-red_open-meteo.png>]
 
-[8 <./images/visualizacion_1.png> <./images/visualizacion_2.png>]
+[8 <./images/visualizacion_1.png> <./images/visualizacion_2.png>])
 
 [9 <./images/visualizacion_3.png>]
 Cap\'{\i }tulo 3.
@@ -1111,15 +1116,15 @@ Package rerunfilecheck Info: File `memtfg.out' has not changed.
 (rerunfilecheck)             Checksum: 78347F0F31B7C2221EF6E6228AA4B127;5102.
  ) 
 Here is how much of TeX's memory you used:
- 21907 strings out of 473254
- 355200 string characters out of 5717961
+ 21913 strings out of 473254
+ 355254 string characters out of 5717961
  908875 words of memory out of 5000000
  44439 multiletter control sequences out of 15000+600000
- 624530 words of font info for 219 fonts, out of 8000000 for 9000
+ 625084 words of font info for 223 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1075b,851s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (27 pages, 1331350 bytes).
+Output written on memtfg.pdf (27 pages, 1332233 bytes).
 PDF statistics:
  371 PDF objects out of 1000 (max. 8388607)
  314 compressed objects within 4 object streams

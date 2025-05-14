@@ -28,8 +28,8 @@ Se eligen 4 ubicaciones de la isla de Tenerife con distintas características cl
 
 Así mismo, se escogen 2 ubicaciones para el conjunto de test, nunca vistas en el ajuste del modelo:
 \begin{itemize}
-    \item \textbf{Garachico}: La Cuesta, 35 metros de altitud.
-    \item \textbf{Santa Cruz de Tenerife}: Camino de Chasna, 812m.
+    \item \textbf{Garachico}: La Montañeta, 922 m.
+    \item \textbf{Santa Cruz de Tenerife}: Polígono Costa Sur, 92m.
 \end{itemize}
 
 Las ubicaciones han sido elegidas al contar con estaciones de medición de Grafcan.
@@ -96,26 +96,32 @@ y de esta forma se mantiene la consistencia de los datos.
 Se desarrolla un cuaderno de Jupyter para realizar el preprocesado de los datos. Este proceso se aplica para cada estación.
 
 En primer lugar, se obtienen las series temporales de las 3 fuentes, Grafcan y los dos modelos de Open-Meteo, para el período entre el 1 de marzo de 2023 y el 28 de febrero de 2025.
-Se agrgan los datos con frecuencia horaria mediante la media.
+Se agregan los datos con frecuencia horaria mediante la media. 
+
+\textbf{Nota:} En la estación de Garachico, usada para el test, el período empleado es del 1 de marzo de 2024 al 28 de febrero de 2025, puesto que el período de 2023 tiene 
+un gran número de datos faltantes.
 
 \subsection{Visualización}
 Se visualizan los datos de cada variable para cada año. Podemos ver ejemplos en las figuras \ref{visualizacion_1}, \ref{visualizacion_2} y \ref{visualizacion_3}.
+
+Se observa claramente que en la presión atmosférica las mediciones de todas las fuentes son muy similares. Sin embargo, 
+en la temperatura del aire y la humedad relativa se aprecian diferencias entre las distintas fuentes.
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{images/visualizacion_1.png}
-    \caption{Visualización de la temperatura del aire en San Cristóbal de La Laguna.}
+    \includegraphics[width=.8\linewidth]{images/visualizacion_1.png}
+    \caption{Visualización de la presión atmosférica en Arona durante 2023.}
     \label{visualizacion_1}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{images/visualizacion_2.png}
-    \caption{Visualización de la temperatura del aire en San Cristóbal de La Laguna.}
+    \includegraphics[width=.8\linewidth]{images/visualizacion_2.png}
+    \caption{Visualización de la temperatura del aire en Arona durante 2024.}
     \label{visualizacion_2}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{images/visualizacion_3.png}
-    \caption{Visualización de la temperatura del aire en San Cristóbal de La Laguna.}
+    \includegraphics[width=.8\linewidth]{images/visualizacion_3.png}
+    \caption{Visualización de la humedad relativa en Arona durante 2025.}
     \label{visualizacion_3}
 \end{figure}
 
@@ -129,10 +135,12 @@ Se detectan los datos faltantes para cada fuente. Las estadísticas se muestran 
         \hline
         Estación & Grafcan & Open-Meteo ICON & Open-Meteo ARPEGE \\
         \hline
-        La Cuesta & 0.2\% & 0.1\% & 0.1\% \\
-        La Punta del Hidalgo & 0.3\% & 0.2\% & 0.2\% \\
-        Camino de Chasna & 0.4\% & 0.3\% & 0.3\% \\
-        Punta de Rasca & 0.5\% & 0.4\% & 0.4\% \\
+        La Laguna 1 (La Cuesta) & 0.2\% & 0.1\% & 0.1\% \\
+        La Laguna 2(La Punta del Hidalgo) & 0.3\% & 0.2\% & 0.2\% \\
+        La Orotava & 0.5\% & 0.4\% & 0.4\% \\
+        Arona & 17 & 0 & 35 \\
+        Garachico & 5 & 0 & 0 \\
+        Santa Cruz de Tenerife & 0.5\% & 0.4\% & 0.4\% \\
         \hline
     \end{tabular}
     \caption{Datos faltantes por estación y fuente de datos (en horas)}
