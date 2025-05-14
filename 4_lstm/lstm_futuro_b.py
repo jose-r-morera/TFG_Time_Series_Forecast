@@ -11,7 +11,7 @@ from custom_attention import CustomAttention
 ######################################################################
 
 # VARIABLES #
-DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p17.pkl"
+DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_full_p17.pkl"
 DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
 
 BATCH_SIZE = 64
@@ -95,7 +95,7 @@ def build_and_train_model(dataset_train):
     #merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])
     
     # Final output layer
-    #merged = tf.keras.layers.Dense(2* output_units)(merged)
+    merged = tf.keras.layers.Dense(4* output_units)(merged) 
     outputs = tf.keras.layers.Dense(output_units)(merged)
 
     model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
@@ -108,7 +108,7 @@ def build_and_train_model(dataset_train):
 # train_data, val_data = load_data("atmospheric_pressure")
 train_data, val_data = load_data(DATASET)
 # Ejecutar n veces y promediar el val_loss
-n_runs = 50
+n_runs = 10
 val_losses = []
 
 ## Callbacks

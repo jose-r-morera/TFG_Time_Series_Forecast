@@ -8,24 +8,23 @@ import matplotlib.pyplot as plt
 # VARIABLES #
 
 # FILES = { "santa_cruz": ["grafcan_santa_cruz_features.csv", "openmeteo_santa_cruz_features.csv"]}
-# FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],}
-# FILES = {"la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],}
-# FILES = {"la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],}
+#FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],}
+#FILES = {"la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],}
+#FILES = {"la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],}
 # FILES = {"punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],}
 
-FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
-        "la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],
-         "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],
-         "punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],
-         }
-
-# FILES = {
-#   "arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
-#   "la_laguna": ["grafcan_la_laguna_features.csv","openmeteo_la_laguna_features.csv"],
-#   "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],
-#   "santa_cruz": ["grafcan_santa_cruz_features.csv", "openmeteo_santa_cruz_features.csv"],
-
+# FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
+#         "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],
+#         # "la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],
+# #          "punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],
 # }
+
+FILES = {
+  "arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
+  "la_laguna": ["grafcan_la_laguna_features.csv","openmeteo_la_laguna_features.csv"],
+  "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],
+  "punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],
+}
 
 # FILES =
 DATASETS_PATH = "../1_data_preprocessing/processed_data/"
@@ -264,7 +263,7 @@ def create_windows(past_n, future_n, step, train_percent, use_covariates):
     pickle.dump({"train": train_data, "test": test_data}, f)
   print(f"Data saved to {out_path}")
   
-for past_n in range(17, 18):
+for past_n in range(5, 41):
   np.random.seed(17)
   random.seed(17)
   print("Generating windows for past_n = ", past_n)

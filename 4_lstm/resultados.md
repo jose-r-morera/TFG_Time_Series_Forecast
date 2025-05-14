@@ -130,7 +130,7 @@ BEST = 42 lstm simple; probadas unidades futuro; best = 4 (probado dense y lstm;
 Average val_loss over 10 runs: 0.028951 ± 0.000268
 Minimum val_loss over 10 runs: 0.028525
 
-        past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
+    past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
     encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
 
     # Decoder part (LSTM for future exogenous features)

@@ -23,7 +23,7 @@ PRINT = False
 learning_rate = 0.002
 EPOCHS = 700
 
-NOISE_STD = 0.05
+NOISE_STD = 0.01
 print("NOISE_STD", NOISE_STD)
 
 #################################################################
@@ -101,7 +101,7 @@ def add_noise_to_target(x, y):
     # Add noise to the target variable
     target_noise = tent_noise(y, NOISE_STD/2)
     
-    return (past + past_noise, fut), y #+ target_noise
+    return (past + past_noise, fut), y + target_noise
 
 dataset_train_noisy = dataset_train.map(add_noise_to_target)
 ####################################################
