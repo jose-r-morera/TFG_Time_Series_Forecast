@@ -119,7 +119,7 @@ def evaluate_with_trials(data_path, min_file, max_file, trials=5):
 
 if __name__ == "__main__":
     # list your datasets here:
-    DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p"
+    DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_full_p"
     min_i = 6
     max_i = 50
     best_ds, all_scores = evaluate_with_trials(DATA_PATH, min_i, max_i)

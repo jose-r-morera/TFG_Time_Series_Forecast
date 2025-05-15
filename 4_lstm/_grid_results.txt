@@ -1,2 +1,0 @@
-best: 42
-testeado hasta 55
