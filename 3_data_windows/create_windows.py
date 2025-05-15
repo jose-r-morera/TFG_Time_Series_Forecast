@@ -67,20 +67,34 @@ def df_raw_windows(df, past_features, future_features, target, past_n, future_n,
   }
   return data
 #####################################################################################################
-  
-def create_windows(past_n, future_n, step, train_percent, use_covariates):
+
+# Data structure for windows
+template = {
+  "past_variables": [],
+  "future_variables": [],
+  "y": [],
+}
+
+def create_processed_windows(past_n, future_n, step, train_percent, use_covariates):
   # Data structure #
   targets = ["air_temperature", "relative_humidity", "atmospheric_pressure"]
-  data = {}
+  train_data, test_data = {}, {}
   for target in targets:
-    data[target] = {}
+    train_data[target] = {}
 
   # Load data #
-  for location in FILES:
-    for i in range(len(targets)):
-      # print(f"Loading {FILES[location]} for {targets[i]} in {location}")
-      target = targets[i]
-      data[target][location] = []    
+  for i in range(len(targets)):
+    # print(f"Loading {FILES[location]} for {targets[i]} in {location}")
+    target = targets[i]
+    train_data[target] = {key: [] for key in template}
+    test_data[target] = {key: [] for key in template}
+    
+    for location in FILES:
+      location_data = [] 
+      
+      ###############################################
+      # Aggregate all the datasets for the location #
+      ###############################################
       for dataset in FILES[location]:
         df = pd.read_csv(DATASETS_PATH + dataset, parse_dates=['time']).drop(columns=['artificial_value_flag', 'outlier_flag'])
 
@@ -92,18 +106,8 @@ def create_windows(past_n, future_n, step, train_percent, use_covariates):
         windows_data = df_raw_windows(df, features, future_features, target, past_n, future_n, step)
         
         # Store data
-        data[target][location].append(windows_data)
+        location_data.append(windows_data)
         
-  #####################
-  # Split by location #
-  #####################
-  split_data = {}
-
-  for target in targets:
-    split_data[target] = {}
-    for location in FILES:
-      split_data[target][location] = {}
-      location_data = data[target][location]
       total_windows = len(location_data[0]["past_variables"])
       overlap_windows = math.ceil((past_n + future_n)/step) # number of windows that overlap with the current one
       test_indexes = random.sample(range(total_windows), int(total_windows * (1 - train_percent)))
@@ -118,11 +122,6 @@ def create_windows(past_n, future_n, step, train_percent, use_covariates):
       forbidden = sorted(i for i in forbidden if 0 <= i < total_windows)
       train_idxs = sorted(set(range(total_windows)) - set(forbidden))
 
-      template = {
-        "past_variables": [],
-        "future_variables": [],
-        "y": [],
-      }
       train_split = {key: [] for key in template}
       test_split = {key: [] for key in template}
       for dataset in range(len(location_data)):
@@ -146,36 +145,17 @@ def create_windows(past_n, future_n, step, train_percent, use_covariates):
         test_split["future_variables"].extend(test_future_variables)
         test_split["y"].extend(test_y)
       
-      split_data[target][location]["train"] = train_split
-      split_data[target][location]["test"] = test_split
-        
+      train_data[target]["past_variables"].extend(train_split["past_variables"])
+      train_data[target]["future_variables"].extend(train_split["future_variables"])
+      train_data[target]["y"].extend(train_split["y"])
       
-
-  #######################
-  # Dataset Aggregation #
-  #######################
-  train_data = {}
-  test_data = {}
-  template = {
-        "past_variables": [],
-        "future_variables": [],
-        "y": [],
-      }
-
-  for target in targets:
-    # Initialize empty (avoid copying because of reference)
-    train_data[target] = {key: [] for key in template}
-    test_data[target] =  {key: [] for key in template}
-    for location, samples in split_data[target].items():
-      train_data[target]["past_variables"].extend(samples["train"]["past_variables"])
-      train_data[target]["future_variables"].extend(samples["train"]["future_variables"])
-      train_data[target]["y"].extend(samples["train"]["y"])
-      # Test data
-      test_data[target]["past_variables"].extend(samples["test"]["past_variables"])
-      test_data[target]["future_variables"].extend(samples["test"]["future_variables"])
-      test_data[target]["y"].extend(samples["test"]["y"])
-
+      test_data[target]["past_variables"].extend(test_split["past_variables"])
+      test_data[target]["future_variables"].extend(test_split["future_variables"])
+      test_data[target]["y"].extend(test_split["y"])
+        
+  # Finished data aggregation #
   print("Data shape:")
+  
   for target in targets:
     # Convert to numpy array
     train_data[target]["past_variables"] = np.array(train_data[target]["past_variables"])
@@ -239,7 +219,7 @@ def create_windows(past_n, future_n, step, train_percent, use_covariates):
 #       # plt.show()
 #       new_future.append(train_data[target]["future_variables"][i])
       
-#   # Add new samples to train dataç
+#   # Add new samples to train data
 #   train_data[target]["past_variables"] = np.concatenate((train_data[target]["past_variables"], np.array(new_past)), axis=0)
 #   train_data[target]["future_variables"] = np.concatenate((train_data[target]["future_variables"], np.array(new_future)), axis=0)
 #   train_data[target]["y"] = np.concatenate((train_data[target]["y"], np.array(new_y)), axis=0)
@@ -263,8 +243,8 @@ def create_windows(past_n, future_n, step, train_percent, use_covariates):
     pickle.dump({"train": train_data, "test": test_data}, f)
   print(f"Data saved to {out_path}")
   
-for past_n in range(5, 51):
+for past_n in range(17, 18):
   np.random.seed(17)
   random.seed(17)
   print("Generating windows for past_n = ", past_n)
-  create_windows(past_n, FUTURE_N, STEP, TRAIN_SPLIT, USE_COVARIATES)
+  create_processed_windows(past_n, FUTURE_N, STEP, TRAIN_SPLIT, USE_COVARIATES)
