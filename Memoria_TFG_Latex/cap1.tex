@@ -42,17 +42,35 @@ estableciendo las bases de lo que hoy conocemos como inteligencia artificial bas
 Más adelante, en 1949, Donald Hebb introdujo la famosa Teoría Hebbiana, una hipótesis que proponía un mecanismo de aprendizaje basado en la plasticidad neuronal \cite{hebb1949}. 
 Este principio se aplicó a modelos computacionales, impulsando la investigación en la simulación del aprendizaje humano.
 
-
 En 1958, Frank Rosenblatt avanzó en este campo con la creación del perceptrón \cite{rosenblatt1958}, un algoritmo pionero de reconocimiento de patrones basado en una red de aprendizaje de computadora de dos capas.
 Este modelo simple operaba mediante operaciones de adición y sustracción, sentando las bases para el desarrollo de redes neuronales más complejas.
 Durante las siguientes décadas, la investigación en redes neuronales experimentó un estancamiento debido a limitaciones técnicas y a la falta de métodos eficaces para el entrenamiento de redes con múltiples capas. 
 Sin embargo, en 1982, un gran avance revitalizó este campo: la introducción del algoritmo de propagación hacia atrás (backpropagation) \cite{werbos1982}, que resolvía el problema del entrenamiento eficiente de redes neuronales profundas, 
 permitiendo la formación de redes multicapa de manera más rápida y eficaz.
-Desde entonces, las redes neuronales han continuado evolucionando, impulsadas en gran parte por los avances en la potencia de cálculo de las GPU y el desarrollo del deep learning.
-Hoy en día, esta tecnología es fundamental y revolucionaria, capaz de realizar predicciones de series temporales con notable rapidez y precisión.
-La investigación en este ámbito sigue siendo prolífica. Una búsqueda rápida en internet revela la continua producción de proyectos y estudios enfocados 
-en perfeccionar las técnicas de predicción temporal mediante aprendizaje profundo. Estos trabajos se caracterizan por un análisis exhaustivo y la exploración de nuevos métodos, 
-todos con el objetivo de optimizar la precisión y la eficacia de las previsiones en aplicaciones prácticas.
+
+La aplicación de redes neuronales profundas a la predicción de series temporales experimentó un impulso decisivo con la introducción de las redes recurrentes (RNN)
+a principios de los años ochenta. En 1987, Jeffrey Elman describió un modelo de red recurrente simple capaz de aprender dependencias temporales mediante la alimentación
+de su propia salida en la capa oculta al instante siguiente\cite{elman1990}. Sin embargo, estas primeras RNN adolecían del problema del desvanecimiento y explosión del gradiente, lo
+que limitaba su eficacia para secuencias largas.
+
+Para superar estas limitaciones, Hochreiter y Schmidhuber propusieron en 1997 las Long Short-Term Memory (LSTM), una arquitectura RNN que incorpora puertas de entrada,
+olvido y salida, permitiendo el flujo de gradiente a través de largas secuencias y mejorando sustancialmente la capacidad de memoria de la red \cite{hochreiter1997}.
+Posteriormente, Cho et al. introdujeron en 2014 las Gated Recurrent Units (GRU), una simplificación de las LSTM con menor número de parámetros,
+que ha demostrado en muchos casos un rendimiento comparable acelerando el entrenamiento[7]. 
+Más recientemente, la arquitectura Transformer, basada completamente en mecanismos de atención y sin conexiones recurrentes, revolucionó el campo al
+mejorar la paralelización y capturar dependencias de largo alcance en el tiempo con mayor eficacia[8].
+
+A partir de 2015 surgieron estudios que adaptaron estas arquitecturas al ámbito meteorológico. Shi et al. desarrollaron el ConvLSTM, que añade convoluciones espaciales a
+la LSTM para modelar simultáneamente la dinámica espacial y temporal en tareas de nowcasting de precipitación[9]. Weyn et al. demostraron en 2019 que redes
+profundas convolucionales aplicadas a datos globales de variables meteorológicas pueden mejorar la predicción a corto plazo frente a los modelos numéricos tradicionales,
+especialmente al resolver patrones locales que escapan a la resolución de la rejilla de los sistemas de predicción numérica del tiempo (NWP)[10].
+
+La mayoría de los enfoques anteriores se especializan en una región o estación concreta, entrenando modelos independientes para cada ubicación. Esto requiere un esfuerzo de
+reentrenamiento y calibración local cada vez que se desea aplicar el sistema en un punto nuevo. Algunos trabajos recientes abordan la generalización geográfica mediante la
+ inclusión de información posicional o condiciones iniciales específicas de cada punto dentro del modelo, aunque todavía con resultados preliminares[11][12]. 
+El desarrollo de un modelo verdaderamente “generalista” —capaz de recibir como entrada únicamente datos de sensores básicos, sin necesidad de reentrenar, y proporcionar predicciones meteorológicas
+de calidad comparable o superior a las de los NWP en cualquier ubicación— se conoce como el problema de zero-shot, debido 
+y constituye un reto abierto y de gran interés práctico.
 
 \section{Objetivos}
 
