@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  16 MAY 2025 01:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  16 MAY 2025 10:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -687,6 +687,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 102.
+ (./memtfg.out) (./memtfg.out)
 \@outlinefile=\write3
 \openout3 = `memtfg.out'.
 
@@ -736,7 +737,7 @@ Package gensymb Info: Using \textmu for \micro on input line 102.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count357
-<images/escuela-ingenieria-tecnologia-original.png, id=4, 434.1018pt x 158.994pt>
+<images/escuela-ingenieria-tecnologia-original.png, id=156, 434.1018pt x 158.994pt>
 File: images/escuela-ingenieria-tecnologia-original.png Graphic file (type png)
 <use images/escuela-ingenieria-tecnologia-original.png>
 Package pdftex.def Info: images/escuela-ingenieria-tecnologia-original.png  used on input line 121.
@@ -772,7 +773,7 @@ LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 
 
 [3]
-<images/by-nc-sa_88x31.png, id=23, 88.33pt x 31.11626pt>
+<images/by-nc-sa_88x31.png, id=175, 88.33pt x 31.11626pt>
 File: images/by-nc-sa_88x31.png Graphic file (type png)
 <use images/by-nc-sa_88x31.png>
 Package pdftex.def Info: images/by-nc-sa_88x31.png  used on input line 207.
@@ -806,19 +807,74 @@ l.245 \newpage
               {\pagestyle{empty}} [1]
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 (Font)              scaled to size 22.39185pt on input line 266.
+ (./memtfg.toc
+LaTeX Font Info:    Font shape `T1/fve/b/n' will be
+(Font)              scaled to size 18.66588pt on input line 2.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 3.
+LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 3.
+LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
+(Font)              scaled to size 5.39996pt on input line 3.
 
-No file memtfg.toc.
+
+
+LaTeX Font Warning: Font shape `T1/fve/m/sc' undefined
+(Font)              using `T1/fve/m/n' instead on input line 35.
+
+LaTeX Font Info:    Font shape `T1/fve/m/sc' will be
+(Font)              scaled to size 10.79993pt on input line 35.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\hbox' on input line 35.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 35.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\tf@size' on input line 35.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 35.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sf@size' on input line 35.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 35.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\ssf@size' on input line 35.
+
+[1
+
+])
 \tf@toc=\write4
 \openout4 = `memtfg.toc'.
 
 
 
-
-LaTeX Font Warning: Font shape `T1/fve/m/sc' undefined
-(Font)              using `T1/fve/m/n' instead on input line 269.
-
-LaTeX Font Info:    Font shape `T1/fve/m/sc' will be
-(Font)              scaled to size 10.79993pt on input line 269.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\hbox' on input line 269.
@@ -847,10 +903,37 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\ssf@size' on input line 269.
 
-[1
+[2] (./memtfg.lof
+Overfull \hbox (2.63512pt too wide) detected at line 13
+\T1/fve/m/n/12 2.10. 
+ []
 
-]
-No file memtfg.lof.
+
+Overfull \hbox (2.63512pt too wide) detected at line 14
+\T1/fve/m/n/12 2.11. 
+ []
+
+
+Overfull \hbox (2.63512pt too wide) detected at line 15
+\T1/fve/m/n/12 2.12. 
+ []
+
+
+Overfull \hbox (2.63512pt too wide) detected at line 16
+\T1/fve/m/n/12 2.13. 
+ []
+
+
+Overfull \hbox (2.63512pt too wide) detected at line 17
+\T1/fve/m/n/12 2.14. 
+ []
+
+
+Overfull \hbox (2.63512pt too wide) detected at line 18
+\T1/fve/m/n/12 2.15. 
+ []
+
+)
 \tf@lof=\write5
 \openout5 = `memtfg.lof'.
 
@@ -884,10 +967,9 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\ssf@size' on input line 274.
 
-[2
+[3
 
-]
-No file memtfg.lot.
+] (./memtfg.lot)
 \tf@lot=\write6
 \openout6 = `memtfg.lot'.
 
@@ -921,12 +1003,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\ssf@size' on input line 279.
 
-[3
+[4
 
 ]
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    Font shape `T1/fve/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 290.
 (./cap1.tex
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 (Font)              scaled to size 15.55188pt on input line 1.
@@ -940,19 +1020,6 @@ l.26
       [1
 
 ]
-
-Package natbib Warning: Citation `mcculloch1943' on page 2 undefined on input line 36.
-
-
-Package natbib Warning: Citation `hebb1949' on page 2 undefined on input line 38.
-
-
-Package natbib Warning: Citation `rosenblatt1958' on page 2 undefined on input line 42.
-
-
-Package natbib Warning: Citation `werbos1982' on page 2 undefined on input line 45.
-
-
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
@@ -970,13 +1037,6 @@ l.66 \newpage
 Cap\'{\i }tulo 2.
 (./cap2.tex
 
-Package natbib Warning: Citation `grafcan_sensores' on page 4 undefined on input line 13.
-
-
-Package natbib Warning: Citation `open_meteo_api' on page 4 undefined on input line 17.
-
-
-
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
@@ -985,20 +1045,14 @@ l.32     \item \textbf
                       {Santa Cruz de Tenerife (F)}: Polígono Costa Sur, 92m. [4
 
 ]
-
-LaTeX Warning: Reference `mapa_estaciones' on page 5 undefined on input line 36.
-
-<images/mapa_estaciones.png, id=79, 578.16pt x 505.13719pt>
+<images/mapa_estaciones.png, id=318, 578.16pt x 505.13719pt>
 File: images/mapa_estaciones.png Graphic file (type png)
 <use images/mapa_estaciones.png>
 Package pdftex.def Info: images/mapa_estaciones.png  used on input line 41.
 (pdftex.def)             Requested size: 290.22107pt x 253.56227pt.
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 59.
-
-LaTeX Warning: Reference `grafcan_flows' on page 5 undefined on input line 61.
-
-<images/node-red_grafcan.png, id=80, 1927.2pt x 1084.05pt>
+<images/node-red_grafcan.png, id=320, 1927.2pt x 1084.05pt>
 File: images/node-red_grafcan.png Graphic file (type png)
 <use images/node-red_grafcan.png>
 Package pdftex.def Info: images/node-red_grafcan.png  used on input line 64.
@@ -1006,10 +1060,7 @@ Package pdftex.def Info: images/node-red_grafcan.png  used on input line 64.
 
 
 [5 <./images/mapa_estaciones.png>]
-
-LaTeX Warning: Reference `open-meteo_flows' on page 6 undefined on input line 75.
-
-<images/node-red_open-meteo.png, id=89, 1927.2pt x 1084.05pt>
+<images/node-red_open-meteo.png, id=328, 1927.2pt x 1084.05pt>
 File: images/node-red_open-meteo.png Graphic file (type png)
 <use images/node-red_open-meteo.png>
 Package pdftex.def Info: images/node-red_open-meteo.png  used on input line 79.
@@ -1017,71 +1068,29 @@ Package pdftex.def Info: images/node-red_open-meteo.png  used on input line 79.
 
 
 [6 <./images/node-red_grafcan.png>]
-
-LaTeX Warning: Reference `visualizacion_1' on page 7 undefined on input line 108.
-
-
-LaTeX Warning: Reference `visualizacion_2' on page 7 undefined on input line 108.
-
-
-LaTeX Warning: Reference `visualizacion_3' on page 7 undefined on input line 108.
-
-<images/visualizacion_1.png, id=98, 620.7993pt x 395.3169pt>
+<images/visualizacion_1.png, id=337, 620.7993pt x 395.3169pt>
 File: images/visualizacion_1.png Graphic file (type png)
 <use images/visualizacion_1.png>
 Package pdftex.def Info: images/visualizacion_1.png  used on input line 114.
 (pdftex.def)             Requested size: 386.95897pt x 246.41495pt.
-<images/visualizacion_2.png, id=99, 607.7907pt x 395.3169pt>
+<images/visualizacion_2.png, id=338, 607.7907pt x 395.3169pt>
 File: images/visualizacion_2.png Graphic file (type png)
 <use images/visualizacion_2.png>
 Package pdftex.def Info: images/visualizacion_2.png  used on input line 120.
 (pdftex.def)             Requested size: 386.95897pt x 251.68695pt.
-<images/visualizacion_3.png, id=100, 617.9085pt x 395.3169pt>
+<images/visualizacion_3.png, id=339, 617.9085pt x 395.3169pt>
 File: images/visualizacion_3.png Graphic file (type png)
 <use images/visualizacion_3.png>
 Package pdftex.def Info: images/visualizacion_3.png  used on input line 126.
 (pdftex.def)             Requested size: 386.95897pt x 247.56104pt.
 
-LaTeX Warning: Reference `tabla_datos_faltantes' on page 7 undefined on input line 134.
-
-
 
 [7 <./images/node-red_open-meteo.png>]
 
-[8 <./images/visualizacion_1.png> <./images/visualizacion_2.png>] (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 139.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 139.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 139.
-LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 139.
-LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 139.
-
+[8 <./images/visualizacion_1.png> <./images/visualizacion_2.png>]
 Overfull \hbox (22.53487pt too wide) in paragraph at lines 139--151
  [][] 
  []
-
-
-Package natbib Warning: Citation `fritsch1980' on page 9 undefined on input line 156.
-
-
-Package natbib Warning: Citation `tawakuli2024' on page 9 undefined on input line 158.
-
-
-LaTeX Warning: Reference `tabla_modelos_seleccionados' on page 9 undefined on input line 166.
 
 
 
@@ -1090,81 +1099,50 @@ Overfull \hbox (16.28159pt too wide) in paragraph at lines 170--182
  [][] 
  []
 
-
-LaTeX Warning: Reference `histogram_1' on page 10 undefined on input line 198.
-
-
-LaTeX Warning: Reference `histogram_2' on page 10 undefined on input line 199.
-
-<images/histogram_humidity.png, id=126, 622.325pt x 391.4625pt>
+<images/histogram_humidity.png, id=365, 622.325pt x 391.4625pt>
 File: images/histogram_humidity.png Graphic file (type png)
 <use images/histogram_humidity.png>
 Package pdftex.def Info: images/histogram_humidity.png  used on input line 203.
 (pdftex.def)             Requested size: 241.84843pt x 152.13216pt.
-<images/histogram_temperature.png, id=127, 621.32124pt x 391.4625pt>
+<images/histogram_temperature.png, id=366, 621.32124pt x 391.4625pt>
 File: images/histogram_temperature.png Graphic file (type png)
 <use images/histogram_temperature.png>
 Package pdftex.def Info: images/histogram_temperature.png  used on input line 210.
 (pdftex.def)             Requested size: 241.84843pt x 152.37706pt.
 
-Package natbib Warning: Citation `gu2019' on page 10 undefined on input line 216.
-
-
-LaTeX Warning: Reference `knn_distances' on page 10 undefined on input line 220.
-
-
-LaTeX Warning: Reference `histogram_knn_humidity' on page 10 undefined on input line 220.
-
-
-LaTeX Warning: Reference `histogram_knn_temperature' on page 10 undefined on input line 220.
-
-
 
 [10 <./images/histogram_humidity.png>]
-<images/knn_distances_temperature_arona.png, id=137, 499.3857pt x 339.669pt>
+<images/knn_distances_temperature_arona.png, id=377, 499.3857pt x 339.669pt>
 File: images/knn_distances_temperature_arona.png Graphic file (type png)
 <use images/knn_distances_temperature_arona.png>
 Package pdftex.def Info: images/knn_distances_temperature_arona.png  used on input line 226.
 (pdftex.def)             Requested size: 241.84843pt x 164.50084pt.
-<images/histogram_humidity_knn.png, id=138, 620.7993pt x 395.3169pt>
+<images/histogram_humidity_knn.png, id=378, 620.7993pt x 395.3169pt>
 File: images/histogram_humidity_knn.png Graphic file (type png)
 <use images/histogram_humidity_knn.png>
 Package pdftex.def Info: images/histogram_humidity_knn.png  used on input line 233.
 (pdftex.def)             Requested size: 241.84843pt x 154.00406pt.
-<images/histogram_temperature_knn.png, id=139, 620.7993pt x 395.3169pt>
+<images/histogram_temperature_knn.png, id=379, 620.7993pt x 395.3169pt>
 File: images/histogram_temperature_knn.png Graphic file (type png)
 <use images/histogram_temperature_knn.png>
 Package pdftex.def Info: images/histogram_temperature_knn.png  used on input line 240.
 (pdftex.def)             Requested size: 241.84843pt x 154.00406pt.
-
-
-LaTeX Warning: Reference `fft_temperature' on page 11 undefined on input line 250.
-
-
-LaTeX Warning: Reference `fft_pressure' on page 11 undefined on input line 251.
-
-<images/fft_temperature.png, id=140, 715.473pt x 426.393pt>
+<images/fft_temperature.png, id=382, 715.473pt x 426.393pt>
 File: images/fft_temperature.png Graphic file (type png)
 <use images/fft_temperature.png>
 Package pdftex.def Info: images/fft_temperature.png  used on input line 255.
 (pdftex.def)             Requested size: 241.84843pt x 144.12589pt.
-<images/fft_pressure.png, id=141, 715.473pt x 426.393pt>
+<images/fft_pressure.png, id=383, 715.473pt x 426.393pt>
 File: images/fft_pressure.png Graphic file (type png)
 <use images/fft_pressure.png>
 Package pdftex.def Info: images/fft_pressure.png  used on input line 262.
 (pdftex.def)             Requested size: 241.84843pt x 144.12589pt.
 
-Package natbib Warning: Citation `ChapmanLindzen1970' on page 11 undefined on input line 271.
-
-
 
 [11 <./images/histogram_temperature.png> <./images/knn_distances_temperature_arona.png>]
 
 [12 <./images/histogram_humidity_knn.png> <./images/histogram_temperature_knn.png> <./images/fft_temperature.png>]
-
-LaTeX Warning: Reference `correlation_map' on page 13 undefined on input line 283.
-
-<images/correlation_heatmap.png, id=165, 481.3182pt x 415.5525pt>
+<images/correlation_heatmap.png, id=402, 481.3182pt x 415.5525pt>
 File: images/correlation_heatmap.png Graphic file (type png)
 <use images/correlation_heatmap.png>
 Package pdftex.def Info: images/correlation_heatmap.png  used on input line 287.
@@ -1181,281 +1159,46 @@ LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
 (Font)              scaled to size 9.85492pt on input line 342.
 LaTeX Font Info:    Font shape `T1/fve/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 346.
+(Font)              scaled to size 7.19995pt on input line 342.
 LaTeX Font Info:    Font shape `T1/fve/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 346.
+(Font)              scaled to size 5.39996pt on input line 342.
 LaTeX Font Info:    Font shape `T1/fve/m/it' in size <10.95> not available
 (Font)              Font shape `T1/fve/m/sl' tried instead on input line 348.
 LaTeX Font Info:    Font shape `T1/fve/m/sl' will be
 (Font)              scaled to size 9.85492pt on input line 348.
 
-./cap2.tex:360: Missing $ inserted.
-<inserted text> 
-                $
-l.360       train_
-                  split = {key: [] for key in template}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-./cap2.tex:366: You can't use `macro parameter character #' in math mode.
-l.366         #
-                Gather train/test splits
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+[15])
 
-./cap2.tex:370: Missing $ inserted.
-<inserted text> 
-                $
-l.370 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:370: Missing } inserted.
-<inserted text> 
-                }
-l.370 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap2.tex:370: Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.370 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./cap2.tex:371: Missing $ inserted.
-<inserted text> 
-                $
-l.371         test_
-                   past_variables = np.array([past_variables_windows[i] for ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:374: Missing $ inserted.
-<inserted text> 
-                $
-l.374 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:374: Missing } inserted.
-<inserted text> 
-                }
-l.374 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap2.tex:374: Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.374 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./cap2.tex:375: Missing $ inserted.
-<inserted text> 
-                $
-l.375         train_
-                    split["past_variables"].extend(train_past_variables)
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:378: Missing $ inserted.
-<inserted text> 
-                $
-l.378 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:378: Missing } inserted.
-<inserted text> 
-                }
-l.378 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap2.tex:378: Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.378 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./cap2.tex:379: Missing $ inserted.
-<inserted text> 
-                $
-l.379         test_
-                   split["past_variables"].extend(test_past_variables)
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:382: Missing $ inserted.
-<inserted text> 
-                $
-l.382 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:382: Missing } inserted.
-<inserted text> 
-                }
-l.382 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap2.tex:382: Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.382 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./cap2.tex:383: Missing $ inserted.
-<inserted text> 
-                $
-l.383       train_
-                  data[target]["past_variables"].extend(train_split["past_va...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:386: Missing $ inserted.
-<inserted text> 
-                $
-l.386 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:386: Missing } inserted.
-<inserted text> 
-                }
-l.386 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap2.tex:386: Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.386 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./cap2.tex:387: Missing $ inserted.
-<inserted text> 
-                $
-l.387       test_
-                 data[target]["past_variables"].extend(test_split["past_vari...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:390: Missing $ inserted.
-<inserted text> 
-                $
-l.390 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap2.tex:390: Missing } inserted.
-<inserted text> 
-                }
-l.390 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap2.tex:390: Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.390 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-)
-
-[15]
+[16]
 Cap\'{\i }tulo 3.
 (./cap3.tex)
 
-[16
+[17
 
 ]
 Cap\'{\i }tulo 4.
 (./cap4.tex)
 
-[17
+[18
 
 ]
 Cap\'{\i }tulo 5.
 (./cap5.tex)
 
-[18
+[19
 
 ]
 Cap\'{\i }tulo 6.
 (./cap6.tex)
 
-[19
+[20
 
 ]
 Cap\'{\i }tulo 7.
 (./cap7.tex)
 
-[20
+[21
 
 ]
 Ap\'endice A.
@@ -1499,7 +1242,7 @@ Overfull \hbox (11.62183pt too wide) in paragraph at lines 52--52
 
 
 
-[21
+[22
 
 
 ]
@@ -1519,11 +1262,11 @@ Overfull \hbox (11.62183pt too wide) in paragraph at lines 79--79
 
 )
 
-[22]
+[23]
 Ap\'endice B.
 (./apendice2.tex)
 
-[23
+[24
 
 ]
 Underfull \hbox (badness 2189) in paragraph at lines 382--383
@@ -1566,18 +1309,10 @@ Underfull \hbox (badness 1331) in paragraph at lines 394--395
  []
 
 
-Package natbib Warning: There were undefined citations.
 
+[25
 
-
-[24
-
-] (./memtfg.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+] (./memtfg.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
@@ -1586,34 +1321,22 @@ L3 programming layer <2024-12-09>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `memtfg.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `memtfg.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  5919CAC6EBEA04C6B74C0233D017C429;6820.
+Package rerunfilecheck Info: File `memtfg.out' has not changed.
+(rerunfilecheck)             Checksum: 5919CAC6EBEA04C6B74C0233D017C429;6820.
  ) 
 Here is how much of TeX's memory you used:
- 22083 strings out of 473254
- 358956 string characters out of 5717961
- 910875 words of memory out of 5000000
- 44524 multiletter control sequences out of 15000+600000
- 645027 words of font info for 275 fonts, out of 8000000 for 9000
+ 22128 strings out of 473254
+ 359647 string characters out of 5717961
+ 911875 words of memory out of 5000000
+ 44564 multiletter control sequences out of 15000+600000
+ 644407 words of font info for 270 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1075b,877s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (33 pages, 1712410 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
+Output written on memtfg.pdf (35 pages, 1698475 bytes).
 PDF statistics:
- 326 PDF objects out of 1000 (max. 8388607)
- 236 compressed objects within 3 object streams
- 106 named destinations out of 1000 (max. 500000)
- 82513 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 525 PDF objects out of 1000 (max. 8388607)
+ 435 compressed objects within 5 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 82817 words of extra memory for PDF output out of 89155 (max. 10000000)
 

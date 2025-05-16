@@ -122,8 +122,6 @@ def create_processed_windows(past_n, future_n, step, train_percent, use_covariat
       forbidden = sorted(i for i in forbidden if 0 <= i < windows_count)
       train_idxs = sorted(set(range(windows_count)) - set(forbidden))
 
-      train_split = {key: [] for key in template}
-      test_split = {key: [] for key in template}
       for dataset in range(len(location_data)):
         past_variables_windows = location_data[dataset]["past_variables"]
         future_variables_windows = location_data[dataset]["future_variables"]
@@ -136,22 +134,14 @@ def create_processed_windows(past_n, future_n, step, train_percent, use_covariat
         test_past_variables = np.array([past_variables_windows[i] for i in test_indexes])
         test_future_variables = np.array([future_variables_windows[i] for i in test_indexes])
         test_y = np.array([y_windows[i] for i in test_indexes])
-        
-        train_split["past_variables"].extend(train_past_variables)
-        train_split["future_variables"].extend(train_future_variables)
-        train_split["y"].extend(train_y)
-        
-        test_split["past_variables"].extend(test_past_variables)
-        test_split["future_variables"].extend(test_future_variables)
-        test_split["y"].extend(test_y)
       
-      train_data[target]["past_variables"].extend(train_split["past_variables"])
-      train_data[target]["future_variables"].extend(train_split["future_variables"])
-      train_data[target]["y"].extend(train_split["y"])
-      
-      test_data[target]["past_variables"].extend(test_split["past_variables"])
-      test_data[target]["future_variables"].extend(test_split["future_variables"])
-      test_data[target]["y"].extend(test_split["y"])
+        train_data[target]["past_variables"].extend(train_past_variables)
+        train_data[target]["future_variables"].extend(train_future_variables)
+        train_data[target]["y"].extend(train_y)
+        
+        test_data[target]["past_variables"].extend(test_past_variables)
+        test_data[target]["future_variables"].extend(test_future_variables)
+        test_data[target]["y"].extend(test_y)
         
   # Finished data aggregation #
   print("Data shape:")
