@@ -56,20 +56,20 @@ que limitaba su eficacia para secuencias largas.
 Para superar estas limitaciones, Hochreiter y Schmidhuber propusieron en 1997 las Long Short-Term Memory (LSTM), una arquitectura RNN que incorpora puertas de entrada,
 olvido y salida, permitiendo el flujo de gradiente a través de largas secuencias y mejorando sustancialmente la capacidad de memoria de la red \cite{hochreiter1997}.
 Posteriormente, Cho et al. introdujeron en 2014 las Gated Recurrent Units (GRU), una simplificación de las LSTM con menor número de parámetros,
-que ha demostrado en muchos casos un rendimiento comparable acelerando el entrenamiento[7]. 
+que ha demostrado en muchos casos un rendimiento comparable acelerando el entrenamiento\cite{cho2014}. 
 Más recientemente, la arquitectura Transformer, basada completamente en mecanismos de atención y sin conexiones recurrentes, revolucionó el campo al
-mejorar la paralelización y capturar dependencias de largo alcance en el tiempo con mayor eficacia[8].
+mejorar la paralelización y capturar dependencias de largo alcance en el tiempo con mayor eficacia\cite{vaswani2017}.
 
 A partir de 2015 surgieron estudios que adaptaron estas arquitecturas al ámbito meteorológico. Shi et al. desarrollaron el ConvLSTM, que añade convoluciones espaciales a
-la LSTM para modelar simultáneamente la dinámica espacial y temporal en tareas de nowcasting de precipitación[9]. Weyn et al. demostraron en 2019 que redes
+la LSTM para modelar simultáneamente la dinámica espacial y temporal en tareas de nowcasting de precipitación\cite{shi2015}. Weyn et al. demostraron en 2019 que redes
 profundas convolucionales aplicadas a datos globales de variables meteorológicas pueden mejorar la predicción a corto plazo frente a los modelos numéricos tradicionales,
-especialmente al resolver patrones locales que escapan a la resolución de la rejilla de los sistemas de predicción numérica del tiempo (NWP)[10].
+especialmente al resolver patrones locales que escapan a la resolución de la rejilla de los sistemas de predicción numérica del tiempo (NWP)\cite{weyn2019}.
 
 La mayoría de los enfoques anteriores se especializan en una región o estación concreta, entrenando modelos independientes para cada ubicación. Esto requiere un esfuerzo de
 reentrenamiento y calibración local cada vez que se desea aplicar el sistema en un punto nuevo. Algunos trabajos recientes abordan la generalización geográfica mediante la
- inclusión de información posicional o condiciones iniciales específicas de cada punto dentro del modelo, aunque todavía con resultados preliminares[11][12]. 
+ inclusión de información posicional o condiciones iniciales específicas de cada punto dentro del modelo, aunque todavía con resultados preliminares\cite{fu2019}. 
 El desarrollo de un modelo verdaderamente “generalista” —capaz de recibir como entrada únicamente datos de sensores básicos, sin necesidad de reentrenar, y proporcionar predicciones meteorológicas
-de calidad comparable o superior a las de los NWP en cualquier ubicación— se conoce como el problema de zero-shot, debido 
+de calidad comparable o superior a las de los NWP en cualquier ubicación— se conoce como el problema de zero-shot \cite{deznabi2024}, debido 
 y constituye un reto abierto y de gran interés práctico.
 
 \section{Objetivos}

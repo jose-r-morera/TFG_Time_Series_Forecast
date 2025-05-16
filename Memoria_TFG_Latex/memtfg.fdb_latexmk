@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1747401922.54835 "/home/jr/Desktop/TFG_Pronostico_secuencias_temporales/Memoria_TFG_Latex/memtfg.tex" "memtfg.pdf" "memtfg" 1747401924.95817 0
-  "/home/jr/Desktop/TFG_Pronostico_secuencias_temporales/Memoria_TFG_Latex/memtfg.tex" 1747401826.23164 11428 6e0af0cf06c6c5e01701c1dac785164e ""
+["pdflatex"] 1747406950.11208 "/home/jr/Desktop/TFG_Pronostico_secuencias_temporales/Memoria_TFG_Latex/memtfg.tex" "memtfg.pdf" "memtfg" 1747406952.60325 0
+  "/home/jr/Desktop/TFG_Pronostico_secuencias_temporales/Memoria_TFG_Latex/memtfg.tex" 1747406949.87808 12647 7eafd1f9ac9d30c7dcb3322d978d27cd ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
@@ -162,7 +162,7 @@
   "algorithm2e.sty" 1528822142 138651 c006eb51fab245e2cbd4311ea372d89f ""
   "apendice1.tex" 1528822142 1435 c4b1e0b47185a00f88ad6ded6c858cb7 ""
   "apendice2.tex" 1528822142 86 001584b14e2e02f9179860accc032692 ""
-  "cap1.tex" 1747401922.01925 9236 c9cf447417c260d41766f229a5e623a0 ""
+  "cap1.tex" 1747406505.86768 9308 9c21768fa9bea822f02722f88fa82a43 ""
   "cap2.tex" 1747392362.42086 23875 aecbe868457cac9ce39f7ac0b6e9e3b6 ""
   "cap3.tex" 1747392221.5694 295 edc6b4614049968d858b677da3ff1566 ""
   "cap4.tex" 1528822142 221 731ee6e644a26c8d5ceae3fd4efa999a ""
@@ -186,12 +186,12 @@
   "images/visualizacion_1.png" 1747176006.06187 106330 dab098ad97ba91de070a93fc79fe26e3 ""
   "images/visualizacion_2.png" 1747176038.63779 102976 8be417a2d312b176ab03d2adbdf947bb ""
   "images/visualizacion_3.png" 1747176023.36983 173748 04054b5560fa575e7a7bec2507d8e341 ""
-  "memtfg.aux" 1747401924.84724 13602 955a472063a0c3a532e209a4e450be02 "pdflatex"
-  "memtfg.lof" 1747401924.85124 2355 b69510e0501a642b7a5ca3143df495f8 "pdflatex"
-  "memtfg.lot" 1747401924.85124 587 a848f16b8de1e1927a256c6d73feb50a "pdflatex"
-  "memtfg.out" 1747401924.85124 6639 0dafb401146d0d3496a93a76b30a70ac "pdflatex"
-  "memtfg.tex" 1747401826.23164 11428 6e0af0cf06c6c5e01701c1dac785164e ""
-  "memtfg.toc" 1747401924.85124 3376 b1af6854db3623f2498a138e19447129 "pdflatex"
+  "memtfg.aux" 1747406952.49007 13902 54b11856f6f8a5aaeea03ae1f5753bc0 "pdflatex"
+  "memtfg.lof" 1747406952.49407 2355 b69510e0501a642b7a5ca3143df495f8 "pdflatex"
+  "memtfg.lot" 1747406952.49407 587 a848f16b8de1e1927a256c6d73feb50a "pdflatex"
+  "memtfg.out" 1747406952.49407 6639 0dafb401146d0d3496a93a76b30a70ac "pdflatex"
+  "memtfg.tex" 1747406949.87808 12647 7eafd1f9ac9d30c7dcb3322d978d27cd ""
+  "memtfg.toc" 1747406952.49407 3376 b1af6854db3623f2498a138e19447129 "pdflatex"
   "multirow.sty" 1528822142 7374 f7c1f13fc632dd5c9b220a247d233082 ""
   "spanish.ldf" 1528822142 21612 5772dec1e643132e9ec6e1b45cbe2ddb ""
   (generated)
