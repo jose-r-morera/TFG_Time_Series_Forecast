@@ -396,4 +396,7 @@ Se utilizan las ventanas del conjunto de entremaniento para calcular las caracte
 Usamos la estandarización o normalización Z-score, que consiste en restar la media y dividir por la desviación típica.
 De esta forma, los datos quedan centrados en 0 y con una desviación típica de 1.
 
+La normalización se aplica a la variable objetivo y las covariables meteorológicas, tanto en los datos pasados como los datos a predecir (y). 
+No se aplica a las variables de codificación temporal, ya que al tratarse de senos y cosenos, su rango ya es limitado entre -1 y 1.
+
 Debemos almacenar los parámetros de normalización puesto que serán necesarios para tratar cualquier dato que se suministre en el futuro al sistema.
