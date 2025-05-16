@@ -3,7 +3,9 @@ Se desea trabajar con series temporales sobre mediciones climatológicas.
 En concreto, se eligen las variables de temperatura del aire, humedad relativa y presión atmosférica en la superficie.
 Dichas variables son estudiadas con frecuencia horaria, en el intervalo comprendido entre el 1 de marzo de 2023 y el 28 de febrero de 2025.
 
-Es relevante el uso de datos en un período múltiplo del año, para asegurar que se capturan las variaciones estacionales y que el conjunto de datos está suficientemente equilibrado.
+Es imprescindible disponer de un conjunto de datos que abarque un período de tiempo suficientemente amplio para poder cubrir las diversas condiciones climáticas que pueden presentarse.
+Además, es relevante el uso de datos en un período múltiplo del año, para asegurar que se capturan las variaciones estacionales y que el conjunto de datos está suficientemente equilibrado.
+Es decir, si se emplearan un año y 3 meses, se podría sesgar el conjunto introduciendo más días con temperaturas bajas, por ejemplo, si se cubrieran 2 inviernos pero un solo verano.
 
 \section{Fuentes de los datos}
 
@@ -82,8 +84,8 @@ Los resultados se almacenan en una base de datos PostgreSQL.
 \end{figure}
 
 \subsection{Almacenamiento}
-Se estudian distintas alternativas para el almacenamiento de los datos.
-Se opta por emplear TimescaleDB, una extensión del popular sistema PostgreSQL
+Se estudian distintas alternativas para el almacenamiento de los datos, fundamentalmente, servicios de bases de datos como Redis, MongoDB o PostgreSQL.
+Tras valorar las opciones, se opta por emplear TimescaleDB, una extensión del popular sistema PostgreSQL
 de bases de datos relacionales, especialmente adaptada para el manejo de series temporales. 
 
 Se establece un servidor TimescaleDB en un contenedor Docker. Se configura una tabla para cada estación y cada fuente: Grafcan, Open-Meteo ICON y Open-Meteo ARPEGE. 
@@ -163,7 +165,8 @@ Los datos sintéticos son etiquetados como tales para poder ser identificados po
 \subsection{Selección de modelo de Open-Meteo}
 Para cada variable se selecciona el modelo de Open-Meteo que mejor se ajusta a los datos de Grafcan.
 Se emplean diversas métricas: los coeficiente de correlación de Pearson, Spearman y Kendall, así como el error cuadrático medio (MSE) y 
-la distancia euclídea. Se elige el modelo que mejor resultados da en la mayoría de indicadores. Los resultados se muestran en la tabla \ref{tabla_modelos_seleccionados}.
+la distancia euclídea. Se elige el modelo que mejor resultados da en la mayoría de indicadores. Los modelos seleccionados y un ejemplo de las métricas
+ se muestran en las tablas \ref{tabla_modelos_seleccionados} y .
 
 \begin{table}[htb]
     \centering
@@ -182,6 +185,32 @@ la distancia euclídea. Se elige el modelo que mejor resultados da en la mayorí
     \caption{Modelo de Open-Meteo seleccionado para cada variable y estación}
     \label{tabla_modelos_seleccionados}
 \end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Métricas de similitud con Grafcan para Arona}
+\label{tab:sim_metrics}
+\footnotesize {
+\begin{tabular}{l  cc  cc  cc}
+\toprule
+\textbf{Métrica} &
+\multicolumn{2}{c}{\textbf{air\_temperature}} &
+\multicolumn{2}{c}{\textbf{atmospheric\_pressure}} &
+\multicolumn{2}{c}{\textbf{relative\_humidity}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+ & \textbf{ICON} & \textbf{ARPEGE} & \textbf{ICON} & \textbf{ARPEGE} & \textbf{ICON} & \textbf{ARPEGE} \\
+\midrule
+Pearson               & 0.8871 & 0.8415 & 0.9890 & 0.9891 & 0.6281 & 0.3838 \\
+Spearman              & 0.9116 & 0.8519 & 0.9859 & 0.9866 & 0.6026 & 0.2748 \\
+Kendall               & 0.7489 & 0.6650 & 0.9048 & 0.9070 & 0.4423 & 0.1973 \\
+MSE                   & 2.8616 & 5.6179 & 1.1085 & 0.5754 & 208.6453 & 406.1746 \\
+Euclidean Distance    & 224.0627 & 313.9447 & 139.4523 & 100.4768 & 1913.2363 & 2669.4431 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+
 Observamos que, en general, el modelo ICON es el que mejor se ajusta a las variables de temperatura del aire y humedad relativa,
  mientras que el modelo ARPEGE es el que mejor se ajusta a la presión atmosférica.
 
@@ -247,8 +276,38 @@ Se realiza un análisis de Fourier para cada variable. De esta forma, se pueden 
 es relevante para detectar las frecuencias a emplear en la codificación de la información temporal, que se aborda en el siguiente apartado.
 
 Se emplea la transformada rápida de Fourier (FFT), se filtran las frecuencias positivas, se acota a las frecuencias mayores a \(10^{-3}\) 
- (unos 16,66... minutos) y se grafican haciendo uso de escala logarítmica en el eje X. Se pueden observar ejemplos en las figuras \ref{fft_temperature},
+ (unos 16,66... minutos) y se grafican haciendo uso de escala logarítmica en el eje X. El pseudocódigo se muestra en \ref{fft_positive}. Se pueden observar ejemplos en las figuras \ref{fft_temperature},
  y \ref{fft_pressure}. Se señalan las 5 frecuencias de mayor magnitud con un punto en rojo. 
+
+ \begin{figure}[H]
+{\small
+ \hrule \
+ {\bf\small Pseudocódigo Cálculo de FFT Positiva}
+ \hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun} \= {\bf ción} calcular\_fft\_positiva($valores$, $intervalo\_muestreo$): \\
+\ 2: \> \# 1. Computar la transformada rápida de Fourier del vector de entrada \\
+\ 3: \> $fft\_result$ = FFT($valores$)  \\
+\ 4: \> \# 2. Generar los intervalos de frecuencia para cada punto de la FFT \\
+\ 5: \> $frecuencias$ = FFTFREQ(longitud($valores$), $intervalo\_muestreo$)  \\
+\ 6: \> \# 3. Calcular la mitad de la longitud para aislar frecuencias no negativas \\
+\ 7: \> $mitad$ = piso(longitud($valores$) / 2)  \\
+\ 8: \> \# 4. Extraer solo la parte de frecuencias positivas \\
+\ 9: \> $resultado\_fft\_positivo$ = $fft\_result$[0:$mitad$]  \\
+\ 10: \> $frecuencias\_positivas$ = $frecuencias$[0:$mitad$]  \\
+\ 11: \> \# 5. Calcular la magnitud de los coeficientes complejos resultantes \\
+\ 12: \> $magnitud$ = valor\_absoluto($resultado\_fft\_positivo$)  \\
+\ 13: \> \# 6. Devolver el eje de frecuencias positivas y su espectro de magnitudes \\
+\ 14: \> {\bf Retornar} $frecuencias\_positivas$, $magnitud$  \\
+\end{tabbing}
+\end{center}
+\hrule
+}
+\caption{Pseudocódigo Cálculo de FFT Positiva}
+\label{fft_positive}
+\end{figure}
+
 
 \begin{figure}
     \centering
@@ -280,7 +339,8 @@ Se estudia la frecuencia semanal, pero se descarta al existir poca correlación.
 
 \subsection{Estudio de correlación}
 Se estudia la correlación entre las distintas variables que conforman el dataset mediante una matriz de correlación con el coeficiente de Pearson.
-Se observa que las variables climáticas tienen una correlación de entorno a 0.3, lo que indica una correlación baja \ref{correlation_map}.
+Se observa que las variables climáticas tienen una correlación negativa de en torno a 0.3, lo que indica que las variables están relacionadas de 
+forma baja/moderada e inversamente proporcional \ref{correlation_map}.
 
 \begin{figure}
     \centering
@@ -396,7 +456,7 @@ Se utilizan las ventanas del conjunto de entremaniento para calcular las caracte
 Usamos la estandarización o normalización Z-score, que consiste en restar la media y dividir por la desviación típica.
 De esta forma, los datos quedan centrados en 0 y con una desviación típica de 1.
 
-La normalización se aplica a la variable objetivo y las covariables meteorológicas, tanto en los datos pasados como los datos a predecir (y). 
+La normalización se aplica a la variable objetivo y las covariables meteorológicas, tanto en los datos pasados como los datos a predecir ($y$). 
 No se aplica a las variables de codificación temporal, ya que al tratarse de senos y cosenos, su rango ya es limitado entre -1 y 1.
 
 Debemos almacenar los parámetros de normalización puesto que serán necesarios para tratar cualquier dato que se suministre en el futuro al sistema.

@@ -11,7 +11,16 @@ from custom_attention import CustomAttention
 ######################################################################
 
 # VARIABLES #
-DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_full_p17.pkl"
+#DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_p17.pkl"
+# DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_la_orotava_p17.pkl"
+# DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_la_laguna_p17.pkl"
+# DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_punta_hidalgo_p17.pkl"
+
+# DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_orotava_p17.pkl"
+DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_laguna_orotava_p17.pkl"
+
+# DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_full_p17.pkl"
+
 DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
 
 BATCH_SIZE = 64
