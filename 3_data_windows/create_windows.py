@@ -108,9 +108,9 @@ def create_processed_windows(past_n, future_n, step, train_percent, use_covariat
         # Store data
         location_data.append(windows_data)
         
-      total_windows = len(location_data[0]["past_variables"])
+      windows_count = len(location_data[0]["past_variables"])
       overlap_windows = math.ceil((past_n + future_n)/step) # number of windows that overlap with the current one
-      test_indexes = random.sample(range(total_windows), int(total_windows * (1 - train_percent)))
+      test_indexes = random.sample(range(windows_count), int(windows_count * (1 - train_percent)))
     
       forbidden = set()
       for idx in test_indexes:
@@ -119,8 +119,8 @@ def create_processed_windows(past_n, future_n, step, train_percent, use_covariat
               forbidden.add(idx + j)
 
       # Clip to valid window numbers
-      forbidden = sorted(i for i in forbidden if 0 <= i < total_windows)
-      train_idxs = sorted(set(range(total_windows)) - set(forbidden))
+      forbidden = sorted(i for i in forbidden if 0 <= i < windows_count)
+      train_idxs = sorted(set(range(windows_count)) - set(forbidden))
 
       train_split = {key: [] for key in template}
       test_split = {key: [] for key in template}

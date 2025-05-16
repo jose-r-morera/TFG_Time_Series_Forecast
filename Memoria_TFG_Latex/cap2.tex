@@ -290,6 +290,120 @@ Se observa que las variables climáticas tienen una correlación de entorno a 0.
 \end{figure}
 
 \section{Creación de ventanas de datos}
+Para la predicción de series temporales, los modelos neuronales requieren como entrada los valores de las variables en un número de instantes, en nuestro caso horas,
+previos, que denominaremos P. Así mismo, se define un número de horas a predecir, que denominaremos N. 
+De esta forma, un modelo requiere P horas de datos para predecir N horas futuras. Esto es lo que se conoce como ventana de datos.
 
+En su versión más simple, la univariable, consta de una componente X, los valores de las variables en P pasos, y una componente Y, un vector
+de tamaño N con los valores a predecir. 
+No obstante, puede ser relevante incluir información adicional exógena sobre los valores a predecir, como la codificación temporal 
+(o en otros dominios, si el día es festivo, etc).
 
+De esta forma, optamos por contruir ventanas de datos con 3 componentes, X e Y, ya definidas, así como F, formada por las 4 variables de codificación temporal 
+para cada paso a predecir N. Empíricamente comprobamos que la inclusión de esta información adicional mejora ligeramente el rendimiento del modelo.
 
+En la práctica, estas ventanas se construyen mediante la técnica de ventana deslizante, que consiste en recorrer la serie temporal desplazando 
+la ventana de datos en un número de pasos, que denominaremos S. Establecemos S=6 para que la ventana se desplace cada 6 horas, con el fin de evitar 
+la redundancia de datos.
+
+Como datos pasados empleamos la variable meteorológcia estudiada, así como las restantes como covariables. Se comprueba exógenamente que 
+añadir estas covariables mejora el rendimiento del modelo. También se emplea como datos pasados las variables de codificación temporal. 
+
+De esta forma, una ventana tiene X de tamaño P * 7, Y de tamaño N y F de tamaño N * 4.
+
+\subsection{Implementación}
+En primer lugar, se define una función \textit{df\_raw\_windows} que recibe como parámetros:
+\itemize{
+    \item df: un dataframe de pandas, que es una estructura de datos de python similar a una tabla, correspondiente a un dataset de una ubicación,
+    \item P: el número de pasos pasados.
+    \item N: el número de pasos a predecir.
+    \item S: el número de pasos a desplazar la ventana.
+    \item past\_features: un array con los nombres de las variables usadas como entradas.
+    \item future\_features: un array con los nombres de las variables exógenas usadas como datos futuros.
+    \item target: el nombre de la variable objetivo a predecir.
+}
+
+La función devuelve un objeto con 3 atributos,\textit{past\_variables}, \textit{future\_variables} e \textit{y}.
+Siendo cada uno un arreglo con los datos de cada componente de las ventanas de datos. Es decir, la ventana i ésima
+está formada por los iésimos elementos de cada uno de los 3 atributos. Esta estructura se debe al comportamiento
+de las librerías de los modelos de aprendizaje profundo empleados, que procesan los datos de forma más eficiente en este formato,
+como se verá más adelante.
+
+\bigskip
+El comportamiento de la función principal es el siguiente:
+
+\begin{figure}[H]
+{\small
+ \hrule \
+ {\bf\small Pseudocódigo Creación de Ventanas de Datos}
+ \hrule
+\begin{center}
+\begin{tabbing}
+\ 1: $train_data$ = \{\} \\
+\ 1: $test_data$ = \{\} \\
+\ 1: {\bf Par}\={\bf a cada} variable objetivo $v$: \\
+\ 1: \> {\bf Par}\={\bf a cada} ubicación $u$:  \\
+\ 1: \> $location\_data$ = [] \\
+\ 2: \> \> {\bf Par}\={\bf a cada} dataset $d$ en la ubicación $u$:  \\
+\ 3: \> \> \> $ventanas$ =  \textit{df\_raw\_windows()} \\
+\ 4: \> \> \> $location\_data$.añadir($ventanas$) \\
+\ 5: \> \> $windows\_count$ = len($location\_data$[0][$y$]) \\
+\ 6: \> \> $overlap\_windows$ = ceil(($past\_n$ + $future\_n$)/$step$) \\
+\ 7: \> \> $test\_indexes$ = random\_sample($windows\_count$, $test\_percent$) \\
+\ 7: \> \> $forbidden$ = set() \\
+\ 7: \> \> {\bf for} $index$ in $test\_indexes$: \\
+\    \> \>     \# forbid index itself and the next `$overlap\_windows$ - 1` windows \\
+\ 7: \> \> \>   {\bf for} \= $j$ in range($overlap\_windows$): \\
+\ 7: \> \> \> \>     $forbidden$.add($index$ + $j$) \\
+\ 7: \> \> $train\_indexes$ = range($windows\_count$) - $forbidden$ \\
+
+      train_split = {key: [] for key in template}
+      test_split = {key: [] for key in template}
+      for dataset in range(len(location_data)):
+        past_variables_windows = location_data[dataset]["past_variables"]
+        future_variables_windows = location_data[dataset]["future_variables"]
+        y_windows = location_data[dataset]["y"]
+        # Gather train/test splits
+        train_past_variables = np.array([past_variables_windows[i] for i in train_idxs])
+        train_future_variables = np.array([future_variables_windows[i] for i in train_idxs])
+        train_y = np.array([y_windows[i] for i in train_idxs])
+
+        test_past_variables = np.array([past_variables_windows[i] for i in test_indexes])
+        test_future_variables = np.array([future_variables_windows[i] for i in test_indexes])
+        test_y = np.array([y_windows[i] for i in test_indexes])
+        
+        train_split["past_variables"].extend(train_past_variables)
+        train_split["future_variables"].extend(train_future_variables)
+        train_split["y"].extend(train_y)
+        
+        test_split["past_variables"].extend(test_past_variables)
+        test_split["future_variables"].extend(test_future_variables)
+        test_split["y"].extend(test_y)
+      
+      train_data[target]["past_variables"].extend(train_split["past_variables"])
+      train_data[target]["future_variables"].extend(train_split["future_variables"])
+      train_data[target]["y"].extend(train_split["y"])
+      
+      test_data[target]["past_variables"].extend(test_split["past_variables"])
+      test_data[target]["future_variables"].extend(test_split["future_variables"])
+      test_data[target]["y"].extend(test_split["y"])
+
+\end{tabbing}
+\end{center}
+\hrule
+}
+\caption{Pseudocódigo Creación de Ventanas de Datos}
+\label{branch_and_bound_max_diversity}
+\end{figure}
+
+Para cada ubicación se eligen los índices de las ventanas de test aleatoriamente. Estos índices son los mismos para los dos datasets de una localización, 
+puesto que los datos son bastante similares entre ambos y queremos evitar el filtrado de información. 
+Cabe destacar la consideración de ventanas "prohibidas", que se descartan del conjunto de entrenamietno para evitar filtrar datos.
+De esta forma, todas las ventanas previas que estén solapadas con una ventana de test son descartadas.
+
+\subsection{Normalización}
+Se utilizan las ventanas del conjunto de entremaniento para calcular las características de la normalización.
+Usamos la estandarización o normalización Z-score, que consiste en restar la media y dividir por la desviación típica.
+De esta forma, los datos quedan centrados en 0 y con una desviación típica de 1.
+
+Debemos almacenar los parámetros de normalización puesto que serán necesarios para tratar cualquier dato que se suministre en el futuro al sistema.

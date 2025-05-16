@@ -1,204 +1,262 @@
+I0000 00:00:1747326952.335390  769935 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1786 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 3GB, pci bus id: 0000:01:00.0, compute capability: 6.1
+2025-05-15 17:35:52.448581: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5...I0000 00:00:1747326956.484970  769992 cuda_dnn.cc:529] Loaded cuDNN version 90800
+ best_val_loss=0.05756
+ Run 2/5... best_val_loss=0.05696
+ Run 3/5... best_val_loss=0.05747
+ Run 4/5... best_val_loss=0.05723
+ Run 5/5... best_val_loss=0.05783
+ → mean val_loss = 0.05741 ± 0.00030
 
-=== Dataset: paquetes_s6_cov_p6.pkl ===
- Run 1/5... best_val_loss=0.05733
- Run 2/5... best_val_loss=0.05665
- Run 3/5... best_val_loss=0.05750
- Run 4/5... best_val_loss=0.05683
- Run 5/5... best_val_loss=0.05695
- → mean val_loss = 0.05705 ± 0.00031
+=== Dataset: paquetes_s6_cov_full_p7.pkl ===
+2025-05-15 17:42:05.785436: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.05543
+ Run 2/5... best_val_loss=0.05598
+ Run 3/5... best_val_loss=0.05552
+ Run 4/5... best_val_loss=0.05634
+ Run 5/5... best_val_loss=0.05587
+ → mean val_loss = 0.05583 ± 0.00033
 
-=== Dataset: paquetes_s6_cov_p7.pkl ===
- Run 1/5... best_val_loss=0.05446
- Run 2/5... best_val_loss=0.05447
- Run 3/5... best_val_loss=0.05419
- Run 4/5... best_val_loss=0.05453
- Run 5/5... best_val_loss=0.05398
- → mean val_loss = 0.05433 ± 0.00021
+=== Dataset: paquetes_s6_cov_full_p8.pkl ===
+ Run 1/5... best_val_loss=0.05742
+ Run 2/5... best_val_loss=0.05679
+ Run 3/5... best_val_loss=0.05683
+ Run 4/5... best_val_loss=0.05684
+ Run 5/5... best_val_loss=0.05745
+ → mean val_loss = 0.05707 ± 0.00030
 
-=== Dataset: paquetes_s6_cov_p8.pkl ===
- Run 1/5... best_val_loss=0.05571
- Run 2/5... best_val_loss=0.05494
- Run 3/5... best_val_loss=0.05575
- Run 4/5... best_val_loss=0.05529
- Run 5/5... best_val_loss=0.05453
- → mean val_loss = 0.05524 ± 0.00047
+=== Dataset: paquetes_s6_cov_full_p9.pkl ===
+2025-05-15 17:52:39.122079: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.05802
+ Run 2/5... best_val_loss=0.05763
+ Run 3/5... best_val_loss=0.05796
+ Run 4/5... best_val_loss=0.05832
+ Run 5/5... best_val_loss=0.05796
+ → mean val_loss = 0.05798 ± 0.00022
 
-=== Dataset: paquetes_s6_cov_p9.pkl ===
- Run 1/5... best_val_loss=0.05532
- Run 2/5... best_val_loss=0.05585
- Run 3/5... best_val_loss=0.05564
- Run 4/5... best_val_loss=0.05552
- Run 5/5... best_val_loss=0.05549
- → mean val_loss = 0.05556 ± 0.00018
+=== Dataset: paquetes_s6_cov_full_p10.pkl ===
+ Run 1/5... best_val_loss=0.05459
+ Run 2/5... best_val_loss=0.05365
+ Run 3/5... best_val_loss=0.05391
+ Run 4/5... best_val_loss=0.05327
+ Run 5/5... best_val_loss=0.05375
+ → mean val_loss = 0.05383 ± 0.00043
 
-=== Dataset: paquetes_s6_cov_p10.pkl ===
- Run 1/5... best_val_loss=0.05190
- Run 2/5... best_val_loss=0.05191
- Run 3/5... best_val_loss=0.05164
- Run 4/5... best_val_loss=0.05223
- Run 5/5... best_val_loss=0.05262
- → mean val_loss = 0.05206 ± 0.00033
+=== Dataset: paquetes_s6_cov_full_p11.pkl ===
+ Run 1/5... best_val_loss=0.04976
+ Run 2/5... best_val_loss=0.04993
+ Run 3/5... best_val_loss=0.05033
+ Run 4/5... best_val_loss=0.04909
+ Run 5/5... best_val_loss=0.04971
+ → mean val_loss = 0.04976 ± 0.00040
 
-=== Dataset: paquetes_s6_cov_p11.pkl ===
- Run 1/5... best_val_loss=0.04919
- Run 2/5... best_val_loss=0.04922
- Run 3/5... best_val_loss=0.04893
- Run 4/5... best_val_loss=0.04886
- Run 5/5... best_val_loss=0.04943
- → mean val_loss = 0.04913 ± 0.00021
+=== Dataset: paquetes_s6_cov_full_p12.pkl ===
+ Run 1/5... best_val_loss=0.04999
+ Run 2/5... best_val_loss=0.04977
+ Run 3/5... best_val_loss=0.04931
+ Run 4/5... best_val_loss=0.04927
+ Run 5/5... best_val_loss=0.04938
+ → mean val_loss = 0.04955 ± 0.00029
 
-=== Dataset: paquetes_s6_cov_p12.pkl ===
- Run 1/5... best_val_loss=0.05032
- Run 2/5... best_val_loss=0.04957
- Run 3/5... best_val_loss=0.05060
- Run 4/5... best_val_loss=0.05048
- Run 5/5... best_val_loss=0.05054
- → mean val_loss = 0.05030 ± 0.00038
+=== Dataset: paquetes_s6_cov_full_p13.pkl ===
+2025-05-15 18:13:18.893936: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.04775
+ Run 2/5... best_val_loss=0.04801
+ Run 3/5... best_val_loss=0.04789
+ Run 4/5... best_val_loss=0.04848
+ Run 5/5... best_val_loss=0.04751
+ → mean val_loss = 0.04793 ± 0.00032
 
-=== Dataset: paquetes_s6_cov_p13.pkl ===
- Run 1/5... best_val_loss=0.04922
- Run 2/5... best_val_loss=0.04831
- Run 3/5... best_val_loss=0.04759
- Run 4/5... best_val_loss=0.04820
- Run 5/5... best_val_loss=0.04770
- → mean val_loss = 0.04820 ± 0.00058
+=== Dataset: paquetes_s6_cov_full_p14.pkl ===
+ Run 1/5... best_val_loss=0.04858
+ Run 2/5... best_val_loss=0.04864
+ Run 3/5... best_val_loss=0.04891
+ Run 4/5... best_val_loss=0.04897
+ Run 5/5... best_val_loss=0.04833
+ → mean val_loss = 0.04868 ± 0.00023
 
-=== Dataset: paquetes_s6_cov_p14.pkl ===
- Run 1/5... best_val_loss=0.04956
- Run 2/5... best_val_loss=0.04935
- Run 3/5... best_val_loss=0.04877
- Run 4/5... best_val_loss=0.04946
- Run 5/5... best_val_loss=0.04903
- → mean val_loss = 0.04924 ± 0.00029
-
-=== Dataset: paquetes_s6_cov_p15.pkl ===
- Run 1/5... best_val_loss=0.04772
- Run 2/5... best_val_loss=0.04654
- Run 3/5... best_val_loss=0.04704
- Run 4/5... best_val_loss=0.04697
- Run 5/5... best_val_loss=0.04616
- → mean val_loss = 0.04688 ± 0.00052
-
-=== Dataset: paquetes_s6_cov_p16.pkl ===
- Run 1/5... best_val_loss=0.04685
- Run 2/5... best_val_loss=0.04582
- Run 3/5... best_val_loss=0.04618
- Run 4/5... best_val_loss=0.04570
- Run 5/5... best_val_loss=0.04684
- → mean val_loss = 0.04628 ± 0.00049
-
-=== Dataset: paquetes_s6_cov_p17.pkl ===
- Run 1/5... best_val_loss=0.04493
- Run 2/5... best_val_loss=0.04491
- Run 3/5... best_val_loss=0.04465
- Run 4/5... best_val_loss=0.04469
- Run 5/5... best_val_loss=0.04417
- → mean val_loss = 0.04467 ± 0.00027
-
-=== Dataset: paquetes_s6_cov_p18.pkl ===
- Run 1/5... best_val_loss=0.04600
- Run 2/5... best_val_loss=0.04595
- Run 3/5... best_val_loss=0.04596
- Run 4/5... best_val_loss=0.04644
- Run 5/5... best_val_loss=0.04613
- → mean val_loss = 0.04610 ± 0.00018
-
-=== Dataset: paquetes_s6_cov_p19.pkl ===
- Run 1/5... best_val_loss=0.04564
- Run 2/5... best_val_loss=0.04500
- Run 3/5... best_val_loss=0.04546
- Run 4/5... best_val_loss=0.04540
- Run 5/5... best_val_loss=0.04529
- → mean val_loss = 0.04536 ± 0.00021
-
-=== Dataset: paquetes_s6_cov_p20.pkl ===
- Run 1/5... best_val_loss=0.04822
- Run 2/5... best_val_loss=0.04732
- Run 3/5... best_val_loss=0.04824
- Run 4/5... best_val_loss=0.04737
- Run 5/5... best_val_loss=0.04758
- → mean val_loss = 0.04775 ± 0.00040
-
-=== Dataset: paquetes_s6_cov_p21.pkl ===
- Run 1/5... best_val_loss=0.05070
- Run 2/5... best_val_loss=0.05091
- Run 3/5... best_val_loss=0.05024
- Run 4/5... best_val_loss=0.04997
- Run 5/5... best_val_loss=0.05121
- → mean val_loss = 0.05061 ± 0.00045
-
-=== Dataset: paquetes_s6_cov_p22.pkl ===
- Run 1/5... best_val_loss=0.05161
- Run 2/5... best_val_loss=0.04996
- Run 3/5... best_val_loss=0.05162
- Run 4/5... best_val_loss=0.05161
- Run 5/5... best_val_loss=0.05052
- → mean val_loss = 0.05106 ± 0.00069
-
-=== Dataset: paquetes_s6_cov_p23.pkl ===
- Run 1/5... best_val_loss=0.04678
- Run 2/5... best_val_loss=0.04701
- Run 3/5... best_val_loss=0.04669
- Run 4/5... best_val_loss=0.04735
- Run 5/5... best_val_loss=0.04736
- → mean val_loss = 0.04704 ± 0.00028
-
-=== Dataset: paquetes_s6_cov_p24.pkl ===
- Run 1/5... best_val_loss=0.04869
- Run 2/5... best_val_loss=0.04911
- Run 3/5... best_val_loss=0.04793
- Run 4/5... best_val_loss=0.04861
- Run 5/5... best_val_loss=0.04822
- → mean val_loss = 0.04851 ± 0.00041
-
-=== Dataset: paquetes_s6_cov_p25.pkl ===
- Run 1/5... best_val_loss=0.04798
- Run 2/5... best_val_loss=0.04737
- Run 3/5... best_val_loss=0.04768
- Run 4/5... best_val_loss=0.04697
- Run 5/5... best_val_loss=0.04734
- → mean val_loss = 0.04747 ± 0.00034
-
-=== Dataset: paquetes_s6_cov_p26.pkl ===
- Run 1/5... best_val_loss=0.04616
- Run 2/5... best_val_loss=0.04681
- Run 3/5... best_val_loss=0.04695
- Run 4/5... best_val_loss=0.04612
- Run 5/5... best_val_loss=0.04697
- → mean val_loss = 0.04660 ± 0.00038
-
-=== Dataset: paquetes_s6_cov_p27.pkl ===
- Run 1/5... best_val_loss=0.04857
- Run 2/5... best_val_loss=0.04794
- Run 3/5... best_val_loss=0.04929
- Run 4/5... best_val_loss=0.04904
- Run 5/5... best_val_loss=0.04890
- → mean val_loss = 0.04875 ± 0.00047
-
-=== Dataset: paquetes_s6_cov_p28.pkl ===
- Run 1/5... best_val_loss=0.05008
- Run 2/5... best_val_loss=0.05071
- Run 3/5... best_val_loss=0.04996
- Run 4/5... best_val_loss=0.05108
- Run 5/5... best_val_loss=0.05028
- → mean val_loss = 0.05042 ± 0.00042
-
-=== Dataset: paquetes_s6_cov_p29.pkl ===
- Run 1/5... best_val_loss=0.04789
- Run 2/5... best_val_loss=0.04827
- Run 3/5... best_val_loss=0.04751
- Run 4/5... best_val_loss=0.04724
- Run 5/5... best_val_loss=0.04713
- → mean val_loss = 0.04761 ± 0.00042
-
-=== Dataset: paquetes_s6_cov_p30.pkl ===
- Run 1/5... best_val_loss=0.04774
- Run 2/5... best_val_loss=0.04701
- Run 3/5... best_val_loss=0.04779
+=== Dataset: paquetes_s6_cov_full_p15.pkl ===
+ Run 1/5... best_val_loss=0.04653
+ Run 2/5... best_val_loss=0.04686
+ Run 3/5... best_val_loss=0.04697
  Run 4/5... best_val_loss=0.04747
- Run 5/5... best_val_loss=0.04796
- → mean val_loss = 0.04759 ± 0.00033
+ Run 5/5... best_val_loss=0.04731
+ → mean val_loss = 0.04703 ± 0.00033
 
-*** Best dataset is paquetes_s6_cov_p17.pkl with mean val_loss = 0.04467 (std=0.00027)
-Best dataset: ../3_data_windows/f6/paquetes_s6_cov_p17.pkl
-All scores: {'../3_data_windows/f6/paquetes_s6_cov_p6.pkl': {'losses': [0.057326994836330414, 0.056654851883649826, 0.05749715864658356, 0.05682680383324623, 0.05694803223013878], 'mean': 0.05705076828598976, 'std': 0.0003140159333697826}, '../3_data_windows/f6/paquetes_s6_cov_p7.pkl': {'losses': [0.054462093859910965, 0.05447274073958397, 0.054189637303352356, 0.05453462526202202, 0.05397634580731392], 'mean': 0.05432708859443665, 'std': 0.00021186117984359776}, '../3_data_windows/f6/paquetes_s6_cov_p8.pkl': {'losses': [0.055711060762405396, 0.05493874475359917, 0.05574939772486687, 0.05528778210282326, 0.05452612787485123], 'mean': 0.05524262264370918, 'std': 0.0004656181174688182}, '../3_data_windows/f6/paquetes_s6_cov_p9.pkl': {'losses': [0.05531597509980202, 0.055854711681604385, 0.05564432963728905, 0.05552099645137787, 0.055485084652900696], 'mean': 0.0555642195045948, 'std': 0.00017919775660259964}, '../3_data_windows/f6/paquetes_s6_cov_p10.pkl': {'losses': [0.051904547959566116, 0.05191029980778694, 0.05164382979273796, 0.052231013774871826, 0.052615609019994736], 'mean': 0.05206106007099152, 'std': 0.0003339804190006055}, '../3_data_windows/f6/paquetes_s6_cov_p11.pkl': {'losses': [0.049192894250154495, 0.049223896116018295, 0.048929180949926376, 0.04885925352573395, 0.04943302273750305], 'mean': 0.04912764951586723, 'std': 0.0002089015399997518}, '../3_data_windows/f6/paquetes_s6_cov_p12.pkl': {'losses': [0.050316765904426575, 0.04957275837659836, 0.05060182511806488, 0.050483204424381256, 0.05053809657692909], 'mean': 0.05030253008008003, 'std': 0.0003769566847228305}, '../3_data_windows/f6/paquetes_s6_cov_p13.pkl': {'losses': [0.049215514212846756, 0.048310693353414536, 0.04759329557418823, 0.048195235431194305, 0.0476953499019146], 'mean': 0.048202017694711684, 'std': 0.0005772844121292852}, '../3_data_windows/f6/paquetes_s6_cov_p14.pkl': {'losses': [0.049556661397218704, 0.04935277998447418, 0.04877464473247528, 0.049461476504802704, 0.049030426889657974], 'mean': 0.04923519790172577, 'std': 0.00029065674615201277}, '../3_data_windows/f6/paquetes_s6_cov_p15.pkl': {'losses': [0.04771680384874344, 0.04653572663664818, 0.047041069716215134, 0.046974387019872665, 0.04615655913949013], 'mean': 0.04688490927219391, 'std': 0.0005247596339040131}, '../3_data_windows/f6/paquetes_s6_cov_p16.pkl': {'losses': [0.04684742912650108, 0.045822612941265106, 0.04617905244231224, 0.045703962445259094, 0.04683709517121315], 'mean': 0.04627803042531013, 'std': 0.0004865231839576937}, '../3_data_windows/f6/paquetes_s6_cov_p17.pkl': {'losses': [0.044926293194293976, 0.04491060599684715, 0.04465162009000778, 0.04469069465994835, 0.0441683866083622], 'mean': 0.04466952010989189, 'std': 0.0002742110064894264}, '../3_data_windows/f6/paquetes_s6_cov_p18.pkl': {'losses': [0.04600391164422035, 0.045946814119815826, 0.04595618322491646, 0.04643842577934265, 0.04613057151436806], 'mean': 0.04609518125653267, 'std': 0.000183702299915425}, '../3_data_windows/f6/paquetes_s6_cov_p19.pkl': {'losses': [0.04564240202307701, 0.04500290006399155, 0.04545769467949867, 0.045399993658065796, 0.045289549976587296], 'mean': 0.04535850808024407, 'std': 0.0002113608699353417}, '../3_data_windows/f6/paquetes_s6_cov_p20.pkl': {'losses': [0.04822017624974251, 0.04732254892587662, 0.04823683202266693, 0.04737276956439018, 0.047582291066646576], 'mean': 0.04774692356586456, 'std': 0.0004027821521684161}, '../3_data_windows/f6/paquetes_s6_cov_p21.pkl': {'losses': [0.05070295184850693, 0.05090863257646561, 0.05023833364248276, 0.0499732680618763, 0.051207780838012695], 'mean': 0.050606193393468855, 'std': 0.0004469126051551888}, '../3_data_windows/f6/paquetes_s6_cov_p22.pkl': {'losses': [0.051610104739665985, 0.04996192455291748, 0.05161576345562935, 0.0516124852001667, 0.050519637763500214], 'mean': 0.051063983142375945, 'std': 0.0006948970926149984}, '../3_data_windows/f6/paquetes_s6_cov_p23.pkl': {'losses': [0.04678024351596832, 0.04701380059123039, 0.04668933525681496, 0.047351136803627014, 0.047362372279167175], 'mean': 0.047039377689361575, 'std': 0.00027994773180843217}, '../3_data_windows/f6/paquetes_s6_cov_p24.pkl': {'losses': [0.04868713766336441, 0.049113888293504715, 0.04793228209018707, 0.04861319437623024, 0.04822078347206116], 'mean': 0.04851345717906952, 'std': 0.0004059685517415879}, '../3_data_windows/f6/paquetes_s6_cov_p25.pkl': {'losses': [0.04797655716538429, 0.047374218702316284, 0.04768086224794388, 0.046969301998615265, 0.047344107180833817], 'mean': 0.047469009459018704, 'std': 0.0003396408959613643}, '../3_data_windows/f6/paquetes_s6_cov_p26.pkl': {'losses': [0.04615797847509384, 0.04681158810853958, 0.04695237800478935, 0.046119220554828644, 0.04697306081652641], 'mean': 0.046602845191955566, 'std': 0.00038330290542998996}, '../3_data_windows/f6/paquetes_s6_cov_p27.pkl': {'losses': [0.04857044667005539, 0.047940559685230255, 0.049287792295217514, 0.0490400493144989, 0.048898324370384216], 'mean': 0.04874743446707726, 'std': 0.0004653491996682345}, '../3_data_windows/f6/paquetes_s6_cov_p28.pkl': {'losses': [0.05007805675268173, 0.05071154609322548, 0.04996079206466675, 0.05107710883021355, 0.050278469920158386], 'mean': 0.05042119473218918, 'std': 0.0004158393627482132}, '../3_data_windows/f6/paquetes_s6_cov_p29.pkl': {'losses': [0.04789339751005173, 0.04826607182621956, 0.047510359436273575, 0.047244030982255936, 0.04713435098528862], 'mean': 0.04760964214801788, 'std': 0.00041972545756876887}, '../3_data_windows/f6/paquetes_s6_cov_p30.pkl': {'losses': [0.04774048551917076, 0.047008853405714035, 0.04779354855418205, 0.047471098601818085, 0.04795617610216141], 'mean': 0.04759403243660927, 'std': 0.0003316475379069082}}
+=== Dataset: paquetes_s6_cov_full_p16.pkl ===
+ Run 1/5... best_val_loss=0.04747
+ Run 2/5... best_val_loss=0.04710
+ Run 3/5... best_val_loss=0.04736
+ Run 4/5... best_val_loss=0.04746
+ Run 5/5... best_val_loss=0.04757
+ → mean val_loss = 0.04739 ± 0.00016
+
+=== Dataset: paquetes_s6_cov_full_p17.pkl ===
+ Run 1/5... best_val_loss=0.04596
+ Run 2/5... best_val_loss=0.04614
+ Run 3/5... best_val_loss=0.04718
+ Run 4/5... best_val_loss=0.04582
+ Run 5/5... best_val_loss=0.04590
+ → mean val_loss = 0.04620 ± 0.00050
+
+=== Dataset: paquetes_s6_cov_full_p18.pkl ===
+ Run 1/5... best_val_loss=0.04734
+ Run 2/5... best_val_loss=0.04758
+ Run 3/5... best_val_loss=0.04699
+ Run 4/5... best_val_loss=0.04759
+ Run 5/5... best_val_loss=0.04724
+ → mean val_loss = 0.04735 ± 0.00023
+
+=== Dataset: paquetes_s6_cov_full_p19.pkl ===
+ Run 1/5... best_val_loss=0.04681
+ Run 2/5... best_val_loss=0.04642
+ Run 3/5... best_val_loss=0.04647
+ Run 4/5... best_val_loss=0.04678
+ Run 5/5... best_val_loss=0.04678
+ → mean val_loss = 0.04665 ± 0.00017
+
+=== Dataset: paquetes_s6_cov_full_p20.pkl ===
+ Run 1/5... best_val_loss=0.04815
+ Run 2/5... best_val_loss=0.04819
+ Run 3/5... best_val_loss=0.04849
+ Run 4/5... best_val_loss=0.04884
+ Run 5/5... best_val_loss=0.04870
+ → mean val_loss = 0.04847 ± 0.00027
+
+=== Dataset: paquetes_s6_cov_full_p21.pkl ===
+2025-05-15 18:46:51.580556: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.05042
+ Run 2/5... best_val_loss=0.04978
+ Run 3/5... best_val_loss=0.05052
+ Run 4/5... best_val_loss=0.05005
+ Run 5/5... best_val_loss=0.05038
+ → mean val_loss = 0.05023 ± 0.00027
+
+=== Dataset: paquetes_s6_cov_full_p22.pkl ===
+ Run 1/5... best_val_loss=0.05131
+ Run 2/5... best_val_loss=0.05108
+ Run 3/5... best_val_loss=0.05135
+ Run 4/5... best_val_loss=0.04973
+ Run 5/5... best_val_loss=0.05017
+ → mean val_loss = 0.05073 ± 0.00066
+
+=== Dataset: paquetes_s6_cov_full_p23.pkl ===
+ Run 1/5... best_val_loss=0.04716
+ Run 2/5... best_val_loss=0.04651
+ Run 3/5... best_val_loss=0.04782
+ Run 4/5... best_val_loss=0.04648
+ Run 5/5... best_val_loss=0.04725
+ → mean val_loss = 0.04704 ± 0.00050
+
+=== Dataset: paquetes_s6_cov_full_p24.pkl ===
+ Run 1/5... best_val_loss=0.04812
+ Run 2/5... best_val_loss=0.04770
+ Run 3/5... best_val_loss=0.04808
+ Run 4/5... best_val_loss=0.04795
+ Run 5/5... best_val_loss=0.04803
+ → mean val_loss = 0.04798 ± 0.00015
+
+=== Dataset: paquetes_s6_cov_full_p25.pkl ===
+ Run 1/5... best_val_loss=0.04569
+ Run 2/5... best_val_loss=0.04643
+ Run 3/5... best_val_loss=0.04688
+ Run 4/5... best_val_loss=0.04633
+ Run 5/5... best_val_loss=0.04638
+ → mean val_loss = 0.04634 ± 0.00038
+
+=== Dataset: paquetes_s6_cov_full_p26.pkl ===
+ Run 1/5... best_val_loss=0.04733
+ Run 2/5... best_val_loss=0.04688
+ Run 3/5... best_val_loss=0.04793
+ Run 4/5... best_val_loss=0.04757
+ Run 5/5... best_val_loss=0.04746
+ → mean val_loss = 0.04743 ± 0.00034
+
+=== Dataset: paquetes_s6_cov_full_p27.pkl ===
+ Run 1/5... best_val_loss=0.04910
+ Run 2/5... best_val_loss=0.04882
+ Run 3/5... best_val_loss=0.04940
+ Run 4/5... best_val_loss=0.04922
+ Run 5/5... best_val_loss=0.04854
+ → mean val_loss = 0.04902 ± 0.00030
+
+=== Dataset: paquetes_s6_cov_full_p28.pkl ===
+ Run 1/5... best_val_loss=0.05018
+ Run 2/5... best_val_loss=0.05088
+ Run 3/5... best_val_loss=0.05074
+ Run 4/5... best_val_loss=0.05027
+ Run 5/5... best_val_loss=0.05009
+ → mean val_loss = 0.05043 ± 0.00032
+
+=== Dataset: paquetes_s6_cov_full_p29.pkl ===
+ Run 1/5... best_val_loss=0.04770
+ Run 2/5... best_val_loss=0.04744
+ Run 3/5... best_val_loss=0.04762
+ Run 4/5... best_val_loss=0.04768
+ Run 5/5... best_val_loss=0.04740
+ → mean val_loss = 0.04757 ± 0.00012
+
+=== Dataset: paquetes_s6_cov_full_p30.pkl ===
+ Run 1/5... best_val_loss=0.04927
+ Run 2/5... best_val_loss=0.04791
+ Run 3/5... best_val_loss=0.04736
+ Run 4/5... best_val_loss=0.04815
+ Run 5/5... best_val_loss=0.04873
+ → mean val_loss = 0.04828 ± 0.00066
+
+=== Dataset: paquetes_s6_cov_full_p31.pkl ===
+ Run 1/5... best_val_loss=0.04710
+ Run 2/5... best_val_loss=0.04580
+ Run 3/5... best_val_loss=0.04607
+ Run 4/5... best_val_loss=0.04668
+ Run 5/5... best_val_loss=0.04756
+ → mean val_loss = 0.04664 ± 0.00065
+
+=== Dataset: paquetes_s6_cov_full_p32.pkl ===
+ Run 1/5... best_val_loss=0.04843
+ Run 2/5... best_val_loss=0.04931
+ Run 3/5... best_val_loss=0.04885
+ Run 4/5... best_val_loss=0.04824
+ Run 5/5... best_val_loss=0.04876
+ → mean val_loss = 0.04872 ± 0.00037
+
+=== Dataset: paquetes_s6_cov_full_p33.pkl ===
+ Run 1/5... best_val_loss=0.04938
+ Run 2/5... best_val_loss=0.04829
+ Run 3/5... best_val_loss=0.04939
+ Run 4/5... best_val_loss=0.04886
+ Run 5/5... best_val_loss=0.04870
+ → mean val_loss = 0.04892 ± 0.00042
+
+=== Dataset: paquetes_s6_cov_full_p34.pkl ===
+ Run 1/5... best_val_loss=0.04778
+ Run 2/5... best_val_loss=0.04892
+ Run 3/5... best_val_loss=0.04801
+ Run 4/5... best_val_loss=0.04886
+ Run 5/5... best_val_loss=0.04924
+ → mean val_loss = 0.04856 ± 0.00056
+
+=== Dataset: paquetes_s6_cov_full_p35.pkl ===
+ Run 1/5... best_val_loss=0.04766
+ Run 2/5... best_val_loss=0.04688
+ Run 3/5... best_val_loss=0.04686
+ Run 4/5... best_val_loss=0.04791
+ Run 5/5... best_val_loss=0.04760
+ → mean val_loss = 0.04738 ± 0.00043
+
+=== Dataset: paquetes_s6_cov_full_p36.pkl ===
+ Run 1/5... best_val_loss=0.04792
+ Run 2/5... best_val_loss=0.04881
+ Run 3/5... best_val_loss=0.04788
+ Run 4/5... best_val_loss=0.04845
+ Run 5/5... best_val_loss=0.04737
+ → mean val_loss = 0.04809 ± 0.00050
+
+=== Dataset: paquetes_s6_cov_full_p37.pkl ===
+2025-05-15 19:48:56.137954: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.04725
+ Run 2/5... best_val_loss=0.04809
+ Run 3/5... best_val_loss=0.04733
+ Run 4/5... best_val_loss=0.04804
+ Run 5/5... best_val_loss=0.04812
+ → mean val_loss = 0.04777 ± 0.00039
