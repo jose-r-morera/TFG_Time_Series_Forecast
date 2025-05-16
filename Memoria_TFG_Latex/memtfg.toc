@@ -23,8 +23,14 @@
 \contentsline {subsection}{\numberline {2.4.2}Normalización}{16}{subsection.2.4.2}%
 \contentsline {chapter}{\numberline {3}\LARGE Modelos de predicción}{17}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Comparativa inicial}{17}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Estudio del tamaño de las ventanas}{17}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Uso de ruido}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.2}Estudios empíricos}{17}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Número de estaciones}{17}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Tamaño de la ventana}{17}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Uso de ruido}{17}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Resultados}{17}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Temperatura del aire}{17}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Humedad relativa}{17}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Presión atmosférica}{17}{subsection.3.3.3}%
 \contentsline {chapter}{\numberline {4}\LARGE Despliegue}{18}{chapter.4}%
 \contentsline {chapter}{\numberline {5}\LARGE Conclusiones y líneas futuras}{19}{chapter.5}%
 \contentsline {chapter}{\numberline {6}\LARGE Summary and Conclusions}{20}{chapter.6}%

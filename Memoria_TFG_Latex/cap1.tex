@@ -11,7 +11,7 @@ Estas redes no solo capturan patrones temporales de manera eficiente, sino que t
 
 Dentro de este ámbito, se ha estudiado extensamente el desarrollo de modelos ajustados para una o varias ubicaciones concretas. Sin embargo, la creación de un modelo generalista,
 que pueda adaptarse a diferentes ubicaciones y condiciones climáticas, es un tema de investigación poco explorado e interesante. Con este tipo de modelos se puede 
-conseguir, a partir de un sensor básico, generar predicciones meteorológicas para una ubicación cualquiera, que generalmente serán de calidad mayor a las de los modelos numéricos de predicción 
+conseguir, a partir de un sensor básico y sin necesidad de reentrenar, generar predicciones meteorológicas para una ubicación cualquiera, que generalmente serán de calidad mayor a las de los modelos numéricos de predicción 
 climática usados por los servicios meteorológcios debido a las limitaciones de resolución espacial de estos.
 
 \section{Planteamineto}
@@ -69,7 +69,7 @@ La mayoría de los enfoques anteriores se especializan en una región o estació
 reentrenamiento y calibración local cada vez que se desea aplicar el sistema en un punto nuevo. Algunos trabajos recientes abordan la generalización geográfica mediante la
  inclusión de información posicional o condiciones iniciales específicas de cada punto dentro del modelo, aunque todavía con resultados preliminares\cite{fu2019}. 
 El desarrollo de un modelo verdaderamente “generalista” —capaz de recibir como entrada únicamente datos de sensores básicos, sin necesidad de reentrenar, y proporcionar predicciones meteorológicas
-de calidad comparable o superior a las de los NWP en cualquier ubicación— se conoce como el problema de zero-shot \cite{deznabi2024}, debido 
+de calidad comparable o superior a las de los NWP en cualquier ubicación— se conoce como el problema de zero-shot \cite{deznabi2024}, 
 y constituye un reto abierto y de gran interés práctico.
 
 \section{Objetivos}
