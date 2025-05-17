@@ -98,9 +98,9 @@ y de esta forma se mantiene la consistencia de los datos.
 \section{Preprocesado}
 
 Se desarrolla un cuaderno de Jupyter para realizar el preprocesado de los datos. El proceso descrito en este apartado
-se aplica de forma separada para cada estación.
+se aplica de forma separada para cada ubicación.
 
-En primer lugar, se obtienen las series temporales de las 3 fuentes, Grafcan y los dos modelos de Open-Meteo, para el período entre el 1 de marzo de 2023 y el 28 de febrero de 2025.
+En primer lugar, se obtienen las series temporales de las 3 fuentes: Grafcan y los dos modelos de Open-Meteo, para el período entre el 1 de marzo de 2023 y el 28 de febrero de 2025.
 Se agregan los datos con frecuencia horaria mediante la media. 
 
 \textbf{Nota:} En la estación de Garachico, usada para el test, el período empleado es del 1 de marzo de 2024 al 28 de febrero de 2025, puesto que el período de 2023 tiene 
@@ -137,6 +137,7 @@ Se detectan los datos faltantes para cada fuente. Las estadísticas se muestran 
 Es reseñable que el modelo ICON no muestra datos faltantes, mientras que el modelo ARPEGE tiene 35 horas faltantes consecutivas, en el período entre el 31 de diciembre de 2023 y el 1 de enero de 2024.
 
 \begin{table}[htb]
+    \small
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
@@ -244,7 +245,11 @@ Por ejemplo, en la figura \ref{histogram_1} se observa que la humedad presenta u
 Por esto, se decide emplear como método de detección de anomalías el de los K vecinos más cercanos (KNN), 
 una alternativa robusta que permite detectar anomalías en distribuciones no gaussianas \cite{gu2019}.
 
-Se aplica el método de KNN a cada variable por separado, con k=10 y límite de distancia 4 veces la desviación típica. 
+Se aplica el método de KNN a cada variable por separado, con k=10 y límite de distancia 3 veces la desviación típica.
+Respecto al número de vecinos, se observa al graficar la distancia media de los K vecinos más cercanos frente a K que es poco relevante, por lo que se escoge arbitrariamente.
+Una vez fijado K, para fijar el límite se considera que en una distribución gaussiana el 99,7\% de los datos se encuentran dentro de 3 desviaciones típicas y se comprueba empíricamente
+este valor así como otros cercanos, observando los histogramos de valores detectados como anómalos.
+
 Los valores anómalos son etiquetados como tales para poder ser identificados posteriormente. Se pueden observar ejemplos 
 de las distancias en la figura \ref{knn_distances}. En las figuras \ref{histogram_knn_humidity} y \ref{histogram_knn_temperature} se muestran ejemplos de los valores anómalos detectados. 
 
@@ -286,7 +291,7 @@ Se emplea la transformada rápida de Fourier (FFT), se filtran las frecuencias p
  \hrule
 \begin{center}
 \begin{tabbing}
-\ 1: {\bf Fun} \= {\bf ción} calcular\_fft\_positiva($valores$, $intervalo\_muestreo$): \\
+\ 1: {\bf Fun}\={\bf ción} calcular\_fft\_positiva($valores$, $intervalo\_muestreo$): \\
 \ 2: \> \# 1. Computar la transformada rápida de Fourier del vector de entrada \\
 \ 3: \> $fft\_result$ = FFT($valores$)  \\
 \ 4: \> \# 2. Generar los intervalos de frecuencia para cada punto de la FFT \\
@@ -412,23 +417,23 @@ El comportamiento de la función principal es el siguiente:
 \ 11: \> \> $test\_indexes$ = random\_sample($windows\_count$, $test\_percent$) \\
 \ 12: \> \> $forbidden$ = set() \\
 \ 13: \> \> {\bf Par}\={\bf a cada} $index$ en $test\_indexes$: \\
-\     \> \>     \# forbid index itself and the next `$overlap\_windows$ - 1` windows \\
+\     \> \> \>   \# Prohibir el índice y las siguientes `$overlap\_windows$ - 1` ventanas \\
 \ 14: \> \> \>   {\bf Par}\={\bf a cada} \= $j$ en rango($overlap\_windows$): \\
 \ 15: \> \> \> \>     $forbidden$.add($index$ + $j$) \\
 \ 16: \> \> $train\_indexes$ = rango($windows\_count$) - $forbidden$ \\
 
-\ 17: \> \> {\bf Par}\={\bf a cada} dataset $d$ in $location\_data$: \\
+\ 17: \> \> {\bf Par}\={\bf a cada} dataset $d$ en $location\_data$: \\
 \ 18: \> \> \> $past\_variables\_windows$ = $location\_data$[$d$]["past\_variables"] \\
 \ 19: \> \> \> $future\_variables\_windows$ = $location\_data$[$d$]["future\_variables"] \\
 \ 20: \> \> \> $y\_windows$ = $location\_data$[$d$]["y"] \\
-\     \> \> \> \# Gather train/test splits \\
-\ 21: \> \> \> $train\_past\_variables$ = [$past\_variables\_windows$[i] for i in $train\_indexes$] \\
-\ 22: \> \> \> $train\_future\_variables$ = [$future\_variables\_windows$[i] for i in $train\_indexes$] \\
-\ 23: \> \> \> $train\_y$ = [$y\_windows$[i] for i in $train\_indexes$] \\
+\     \> \> \> \# Construcción de conjuntos de entrenamiento y validación \\
+\ 21: \> \> \> $train\_past\_variables$ = [$past\_variables\_windows$[i] para i en $train\_indexes$] \\
+\ 22: \> \> \> $train\_future\_variables$ = [$future\_variables\_windows$[i] para i en $train\_indexes$] \\
+\ 23: \> \> \> $train\_y$ = [$y\_windows$[i] para i en $train\_indexes$] \\
 
-\ 24: \> \> \> $test\_past\_variables$ = [$past\_variables\_windows$[i] for i in $test\_indexes$] \\
-\ 25: \> \> \> $test\_future\_variables$ = [$future\_variables\_windows$[i] for i in $test\_indexes$] \\
-\ 26: \> \> \> $test\_y$ = [$y\_windows$[i] for i in $test\_indexes$] \\
+\ 24: \> \> \> $test\_past\_variables$ = [$past\_variables\_windows$[i] para i en $test\_indexes$] \\
+\ 25: \> \> \> $test\_future\_variables$ = [$future\_variables\_windows$[i] para i en $test\_indexes$] \\
+\ 26: \> \> \> $test\_y$ = [$y\_windows$[i] para i en $test\_indexes$] \\
       
 \ 27: \> \> \> $train\_data$[$v$]["past\_variables"].extender($train\_past\_variables$) \\
 \ 28: \> \> \> $train\_data$[$v$]["future\_variables"].extender($train\_future\_variables$) \\

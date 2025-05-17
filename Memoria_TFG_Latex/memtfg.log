@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  16 MAY 2025 23:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  17 MAY 2025 01:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1091,38 +1091,38 @@ Package pdftex.def Info: images/visualizacion_3.png  used on input line 128.
 
 
 [7 <./images/node-red_open-meteo.png>]
-Overfull \hbox (22.53487pt too wide) in paragraph at lines 141--153
- [][] 
- []
-
+LaTeX Font Info:    Font shape `T1/fve/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 140.
+LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 142.
 
 
 [8 <./images/visualizacion_1.png>]
 
 [9 <./images/visualizacion_2.png> <./images/visualizacion_3.png>]
-Overfull \hbox (16.28159pt too wide) in paragraph at lines 173--185
+Overfull \hbox (16.28159pt too wide) in paragraph at lines 174--186
  [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/fve/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 193.
-LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 194.
 LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 194.
+(Font)              scaled to size 8.99994pt on input line 195.
 LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
-(Font)              scaled to size 4.49997pt on input line 194.
+(Font)              scaled to size 6.29996pt on input line 195.
+LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
+(Font)              scaled to size 4.49997pt on input line 195.
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 196.
+(Font)              scaled to size 8.99994pt on input line 197.
 <images/histogram_humidity.png, id=440, 622.325pt x 391.4625pt>
 File: images/histogram_humidity.png Graphic file (type png)
 <use images/histogram_humidity.png>
-Package pdftex.def Info: images/histogram_humidity.png  used on input line 232.
+Package pdftex.def Info: images/histogram_humidity.png  used on input line 233.
 (pdftex.def)             Requested size: 241.84843pt x 152.13216pt.
 <images/histogram_temperature.png, id=441, 621.32124pt x 391.4625pt>
 File: images/histogram_temperature.png Graphic file (type png)
 <use images/histogram_temperature.png>
-Package pdftex.def Info: images/histogram_temperature.png  used on input line 239.
+Package pdftex.def Info: images/histogram_temperature.png  used on input line 240.
 (pdftex.def)             Requested size: 241.84843pt x 152.37706pt.
 
 
@@ -1130,42 +1130,38 @@ Package pdftex.def Info: images/histogram_temperature.png  used on input line 23
 <images/knn_distances_temperature_arona.png, id=451, 499.3857pt x 339.669pt>
 File: images/knn_distances_temperature_arona.png Graphic file (type png)
 <use images/knn_distances_temperature_arona.png>
-Package pdftex.def Info: images/knn_distances_temperature_arona.png  used on input line 255.
+Package pdftex.def Info: images/knn_distances_temperature_arona.png  used on input line 260.
 (pdftex.def)             Requested size: 241.84843pt x 164.50084pt.
 <images/histogram_humidity_knn.png, id=452, 620.7993pt x 395.3169pt>
 File: images/histogram_humidity_knn.png Graphic file (type png)
 <use images/histogram_humidity_knn.png>
-Package pdftex.def Info: images/histogram_humidity_knn.png  used on input line 262.
+Package pdftex.def Info: images/histogram_humidity_knn.png  used on input line 267.
 (pdftex.def)             Requested size: 241.84843pt x 154.00406pt.
 <images/histogram_temperature_knn.png, id=453, 620.7993pt x 395.3169pt>
 File: images/histogram_temperature_knn.png Graphic file (type png)
 <use images/histogram_temperature_knn.png>
-Package pdftex.def Info: images/histogram_temperature_knn.png  used on input line 269.
+Package pdftex.def Info: images/histogram_temperature_knn.png  used on input line 274.
 (pdftex.def)             Requested size: 241.84843pt x 154.00406pt.
-LaTeX Font Info:    Font shape `T1/fve/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 283.
-LaTeX Font Info:    Font shape `T1/fve/b/n' will be
-(Font)              scaled to size 9.85492pt on input line 285.
-LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 289.
-LaTeX Font Info:    Font shape `T1/fve/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 289.
-LaTeX Font Info:    Font shape `T1/fve/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 289.
 
 
 [11 <./images/histogram_humidity.png> <./images/histogram_temperature.png>]
 
 [12 <./images/knn_distances_temperature_arona.png> <./images/histogram_humidity_knn.png> <./images/histogram_temperature_knn.png>]
+LaTeX Font Info:    Font shape `T1/fve/b/n' will be
+(Font)              scaled to size 9.85492pt on input line 290.
+LaTeX Font Info:    Font shape `T1/fve/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 294.
+LaTeX Font Info:    Font shape `T1/fve/m/n' will be
+(Font)              scaled to size 5.39996pt on input line 294.
 <images/fft_temperature.png, id=474, 715.473pt x 426.393pt>
 File: images/fft_temperature.png Graphic file (type png)
 <use images/fft_temperature.png>
-Package pdftex.def Info: images/fft_temperature.png  used on input line 314.
+Package pdftex.def Info: images/fft_temperature.png  used on input line 319.
 (pdftex.def)             Requested size: 241.84843pt x 144.12589pt.
 <images/fft_pressure.png, id=475, 715.473pt x 426.393pt>
 File: images/fft_pressure.png Graphic file (type png)
 <use images/fft_pressure.png>
-Package pdftex.def Info: images/fft_pressure.png  used on input line 321.
+Package pdftex.def Info: images/fft_pressure.png  used on input line 326.
 (pdftex.def)             Requested size: 241.84843pt x 144.12589pt.
 
 
@@ -1173,15 +1169,15 @@ Package pdftex.def Info: images/fft_pressure.png  used on input line 321.
 <images/correlation_heatmap.png, id=485, 481.3182pt x 415.5525pt>
 File: images/correlation_heatmap.png Graphic file (type png)
 <use images/correlation_heatmap.png>
-Package pdftex.def Info: images/correlation_heatmap.png  used on input line 347.
+Package pdftex.def Info: images/correlation_heatmap.png  used on input line 352.
 (pdftex.def)             Requested size: 241.84843pt x 208.80295pt.
 
 
 [14 <./images/correlation_heatmap.png>]
 LaTeX Font Info:    Font shape `T1/fve/m/it' in size <10.95> not available
-(Font)              Font shape `T1/fve/m/sl' tried instead on input line 408.
+(Font)              Font shape `T1/fve/m/sl' tried instead on input line 413.
 LaTeX Font Info:    Font shape `T1/fve/m/sl' will be
-(Font)              scaled to size 9.85492pt on input line 408.
+(Font)              scaled to size 9.85492pt on input line 413.
 
 
 [15]
@@ -1347,13 +1343,13 @@ Package rerunfilecheck Info: File `memtfg.out' has not changed.
 Here is how much of TeX's memory you used:
  22264 strings out of 473254
  361609 string characters out of 5717961
- 913875 words of memory out of 5000000
+ 914875 words of memory out of 5000000
  44635 multiletter control sequences out of 15000+600000
  654025 words of font info for 305 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1075b,877s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (38 pages, 1719619 bytes).
+Output written on memtfg.pdf (38 pages, 1720188 bytes).
 PDF statistics:
  627 PDF objects out of 1000 (max. 8388607)
  531 compressed objects within 6 object streams

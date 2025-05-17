@@ -1,0 +1,3144 @@
+Loading data from openmeteo_arona_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -48729.773
+Date:                Sat, 17 May 2025   AIC                          97471.547
+Time:                        01:48:23   BIC                          97517.947
+Sample:                             0   HQIC                         97486.853
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         70.1801      0.645    108.800      0.000      68.916      71.444
+ar.L1          1.3280      0.006    222.110      0.000       1.316       1.340
+ar.L2         -0.3160      0.010    -32.722      0.000      -0.335      -0.297
+ar.L3         -0.0468      0.011     -4.384      0.000      -0.068      -0.026
+ar.L4         -0.0204      0.007     -3.056      0.002      -0.034      -0.007
+sigma2        18.8857      0.128    147.628      0.000      18.635      19.136
+===================================================================================
+Ljung-Box (L1) (Q):                   0.01   Jarque-Bera (JB):             12588.70
+Prob(Q):                              0.92   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.85   Skew:                            -0.71
+Prob(H) (two-sided):                  0.00   Kurtosis:                         6.99
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean       0.001139
+std        4.349125
+min      -36.968673
+25%       -1.908015
+50%        0.296481
+75%        2.270027
+max       22.819923
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 7.483
+Loading data from openmeteo_la_orotava_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -52002.913
+Date:                Sat, 17 May 2025   AIC                         104017.826
+Time:                        01:56:29   BIC                         104064.226
+Sample:                             0   HQIC                        104033.133
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         68.9283      1.217     56.622      0.000      66.542      71.314
+ar.L1          1.2531      0.005    255.880      0.000       1.244       1.263
+ar.L2         -0.2403      0.008    -31.438      0.000      -0.255      -0.225
+ar.L3         -0.0497      0.009     -5.458      0.000      -0.068      -0.032
+ar.L4       7.577e-05      0.006      0.012      0.990      -0.012       0.012
+sigma2        27.8391      0.155    179.884      0.000      27.536      28.142
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):             40080.98
+Prob(Q):                              0.99   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.92   Skew:                            -0.88
+Prob(H) (two-sided):                  0.00   Kurtosis:                        10.34
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean       0.001293
+std        5.278783
+min      -55.419309
+25%       -2.311780
+50%        0.364812
+75%        2.698572
+max       33.916255
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 8.187
+Loading data from openmeteo_la_laguna_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -42156.202
+Date:                Sat, 17 May 2025   AIC                          84324.405
+Time:                        02:03:55   BIC                          84370.805
+Sample:                             0   HQIC                         84339.712
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         70.1564      0.328    213.656      0.000      69.513      70.800
+ar.L1          1.4167      0.005    302.346      0.000       1.408       1.426
+ar.L2         -0.4021      0.009    -46.197      0.000      -0.419      -0.385
+ar.L3         -0.0537      0.010     -5.582      0.000      -0.073      -0.035
+ar.L4         -0.0360      0.005     -6.674      0.000      -0.047      -0.025
+sigma2         8.6636      0.047    183.062      0.000       8.571       8.756
+===================================================================================
+Ljung-Box (L1) (Q):                   0.06   Jarque-Bera (JB):             38711.66
+Prob(Q):                              0.81   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.03   Skew:                            -0.77
+Prob(H) (two-sided):                  0.25   Kurtosis:                        10.26
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean       0.000464
+std        2.945043
+min      -28.173639
+25%       -1.365096
+50%        0.229839
+75%        1.540467
+max       22.306952
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 4.233
+Loading data from openmeteo_punta_hidalgo_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -48506.243
+Date:                Sat, 17 May 2025   AIC                          97024.485
+Time:                        02:11:01   BIC                          97070.886
+Sample:                             0   HQIC                         97039.792
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         72.1969      0.297    243.200      0.000      71.615      72.779
+ar.L1          1.2764      0.005    265.793      0.000       1.267       1.286
+ar.L2         -0.3097      0.008    -39.514      0.000      -0.325      -0.294
+ar.L3          0.0368      0.009      4.173      0.000       0.020       0.054
+ar.L4         -0.1215      0.006    -21.440      0.000      -0.133      -0.110
+sigma2        18.3918      0.112    164.052      0.000      18.172      18.612
+===================================================================================
+Ljung-Box (L1) (Q):                   0.60   Jarque-Bera (JB):             31110.28
+Prob(Q):                              0.44   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.06   Skew:                            -0.60
+Prob(H) (two-sided):                  0.03   Kurtosis:                         9.54
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean       0.000773
+std        4.290219
+min      -39.998733
+25%       -1.906256
+50%        0.421463
+75%        2.238217
+max       39.814555
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 6.109
+Loading data from openmeteo_garachico_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                 8088
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -23963.803
+Date:                Sat, 17 May 2025   AIC                          47939.606
+Time:                        02:18:23   BIC                          47981.595
+Sample:                             0   HQIC                         47953.970
+                               - 8088                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         72.5754      0.934     77.706      0.000      70.745      74.406
+ar.L1          1.0722      0.007    145.646      0.000       1.058       1.087
+ar.L2         -0.0353      0.009     -3.810      0.000      -0.053      -0.017
+ar.L3         -0.1034      0.011     -9.725      0.000      -0.124      -0.083
+ar.L4          0.0043      0.009      0.503      0.615      -0.013       0.021
+sigma2        21.9274      0.200    109.476      0.000      21.535      22.320
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):             14452.02
+Prob(Q):                              1.00   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.46   Skew:                            -0.59
+Prob(H) (two-sided):                  0.00   Kurtosis:                         9.44
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                 0
+count  8088.000000
+mean      0.001271
+std       4.684790
+min     -36.498401
+25%      -2.245123
+50%       0.364086
+75%       2.576957
+max      34.745172
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 7.029
+Loading data from openmeteo_santa_cruz_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -42156.202
+Date:                Sat, 17 May 2025   AIC                          84324.405
+Time:                        02:20:36   BIC                          84370.805
+Sample:                             0   HQIC                         84339.712
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         70.1564      0.328    213.656      0.000      69.513      70.800
+ar.L1          1.4167      0.005    302.346      0.000       1.408       1.426
+ar.L2         -0.4021      0.009    -46.197      0.000      -0.419      -0.385
+ar.L3         -0.0537      0.010     -5.582      0.000      -0.073      -0.035
+ar.L4         -0.0360      0.005     -6.674      0.000      -0.047      -0.025
+sigma2         8.6636      0.047    183.062      0.000       8.571       8.756
+===================================================================================
+Ljung-Box (L1) (Q):                   0.06   Jarque-Bera (JB):             38711.66
+Prob(Q):                              0.81   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.03   Skew:                            -0.77
+Prob(H) (two-sided):                  0.25   Kurtosis:                        10.26
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean       0.000464
+std        2.945043
+min      -28.173639
+25%       -1.365096
+50%        0.229839
+75%        1.540467
+max       22.306952
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 4.233
+Loading data from grafcan_arona_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -50573.088
+Date:                Sat, 17 May 2025   AIC                         101158.176
+Time:                        02:27:30   BIC                         101204.576
+Sample:                             0   HQIC                        101173.482
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         71.7833      0.572    125.560      0.000      70.663      72.904
+ar.L1          1.1930      0.004    271.093      0.000       1.184       1.202
+ar.L2         -0.3153      0.007    -45.702      0.000      -0.329      -0.302
+ar.L3          0.0942      0.007     12.900      0.000       0.080       0.109
+ar.L4         -0.0445      0.005     -8.785      0.000      -0.054      -0.035
+sigma2        23.4987      0.123    190.275      0.000      23.257      23.741
+===================================================================================
+Ljung-Box (L1) (Q):                   0.02   Jarque-Bera (JB):             55282.20
+Prob(Q):                              0.89   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.85   Skew:                            -0.50
+Prob(H) (two-sided):                  0.00   Kurtosis:                        11.81
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean      -0.000045
+std        4.849625
+min      -47.275262
+25%       -2.061046
+50%        0.431446
+75%        2.390889
+max       42.284736
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 6.310
+Loading data from grafcan_la_orotava_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -49384.427
+Date:                Sat, 17 May 2025   AIC                          98780.854
+Time:                        02:34:54   BIC                          98827.254
+Sample:                             0   HQIC                         98796.161
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         65.1036      1.108     58.732      0.000      62.931      67.276
+ar.L1          1.1496      0.004    263.249      0.000       1.141       1.158
+ar.L2         -0.2482      0.005    -45.477      0.000      -0.259      -0.237
+ar.L3          0.0797      0.007     12.018      0.000       0.067       0.093
+ar.L4         -0.0176      0.005     -3.611      0.000      -0.027      -0.008
+sigma2        20.4119      0.095    214.387      0.000      20.225      20.598
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):            153309.81
+Prob(Q):                              0.96   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.81   Skew:                             0.02
+Prob(H) (two-sided):                  0.00   Kurtosis:                        17.77
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean       0.000609
+std        4.518507
+min      -47.419278
+25%       -1.607238
+50%        0.153632
+75%        1.598952
+max       51.453928
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 6.025
+Loading data from grafcan_la_laguna_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -49877.848
+Date:                Sat, 17 May 2025   AIC                          99767.696
+Time:                        02:42:02   BIC                          99814.096
+Sample:                             0   HQIC                         99783.003
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         68.9151      0.853     80.815      0.000      67.244      70.586
+ar.L1          1.1807      0.004    293.017      0.000       1.173       1.189
+ar.L2         -0.2762      0.006    -49.522      0.000      -0.287      -0.265
+ar.L3          0.0277      0.006      4.695      0.000       0.016       0.039
+ar.L4          0.0196      0.004      4.371      0.000       0.011       0.028
+sigma2        21.6404      0.104    208.834      0.000      21.437      21.843
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):            118018.72
+Prob(Q):                              0.99   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.65   Skew:                            -0.42
+Prob(H) (two-sided):                  0.00   Kurtosis:                        15.93
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean       0.000555
+std        4.652543
+min      -44.791318
+25%       -1.904859
+50%        0.286043
+75%        1.979070
+max       43.206732
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 4.576
+Loading data from grafcan_punta_hidalgo_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -49031.078
+Date:                Sat, 17 May 2025   AIC                          98074.155
+Time:                        02:49:01   BIC                          98120.555
+Sample:                             0   HQIC                         98089.462
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         71.2421      0.605    117.825      0.000      70.057      72.427
+ar.L1          1.1104      0.004    313.823      0.000       1.103       1.117
+ar.L2         -0.2424      0.005    -52.498      0.000      -0.251      -0.233
+ar.L3          0.0784      0.006     13.778      0.000       0.067       0.090
+ar.L4         -0.0121      0.004     -2.830      0.005      -0.020      -0.004
+sigma2        19.5731      0.083    236.472      0.000      19.411      19.735
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):            162577.84
+Prob(Q):                              1.00   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.06   Skew:                            -0.56
+Prob(H) (two-sided):                  0.03   Kurtosis:                        18.17
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean       0.000213
+std        4.426070
+min      -59.005438
+25%       -1.767715
+50%        0.226480
+75%        1.930658
+max       48.435988
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 4.790
+Loading data from grafcan_garachico_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                 8088
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -26224.599
+Date:                Sat, 17 May 2025   AIC                          52461.199
+Time:                        02:56:13   BIC                          52503.187
+Sample:                             0   HQIC                         52475.563
+                               - 8088                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         74.4338      2.008     37.065      0.000      70.498      78.370
+ar.L1          1.1042      0.007    155.912      0.000       1.090       1.118
+ar.L2         -0.1943      0.009    -20.834      0.000      -0.213      -0.176
+ar.L3          0.0443      0.009      4.780      0.000       0.026       0.062
+ar.L4          0.0048      0.007      0.688      0.491      -0.009       0.018
+sigma2        38.3455      0.268    143.130      0.000      37.820      38.871
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):             60011.11
+Prob(Q):                              1.00   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.10   Skew:                            -0.34
+Prob(H) (two-sided):                  0.01   Kurtosis:                        16.33
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                 0
+count  8088.000000
+mean      0.001874
+std       6.194063
+min     -59.633493
+25%      -2.058899
+50%       0.342749
+75%       2.059927
+max      52.235964
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 7.138
+Loading data from grafcan_santa_cruz_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:      relative_humidity   No. Observations:                16872
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -47140.498
+Date:                Sat, 17 May 2025   AIC                          94292.996
+Time:                        02:58:34   BIC                          94339.396
+Sample:                             0   HQIC                         94308.303
+                              - 16872                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         63.3494      0.487    130.158      0.000      62.395      64.303
+ar.L1          1.1673      0.004    279.227      0.000       1.159       1.175
+ar.L2         -0.2845      0.006    -47.850      0.000      -0.296      -0.273
+ar.L3          0.0583      0.006      9.057      0.000       0.046       0.071
+ar.L4         -0.0101      0.005     -2.141      0.032      -0.019      -0.001
+sigma2        15.6441      0.078    200.889      0.000      15.491      15.797
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):             86420.26
+Prob(Q):                              0.99   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.72   Skew:                            -0.54
+Prob(H) (two-sided):                  0.00   Kurtosis:                        14.03
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  16872.000000
+mean       0.000214
+std        3.955641
+min      -53.177819
+25%       -1.659657
+50%        0.247709
+75%        1.794153
+max       33.535877
+iteration 0 of 224
+iteration 1 of 224
+iteration 2 of 224
+iteration 3 of 224
+iteration 4 of 224
+iteration 5 of 224
+iteration 6 of 224
+iteration 7 of 224
+iteration 8 of 224
+iteration 9 of 224
+iteration 10 of 224
+iteration 11 of 224
+iteration 12 of 224
+iteration 13 of 224
+iteration 14 of 224
+iteration 15 of 224
+iteration 16 of 224
+iteration 17 of 224
+iteration 18 of 224
+iteration 19 of 224
+iteration 20 of 224
+iteration 21 of 224
+iteration 22 of 224
+iteration 23 of 224
+iteration 24 of 224
+iteration 25 of 224
+iteration 26 of 224
+iteration 27 of 224
+iteration 28 of 224
+iteration 29 of 224
+iteration 30 of 224
+iteration 31 of 224
+iteration 32 of 224
+iteration 33 of 224
+iteration 34 of 224
+iteration 35 of 224
+iteration 36 of 224
+iteration 37 of 224
+iteration 38 of 224
+iteration 39 of 224
+iteration 40 of 224
+iteration 41 of 224
+iteration 42 of 224
+iteration 43 of 224
+iteration 44 of 224
+iteration 45 of 224
+iteration 46 of 224
+iteration 47 of 224
+iteration 48 of 224
+iteration 49 of 224
+iteration 50 of 224
+iteration 51 of 224
+iteration 52 of 224
+iteration 53 of 224
+iteration 54 of 224
+iteration 55 of 224
+iteration 56 of 224
+iteration 57 of 224
+iteration 58 of 224
+iteration 59 of 224
+iteration 60 of 224
+iteration 61 of 224
+iteration 62 of 224
+iteration 63 of 224
+iteration 64 of 224
+iteration 65 of 224
+iteration 66 of 224
+iteration 67 of 224
+iteration 68 of 224
+iteration 69 of 224
+iteration 70 of 224
+iteration 71 of 224
+iteration 72 of 224
+iteration 73 of 224
+iteration 74 of 224
+iteration 75 of 224
+iteration 76 of 224
+iteration 77 of 224
+iteration 78 of 224
+iteration 79 of 224
+iteration 80 of 224
+iteration 81 of 224
+iteration 82 of 224
+iteration 83 of 224
+iteration 84 of 224
+iteration 85 of 224
+iteration 86 of 224
+iteration 87 of 224
+iteration 88 of 224
+iteration 89 of 224
+iteration 90 of 224
+iteration 91 of 224
+iteration 92 of 224
+iteration 93 of 224
+iteration 94 of 224
+iteration 95 of 224
+iteration 96 of 224
+iteration 97 of 224
+iteration 98 of 224
+iteration 99 of 224
+iteration 100 of 224
+iteration 101 of 224
+iteration 102 of 224
+iteration 103 of 224
+iteration 104 of 224
+iteration 105 of 224
+iteration 106 of 224
+iteration 107 of 224
+iteration 108 of 224
+iteration 109 of 224
+iteration 110 of 224
+iteration 111 of 224
+iteration 112 of 224
+iteration 113 of 224
+iteration 114 of 224
+iteration 115 of 224
+iteration 116 of 224
+iteration 117 of 224
+iteration 118 of 224
+iteration 119 of 224
+iteration 120 of 224
+iteration 121 of 224
+iteration 122 of 224
+iteration 123 of 224
+iteration 124 of 224
+iteration 125 of 224
+iteration 126 of 224
+iteration 127 of 224
+iteration 128 of 224
+iteration 129 of 224
+iteration 130 of 224
+iteration 131 of 224
+iteration 132 of 224
+iteration 133 of 224
+iteration 134 of 224
+iteration 135 of 224
+iteration 136 of 224
+iteration 137 of 224
+iteration 138 of 224
+iteration 139 of 224
+iteration 140 of 224
+iteration 141 of 224
+iteration 142 of 224
+iteration 143 of 224
+iteration 144 of 224
+iteration 145 of 224
+iteration 146 of 224
+iteration 147 of 224
+iteration 148 of 224
+iteration 149 of 224
+iteration 150 of 224
+iteration 151 of 224
+iteration 152 of 224
+iteration 153 of 224
+iteration 154 of 224
+iteration 155 of 224
+iteration 156 of 224
+iteration 157 of 224
+iteration 158 of 224
+iteration 159 of 224
+iteration 160 of 224
+iteration 161 of 224
+iteration 162 of 224
+iteration 163 of 224
+iteration 164 of 224
+iteration 165 of 224
+iteration 166 of 224
+iteration 167 of 224
+iteration 168 of 224
+iteration 169 of 224
+iteration 170 of 224
+iteration 171 of 224
+iteration 172 of 224
+iteration 173 of 224
+iteration 174 of 224
+iteration 175 of 224
+iteration 176 of 224
+iteration 177 of 224
+iteration 178 of 224
+iteration 179 of 224
+iteration 180 of 224
+iteration 181 of 224
+iteration 182 of 224
+iteration 183 of 224
+iteration 184 of 224
+iteration 185 of 224
+iteration 186 of 224
+iteration 187 of 224
+iteration 188 of 224
+iteration 189 of 224
+iteration 190 of 224
+iteration 191 of 224
+iteration 192 of 224
+iteration 193 of 224
+iteration 194 of 224
+iteration 195 of 224
+iteration 196 of 224
+iteration 197 of 224
+iteration 198 of 224
+iteration 199 of 224
+iteration 200 of 224
+iteration 201 of 224
+iteration 202 of 224
+iteration 203 of 224
+iteration 204 of 224
+iteration 205 of 224
+iteration 206 of 224
+iteration 207 of 224
+iteration 208 of 224
+iteration 209 of 224
+iteration 210 of 224
+iteration 211 of 224
+iteration 212 of 224
+iteration 213 of 224
+iteration 214 of 224
+iteration 215 of 224
+iteration 216 of 224
+iteration 217 of 224
+iteration 218 of 224
+iteration 219 of 224
+iteration 220 of 224
+iteration 221 of 224
+iteration 222 of 224
+iteration 223 of 224
+Test RMSE: 4.079
