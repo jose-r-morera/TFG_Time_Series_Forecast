@@ -17,9 +17,9 @@ from custom_attention import CustomAttention
 # DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_punta_hidalgo_p17.pkl"
 
 # DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_orotava_p17.pkl"
-DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_laguna_orotava_p17.pkl"
+# DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_laguna_orotava_p17.pkl"
 
-# DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_full_p17.pkl"
+DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p17.pkl"
 
 DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
 
@@ -101,8 +101,7 @@ def build_and_train_model(dataset_train):
     # Combine the outputs of encoder and decoder (you can concatenate or merge them)
     future_residue = tf.keras.layers.Flatten()(future_data_layer)
     merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm, future_residue])
-    #merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])
-    
+
     # Final output layer
     merged = tf.keras.layers.Dense(4* output_units)(merged) 
     outputs = tf.keras.layers.Dense(output_units)(merged)

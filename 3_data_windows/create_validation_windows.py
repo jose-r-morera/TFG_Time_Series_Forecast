@@ -7,14 +7,19 @@ import matplotlib.pyplot as plt
 
 # VARIABLES #
 
-# FILES = { "santa_cruz": ["grafcan_santa_cruz_features.csv", "openmeteo_santa_cruz_features.csv"]}
+# FILES = { "santa_cruz": ["grafcan_santa_cruz_features.csv"]}
+# FILES = { "santa_cruz": ["openmeteo_santa_cruz_features.csv"]}
+# FILES = {"garachico": ["grafcan_garachico_features.csv"]}
+# FILES = {"garachico": ["openmeteo_garachico_features.csv"]}
 
 # FILES = {"arona": ["grafcan_arona_features.csv"],}
 # FILES = {"arona": ["openmeteo_arona_features.csv"]}
-FILES = {"la_orotava": ["grafcan_la_orotava_features.csv"]}
-# "openmeteo_la_orotava_features.csv"],}
-#FILES = {"la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],}
-# FILES = {"punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],}
+# FILES = {"la_orotava": ["grafcan_la_orotava_features.csv"]}
+# FILES = {"la_orotava": ["openmeteo_la_orotava_features.csv"],}
+# FILES = {"la_laguna": ["grafcan_la_laguna_features.csv"]}
+# FILES = {"la_laguna": ["openmeteo_la_laguna_features.csv"],}
+# FILES = {"punta_hidalgo": ["grafcan_punta_hidalgo_features.csv"]}
+# FILES = {"punta_hidalgo": ["openmeteo_punta_hidalgo_features.csv"],}
 
 DATASETS_PATH = "../1_data_preprocessing/test_data/"
 
@@ -25,7 +30,7 @@ STEP = 6 # Number of time steps to skip between each input sequence
 USE_COVARIATES = True # Use other features as covariates (ej, temperature and pressure to predict humidity)
 
 # Output is stored as JSON
-OUTPUT_PATH = "f3_val/paquetes_s6_cov_grafcan_arona_"
+OUTPUT_PATH = "f3_val/paquetes_s6_cov_open_meteo_garachico_"
 
 MEAN = {
     "air_temperature": [ 70.01980283, 983.22582669,  20.09918054],

@@ -1,0 +1,2827 @@
+Loading data from openmeteo_arona_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -15589.028
+Date:                Sun, 18 May 2025   AIC                          31190.055
+Time:                        14:10:45   BIC                          31236.690
+Sample:                             0   HQIC                         31205.410
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         22.2396      0.114    195.257      0.000      22.016      22.463
+ar.L1          1.5850      0.005    331.749      0.000       1.576       1.594
+ar.L2         -0.6042      0.009    -63.692      0.000      -0.623      -0.586
+ar.L3          0.0039      0.011      0.349      0.727      -0.018       0.026
+ar.L4         -0.0296      0.006     -4.665      0.000      -0.042      -0.017
+sigma2         0.3461      0.002    169.854      0.000       0.342       0.350
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):             30600.88
+Prob(Q):                              0.97   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.83   Skew:                             1.16
+Prob(H) (two-sided):                  0.00   Kurtosis:                         9.04
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000238
+std        0.589028
+min       -3.839619
+25%       -0.306041
+50%       -0.059943
+75%        0.227003
+max        6.512614
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 1.088
+Loading data from openmeteo_la_orotava_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -16658.063
+Date:                Sun, 18 May 2025   AIC                          33328.125
+Time:                        14:20:09   BIC                          33374.760
+Sample:                             0   HQIC                         33343.480
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         17.0791      0.197     86.653      0.000      16.693      17.465
+ar.L1          1.4701      0.005    307.227      0.000       1.461       1.479
+ar.L2         -0.3512      0.008    -43.172      0.000      -0.367      -0.335
+ar.L3         -0.2008      0.009    -21.824      0.000      -0.219      -0.183
+ar.L4          0.0546      0.005     10.195      0.000       0.044       0.065
+sigma2         0.3910      0.002    158.521      0.000       0.386       0.396
+===================================================================================
+Ljung-Box (L1) (Q):                   0.35   Jarque-Bera (JB):             25703.32
+Prob(Q):                              0.55   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.69   Skew:                             0.67
+Prob(H) (two-sided):                  0.00   Kurtosis:                         8.78
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000323
+std        0.626357
+min       -4.879131
+25%       -0.333376
+50%       -0.051473
+75%        0.286621
+max        5.602734
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 0.917
+Loading data from openmeteo_la_laguna_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood               -8336.771
+Date:                Sun, 18 May 2025   AIC                          16685.541
+Time:                        14:29:30   BIC                          16732.176
+Sample:                             0   HQIC                         16700.896
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         20.3143      0.105    192.848      0.000      20.108      20.521
+ar.L1          1.6370      0.005    320.902      0.000       1.627       1.647
+ar.L2         -0.5341      0.011    -49.136      0.000      -0.555      -0.513
+ar.L3         -0.2329      0.013    -17.754      0.000      -0.259      -0.207
+ar.L4          0.0997      0.007     14.344      0.000       0.086       0.113
+sigma2         0.1514      0.001    159.993      0.000       0.150       0.153
+===================================================================================
+Ljung-Box (L1) (Q):                   0.59   Jarque-Bera (JB):             13823.03
+Prob(Q):                              0.44   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.77   Skew:                             0.51
+Prob(H) (two-sided):                  0.00   Kurtosis:                         7.23
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000190
+std        0.389870
+min       -3.214283
+25%       -0.198371
+50%       -0.022091
+75%        0.179601
+max        3.220636
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 0.806
+Loading data from openmeteo_punta_hidalgo_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -11917.545
+Date:                Sun, 18 May 2025   AIC                          23847.090
+Time:                        15:07:08   BIC                          23893.725
+Sample:                             0   HQIC                         23862.445
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         21.2948      0.082    260.519      0.000      21.135      21.455
+ar.L1          1.6793      0.005    353.729      0.000       1.670       1.689
+ar.L2         -0.6847      0.009    -75.233      0.000      -0.703      -0.667
+ar.L3         -0.0769      0.011     -6.751      0.000      -0.099      -0.055
+ar.L4          0.0362      0.006      5.573      0.000       0.023       0.049
+sigma2         0.2277      0.001    165.677      0.000       0.225       0.230
+===================================================================================
+Ljung-Box (L1) (Q):                   0.16   Jarque-Bera (JB):             28376.43
+Prob(Q):                              0.69   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.94   Skew:                             0.14
+Prob(H) (two-sided):                  0.02   Kurtosis:                         9.22
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000214
+std        0.478131
+min       -6.567973
+25%       -0.254798
+50%       -0.028766
+75%        0.231410
+max        3.577801
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 1.157
+Loading data from openmeteo_garachico_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                 8760
+Model:                 ARIMA(4, 0, 0)   Log Likelihood               -6506.934
+Date:                Sun, 18 May 2025   AIC                          13025.868
+Time:                        15:17:56   BIC                          13068.336
+Sample:                             0   HQIC                         13040.338
+                               - 8760                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         15.5030      0.225     68.754      0.000      15.061      15.945
+ar.L1          1.3184      0.007    199.022      0.000       1.305       1.331
+ar.L2         -0.1272      0.010    -12.491      0.000      -0.147      -0.107
+ar.L3         -0.2462      0.013    -18.684      0.000      -0.272      -0.220
+ar.L4          0.0292      0.009      3.253      0.001       0.012       0.047
+sigma2         0.2585      0.002    111.871      0.000       0.254       0.263
+===================================================================================
+Ljung-Box (L1) (Q):                   0.09   Jarque-Bera (JB):             13105.87
+Prob(Q):                              0.76   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.26   Skew:                             0.30
+Prob(H) (two-sided):                  0.00   Kurtosis:                         8.96
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                 0
+count  8760.000000
+mean     -0.000528
+std       0.510332
+min      -4.433838
+25%      -0.282067
+50%      -0.041335
+75%       0.246762
+max       3.536560
+iteration 0 of 8
+iteration 1 of 8
+iteration 2 of 8
+iteration 3 of 8
+iteration 4 of 8
+iteration 5 of 8
+iteration 6 of 8
+iteration 7 of 8
+Test RMSE: 0.808
+Loading data from openmeteo_santa_cruz_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood               -8336.771
+Date:                Sun, 18 May 2025   AIC                          16685.541
+Time:                        15:18:13   BIC                          16732.176
+Sample:                             0   HQIC                         16700.896
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         22.0143      0.105    208.987      0.000      21.808      22.221
+ar.L1          1.6370      0.005    320.902      0.000       1.627       1.647
+ar.L2         -0.5341      0.011    -49.136      0.000      -0.555      -0.513
+ar.L3         -0.2329      0.013    -17.754      0.000      -0.259      -0.207
+ar.L4          0.0997      0.007     14.344      0.000       0.086       0.113
+sigma2         0.1514      0.001    159.993      0.000       0.150       0.153
+===================================================================================
+Ljung-Box (L1) (Q):                   0.59   Jarque-Bera (JB):             13823.03
+Prob(Q):                              0.44   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.77   Skew:                             0.51
+Prob(H) (two-sided):                  0.00   Kurtosis:                         7.23
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000190
+std        0.389870
+min       -3.214283
+25%       -0.198371
+50%       -0.022091
+75%        0.179601
+max        3.220636
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 0.806
+Loading data from grafcan_arona_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -20455.148
+Date:                Sun, 18 May 2025   AIC                          40922.297
+Time:                        15:57:34   BIC                          40968.931
+Sample:                             0   HQIC                         40937.651
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         21.7718      0.101    214.949      0.000      21.573      21.970
+ar.L1          1.4176      0.005    276.694      0.000       1.408       1.428
+ar.L2         -0.4814      0.010    -47.493      0.000      -0.501      -0.462
+ar.L3          0.0910      0.011      7.915      0.000       0.068       0.114
+ar.L4         -0.0922      0.007    -12.719      0.000      -0.106      -0.078
+sigma2         0.6028      0.004    151.936      0.000       0.595       0.611
+===================================================================================
+Ljung-Box (L1) (Q):                   0.39   Jarque-Bera (JB):             18690.33
+Prob(Q):                              0.53   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.93   Skew:                             0.81
+Prob(H) (two-sided):                  0.00   Kurtosis:                         7.79
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000159
+std        0.776917
+min       -9.169265
+25%       -0.422132
+50%       -0.063842
+75%        0.315618
+max        6.815758
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 1.263
+Loading data from grafcan_la_orotava_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -22938.278
+Date:                Sun, 18 May 2025   AIC                          45888.556
+Time:                        16:07:31   BIC                          45935.191
+Sample:                             0   HQIC                         45903.911
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         17.0310      0.243     70.107      0.000      16.555      17.507
+ar.L1          1.3646      0.005    282.260      0.000       1.355       1.374
+ar.L2         -0.4654      0.008    -57.434      0.000      -0.481      -0.450
+ar.L3          0.0964      0.011      8.978      0.000       0.075       0.117
+ar.L4         -0.0255      0.007     -3.517      0.000      -0.040      -0.011
+sigma2         0.8000      0.005    163.203      0.000       0.790       0.810
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):             21272.38
+Prob(Q):                              0.96   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.01   Skew:                             0.57
+Prob(H) (two-sided):                  0.58   Kurtosis:                         8.27
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000405
+std        0.895222
+min       -7.488833
+25%       -0.442055
+50%       -0.072683
+75%        0.365182
+max        9.860108
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 1.344
+Loading data from grafcan_la_laguna_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -16728.059
+Date:                Sun, 18 May 2025   AIC                          33468.119
+Time:                        16:18:46   BIC                          33514.753
+Sample:                             0   HQIC                         33483.474
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         19.9847      0.184    108.428      0.000      19.623      20.346
+ar.L1          1.3814      0.003    413.265      0.000       1.375       1.388
+ar.L2         -0.3797      0.006    -62.654      0.000      -0.392      -0.368
+ar.L3         -0.0072      0.008     -0.850      0.395      -0.024       0.009
+ar.L4         -0.0230      0.006     -3.907      0.000      -0.034      -0.011
+sigma2         0.3941      0.002    221.281      0.000       0.391       0.398
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):            236515.74
+Prob(Q):                              0.98   Prob(JB):                         0.00
+Heteroskedasticity (H):               0.87   Skew:                             1.07
+Prob(H) (two-sided):                  0.00   Kurtosis:                        20.86
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000241
+std        0.628258
+min       -9.083627
+25%       -0.286855
+50%       -0.050979
+75%        0.228737
+max       12.744214
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 0.902
+Loading data from grafcan_punta_hidalgo_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -14634.765
+Date:                Sun, 18 May 2025   AIC                          29281.530
+Time:                        16:30:58   BIC                          29328.164
+Sample:                             0   HQIC                         29296.884
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         21.6978      0.099    219.986      0.000      21.504      21.891
+ar.L1          1.4051      0.004    376.232      0.000       1.398       1.412
+ar.L2         -0.4150      0.006    -68.564      0.000      -0.427      -0.403
+ar.L3          0.0329      0.007      4.594      0.000       0.019       0.047
+ar.L4         -0.0691      0.005    -13.806      0.000      -0.079      -0.059
+sigma2         0.3104      0.001    207.518      0.000       0.307       0.313
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):             75912.53
+Prob(Q):                              0.99   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.05   Skew:                             0.29
+Prob(H) (two-sided):                  0.08   Kurtosis:                        13.17
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000218
+std        0.557795
+min       -6.335528
+25%       -0.263957
+50%       -0.022433
+75%        0.246571
+max        6.855159
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 1.049
+Loading data from grafcan_garachico_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                 8760
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -12027.828
+Date:                Sun, 18 May 2025   AIC                          24067.656
+Time:                        16:39:41   BIC                          24110.124
+Sample:                             0   HQIC                         24082.126
+                               - 8760                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         14.8021      0.332     44.565      0.000      14.151      15.453
+ar.L1          1.3758      0.007    200.148      0.000       1.362       1.389
+ar.L2         -0.4554      0.011    -40.389      0.000      -0.477      -0.433
+ar.L3          0.0801      0.012      6.517      0.000       0.056       0.104
+ar.L4         -0.0335      0.008     -4.098      0.000      -0.050      -0.017
+sigma2         0.9119      0.008    120.691      0.000       0.897       0.927
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):             11427.91
+Prob(Q):                              0.99   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.48   Skew:                             0.57
+Prob(H) (two-sided):                  0.00   Kurtosis:                         8.48
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                 0
+count  8760.000000
+mean     -0.000633
+std       0.955759
+min      -6.187538
+25%      -0.433547
+50%      -0.067686
+75%       0.367431
+max       8.345446
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 1.434
+Loading data from grafcan_santa_cruz_features.csv
