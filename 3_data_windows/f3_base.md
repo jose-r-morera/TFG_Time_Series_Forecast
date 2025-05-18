@@ -1,4 +1,4 @@
-# Single dataset results for f3
+## Single dataset results for f3
 
 ### Arona
 Generating windows for past_n =  17
@@ -96,7 +96,7 @@ atmospheric_pressure mean: [  21.43884528   71.91826182 1014.16364095]
 atmospheric_pressure std: [ 2.88060217 12.96338698  3.9237207 ]
 Data saved to f3/paquetes_s6_cov_punta_hidalgo_p17.pkl
 
-### Arona + Orotava
+## Arona + Orotava
 Generating windows for past_n =  17
 Data shape:
 Train air_temperature: (6894, 17, 7) samples
@@ -120,7 +120,7 @@ atmospheric_pressure mean: [ 19.60830956  68.76543251 970.77400517]
 atmospheric_pressure std: [ 4.58756341 19.4536422  43.98390144]
 Data saved to f3/paquetes_s6_cov_arona_orotava_p17.pkl
 
-### Arona + Orotava + La Laguna
+## Arona + Orotava + La Laguna
 Generating windows for past_n =  17
 Data shape:
 Train air_temperature: (10400, 17, 7) samples
@@ -144,7 +144,7 @@ atmospheric_pressure mean: [ 19.84972464  69.06031244 972.9136897 ]
 atmospheric_pressure std: [ 4.25001374 17.98676815 36.21673441]
 Data saved to f3/paquetes_s6_cov_arona_orotava_laguna_p17.pkl
 
-### Todos
+## Todos
 Generating windows for past_n =  17
 Data shape:
 Train air_temperature: (13912, 17, 7) samples

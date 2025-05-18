@@ -1,7 +1,17 @@
 Se desarrollan 4 modelos: un modelo ARIMA como base de comparación, un modelo LSTM, un modelo CNN y un híbrido LSTM-CNN.
 
 \section{ARIMA}
+Los modelos ARIMA (Autoregressive Integrated Moving Average) son una tipo de modelos estadísticos utilizados históricamente para el análisis y la predicción de series temporales
+univariable. 
 
+Utilizamos como base de comparación los resultados de un ARIMA para cada serie temporal: cada variable en cada ubicación y cada fuente de datos.
+
+Para emplear un modelo ARIMA, es necesario ajustar cada uno de sus parámetros, que son:
+\begin{itemize}
+    \item $p$: el número de términos autorregresivos.
+    \item $d$: el número de diferencias necesarias para hacer la serie estacionaria.
+    \item $q$: el número de términos de media móvil.
+\end{itemize}
 
 \section{Modelos de aprendizaje profundo}
 Existen diferentes frameworks para el desarrollo de modelos de aprendizaje profundo, destacando TensorFlow, PyTorch o JAX/Flax como los más extendidos.

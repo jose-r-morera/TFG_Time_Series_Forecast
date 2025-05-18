@@ -17,7 +17,7 @@ DATASET_PATH = "../1_data_preprocessing/processed_data/"
 
 PLOT = False
 TEST_SPLIT_DAY = '2025-02-01'  # Test data starts from this date
-DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
+DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
 
 FORECAST_STEPS = 3  # Number of steps to forecast
 # ARIMA parameters
@@ -32,7 +32,6 @@ for file in FILES:
     indices = df[df['time'].dt.date == pd.to_datetime(TEST_SPLIT_DAY).date()].index
     first_2025_day_index = indices[0]
 
-    # atmospheric_pressure or relative_humidity or air_temperature
     train = df.iloc[0:first_2025_day_index][DATASET]
     test = df.iloc[first_2025_day_index:][DATASET].reset_index(drop=True)
     #####################################

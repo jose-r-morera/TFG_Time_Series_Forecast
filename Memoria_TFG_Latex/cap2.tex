@@ -170,6 +170,7 @@ la distancia euclídea. Se elige el modelo que mejor resultados da en la mayorí
  se muestran en las tablas \ref{tabla_modelos_seleccionados} y .
 
 \begin{table}[htb]
+    \small
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
@@ -364,7 +365,7 @@ de tamaño N con los valores a predecir.
 No obstante, puede ser relevante incluir información adicional exógena sobre los valores a predecir, como la codificación temporal 
 (o en otros dominios, si el día es festivo, etc).
 
-De esta forma, optamos por contruir ventanas de datos con 3 componentes, X e Y, ya definidas, así como F, formada por las 4 variables de codificación temporal 
+Optamos por incluir esta información y contruir ventanas de datos con 3 componentes, X e Y, ya definidas, así como F, formada por las 4 variables de codificación temporal 
 para cada paso a predecir N. Empíricamente comprobamos que la inclusión de esta información adicional mejora ligeramente el rendimiento del modelo.
 
 En la práctica, estas ventanas se construyen mediante la técnica de ventana deslizante, que consiste en recorrer la serie temporal desplazando 
@@ -374,7 +375,12 @@ la redundancia de datos.
 Como datos pasados empleamos la variable meteorológcia estudiada, así como las restantes como covariables. Se comprueba exógenamente que 
 añadir estas covariables mejora el rendimiento del modelo. También se emplea como datos pasados las variables de codificación temporal. 
 
-De esta forma, una ventana tiene X de tamaño P * 7, Y de tamaño N y F de tamaño N * 4.
+Es decir, la estructura de una ventana es:
+\itemize{
+    \item X: un vector de tamaño P * 7, que contiene los valores de la variable objetivo y las covariables en los pasos previos.
+    \item F: un vector de tamaño N * 4, que contiene las variables de codificación temporal para cada paso a predecir.
+    \item Y: un vector de tamaño N, que contiene los valores a predecir.
+}
 
 \subsection{Implementación}
 En primer lugar, se define una función \textit{df\_raw\_windows} que recibe como parámetros:
@@ -450,6 +456,10 @@ El comportamiento de la función principal es el siguiente:
 \caption{Pseudocódigo Creación de Ventanas de Datos}
 \label{branch_and_bound_max_diversity}
 \end{figure}
+
+La construcción del conjunto de entrenamiento y test se realiza de forma aleatoria, algo poco común en el ámbito de la predicción de series temporales, puesto que habitualmente 
+se emplea como conjunto de validación un período al final de la serie. Pero, de esta forma, creemos que se puede mejorar el modelo, al disponer de un conjunto de validación
+más diverso y representativo de la meteorología a lo largo del año.
 
 Para cada ubicación se eligen los índices de las ventanas de test aleatoriamente. Estos índices son los mismos para los dos datasets de una localización, 
 puesto que los datos son bastante similares entre ambos y queremos evitar el filtrado de información. 

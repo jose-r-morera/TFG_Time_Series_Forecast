@@ -460,6 +460,7 @@ INPUT ./images/correlation_heatmap.png
 INPUT ./images/correlation_heatmap.png
 INPUT ./images/correlation_heatmap.png
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fvero8t.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/bera/fver8c.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/bera/fvero8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fvero8r.tfm
 INPUT ./cap3.tex
@@ -496,6 +497,7 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb
