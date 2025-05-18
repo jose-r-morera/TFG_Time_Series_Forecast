@@ -15,9 +15,16 @@ Para emplear un modelo ARIMA, es necesario ajustar cada uno de sus parámetros, 
 
 \subsection{Calibración de térmios autorregresivos}
 Para determinar el número de términos autorregresivos, se utiliza la función \texttt{plot\_pacf} de la librería \texttt{statsmodels}, 
-que permite visualizar la función de autocorrelación parcial (PACF) de la serie temporal.
+que permite visualizar la función de autocorrelación parcial (PACF) de la serie temporal. Observamos un ejemplo de los resultados en la figura \ref{arima_pacf}. 
 
-Analíticamente, se emplea el algoritmo descrito en \ref{pacf_ar_order}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{img/arima_pacf.png}
+\caption{Ejemplo de la función de autocorrelación parcial (PACF) de una serie temporal}
+\label{arima_pacf}
+\end{figure}
+
+Analíticamente, se emplea el algoritmo descrito en \ref{pacf_ar_order}. Se determina $p$ = 4.
 
 \begin{figure}[H]
 {\small
@@ -47,6 +54,7 @@ Analíticamente, se emplea el algoritmo descrito en \ref{pacf_ar_order}
 \label{pacf_ar_order}
 \end{figure}
 
+\subsection{Calibración de }
 
 \section{Modelos de aprendizaje profundo}
 Existen diferentes frameworks para el desarrollo de modelos de aprendizaje profundo, destacando TensorFlow, PyTorch o JAX/Flax como los más extendidos.

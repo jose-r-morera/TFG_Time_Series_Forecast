@@ -5,7 +5,6 @@ from sklearn.metrics import mean_squared_error
 from statsmodels.tsa.arima.model import ARIMA
 ###################################################
 
-# FILE = "openmeteo_la_orotava_features.csv"
 FILES = [
     "openmeteo_arona_features.csv", "openmeteo_la_orotava_features.csv",
     "openmeteo_la_laguna_features.csv", "openmeteo_punta_hidalgo_features.csv",
@@ -17,7 +16,7 @@ TRAIN_DATASET_PATH = "../1_data_preprocessing/processed_data/"
 TEST_DATASET_PATH = "../1_data_preprocessing/test_data/"
 
 PLOT = False
-DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
+DATASET = "relative_humidity"  # atmospheric_pressure or relative_humidity or air_temperature
 
 FORECAST_STEPS = 3  # Number of steps to forecast
 # ARIMA parameters

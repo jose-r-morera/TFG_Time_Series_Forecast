@@ -1116,7 +1116,7 @@ Loading data from openmeteo_garachico_features.csv
 Dep. Variable:        air_temperature   No. Observations:                 8760
 Model:                 ARIMA(4, 0, 0)   Log Likelihood               -6506.934
 Date:                Sun, 18 May 2025   AIC                          13025.868
-Time:                        15:17:56   BIC                          13068.336
+Time:                        17:03:18   BIC                          13068.336
 Sample:                             0   HQIC                         13040.338
                                - 8760                                         
 Covariance Type:                  opg                                         
@@ -1147,15 +1147,247 @@ min      -4.433838
 50%      -0.041335
 75%       0.246762
 max       3.536560
-iteration 0 of 8
-iteration 1 of 8
-iteration 2 of 8
-iteration 3 of 8
-iteration 4 of 8
-iteration 5 of 8
-iteration 6 of 8
-iteration 7 of 8
-Test RMSE: 0.808
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 0.850
 Loading data from openmeteo_santa_cruz_features.csv
                                SARIMAX Results                                
 ==============================================================================
@@ -2552,7 +2784,7 @@ Loading data from grafcan_garachico_features.csv
 Dep. Variable:        air_temperature   No. Observations:                 8760
 Model:                 ARIMA(4, 0, 0)   Log Likelihood              -12027.828
 Date:                Sun, 18 May 2025   AIC                          24067.656
-Time:                        16:39:41   BIC                          24110.124
+Time:                        17:06:41   BIC                          24110.124
 Sample:                             0   HQIC                         24082.126
                                - 8760                                         
 Covariance Type:                  opg                                         
@@ -2825,3 +3057,280 @@ iteration 238 of 240
 iteration 239 of 240
 Test RMSE: 1.434
 Loading data from grafcan_santa_cruz_features.csv
+                               SARIMAX Results                                
+==============================================================================
+Dep. Variable:        air_temperature   No. Observations:                17544
+Model:                 ARIMA(4, 0, 0)   Log Likelihood              -18033.220
+Date:                Sun, 18 May 2025   AIC                          36078.441
+Time:                        16:42:49   BIC                          36125.076
+Sample:                             0   HQIC                         36093.796
+                              - 17544                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         22.3821      0.135    166.330      0.000      22.118      22.646
+ar.L1          1.2334      0.002    505.422      0.000       1.229       1.238
+ar.L2         -0.1537      0.007    -23.580      0.000      -0.166      -0.141
+ar.L3         -0.0569      0.010     -5.642      0.000      -0.077      -0.037
+ar.L4         -0.0628      0.007     -8.588      0.000      -0.077      -0.048
+sigma2         0.4574      0.001    316.044      0.000       0.455       0.460
+===================================================================================
+Ljung-Box (L1) (Q):                   0.00   Jarque-Bera (JB):           2205791.70
+Prob(Q):                              0.95   Prob(JB):                         0.00
+Heteroskedasticity (H):               1.47   Skew:                             1.53
+Prob(H) (two-sided):                  0.00   Kurtosis:                        57.85
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+                  0
+count  17544.000000
+mean      -0.000220
+std        0.676723
+min       -9.733195
+25%       -0.293728
+50%       -0.060025
+75%        0.226106
+max       11.993993
+iteration 0 of 240
+iteration 1 of 240
+iteration 2 of 240
+iteration 3 of 240
+iteration 4 of 240
+iteration 5 of 240
+iteration 6 of 240
+iteration 7 of 240
+iteration 8 of 240
+iteration 9 of 240
+iteration 10 of 240
+iteration 11 of 240
+iteration 12 of 240
+iteration 13 of 240
+iteration 14 of 240
+iteration 15 of 240
+iteration 16 of 240
+iteration 17 of 240
+iteration 18 of 240
+iteration 19 of 240
+iteration 20 of 240
+iteration 21 of 240
+iteration 22 of 240
+iteration 23 of 240
+iteration 24 of 240
+iteration 25 of 240
+iteration 26 of 240
+iteration 27 of 240
+iteration 28 of 240
+iteration 29 of 240
+iteration 30 of 240
+iteration 31 of 240
+iteration 32 of 240
+iteration 33 of 240
+iteration 34 of 240
+iteration 35 of 240
+iteration 36 of 240
+iteration 37 of 240
+iteration 38 of 240
+iteration 39 of 240
+iteration 40 of 240
+iteration 41 of 240
+iteration 42 of 240
+iteration 43 of 240
+iteration 44 of 240
+iteration 45 of 240
+iteration 46 of 240
+iteration 47 of 240
+iteration 48 of 240
+iteration 49 of 240
+iteration 50 of 240
+iteration 51 of 240
+iteration 52 of 240
+iteration 53 of 240
+iteration 54 of 240
+iteration 55 of 240
+iteration 56 of 240
+iteration 57 of 240
+iteration 58 of 240
+iteration 59 of 240
+iteration 60 of 240
+iteration 61 of 240
+iteration 62 of 240
+iteration 63 of 240
+iteration 64 of 240
+iteration 65 of 240
+iteration 66 of 240
+iteration 67 of 240
+iteration 68 of 240
+iteration 69 of 240
+iteration 70 of 240
+iteration 71 of 240
+iteration 72 of 240
+iteration 73 of 240
+iteration 74 of 240
+iteration 75 of 240
+iteration 76 of 240
+iteration 77 of 240
+iteration 78 of 240
+iteration 79 of 240
+iteration 80 of 240
+iteration 81 of 240
+iteration 82 of 240
+iteration 83 of 240
+iteration 84 of 240
+iteration 85 of 240
+iteration 86 of 240
+iteration 87 of 240
+iteration 88 of 240
+iteration 89 of 240
+iteration 90 of 240
+iteration 91 of 240
+iteration 92 of 240
+iteration 93 of 240
+iteration 94 of 240
+iteration 95 of 240
+iteration 96 of 240
+iteration 97 of 240
+iteration 98 of 240
+iteration 99 of 240
+iteration 100 of 240
+iteration 101 of 240
+iteration 102 of 240
+iteration 103 of 240
+iteration 104 of 240
+iteration 105 of 240
+iteration 106 of 240
+iteration 107 of 240
+iteration 108 of 240
+iteration 109 of 240
+iteration 110 of 240
+iteration 111 of 240
+iteration 112 of 240
+iteration 113 of 240
+iteration 114 of 240
+iteration 115 of 240
+iteration 116 of 240
+iteration 117 of 240
+iteration 118 of 240
+iteration 119 of 240
+iteration 120 of 240
+iteration 121 of 240
+iteration 122 of 240
+iteration 123 of 240
+iteration 124 of 240
+iteration 125 of 240
+iteration 126 of 240
+iteration 127 of 240
+iteration 128 of 240
+iteration 129 of 240
+iteration 130 of 240
+iteration 131 of 240
+iteration 132 of 240
+iteration 133 of 240
+iteration 134 of 240
+iteration 135 of 240
+iteration 136 of 240
+iteration 137 of 240
+iteration 138 of 240
+iteration 139 of 240
+iteration 140 of 240
+iteration 141 of 240
+iteration 142 of 240
+iteration 143 of 240
+iteration 144 of 240
+iteration 145 of 240
+iteration 146 of 240
+iteration 147 of 240
+iteration 148 of 240
+iteration 149 of 240
+iteration 150 of 240
+iteration 151 of 240
+iteration 152 of 240
+iteration 153 of 240
+iteration 154 of 240
+iteration 155 of 240
+iteration 156 of 240
+iteration 157 of 240
+iteration 158 of 240
+iteration 159 of 240
+iteration 160 of 240
+iteration 161 of 240
+iteration 162 of 240
+iteration 163 of 240
+iteration 164 of 240
+iteration 165 of 240
+iteration 166 of 240
+iteration 167 of 240
+iteration 168 of 240
+iteration 169 of 240
+iteration 170 of 240
+iteration 171 of 240
+iteration 172 of 240
+iteration 173 of 240
+iteration 174 of 240
+iteration 175 of 240
+iteration 176 of 240
+iteration 177 of 240
+iteration 178 of 240
+iteration 179 of 240
+iteration 180 of 240
+iteration 181 of 240
+iteration 182 of 240
+iteration 183 of 240
+iteration 184 of 240
+iteration 185 of 240
+iteration 186 of 240
+iteration 187 of 240
+iteration 188 of 240
+iteration 189 of 240
+iteration 190 of 240
+iteration 191 of 240
+iteration 192 of 240
+iteration 193 of 240
+iteration 194 of 240
+iteration 195 of 240
+iteration 196 of 240
+iteration 197 of 240
+iteration 198 of 240
+iteration 199 of 240
+iteration 200 of 240
+iteration 201 of 240
+iteration 202 of 240
+iteration 203 of 240
+iteration 204 of 240
+iteration 205 of 240
+iteration 206 of 240
+iteration 207 of 240
+iteration 208 of 240
+iteration 209 of 240
+iteration 210 of 240
+iteration 211 of 240
+iteration 212 of 240
+iteration 213 of 240
+iteration 214 of 240
+iteration 215 of 240
+iteration 216 of 240
+iteration 217 of 240
+iteration 218 of 240
+iteration 219 of 240
+iteration 220 of 240
+iteration 221 of 240
+iteration 222 of 240
+iteration 223 of 240
+iteration 224 of 240
+iteration 225 of 240
+iteration 226 of 240
+iteration 227 of 240
+iteration 228 of 240
+iteration 229 of 240
+iteration 230 of 240
+iteration 231 of 240
+iteration 232 of 240
+iteration 233 of 240
+iteration 234 of 240
+iteration 235 of 240
+iteration 236 of 240
+iteration 237 of 240
+iteration 238 of 240
+iteration 239 of 240
+Test RMSE: 1.335

@@ -21,7 +21,7 @@ def make_stationary(series, alpha=0.05):
             break
     return series, d
 
-# Ejemplo de uso con una serie de ejemplo
+
 if __name__ == "__main__":
     # np.random.seed(42)
     # n = 100
@@ -29,10 +29,9 @@ if __name__ == "__main__":
     
     FILE_NAME = "grafcan_la_laguna_features.csv"
     DATASET_PATH = "../1_data_preprocessing/processed_data/"  + FILE_NAME
-    DATASET = "relative_humidity"
+    DATASET = "air_temperature"
     df = pd.read_csv(DATASET_PATH, parse_dates=['time'])
 
-    
     # Visualización de la serie original
     plt.figure(figsize=(10, 4))
     plt.plot(df[DATASET], label="Serie Original")
