@@ -247,9 +247,9 @@ Por esto, se decide emplear como método de detección de anomalías el de los K
 una alternativa robusta que permite detectar anomalías en distribuciones no gaussianas \cite{gu2019}.
 
 Se aplica el método de KNN a cada variable por separado, con k=10 y límite de distancia 3 veces la desviación típica.
-Respecto al número de vecinos, se observa al graficar la distancia media de los K vecinos más cercanos frente a K que es poco relevante, por lo que se escoge arbitrariamente.
-Una vez fijado K, para fijar el límite se considera que en una distribución gaussiana el 99,7\% de los datos se encuentran dentro de 3 desviaciones típicas y se comprueba empíricamente
-este valor así como otros cercanos, observando los histogramos de valores detectados como anómalos.
+Respecto al número de vecinos (K), se observa al graficar la distancia media de los K vecinos más cercanos frente a K que es poco relevante, por lo que se escoge arbitrariamente.
+Una vez fijado K, para determinar el límite se considera que en una distribución gaussiana el 99,7\% de los datos se encuentran dentro de 3 desviaciones típicas y se comprueba empíricamente
+este valor, así como otros cercanos, observando los histogramos de los datos detectados como anómalos.
 
 Los valores anómalos son etiquetados como tales para poder ser identificados posteriormente. Se pueden observar ejemplos 
 de las distancias en la figura \ref{knn_distances}. En las figuras \ref{histogram_knn_humidity} y \ref{histogram_knn_temperature} se muestran ejemplos de los valores anómalos detectados. 
@@ -465,6 +465,10 @@ Para cada ubicación se eligen los índices de las ventanas de test aleatoriamen
 puesto que los datos son bastante similares entre ambos y queremos evitar el filtrado de información. 
 Cabe destacar la consideración de ventanas "prohibidas", que se descartan del conjunto de entrenamietno para evitar filtrar datos.
 De esta forma, todas las ventanas previas que estén solapadas con una ventana de test son descartadas.
+
+De todas las ventanas creadas originalmente, se escogen un 10\% para el conjunto de test. Como se descartan las ventanas solapadas, según los parámetros empleados, la división resultantes
+es de alrededor de un 14\% de ventanas de test y un 86\% de ventanas de entrenamiento. Se eligen estos porcentajes puesto que se comprueba empíricamente que a un mayor número de 
+ventanas de entrenamiento el rendiemiento del modelo mejora, pero se fija el límite del 10\% para conseguir un conjunto de test representativo y diverso. 
 
 \subsection{Normalización}
 Se utilizan las ventanas del conjunto de entremaniento para calcular las características de la normalización.

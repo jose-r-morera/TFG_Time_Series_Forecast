@@ -9,19 +9,14 @@ import matplotlib.pyplot as plt
 
 # FILES = { "santa_cruz": ["grafcan_santa_cruz_features.csv", "openmeteo_santa_cruz_features.csv"]}
 
-FILES = {"arona": ["grafcan_arona_features.csv"],}
-# FILES = {"arona": [, "openmeteo_arona_features.csv"]}
-#FILES = {"la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],}
+# FILES = {"arona": ["grafcan_arona_features.csv"],}
+# FILES = {"arona": ["openmeteo_arona_features.csv"]}
+FILES = {"la_orotava": ["grafcan_la_orotava_features.csv"]}
+# "openmeteo_la_orotava_features.csv"],}
 #FILES = {"la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],}
 # FILES = {"punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],}
 
-# FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
-#         "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],
-#         # "la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],
-# #          "punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],
-# }
-
-DATASETS_PATH = "../1_data_preprocessing/processed_data/"
+DATASETS_PATH = "../1_data_preprocessing/test_data/"
 
 #PAST_N = 13 # Number of past time steps to use as input
 FUTURE_N = 3 # Number of future time steps to predict

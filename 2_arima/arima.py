@@ -13,11 +13,11 @@ FILES = [
     "grafcan_arona_features.csv", "grafcan_la_orotava_features.csv",
     "grafcan_la_laguna_features.csv", "grafcan_punta_hidalgo_features.csv",
     "grafcan_garachico_features.csv", "grafcan_santa_cruz_features.csv"]
-DATASET_PATH = "../1_data_preprocessing/processed_data/"
+TRAIN_DATASET_PATH = "../1_data_preprocessing/processed_data/"
+TEST_DATASET_PATH = "../1_data_preprocessing/test_data/"
 
 PLOT = False
-TEST_SPLIT_DAY = '2025-02-01'  # Test data starts from this date
-DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
+DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
 
 FORECAST_STEPS = 3  # Number of steps to forecast
 # ARIMA parameters
@@ -28,12 +28,8 @@ ARIMA_Q = 0  # Moving average order
 ####################
 for file in FILES:
     print("Loading data from", file)
-    df = pd.read_csv(DATASET_PATH + file, parse_dates=['time'])
-    indices = df[df['time'].dt.date == pd.to_datetime(TEST_SPLIT_DAY).date()].index
-    first_2025_day_index = indices[0]
-
-    train = df.iloc[0:first_2025_day_index][DATASET]
-    test = df.iloc[first_2025_day_index:][DATASET].reset_index(drop=True)
+    train = pd.read_csv(TRAIN_DATASET_PATH + file, parse_dates=['time'])[DATASET]
+    test = pd.read_csv(TEST_DATASET_PATH + file, parse_dates=['time'])[DATASET]
     #####################################
     model_temp = ARIMA(train, order=(ARIMA_P, ARIMA_D, ARIMA_Q))
     model_fit = model_temp.fit()

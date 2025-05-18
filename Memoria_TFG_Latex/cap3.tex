@@ -8,10 +8,45 @@ Utilizamos como base de comparación los resultados de un ARIMA para cada serie 
 
 Para emplear un modelo ARIMA, es necesario ajustar cada uno de sus parámetros, que son:
 \begin{itemize}
-    \item $p$: el número de términos autorregresivos.
-    \item $d$: el número de diferencias necesarias para hacer la serie estacionaria.
-    \item $q$: el número de términos de media móvil.
+    \item $p$: el número de términos autorregresivos (AR).
+    \item $d$: el número de diferencias necesarias para hacer la serie estacionaria (I).
+    \item $q$: el número de términos de media móvil (MA).
 \end{itemize}
+
+\subsection{Calibración de térmios autorregresivos}
+Para determinar el número de términos autorregresivos, se utiliza la función \texttt{plot\_pacf} de la librería \texttt{statsmodels}, 
+que permite visualizar la función de autocorrelación parcial (PACF) de la serie temporal.
+
+Analíticamente, se emplea el algoritmo descrito en \ref{pacf_ar_order}
+
+\begin{figure}[H]
+{\small
+ \hrule \
+ {\bf\small Pseudocódigo Selección de Orden AR vía PACF}
+ \hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun}\={\bf ción} seleccionar\_orden\_AR($serie$, $max\_lags$): \\
+\ 2: \> \# 1. Calcular la PACF hasta $max\_lags$ retardos \\
+\ 3: \> $pacf\_valores$ = PACF($serie$, $nlags$=$max\_lags$) \\
+\ 4: \> \# 2. Definir intervalo de confianza al 95\% \\
+\ 5: \> $intervalo\_confianza$ = 1.96 / raiz\_cuadrada(longitud($serie$)) \\
+\ 6: \> \# 3. Buscar el primer retardo no significativo \\
+\ 7: \> {\bf Para} \= $lag$ {\bf en} 1 \dots $max\_lags$: \\
+\ 8: \> \> {\bf Si} \= valor\_absoluto($pacf\_valores[lag]$) $<$ $intervalo\_confianza$: \\
+\ 9: \> \> \> imprimir("El mejor orden AR sugerido por la PACF es:", $lag-1$) \\
+\ 10: \> \> \> {\bf Retornar} $lag-1$ \\
+\ 11: \> \# 4. Si todos los retardos son significativos \\
+\ 12: \> imprimir("Todos los retardos hasta", $max\_lags$, "son significativos.) \\
+\ 13: \> {\bf Retornar} $max\_lags$ \\
+\end{tabbing}
+\end{center}
+\hrule
+}
+\caption{Pseudocódigo para Selección de Orden AR usando PACF}
+\label{pacf_ar_order}
+\end{figure}
+
 
 \section{Modelos de aprendizaje profundo}
 Existen diferentes frameworks para el desarrollo de modelos de aprendizaje profundo, destacando TensorFlow, PyTorch o JAX/Flax como los más extendidos.
@@ -26,6 +61,8 @@ una biblioteca de alto nivel que facilita la creación de modelos de aprendizaje
 
 
 \section{Comparativa inicial}
+Realizar una comparativa justa entre los modelos ARIMA y los modelos de aprendizaje profundo es imposible, debido a que tienen naturalezas distintas.
+Los 
 
 \section{Estudios empíricos}
 
