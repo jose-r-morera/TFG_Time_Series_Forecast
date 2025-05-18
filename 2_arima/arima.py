@@ -16,11 +16,11 @@ TRAIN_DATASET_PATH = "../1_data_preprocessing/processed_data/"
 TEST_DATASET_PATH = "../1_data_preprocessing/test_data/"
 
 PLOT = False
-DATASET = "relative_humidity"  # atmospheric_pressure or relative_humidity or air_temperature
+DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
 
 FORECAST_STEPS = 3  # Number of steps to forecast
 # ARIMA parameters
-ARIMA_P = 4  # Autoregressive order
+ARIMA_P = 8  # Autoregressive order
 ARIMA_D = 0  # Integrated order
 ARIMA_Q = 0  # Moving average order
 

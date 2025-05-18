@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import statsmodels.api as sm
 from statsmodels.graphics.tsaplots import plot_acf
 from statsmodels.tsa.arima.model import ARIMA
+from statsmodels.tsa.seasonal import seasonal_decompose
 
 def determinar_orden_ma_acf(serie, max_lags=20, alpha=0.05, min_conf=0.05):
     """
@@ -17,6 +18,10 @@ def determinar_orden_ma_acf(serie, max_lags=20, alpha=0.05, min_conf=0.05):
     Retorna:
     int: El mejor orden MA basado en la ACF.
     """
+    # Eliminar la estacionalidad diaria
+    # res = seasonal_decompose(serie, period=24)
+    # serie = serie - res.seasonal
+
     # Graficar la ACF
     plot_acf(serie, lags=max_lags, alpha=alpha)
     plt.title('Función de Autocorrelación (ACF)')
@@ -27,6 +32,7 @@ def determinar_orden_ma_acf(serie, max_lags=20, alpha=0.05, min_conf=0.05):
     
     # Encontrar el primer lag donde la ACF es no significativa
     conf_interval = max(1.96 / np.sqrt(len(serie)), min_conf)
+    print(conf_interval)
     # conf_interval = 1.96 / np.sqrt(len(serie))  # Intervalo de confianza a 95%
     
     for lag in range(1, max_lags + 1):
@@ -42,9 +48,10 @@ def determinar_orden_ma_acf(serie, max_lags=20, alpha=0.05, min_conf=0.05):
 # np.random.seed(123)
 # serie = sm.tsa.arma_generate_sample(ar=[1], ma=[1, 0.75, 0.52], nsample=100)  # Simula una serie MA(2)
 
-FILE_NAME = "grafcan_cuesta_features.csv"
-DATASET_PATH = "../1_tratamiento_datos/processed_data/" + FILE_NAME
-serie = pd.read_csv(DATASET_PATH, parse_dates=['time'])["air_temperature"].values
+FILE_NAME = "grafcan_la_laguna_features.csv"
+DATASET_PATH = "../1_data_preprocessing/processed_data/" + FILE_NAME
+VARIABLE = "atmospheric_pressure" # atmospheric_pressure or relative_humidity or air_temperature
+serie = pd.read_csv(DATASET_PATH, parse_dates=['time'])[VARIABLE].values
 
 plt.figure(1)
 plt.plot(serie)

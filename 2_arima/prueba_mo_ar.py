@@ -29,6 +29,7 @@ def determinar_orden_ar_pacf(serie, max_lags=20, alpha=0.05):
     conf_interval = 1.96 / np.sqrt(len(serie))  # Intervalo de confianza a 95%
     
     for lag in range(1, max_lags + 1):
+        print("lag: ", lag, "pacf_values[lag]:", pacf_values[lag], "conf_interval:", conf_interval)
         if abs(pacf_values[lag]) < conf_interval:
             print(f"\nEl mejor orden AR sugerido por la PACF es: {lag-1}")
             return lag-1
@@ -43,7 +44,7 @@ def determinar_orden_ar_pacf(serie, max_lags=20, alpha=0.05):
 
 FILE_NAME = "grafcan_la_laguna_features.csv"
 DATASET_PATH = "../1_data_preprocessing/processed_data/" + FILE_NAME
-DATASET = "relative_humidity"
+DATASET = "relative_humidity" # atmospheric_pressure or relative_humidity or air_temperature
 serie = pd.read_csv(DATASET_PATH, parse_dates=['time'])[DATASET].values
 
 plt.figure(1)

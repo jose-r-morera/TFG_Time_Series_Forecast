@@ -18,8 +18,12 @@
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Mapa de correlación entre las variables del dataset.}}{14}{figure.caption.21}%
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Pseudocódigo Creación de Ventanas de Datos}}{16}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ejemplo de la función de autocorrelación parcial (PACF) de una serie temporal}}{19}{figure.caption.23}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Pseudocódigo para Selección de Orden AR usando PACF}}{19}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Gráfico de PACF para la serie de humedad relativa en La Laguna de Grafcan}}{19}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Gráfico de PACF para la serie de presión atmosférica en La Laguna de Grafcan}}{19}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Pseudocódigo para Selección de Orden AR usando PACF}}{20}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Pseudocódigo para Selección de Orden MA usando ACF}}{21}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Gráfico de ACF para la serie de temperatura del aire en La Laguna de Grafcan}}{21}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Gráfico de ACF para la serie de presión atmosférica en La Laguna de Grafcan}}{22}{figure.caption.28}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

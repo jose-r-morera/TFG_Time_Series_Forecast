@@ -27,9 +27,9 @@ if __name__ == "__main__":
     # n = 100
     # time_series = np.cumsum(np.random.randn(n))  # Serie no estacionaria (caminata aleatoria)
     
-    FILE_NAME = "grafcan_la_laguna_features.csv"
+    FILE_NAME = "openmeteo_la_laguna_features.csv"
     DATASET_PATH = "../1_data_preprocessing/processed_data/"  + FILE_NAME
-    DATASET = "air_temperature"
+    DATASET = "relative_humidity" # atmospheric_pressure or relative_humidity or air_temperature
     df = pd.read_csv(DATASET_PATH, parse_dates=['time'])
 
     # Visualización de la serie original
