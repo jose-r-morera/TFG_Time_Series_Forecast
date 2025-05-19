@@ -69,7 +69,7 @@ La prueba ADF es una prueba estadística que evalúa la presencia de una raíz u
 La hipótesis nula de la prueba ADF establece que la serie temporal tiene una raíz unitaria, lo que implica que no es estacionaria.
 Si el valor p de la prueba es menor que un nivel de significancia predefinido (por ejemplo, 0.05), se rechaza la hipótesis nula y se concluye que la serie es estacionaria.
 
-Empleamos como significancia un nivel de 0.05, y se obserca que todas las series temporales son estacionarias, por lo que no es necesario aplicar diferencias, 
+Empleamos como significancia un nivel de 0.05, y se observa que todas las series temporales son estacionarias, por lo que no es necesario aplicar diferencias, 
 es decir, $d$ = 0.
 
 \subsection{Determinación del orden de la media móvil}
@@ -126,6 +126,38 @@ no existe un punto de corte claro, sino que existe un descenso suave y progresiv
     \label{acf_arima_pres}
 \end{figure}
 
+\subsection{Evaluación}
+Para evaluar los modelos ARIMA empleamos la validación progresiva (walk-forward validation), que consiste en un bucle en el que se entrena al modelo, se realiza una predicción y se reentrena con los datos más recientes
+antes de realizar la siguiente predicción. Este proceso se repite hasta que se alcanza el final del periodo de validación \ref{walk_forward_arima}. Emplearemos como métrica la raíz del error cuadrático medio (RMSE), 
+que se calcula como la raíz cuadrada de la media de los errores al cuadrado entre las predicciones y los valores reales. Esta medición proporciona el error en la unidad de la variable.
+
+\begin{figure}[H]
+{\small
+\hrule
+{\bf\small Pseudocódigo Validación Walk-Forward con ARIMA}
+\hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun}\={\bf ción} validacion\_walk\_forward($test$, $history$, $pasos\_prediccion$, $orden\_ARIMA$): \\
+\ 2: \> $predicciones$ = lista\_vacía() \\
+\ 3: \> $valores\_reales$ = lista\_vacía() \\
+\ 4: \> {\bf Para} \= $t$ {\bf en} rango(0, longitud($test$) $-$ $pasos\_prediccion$ $+$ 1, $pasos\_prediccion$): \\
+\ 5: \> \> $modelo$ = ARIMA($history$, orden=$orden\_ARIMA$) \\
+\ 6: \> \> $ajuste$ = ajustar($modelo$) \\
+\ 7: \> \> $pronostico$ = predecir($ajuste$, pasos=$pasos\_prediccion$) \\
+\ 8: \> \> $predicciones$.añadir($pronostico$) \\
+\ 9: \> \> $valores\_reales$.añadir($test[t : t+pasos]$) \\
+\ 10: \> \> $history$.añadir($test[t : t+pasos]$) \\
+\ 11: \> $rmse$ = raíz\_cuadrada(ECM($valores\_reales$, $predicciones$)) \\
+\ 12: \> {\bf Retornar} $rmse$ \\
+\end{tabbing}
+\end{center}
+}
+\hrule
+\caption{Pseudocódigo para validación walk-forward usando ARIMA}
+\label{walk_forward_arima}
+\end{figure}
+
 \section{Modelos de aprendizaje profundo}
 Existen diferentes frameworks para el desarrollo de modelos de aprendizaje profundo, destacando TensorFlow, PyTorch o JAX/Flax como los más extendidos.
 Después de evaluar alternativas, se opta por TensorFlow debido a su amplia comunidad de usuarios y su extensa documentación, así comopor su integración con Keras, 
@@ -139,8 +171,58 @@ una biblioteca de alto nivel que facilita la creación de modelos de aprendizaje
 
 
 \section{Comparativa inicial}
-Realizar una comparativa justa entre los modelos ARIMA y los modelos de aprendizaje profundo es imposible, debido a que tienen naturalezas distintas.
-Los 
+Para establecer una referencia del rendimiento de los modelos neuronales, se compara un modelo LSTM con un modelo ARIMA, ambos con un horizonte de predicción de 3 horas.
+
+Es difícil realizar una comparativa justa entre modelos ARIMA y de aprendizaje profundo, debido a que tienen naturalezas distintas.
+Los ARIMA toman una serie temporal unidimensional para su entrenamiento, idealmente con un número elevado de observaciones (normalmente, más de 500),
+ y generan una predicción de su continuación. Mientras que, con los modelos de aprendizaje profundo, buscamos crear un modelo capaz de predecir
+una serie que no ha usado en su entrenamiento, a partir de una muestra pequeña, de menos de un día.  
+
+
+Debido a estas limitaciones, los ARIMA se suelen evaluar sobre el periodo posterior al entrenamiento, lo que contrata con el enfoque de validación que habíamos implementado 
+en los modelos neuronales, usando un muestreo aleatorio de las ventanas en todo el período contemplado.
+Para comparar ambos modelos, se opta por emplear el mes de marzo de 2025, siendo ambos modelos entrenados con el intervalo de marzo de 2023 a febrero de 2025.  
+
+
+Los resultados se muestran en la tabla \ref{comparativa_inicial}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{llrrrrrr}
+\toprule
+ &  & \multicolumn{2}{c}{Temperatura} & \multicolumn{2}{c}{Presión} & \multicolumn{2}{c}{Humedad} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+Ubicación & Fuente & ARIMA & LSTM & ARIMA & LSTM & ARIMA & LSTM \\
+\midrule
+\multirow{2}{*}{Arona}
+  & Open-Meteo    & 1,088 & 0,630 & 0 & 0 & 0 & 0 \\
+  & Grafcan & 1,263 & 0,697 & 0 & 0 & 0 & 0 \\
+\addlinespace
+\multirow{2}{*}{La Orotava}
+  & Open-Meteo    & 0,917 & 0,496 & 0 & 0 & 0 & 0 \\
+  & Grafcan & 1,344 & 0,832 & 0 & 0 & 0 & 0 \\
+\addlinespace
+\multirow{2}{*}{La Laguna 1}
+  & Open-Meteo    & 0,806 & 0,385 & 0 & 0 & 0 & 0 \\
+  & Grafcan & 0,902 & 0,699 & 0 & 0 & 0 & 0 \\
+\addlinespace
+\multirow{2}{*}{La Laguna 2}
+  & Open-Meteo    & 1,157 & 0,497 & 0 & 0 & 0 & 0 \\
+  & Grafcan & 1,049 & 0,621 & 0 & 0 & 0 & 0 \\
+\addlinespace
+\multirow{2}{*}{Santa Cruz}
+  & Open-Meteo    & 0,806 & 0,404 & 0 & 0 & 0 & 0 \\
+  & Grafcan & 1,335 & 0,832 & 0 & 0 & 0 & 0 \\
+\addlinespace
+\multirow{2}{*}{Garachico}
+  & Open-Meteo    & 0,850 & 0,612 & 0 & 0 & 0 & 0 \\
+  & Grafcan & 1,434 & 0,991 & 0 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Comparativa inicial de modelos ARIMA y LSTM con predicciones de 3 horas} 
+\label{comparativa_inicial}
+\end{table}
+
 
 \section{Estudios empíricos}
 

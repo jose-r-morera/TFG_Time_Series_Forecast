@@ -24,6 +24,7 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Pseudocódigo para Selección de Orden MA usando ACF}}{21}{figure.caption.26}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Gráfico de ACF para la serie de temperatura del aire en La Laguna de Grafcan}}{21}{figure.caption.27}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Gráfico de ACF para la serie de presión atmosférica en La Laguna de Grafcan}}{22}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Pseudocódigo para validación walk-forward usando ARIMA}}{22}{figure.caption.29}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

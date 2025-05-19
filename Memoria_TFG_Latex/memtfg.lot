@@ -5,10 +5,11 @@
 \contentsline {table}{\numberline {2.2}{\ignorespaces Modelo de Open-Meteo seleccionado para cada variable y estación}}{10}{table.caption.11}%
 \contentsline {table}{\numberline {2.3}{\ignorespaces Métricas de similitud con Grafcan para Arona}}{10}{table.caption.12}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Comparativa inicial de modelos ARIMA y LSTM con predicciones de 3 horas}}{24}{table.caption.30}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Resumen de tipos}}{27}{table.caption.29}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Resumen de tipos}}{28}{table.caption.31}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
