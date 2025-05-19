@@ -29,27 +29,28 @@
 \contentsline {subsection}{\numberline {3.1.4}Evaluación}{22}{subsection.3.1.4}%
 \contentsline {section}{\numberline {3.2}Modelos de aprendizaje profundo}{22}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Creación del dataset con TensorFlow}{23}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}LSTM}{23}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Consideraciones generales}{23}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}CNN}{23}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}LSTM-CNN}{24}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.4}LSTM}{24}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}LSTM-CNN}{24}{subsection.3.2.5}%
 \contentsline {section}{\numberline {3.3}Comparativa inicial}{24}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Estudios empíricos}{25}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Número de estaciones}{25}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Tamaño de la ventana}{25}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Uso de ruido}{25}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Resultados}{25}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Temperatura del aire}{25}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Humedad relativa}{25}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Presión atmosférica}{25}{subsection.3.5.3}%
-\contentsline {chapter}{\numberline {4}\LARGE Despliegue}{26}{chapter.4}%
-\contentsline {chapter}{\numberline {5}\LARGE Conclusiones y líneas futuras}{27}{chapter.5}%
-\contentsline {chapter}{\numberline {6}\LARGE Summary and Conclusions}{28}{chapter.6}%
-\contentsline {chapter}{\numberline {7}\LARGE Presupuesto}{29}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Sección Uno}{29}{section.7.1}%
-\contentsline {chapter}{\numberline {A}\LARGE Título del Apéndice 1}{30}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Algoritmo XXX}{30}{section.Alph1.1}%
-\contentsline {section}{\numberline {A.2}Algoritmo YYY}{30}{section.Alph1.2}%
-\contentsline {section}{\numberline {A.3}Algoritmo ZZZ}{31}{section.Alph1.3}%
-\contentsline {chapter}{\numberline {B}\LARGE Título del Apéndice 2}{32}{appendix.Alph2}%
-\contentsline {section}{\numberline {B.1}Otro apéndice: Sección 1}{32}{section.Alph2.1}%
-\contentsline {section}{\numberline {B.2}Otro apéndice: Sección 2}{32}{section.Alph2.2}%
+\contentsline {subsection}{\numberline {3.4.2}Tamaño de la ventana}{26}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Uso de ruido}{26}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Resultados}{26}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Temperatura del aire}{26}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Humedad relativa}{26}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Presión atmosférica}{26}{subsection.3.5.3}%
+\contentsline {chapter}{\numberline {4}\LARGE Despliegue}{27}{chapter.4}%
+\contentsline {chapter}{\numberline {5}\LARGE Conclusiones y líneas futuras}{28}{chapter.5}%
+\contentsline {chapter}{\numberline {6}\LARGE Summary and Conclusions}{29}{chapter.6}%
+\contentsline {chapter}{\numberline {7}\LARGE Presupuesto}{30}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Sección Uno}{30}{section.7.1}%
+\contentsline {chapter}{\numberline {A}\LARGE Título del Apéndice 1}{31}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Algoritmo XXX}{31}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Algoritmo YYY}{31}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Algoritmo ZZZ}{32}{section.Alph1.3}%
+\contentsline {chapter}{\numberline {B}\LARGE Título del Apéndice 2}{33}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Otro apéndice: Sección 1}{33}{section.Alph2.1}%
+\contentsline {section}{\numberline {B.2}Otro apéndice: Sección 2}{33}{section.Alph2.2}%

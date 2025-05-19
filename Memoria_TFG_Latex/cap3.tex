@@ -173,6 +173,30 @@ el modelo es más sensible al ruido, con ese valor se consiguen los modelos con 
 
 En el caso del conjunto de entrenamiento, tras crear los lotes se baraja, para evitar el sobreajuste y mejorar la generalización del modelo.
 
+\subsection{Consideraciones generales}
+Se emplea como métrica de pérdida el error mse de las ventanas de validación.
+
+Además, para controlar el entrenamiento se emplean dos funciones de retorno (callbacks): 
+\itemize{
+\item \texttt{EarlyStopping}: detiene el entrenamiento si no se observa mejora en la métrica de validación durante un número determinado de épocas (patience). 
+De esta forma se intenta evitar el sobreajuste. Además, se guarda el modelo con la mejor métrica de validación.
+\item \texttt{ReduceLORonPlateau}: reduce la tasa de aprendizaje por un factor si no se observa mejora en la métrica de validación durante un número determinado de épocas (patience).
+Se basa en la idea de que cuando el modelo no mejora, es posible que se encuentre cerca de un mínimo local y que una tasa de aprendizaje más baja pueda ayudar a acercarse más.
+}
+
+Para determinar todas estas variables, se hace uso de una herramienta de ajuste fino (fine-tuning) de los hiperparámetros. En particular, se emplea Keras Tuner, y el método de búsqueda
+en rejilla (grid search), que consiste en definir un espacio de búsqueda para los hiperparámetros y evaluar todas las combinaciones posibles. Se realizan 5 ejecuciones por prueba y se 
+emplea la media de los resultados.
+
+\subsection{CNN}
+Las redes convolucionales (CNN) son un tipo de red neuronal diseñadas originalmente para procesar datos con estructura de cuadrícula (como imágenes), pero también se pueden aplicar a series temporales (1D).
+Su base es la convolución, una operación en la que uno o varios filtros (o núcleos) se deslizan sobre la entrada, calculando productos escalares para extraer características locales relevantes.
+Cada filtro tiene un tamaño (kernel size) y avanza con un paso (stride) determinado; además, puede aplicarse padding (relleno) para controlar las dimensiones de la salida.
+En una capa suelen existir múltiples filtros distintos, de manera que cada uno aprende a detectar un patrón diferente (por ejemplo, tendencias, picos o frecuencias concretas en series temporales).
+
+Tras las capas convolucionales, es común intercalar capas de pooling (submuestreo), como max-pooling o average-pooling, para reducir dimensión, extraer características más robustas y controlar el sobreajuste.
+Durante el entrenamiento de la red, los pesos de los filtros se ajustan para minimizar el error de predicción.
+
 \subsection{LSTM}
 Las redes LSTM (Long Short-Term Memory) son un tipo de red neuronal recurrente (RNN) que se utilizan para modelar secuencias temporales.
 Las LSTM son capaces de aprender patrones a largo plazo en los datos, lo que las hace adecuadas para tareas de predicción de series temporales.
@@ -183,16 +207,6 @@ Cada unidad LSTM incluye una celda de memoria y tres puertas que regulan el fluj
 \item Puerta de olvido: determina qué información de la celda de memoria se olvida.
 \item  Puerta de salida: controla qué información de la celda de memoria se envía como salida.
 }
-
-
-\subsection{CNN}
-Las redes convolucionales (CNN) son un tipo de red neuronal diseñadas originalmente para procesar datos con estructura de cuadrícula (como imágenes), pero también se pueden aplicar a series temporales (1D).
-Su base es la convolución, una operación en la que uno o varios filtros (o núcleos) se deslizan sobre la entrada, calculando productos escalares para extraer características locales relevantes.
-Cada filtro tiene un tamaño (kernel size) y avanza con un paso (stride) determinado; además, puede aplicarse padding (relleno) para controlar las dimensiones de la salida.
-En una capa suelen existir múltiples filtros distintos, de manera que cada uno aprende a detectar un patrón diferente (por ejemplo, tendencias, picos o frecuencias concretas en series temporales).
-
-Tras las capas convolucionales, es común intercalar capas de pooling (submuestreo), como max-pooling o average-pooling, para reducir dimensión, extraer características más robustas y controlar el sobreajuste.
-Durante el entrenamiento de la red, los pesos de los filtros se ajustan para minimizar el error de predicción.
 
 \subsection{LSTM-CNN}
 Los modelos híbridos LSTM-CNN combinan las ventajas de las redes LSTM y las redes convolucionales. Intercalan capas convolucionales y LSTM para capturar tanto patrones locales como dependencias a largo plazo en los datos de series temporales.
