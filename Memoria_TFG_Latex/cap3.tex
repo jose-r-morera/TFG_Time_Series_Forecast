@@ -163,12 +163,40 @@ Existen diferentes frameworks para el desarrollo de modelos de aprendizaje profu
 Después de evaluar alternativas, se opta por TensorFlow debido a su amplia comunidad de usuarios y su extensa documentación, así comopor su integración con Keras, 
 una biblioteca de alto nivel que facilita la creación de modelos de aprendizaje profundo.
 
+\subsection{Creación del dataset con TensorFlow}
+Para crear el dataset, se emplea la función de TensorFlow \texttt{Dataset.from\_tensor\_slices()}, que permite crear un objeto Dataset 
+a partir de tensores de entrada y salida. Dichos tensores son: la dupla (datos\_pasados, datos\_futuros) y el arreglo con los datos de validación.
+
+Se crean dos datasets: uno para el entrenamiento y otro para la validación. Ambos se dividen en lotes (batches) de tamaño 64. Este número se elige tras realizar 
+pruebas con diferentes tamaños de lotes en los distintos modelos, y se observa que, pese a ser un poco más inestable, ya que al ser un número pequeño de muestrar por lote,
+el modelo es más sensible al ruido, con ese valor se consiguen los modelos con menor error. 
+
+En el caso del conjunto de entrenamiento, tras crear los lotes se baraja, para evitar el sobreajuste y mejorar la generalización del modelo.
+
 \subsection{LSTM}
+Las redes LSTM (Long Short-Term Memory) son un tipo de red neuronal recurrente (RNN) que se utilizan para modelar secuencias temporales.
+Las LSTM son capaces de aprender patrones a largo plazo en los datos, lo que las hace adecuadas para tareas de predicción de series temporales.
+Se basan en la idea de utilizar celdas de memoria que pueden almacenar información durante períodos prolongados, lo que les permite recordar información relevante de entradas anteriores.
+Cada unidad LSTM incluye una celda de memoria y tres puertas que regulan el flujo de información:
+\itemize{
+\item Puerta de entrada: decide qué información nueva se añade a la celda de memoria.
+\item Puerta de olvido: determina qué información de la celda de memoria se olvida.
+\item  Puerta de salida: controla qué información de la celda de memoria se envía como salida.
+}
+
 
 \subsection{CNN}
+Las redes convolucionales (CNN) son un tipo de red neuronal diseñadas originalmente para procesar datos con estructura de cuadrícula (como imágenes), pero también se pueden aplicar a series temporales (1D).
+Su base es la convolución, una operación en la que uno o varios filtros (o núcleos) se deslizan sobre la entrada, calculando productos escalares para extraer características locales relevantes.
+Cada filtro tiene un tamaño (kernel size) y avanza con un paso (stride) determinado; además, puede aplicarse padding (relleno) para controlar las dimensiones de la salida.
+En una capa suelen existir múltiples filtros distintos, de manera que cada uno aprende a detectar un patrón diferente (por ejemplo, tendencias, picos o frecuencias concretas en series temporales).
+
+Tras las capas convolucionales, es común intercalar capas de pooling (submuestreo), como max-pooling o average-pooling, para reducir dimensión, extraer características más robustas y controlar el sobreajuste.
+Durante el entrenamiento de la red, los pesos de los filtros se ajustan para minimizar el error de predicción.
 
 \subsection{LSTM-CNN}
-
+Los modelos híbridos LSTM-CNN combinan las ventajas de las redes LSTM y las redes convolucionales. Intercalan capas convolucionales y LSTM para capturar tanto patrones locales como dependencias a largo plazo en los datos de series temporales.
+La arquitectura típica de un modelo LSTM-CNN incluye capas convolucionales iniciales para extraer características locales, seguidas de capas LSTM para capturar patrones temporales a largo plazo.
 
 \section{Comparativa inicial}
 Para establecer una referencia del rendimiento de los modelos neuronales, se compara un modelo LSTM con un modelo ARIMA, ambos con un horizonte de predicción de 3 horas.
@@ -223,6 +251,9 @@ Ubicación & Fuente & ARIMA & LSTM & ARIMA & LSTM & ARIMA & LSTM \\
 \label{comparativa_inicial}
 \end{table}
 
+TODO: Conclusiones.
+
+A continuación, se comparan los modelos LSTM, CNN y el híbrido. En este caso, emplearemos el RMSE obtenido en la validación cruzada del entrenamiento.
 
 \section{Estudios empíricos}
 
