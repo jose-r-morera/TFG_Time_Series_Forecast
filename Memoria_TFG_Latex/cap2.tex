@@ -360,7 +360,7 @@ Para la predicción de series temporales, los modelos neuronales requieren como 
 previos, que denominaremos P. Así mismo, se define un número de horas a predecir, que denominaremos N. 
 De esta forma, un modelo requiere P horas de datos para predecir N horas futuras. Esto es lo que se conoce como ventana de datos.
 
-En su versión más simple, la univariable, consta de una componente X, los valores de las variables en P pasos, y una componente Y, un vector
+En su versión más simple, la univariable, consta de una componente X, los valores de la variable en P pasos, y una componente Y, un vector
 de tamaño N con los valores a predecir. 
 No obstante, puede ser relevante incluir información adicional exógena sobre los valores a predecir, como la codificación temporal 
 (o en otros dominios, si el día es festivo, etc).
@@ -369,10 +369,10 @@ Optamos por incluir esta información y contruir ventanas de datos con 3 compone
 para cada paso a predecir N. Empíricamente comprobamos que la inclusión de esta información adicional mejora ligeramente el rendimiento del modelo.
 
 En la práctica, estas ventanas se construyen mediante la técnica de ventana deslizante, que consiste en recorrer la serie temporal desplazando 
-la ventana de datos en un número de pasos, que denominaremos S. Establecemos S=6 para que la ventana se desplace cada 6 horas, con el fin de evitar 
-la redundancia de datos.
+la ventana de datos en un número de pasos, que denominaremos S. Establecemos S=6 para que la ventana se desplace cada 6 horas, con el fin de buscar un balance 
+entre evitar la redundancia de datos que existiría si usásemos un paso menor y mantener el máximo de información posible.
 
-Como datos pasados empleamos la variable meteorológcia estudiada, así como las restantes como covariables. Se comprueba exógenamente que 
+Como datos pasados empleamos la variable meteorológcia estudiada, así como las restantes como covariables. Se comprueba empíricamente que 
 añadir estas covariables mejora el rendimiento del modelo. También se emplea como datos pasados las variables de codificación temporal. 
 
 Es decir, la estructura de una ventana es:

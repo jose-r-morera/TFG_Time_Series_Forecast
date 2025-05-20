@@ -1,0 +1,25 @@
+Bidirectional de 42:
+
+  Sin segunda densa:
+  Average val_loss over 10 runs: 0.122418 ± 0.000994
+  Minimum val_loss over 10 runs: 0.121305
+
+  Con segunda densa y 6x neuronas:
+  Average val_loss over 10 runs: 0.121327 ± 0.001071
+  Minimum val_loss over 10 runs: 0.118715
+
+  Con segunda densa y 5x neuronas:
+  Average val_loss over 10 runs: 0.121555 ± 0.000857
+  Minimum val_loss over 10 runs: 0.120335
+
+  Con segunda densa y 4x neuronas:
+  Average val_loss over 10 runs: 0.122008 ± 0.000868
+  Minimum val_loss over 10 runs: 0.120199
+
+  Con segunda densa y 3x neuronas:
+  Average val_loss over 10 runs: 0.122447 ± 0.000502
+  Minimum val_loss over 10 runs: 0.121607
+
+  Con segunda densa y 2x neuronas:
+  Average val_loss over 10 runs: 0.122233 ± 0.000855
+  Minimum val_loss over 10 runs: 0.120813

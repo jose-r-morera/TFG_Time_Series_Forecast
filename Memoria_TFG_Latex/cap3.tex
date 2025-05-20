@@ -184,7 +184,7 @@ De esta forma se intenta evitar el sobreajuste. Además, se guarda el modelo con
 Se basa en la idea de que cuando el modelo no mejora, es posible que se encuentre cerca de un mínimo local y que una tasa de aprendizaje más baja pueda ayudar a acercarse más.
 }
 
-Para determinar todas estas variables, se hace uso de una herramienta de ajuste fino (fine-tuning) de los hiperparámetros. En particular, se emplea Keras Tuner, y el método de búsqueda
+Para determinar estas variables, además de otros hiperparámetros como el ratio de aprendizaje, se hace uso de una herramienta de ajuste fino (fine-tuning). En particular, se emplea Keras Tuner, y el método de búsqueda
 en rejilla (grid search), que consiste en definir un espacio de búsqueda para los hiperparámetros y evaluar todas las combinaciones posibles. Se realizan 5 ejecuciones por prueba y se 
 emplea la media de los resultados.
 
@@ -276,6 +276,8 @@ Se estudia el impacto del número de estaciones en la precisión de los modelos.
 Para evaluarlo, se mide el desempeño frente a las estaciones de test. Observamos que el rendimiento mejora a medida que se añaden más estaciones.
 
 \subsection{Tamaño de la ventana}
+Se estudia exhaustivamente el número de horas previas $P$ que contiene la ventana. Para ello, se construyen datasets desde $P$=6 hasta $P$=48 y se evalúan en los modelos 
+desarrollados. Se observan distintos valores óptimos de $P$ según las variables:
 
 \subsection{Uso de ruido}
 

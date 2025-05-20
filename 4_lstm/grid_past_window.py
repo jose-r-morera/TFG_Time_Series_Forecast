@@ -12,7 +12,7 @@ SHUFFLE       = True
 LEARNING_RATE = 0.002
 EPOCHS        = 700
 
-DATASET = "air_temperature"  # "atmospheric_pressure" or "relative_humidity"
+DATASET = "relative_humidity"  # air_temperature, "atmospheric_pressure" or "relative_humidity"
 
 es_callback = tf.keras.callbacks.EarlyStopping(
     monitor="val_loss", patience=10, restore_best_weights=True
@@ -28,15 +28,16 @@ def build_model(past_shape, future_shape, target_dim):
 
     # encoder
     e = tf.keras.layers.Bidirectional(
-        tf.keras.layers.LSTM(64, return_sequences=False)
+        tf.keras.layers.LSTM(42, return_sequences=False)
     )(past_in)
 
     # decoder
-    d = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
+    d = tf.keras.layers.Flatten()(future_in)
+    d =  tf.keras.layers.Dense(4, activation='relu')(d)
 
     # merge & output
     m = tf.keras.layers.concatenate([e, d])
-    m = tf.keras.layers.Dense(2*target_dim)(m)
+    #m = tf.keras.layers.Dense(2*target_dim)(m)
     out = tf.keras.layers.Dense(target_dim)(m)
 
     model = tf.keras.Model([past_in, future_in], out)
@@ -64,7 +65,6 @@ def load_dataset(path):
 
     if SHUFFLE:
         ds_tr  = ds_tr.shuffle(ds_tr.cardinality())
-        ds_val = ds_val.shuffle(ds_val.cardinality())
 
     return ds_tr.batch(BATCH_SIZE), ds_val.batch(BATCH_SIZE)
 
@@ -119,9 +119,9 @@ def evaluate_with_trials(data_path, min_file, max_file, trials=5):
 
 if __name__ == "__main__":
     # list your datasets here:
-    DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_full_p"
+    DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p"
     min_i = 6
-    max_i = 50
+    max_i = 40
     best_ds, all_scores = evaluate_with_trials(DATA_PATH, min_i, max_i)
     print(f"Best dataset: {best_ds}")
     print(f"All scores: {all_scores}")
