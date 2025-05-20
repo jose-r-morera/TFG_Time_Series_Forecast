@@ -29,7 +29,7 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Resultados del modelo ARIMA para la serie de temperatura del aire en Arona de Open-Meteo}}{23}{figure.caption.32}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Distribución de los residuos del modelo ARIMA para la serie de temperatura del aire en Arona de Open-Meteo}}{24}{figure.caption.31}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Pseudocódigo de la función \texttt {add\_noise}}}{28}{figure.caption.34}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Datos pasados de 2 muestras. Datos originales en continua y con el ruido en discontinua.}}{28}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Datos pasados de 2 muestras. Datos originales en continua y con el ruido en discontinua.}}{29}{figure.caption.35}%
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Valores objetivo de 2 muestras. Datos originales en continua y con el ruido en discontinua.}}{29}{figure.caption.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

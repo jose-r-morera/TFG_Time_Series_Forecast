@@ -26,6 +26,7 @@ PRINT = False
 
 learning_rate = 0.002
 EPOCHS = 700
+DATASET = "relative_humidity"  # atmospheric_pressure or relative_humidity or air_temperature
 
 #################################################################
 # Avoid memory issues with TensorFlow
@@ -43,13 +44,13 @@ if gpus:
 with open(DATA_PATH, "rb") as f:
     data = pickle.load(f)
 
-x_train = data["train"]["air_temperature"]["past_variables"]
-future_train = data["train"]["air_temperature"]["future_variables"]
-y_train = data["train"]["air_temperature"]["y"]
+x_train = data["train"][DATASET]["past_variables"]
+future_train = data["train"][DATASET]["future_variables"]
+y_train = data["train"][DATASET]["y"]
 
-x_val = data["test"]["air_temperature"]["past_variables"]
-future_val = data["test"]["air_temperature"]["future_variables"]
-y_val = data["test"]["air_temperature"]["y"]
+x_val = data["test"][DATASET]["past_variables"]
+future_val = data["test"][DATASET]["future_variables"]
+y_val = data["test"][DATASET]["y"]
 
 #############
 # BATCH AND SHUFFLE
@@ -98,12 +99,13 @@ def build_model(hp):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    past_units = hp.Int('past_units', min_value=18, max_value=64, step=1)
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(past_units, return_sequences=False))(past_in)
+   
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
     
     # Future exogenous features
     future_dense = tf.keras.layers.Flatten()(future_in)
-    future_dense = tf.keras.layers.Dense(4)(future_dense)
+    future_units = hp.Int('future_units', min_value=1, max_value=8, step=1)
+    future_dense = tf.keras.layers.Dense(future_units)(future_dense)
 
     # Combine the outputs of past and future
     future_residue = tf.keras.layers.Flatten()(future_in)
@@ -138,7 +140,7 @@ tuner = kt.GridSearch(
     max_trials=500,
     executions_per_trial=6,
     directory='../output/tuner',
-    project_name='lstm_fut_grid_h'
+    project_name='lstm_fut_grid_h2'
 )
 
 # Define tunable patience and min_delta for ReduceLROnPlateau

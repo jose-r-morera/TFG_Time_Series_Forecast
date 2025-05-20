@@ -86,28 +86,31 @@ def build_and_train_model(dataset_train):
         inputs, targets = batch
         past_data, future_data = inputs
         
-    past_data_shape = (past_data.shape[1], past_data.shape[2])
-    future_data_shape = (future_data.shape[1], future_data.shape[2])    
-    output_units = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
+    past_shape = (past_data.shape[1], past_data.shape[2])
+    future_shape = (future_data.shape[1], future_data.shape[2])    
+    target_dim = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
     ########################################################################################
     # Encoder part (LSTM for past data)
-    past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_data_layer)
+    past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
+    future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
-    # Decoder part (LSTM for future exogenous features)
-    future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
-    decoder_lstm = tf.keras.layers.Flatten()(future_data_layer)
-    decoder_lstm = tf.keras.layers.Dense(4)(decoder_lstm)
+    # Past data 
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=True))(past_in)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42))(past_lstm)
+    
+    # Future exogenous features
+    future_dense = tf.keras.layers.Flatten()(future_in)
+    future_dense = tf.keras.layers.Dense(4)(future_dense)
 
-    # Combine the outputs of encoder and decoder (you can concatenate or merge them)
-    #future_residue = tf.keras.layers.Flatten()(future_data_layer)
-    merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])#, future_residue])
+    # Combine the outputs of past and future
+    future_residue = tf.keras.layers.Flatten()(future_in)
+    merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
 
     # Final output layer
-    merged = tf.keras.layers.Dense(7* output_units)(merged) 
-    outputs = tf.keras.layers.Dense(output_units)(merged)
+    merged = tf.keras.layers.Dense(6* target_dim)(merged) 
+    out = tf.keras.layers.Dense(target_dim)(merged)
 
-    model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
+    model = tf.keras.Model([past_in, future_in], out)
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
     
     return model
@@ -117,7 +120,7 @@ def build_and_train_model(dataset_train):
 # train_data, val_data = load_data("atmospheric_pressure")
 train_data, val_data = load_data(DATASET)
 # Ejecutar n veces y promediar el val_loss
-n_runs = 6
+n_runs = 10
 val_losses = []
 
 ## Callbacks

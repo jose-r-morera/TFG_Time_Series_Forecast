@@ -21,12 +21,14 @@
 
     model = tf.keras.Model([past_in, future_in], out)
     ######################################################
-Average val_loss over 10 runs: 0.000197 ± 0.000036
-Minimum val_loss over 10 runs: 0.000152
-Average val_loss over 6 runs: 0.000188 ± 0.000014
-Minimum val_loss over 6 runs: 0.000165
+Average val_loss over 10 runs: 0.000199 ± 0.000021
+Minimum val_loss over 10 runs: 0.000168
 
-Desne*4:
+SIN residuo:
+Average val_loss over 10 runs: 0.000206 ± 0.000032
+Minimum val_loss over 10 runs: 0.000178
+
+Dense*4:
 Average val_loss over 6 runs: 0.000216 ± 0.000025
 Minimum val_loss over 6 runs: 0.000176
 
@@ -40,3 +42,6 @@ Minimum val_loss over 6 runs: 0.000175
 
 ##############################################################
 #############################################################
+Densa despues de lstm: 
+Average val_loss over 10 runs: 0.000178 ± 0.000019
+Minimum val_loss over 10 runs: 0.000151

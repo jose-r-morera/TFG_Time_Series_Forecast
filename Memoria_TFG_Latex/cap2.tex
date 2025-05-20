@@ -17,7 +17,7 @@ Se han empleado 2 fuentes para recopilar las mediciones:
     propias, sino que recopila pronósticos de diferentes modelos de predicción climatológica. 
 
     Se emplea la API de predicciones pasadas\cite{open_meteo_api}. Se seleccionan los modelos ICON Global del servicio meteorológico alemán (DWD) y el modelo ARPEGE Europe de Météo-France. Ambos modelos se actualizan cada 3 horas. 
-    Se explora la posibilidad de emplear as predicciones del modelo HAROME de la AEMET, pero no están disponibles de forma pública
+    Se explora la posibilidad de emplear las predicciones del modelo HAROME de la AEMET, pero no están disponibles de forma pública
 \end{itemize}
 
 Se eligen 4 ubicaciones de la isla de Tenerife con distintas características climáticas para el conjunto de entrenamiento y evaluación:
@@ -36,7 +36,7 @@ Así mismo, se escogen 2 ubicaciones para el conjunto de test, nunca vistas en e
 
 Las ubicaciones han sido elegidas al contar con estaciones de medición de Grafcan.
 Sus posiciones se muestran en la Figura \ref{mapa_estaciones}, con la letra indicada en la lista.
-Se señaladan en rojo las estaciones de entrenamiento y en naranja las de test.
+Se señalan en rojo las estaciones de entrenamiento y en naranja las de test.
 
 \begin{figure}[htb]
    \centering
@@ -53,7 +53,7 @@ del servicio Grafcan y las de Open-Meteo, lo que podría afectar la calidad de l
 
 \section{Proceso de adquisición y almacenamiento}
 
-Para automatizar la adquisición de datos, se emplea la herramienta de orquestación node-red, que permite crear flujos de información mediante nodos que realizan tareas específicas o ejecutan códgio de JavaScript.
+Para automatizar la adquisición de datos, se emplea la herramienta de orquestación node-red, que permite crear flujos de información mediante nodos que realizan tareas específicas o ejecutan código de JavaScript.
 En dicha herramienta se desarrollan dos paneles, uno para cada fuente de datos. 
 Así mismo, dentro de cada panel se desarrollan dos flujos, uno para la adquisición de datos en un intervalo dado, y otro para la adquisición de datos en tiempo real, en particular, 
 se establece la recogida de datos cada 6 horas.
@@ -68,7 +68,7 @@ Posteriormente, se unen las series de cada estación en una única serie, que se
    \label{grafcan_flows}
 \end{figure}
 
-Las mediciones de Grafcan se recogen apróximamente cada 10 minutos, si bien la frecuencia no es consistente y en ocasiones es mayor. Así mismo, 
+Las mediciones de Grafcan se recogen apróximadamente cada 10 minutos, si bien la frecuencia no es consistente y en ocasiones es mayor. Así mismo, 
 los instantes de medición son independientes entre las variables estudiadas. Para manejar esta variabilidad, 
 en este nivel los datos se agregan cada 10 minutos, usando la media de las mediciones del intervalo.
 
@@ -220,11 +220,11 @@ Observamos que, en general, el modelo ICON es el que mejor se ajusta a las varia
  de humedad relativa que en las otras. Esto puede ser relevante más adelante, de cara al rendimiento de los modelos de predicción. 
 
  \bigskip
- Tras selecciona el modelo de Open-Meteo para cada variable, se crea un dataset unificado con las 3 variables. De esta forma se dispone 
+ Tras seleccionar el modelo de Open-Meteo para cada variable, se crea un dataset unificado con las 3 variables. De esta forma se dispone 
  de un dataset de Open-Meteo y otro de Grafcan con las 3 variables para cada estación.
 
 \subsection{Detección de valores anómalos}
-Para la detección de valores anómalos, en primer lugar se empea el método del rango intercuartílico (IQR). 
+Para la detección de valores anómalos, en primer lugar se emplea el método del rango intercuartílico (IQR). 
 Sin embargo, se observa en los histogramas que la distribución de los datos no es puramente gaussiana, existiendo sesgos y colas largas.
 Por ejemplo, en la figura \ref{histogram_1} se observa que la humedad presenta un sesgo a la izquierda, mientras que en la figura 
 \ref{histogram_2} se observa que la temperatura presenta una cola larga a la derecha.
@@ -249,12 +249,12 @@ una alternativa robusta que permite detectar anomalías en distribuciones no gau
 Se aplica el método de KNN a cada variable por separado, con k=10 y límite de distancia 3 veces la desviación típica.
 Respecto al número de vecinos (K), se observa al graficar la distancia media de los K vecinos más cercanos frente a K que es poco relevante, por lo que se escoge arbitrariamente.
 Una vez fijado K, para determinar el límite se considera que en una distribución gaussiana el 99,7\% de los datos se encuentran dentro de 3 desviaciones típicas y se comprueba empíricamente
-este valor, así como otros cercanos, observando los histogramos de los datos detectados como anómalos.
+este valor, así como otros cercanos, observando los histogramas de los datos detectados como anómalos.
 
 Los valores anómalos son etiquetados como tales para poder ser identificados posteriormente. Se pueden observar ejemplos 
 de las distancias en la figura \ref{knn_distances}. En las figuras \ref{histogram_knn_humidity} y \ref{histogram_knn_temperature} se muestran ejemplos de los valores anómalos detectados. 
 
-Nota: Se muestran los valores anómalos indepentientemente de la variable respecto a la que se detectaron.
+Nota: Se muestran los valores anómalos independientemente de la variable respecto a la que se detectaron.
 
 \begin{figure}
     \centering
@@ -339,7 +339,7 @@ que presenta este ciclo debido a un fenómeno conocido como mareas térmicas \ci
 \subsection{Codificación de la información temporal}
 Se decide codificar la información temporal mediante el uso de senos y cosenos de las frecuencias dominantes.
 En base a los resultados del análisis de Fourier, se emplean la frecuencia de 24 horas y del año, teniendo especial cuidado para detectar
-    si el año es bisiesto o no. De esta forma, se añaden 4 variables adicionales al dataset: sin(dia), cos(diá), sin(año) y cos(año).
+    si el año es bisiesto o no. De esta forma, se añaden 4 variables adicionales al dataset: sin(día), cos(día), sin(año) y cos(año).
 
 Se estudia la frecuencia semanal, pero se descarta al existir poca correlación.
 
@@ -365,14 +365,14 @@ de tamaño N con los valores a predecir.
 No obstante, puede ser relevante incluir información adicional exógena sobre los valores a predecir, como la codificación temporal 
 (o en otros dominios, si el día es festivo, etc).
 
-Optamos por incluir esta información y contruir ventanas de datos con 3 componentes, X e Y, ya definidas, así como F, formada por las 4 variables de codificación temporal 
+Optamos por incluir esta información y construir ventanas de datos con 3 componentes, X e Y, ya definidas, así como F, formada por las 4 variables de codificación temporal 
 para cada paso a predecir N. Empíricamente comprobamos que la inclusión de esta información adicional mejora ligeramente el rendimiento del modelo.
 
 En la práctica, estas ventanas se construyen mediante la técnica de ventana deslizante, que consiste en recorrer la serie temporal desplazando 
 la ventana de datos en un número de pasos, que denominaremos S. Establecemos S=6 para que la ventana se desplace cada 6 horas, con el fin de buscar un balance 
 entre evitar la redundancia de datos que existiría si usásemos un paso menor y mantener el máximo de información posible.
 
-Como datos pasados empleamos la variable meteorológcia estudiada, así como las restantes como covariables. Se comprueba empíricamente que 
+Como datos pasados empleamos la variable meteorológica estudiada, así como las restantes como covariables. Se comprueba empíricamente que 
 añadir estas covariables mejora el rendimiento del modelo. También se emplea como datos pasados las variables de codificación temporal. 
 
 Es decir, la estructura de una ventana es:
@@ -463,16 +463,16 @@ más diverso y representativo de la meteorología a lo largo del año.
 
 Para cada ubicación se eligen los índices de las ventanas de test aleatoriamente. Estos índices son los mismos para los dos datasets de una localización, 
 puesto que los datos son bastante similares entre ambos y queremos evitar el filtrado de información. 
-Cabe destacar la consideración de ventanas "prohibidas", que se descartan del conjunto de entrenamietno para evitar filtrar datos.
+Cabe destacar la consideración de ventanas "prohibidas", que se descartan del conjunto de entrenamienno para evitar filtrar datos.
 De esta forma, todas las ventanas previas que estén solapadas con una ventana de test son descartadas.
 
 De todas las ventanas creadas originalmente, se escogen un 10\% para el conjunto de test. Como se descartan las ventanas solapadas, según los parámetros empleados, la división resultantes
 es de alrededor de un 14\% de ventanas de test y un 86\% de ventanas de entrenamiento. Se eligen estos porcentajes puesto que se comprueba empíricamente que a un mayor número de 
-ventanas de entrenamiento el rendiemiento del modelo mejora, pero se fija el límite del 10\% para conseguir un conjunto de test representativo y diverso. Esto supone unas 2.300 ventanas
+ventanas de entrenamiento el rendimiento del modelo mejora, pero se fija el límite del 10\% para conseguir un conjunto de test representativo y diverso. Esto supone unas 2.300 ventanas
 de validación y entre 13.900 y 12.500 de entrenamiento según las características de la ventana elegidas. 
 
 \subsection{Normalización}
-Se utilizan las ventanas del conjunto de entremaniento para calcular las características de la normalización.
+Se utilizan las ventanas del conjunto de entrenamiento para calcular las características de la normalización.
 Usamos la estandarización o normalización Z-score, que consiste en restar la media y dividir por la desviación típica.
 De esta forma, los datos quedan centrados en 0 y con una desviación típica de 1.
 

@@ -13,7 +13,7 @@ Para emplear un modelo ARIMA, es necesario ajustar cada uno de sus parámetros, 
     \item $q$: el número de términos de media móvil (MA).
 \end{itemize}
 
-\subsection{Calibración de térmios autorregresivos}
+\subsection{Calibración de términos autorregresivos}
 Para determinar el número de términos autorregresivos, se utiliza la función \texttt{plot\_pacf} de la librería \texttt{statsmodels}, 
 que permite visualizar la función de autocorrelación parcial (PACF) de la serie temporal. Observamos ejemplos de los resultados en las figuras \ref{arima_pacf_hum}, \ref{arima_pacf_pres}. 
 
@@ -185,7 +185,7 @@ Al estar centrada en 0 y tener una forma similar a la campana de Gauss, se puede
 
 \section{Modelos de aprendizaje profundo}
 Existen diferentes frameworks para el desarrollo de modelos de aprendizaje profundo, destacando TensorFlow, PyTorch o JAX/Flax como los más extendidos.
-Después de evaluar alternativas, se opta por TensorFlow debido a su amplia comunidad de usuarios y su extensa documentación, así comopor su integración con Keras, 
+Después de evaluar alternativas, se opta por TensorFlow debido a su amplia comunidad de usuarios y su extensa documentación, así como por su integración con Keras, 
 una biblioteca de alto nivel que facilita la creación de modelos de aprendizaje profundo.
 
 \subsection{Creación del dataset con TensorFlow}
@@ -193,8 +193,8 @@ Para crear el dataset, se emplea la función de TensorFlow \texttt{Dataset.from\
 a partir de tensores de entrada y salida. Dichos tensores son: la dupla (datos\_pasados, datos\_futuros) y el arreglo con los datos de validación.
 
 Se crean dos datasets: uno para el entrenamiento y otro para la validación. Ambos se dividen en lotes (batches) de tamaño 64. Este número se elige tras realizar 
-pruebas con diferentes tamaños de lotes en los distintos modelos, y se observa que, pese a ser un poco más inestable, ya que al ser un número pequeño de muestrar por lote,
-el modelo es más sensible al ruido, con ese valor se consiguen los modelos con menor error. 
+pruebas con diferentes tamaños de lotes en los distintos modelos, y se observa que, pese a ser un poco más inestable, ya que un número pequeño de muestras por lote
+puede causar que el modelo cambie de forma exagerada en algún lote, con ese valor se consiguen los modelos con menor error. 
 
 En el caso del conjunto de entrenamiento, tras crear los lotes se baraja, para evitar el sobreajuste y mejorar la generalización del modelo.
 
@@ -232,6 +232,10 @@ Cada unidad LSTM incluye una celda de memoria y tres puertas que regulan el fluj
 \item Puerta de olvido: determina qué información de la celda de memoria se olvida.
 \item  Puerta de salida: controla qué información de la celda de memoria se envía como salida.
 }
+
+Son relevantes también las capas bidireccionales. Introducidas en 2005 por Graves y Schmidhuber \cite{graves_schmidhuber2005}, las LSTM bidireccionales permiten que la red procese la secuencia de 
+entrada en ambas direcciones (hacia adelante y hacia atrás), lo que mejora la capacidad de capturar dependencias a largo plazo en los datos, ayudando, por ejemplo, a evitar
+ambigüedades debido al mayor contexto.
 
 \subsection{LSTM-CNN}
 Los modelos híbridos LSTM-CNN combinan las ventajas de las redes LSTM y las redes convolucionales. Intercalan capas convolucionales y LSTM para capturar tanto patrones locales como dependencias a largo plazo en los datos de series temporales.
@@ -295,6 +299,12 @@ TODO: Conclusiones.
 A continuación, se comparan los modelos LSTM, CNN y el híbrido. En este caso, emplearemos el RMSE obtenido en la validación cruzada del entrenamiento.
 
 \section{Estudios empíricos}
+Se realizan diferentes experimentos sobre los modelos neuronales de cara a obtener el mejor rendimiento posible.
+
+\subsection{Características de los modelos}
+Se prueba el uso de diferentes elementos para evitar el sobreajuste y mejorar la generalización de los modelos, como las capas de abandono (dropout) y la normalización 
+por lotes (batch normalization) o la normalización de capas (layer normalization). También se emplea el abandono recurrente, que consiste en aplicar el abandono a las conexiones recurrentes de la red LSTM, lo que ayuda a prevenir el sobreajuste al forzar a la red a aprender representaciones más robustas y generalizables.
+Sin embargo, se observa que ninguna de estas técnicas mejora el rendimiento de los modelos, por lo que se opta por no incluirlas en las arquitecturas finales.
 
 \subsection{Número de estaciones}
 Se estudia el impacto del número de estaciones en la precisión de los modelos. Se entrena un modelo LSTM con diferente número de estaciones. Los resultados se muestran en la tabla XXX.
@@ -302,14 +312,16 @@ Para evaluarlo, se mide el desempeño frente a las estaciones de test. Observamo
 
 \subsection{Tamaño de la ventana}
 Se estudia exhaustivamente el número de horas previas $P$ que contiene la ventana. Para ello, se construyen datasets desde $P$=6 hasta $P$=48 y se evalúan en los modelos 
-desarrollados. Se observan distintos valores óptimos de $P$ según las variables:
+desarrollados. Se observan distintos valores óptimos de $P$ según las variables: $P$=17 para la temperatura del aire, $P$=24 para la humedad relativa y 
+$P$=?? para la presión atmosférica.
+
 
 \subsection{Uso de ruido}
 Se plantea la hipótesis de que añadir un cierto ruido a los datos a medida que son consumidos en el entrenamiento puede favorecer la precisión del modelo al evitar el sobreajuste.
 Esto es, se desea que el modelo en cada época no vea la misma muestra, sino que vea una versión ligeramente distinta. 
 
 Para ello, se emplea el método .map del dataset de TensorFlow, que permite mapear otra función para su ejecución perezosa.
-Se utiliza la función descrita en \ref{add_noise} sobre el conjunto de entremaiento. En dicha función se aplica el ruido mediante una máscara
+Se utiliza la función descrita en \ref{add_noise} sobre el conjunto de entrenamiento. En dicha función se aplica el ruido mediante una máscara
 a los datos pasados de la variable y las covariables, sin alterar la codificación temporal. Además, se aplica ruido al valor objetivo $y$.
 
 \begin{figure}[H]
@@ -344,7 +356,7 @@ a los datos pasados de la variable y las covariables, sin alterar la codificaci�
 
 
 Se prueban distintos valores de ruido y varias distribuciones: normal y una triangular, con menor desviación, construida mediante dos distribuciones uniformes.
-Ejemplos de los datos con el ruido aplicado se pueden ver en las figuras \ref{noise1} y \ref{noise2}. Tammbién se experimenta aplicando coeficientes de ruido distintos a las covariables 
+Ejemplos de los datos con el ruido aplicado se pueden ver en las figuras \ref{noise1} y \ref{noise2}. También se experimenta aplicando coeficientes de ruido distintos a las covariables 
 y a la variable objetivo. Se observa que un ruido menor al de las covariables en la variable objetivo mejora los resultados frente a usar el mismo valor.
 
 \begin{figure}[H]
@@ -364,7 +376,7 @@ y a la variable objetivo. Se observa que un ruido menor al de las covariables en
 Sin embargo, en la práctica se constata que el ruido no mejora los resultados de los modelos. Esto puede deberse a que las series exhiben una tendencia muy fuerte, 
 que la inclusión del ruido no es capaz de modificar, puesto que sería necesario un ruido tan elevado que se perdería el valor de los datos.
 
-\section{Resultados}
+\section{Modelos y Resultados}
 \subsection{Temperatura del aire}
 \subsection{Humedad relativa}
 \subsection{Presión atmosférica}
