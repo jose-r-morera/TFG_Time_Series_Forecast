@@ -158,6 +158,31 @@ que se calcula como la raíz cuadrada de la media de los errores al cuadrado ent
 \label{walk_forward_arima}
 \end{figure}
 
+Se toma como ejemplo la serie de temperatura del aire en Arona de Open-Meteo, con un horizonte de predicción de 3 horas. En la figura \ref{arima_residuals} se observan los residuos (diferencia entre valor real y predicción), mientras que en \ref{arima_residuals_density} se observa la estimación de la distribución de la densidad de los residuos.
+Al estar centrada en 0 y tener una forma similar a la campana de Gauss, se puede concluir que el modelo ARIMA se ajusta bien a los datos. Finalmente, en la figura 
+\ref{arima_results_graph} se muestra un ejemplo de los resultados obtenidos.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/arima_residuals.png}
+    \caption{Residuos del modelo ARIMA para la serie de temperatura del aire en Arona de Open-Meteo}
+    \label{arima_residuals}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/arima_residuals_density.png}
+    \caption{Distribución de los residuos del modelo ARIMA para la serie de temperatura del aire en Arona de Open-Meteo}
+    \label{arima_residuals_density}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/arima_result.png}
+    \caption{Resultados del modelo ARIMA para la serie de temperatura del aire en Arona de Open-Meteo}
+    \label{arima_results_graph}
+\end{figure}
+
 \section{Modelos de aprendizaje profundo}
 Existen diferentes frameworks para el desarrollo de modelos de aprendizaje profundo, destacando TensorFlow, PyTorch o JAX/Flax como los más extendidos.
 Después de evaluar alternativas, se opta por TensorFlow debido a su amplia comunidad de usuarios y su extensa documentación, así comopor su integración con Keras, 
@@ -280,6 +305,64 @@ Se estudia exhaustivamente el número de horas previas $P$ que contiene la venta
 desarrollados. Se observan distintos valores óptimos de $P$ según las variables:
 
 \subsection{Uso de ruido}
+Se plantea la hipótesis de que añadir un cierto ruido a los datos a medida que son consumidos en el entrenamiento puede favorecer la precisión del modelo al evitar el sobreajuste.
+Esto es, se desea que el modelo en cada época no vea la misma muestra, sino que vea una versión ligeramente distinta. 
+
+Para ello, se emplea el método .map del dataset de TensorFlow, que permite mapear otra función para su ejecución perezosa.
+Se utiliza la función descrita en \ref{add_noise} sobre el conjunto de entremaiento. En dicha función se aplica el ruido mediante una máscara
+a los datos pasados de la variable y las covariables, sin alterar la codificación temporal. Además, se aplica ruido al valor objetivo $y$.
+
+\begin{figure}[H]
+{\small
+\hrule
+{\bf\small Pseudocódigo para agregar ruido}
+\hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Función}\={\bf add\_noise}($x$, $y$, $covariates\_indexes$): \\
+\ 2: \> Desempaquetar $x$ en \= $past,\, fut$ \\
+\ 3: \> \# Generar ruido sobre las covariables \\
+\ 4: \> $cov\_noise$ = noise\_distribution($past$, NOISE\_STD) \\
+\ 5: \> \# Construir máscara de características afectadas \\
+\ 6: \> $n\_features$ = shape($past$)[-1] \\
+\ 7: \> $mask$ = ceros($(n\_features)$) \\
+\ 8: \> $mask$[ $covariates\_indexes$ ] = 1 \\
+10: \> $mask$ = reshape($mask$, $(1,1,n\_feat)$)  \# redimensión para aplicar al lote \\
+11: \> \# Aplicar ruido sólo en características seleccionadas \\
+12: \> $past\_noise$ = $cov\_noise \times mask$ \\
+13: \> \# Generar ruido sobre la variable objetivo. \\
+14: \> $target\_noise$ = noise\_distribution($y$, NOISE\_STD) \\
+15: \> \# Retornar tupla con datos ruidosos y futuro sin modificar \\
+16: \> {\bf Retornar}\ ( $(past + past\_noise),\, fut$ ),\ $y + target\_noise$ \\
+\end{tabbing}
+\end{center}
+}
+\hrule
+\caption{Pseudocódigo de la función \texttt{add\_noise}}
+\label{add_noise}
+\end{figure}
+
+
+Se prueban distintos valores de ruido y varias distribuciones: normal y una triangular, con menor desviación, construida mediante dos distribuciones uniformes.
+Ejemplos de los datos con el ruido aplicado se pueden ver en las figuras \ref{noise1} y \ref{noise2}. Tammbién se experimenta aplicando coeficientes de ruido distintos a las covariables 
+y a la variable objetivo. Se observa que un ruido menor al de las covariables en la variable objetivo mejora los resultados frente a usar el mismo valor.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/noise_past_data.png}
+    \caption{Datos pasados de 2 muestras. Datos originales en continua y con el ruido en discontinua.}
+    \label{noise1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/noise_y.png}
+    \caption{Valores objetivo de 2 muestras. Datos originales en continua y con el ruido en discontinua.}
+    \label{noise2}
+\end{figure}
+
+Sin embargo, en la práctica se constata que el ruido no mejora los resultados de los modelos. Esto puede deberse a que las series exhiben una tendencia muy fuerte, 
+que la inclusión del ruido no es capaz de modificar, puesto que sería necesario un ruido tan elevado que se perdería el valor de los datos.
 
 \section{Resultados}
 \subsection{Temperatura del aire}

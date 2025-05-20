@@ -25,6 +25,12 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Gráfico de ACF para la serie de temperatura del aire en La Laguna de Grafcan}}{21}{figure.caption.27}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Gráfico de ACF para la serie de presión atmosférica en La Laguna de Grafcan}}{22}{figure.caption.28}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Pseudocódigo para validación walk-forward usando ARIMA}}{22}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Residuos del modelo ARIMA para la serie de temperatura del aire en Arona de Open-Meteo}}{23}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Resultados del modelo ARIMA para la serie de temperatura del aire en Arona de Open-Meteo}}{23}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Distribución de los residuos del modelo ARIMA para la serie de temperatura del aire en Arona de Open-Meteo}}{24}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Pseudocódigo de la función \texttt {add\_noise}}}{28}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Datos pasados de 2 muestras. Datos originales en continua y con el ruido en discontinua.}}{28}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Valores objetivo de 2 muestras. Datos originales en continua y con el ruido en discontinua.}}{29}{figure.caption.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

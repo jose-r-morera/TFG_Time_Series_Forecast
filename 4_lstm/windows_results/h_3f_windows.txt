@@ -1,0 +1,354 @@
+=== Dataset: paquetes_s6_cov_full_p6.pkl ===
+I0000 00:00:1747747426.896654  206116 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 2038 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 3GB, pci bus id: 0000:01:00.0, compute capability: 6.1
+2025-05-20 14:23:47.001421: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5...I0000 00:00:1747747430.399831  206160 cuda_dnn.cc:529] Loaded cuDNN version 90800
+ best_val_loss=0.13718
+ Run 2/5... best_val_loss=0.13754
+ Run 3/5... best_val_loss=0.13910
+ Run 4/5... best_val_loss=0.13894
+ Run 5/5... best_val_loss=0.13834
+ → mean val_loss = 0.13822 ± 0.00076
+
+=== Dataset: paquetes_s6_cov_full_p7.pkl ===
+2025-05-20 14:28:22.705957: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.11708
+ Run 2/5... best_val_loss=0.11755
+ Run 3/5... best_val_loss=0.11474
+ Run 4/5... best_val_loss=0.11643
+ Run 5/5... best_val_loss=0.11685
+ → mean val_loss = 0.11653 ± 0.00096
+
+=== Dataset: paquetes_s6_cov_full_p8.pkl ===
+ Run 1/5... best_val_loss=0.11077
+ Run 2/5... best_val_loss=0.11126
+ Run 3/5... best_val_loss=0.11086
+ Run 4/5... best_val_loss=0.11274
+ Run 5/5... best_val_loss=0.11130
+ → mean val_loss = 0.11139 ± 0.00071
+
+=== Dataset: paquetes_s6_cov_full_p9.pkl ===
+2025-05-20 14:38:02.468658: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.12243
+ Run 2/5... best_val_loss=0.12308
+ Run 3/5... best_val_loss=0.12340
+ Run 4/5... best_val_loss=0.12236
+ Run 5/5... best_val_loss=0.12434
+ → mean val_loss = 0.12312 ± 0.00072
+
+=== Dataset: paquetes_s6_cov_full_p10.pkl ===
+ Run 1/5... best_val_loss=0.13759
+ Run 2/5... best_val_loss=0.13708
+ Run 3/5... best_val_loss=0.13860
+ Run 4/5... best_val_loss=0.13766
+ Run 5/5... best_val_loss=0.13758
+ → mean val_loss = 0.13770 ± 0.00049
+
+=== Dataset: paquetes_s6_cov_full_p11.pkl ===
+ Run 1/5... best_val_loss=0.13681
+ Run 2/5... best_val_loss=0.13694
+ Run 3/5... best_val_loss=0.13655
+ Run 4/5... best_val_loss=0.13655
+ Run 5/5... best_val_loss=0.13639
+ → mean val_loss = 0.13665 ± 0.00020
+
+=== Dataset: paquetes_s6_cov_full_p12.pkl ===
+ Run 1/5... best_val_loss=0.13685
+ Run 2/5... best_val_loss=0.13494
+ Run 3/5... best_val_loss=0.13784
+ Run 4/5... best_val_loss=0.13648
+ Run 5/5... best_val_loss=0.13782
+ → mean val_loss = 0.13678 ± 0.00107
+
+=== Dataset: paquetes_s6_cov_full_p13.pkl ===
+2025-05-20 14:55:05.228865: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.11866
+ Run 2/5... best_val_loss=0.11872
+ Run 3/5... best_val_loss=0.11942
+ Run 4/5... best_val_loss=0.11887
+ Run 5/5... best_val_loss=0.11930
+ → mean val_loss = 0.11899 ± 0.00031
+
+=== Dataset: paquetes_s6_cov_full_p14.pkl ===
+ Run 1/5... best_val_loss=0.11585
+ Run 2/5... best_val_loss=0.11491
+ Run 3/5... best_val_loss=0.11530
+ Run 4/5... best_val_loss=0.11468
+ Run 5/5... best_val_loss=0.11632
+ → mean val_loss = 0.11541 ± 0.00060
+
+=== Dataset: paquetes_s6_cov_full_p15.pkl ===
+ Run 1/5... best_val_loss=0.11262
+ Run 2/5... best_val_loss=0.11282
+ Run 3/5... best_val_loss=0.11357
+ Run 4/5... best_val_loss=0.11298
+ Run 5/5... best_val_loss=0.11318
+ → mean val_loss = 0.11303 ± 0.00033
+
+=== Dataset: paquetes_s6_cov_full_p16.pkl ===
+ Run 1/5... best_val_loss=0.11844
+ Run 2/5... best_val_loss=0.11789
+ Run 3/5... best_val_loss=0.11679
+ Run 4/5... best_val_loss=0.11661
+ Run 5/5... best_val_loss=0.11725
+ → mean val_loss = 0.11740 ± 0.00068
+
+=== Dataset: paquetes_s6_cov_full_p17.pkl ===
+ Run 1/5... best_val_loss=0.12198
+ Run 2/5... best_val_loss=0.12211
+ Run 3/5... best_val_loss=0.12169
+ Run 4/5... best_val_loss=0.12287
+ Run 5/5... best_val_loss=0.12369
+ → mean val_loss = 0.12247 ± 0.00073
+
+=== Dataset: paquetes_s6_cov_full_p18.pkl ===
+ Run 1/5... best_val_loss=0.12629
+ Run 2/5... best_val_loss=0.12559
+ Run 3/5... best_val_loss=0.12570
+ Run 4/5... best_val_loss=0.12593
+ Run 5/5... best_val_loss=0.12585
+ → mean val_loss = 0.12587 ± 0.00024
+
+=== Dataset: paquetes_s6_cov_full_p19.pkl ===
+ Run 1/5... best_val_loss=0.11379
+ Run 2/5... best_val_loss=0.11126
+ Run 3/5... best_val_loss=0.11332
+ Run 4/5... best_val_loss=0.11396
+ Run 5/5... best_val_loss=0.11365
+ → mean val_loss = 0.11320 ± 0.00099
+
+=== Dataset: paquetes_s6_cov_full_p20.pkl ===
+ Run 1/5... best_val_loss=0.11900
+ Run 2/5... best_val_loss=0.11818
+ Run 3/5... best_val_loss=0.11685
+ Run 4/5... best_val_loss=0.11923
+ Run 5/5... best_val_loss=0.11712
+ → mean val_loss = 0.11808 ± 0.00096
+
+=== Dataset: paquetes_s6_cov_full_p21.pkl ===
+2025-05-20 15:25:13.147596: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.11474
+ Run 2/5... best_val_loss=0.11440
+ Run 3/5... best_val_loss=0.11457
+ Run 4/5... best_val_loss=0.11448
+ Run 5/5... best_val_loss=0.11431
+ → mean val_loss = 0.11450 ± 0.00015
+
+=== Dataset: paquetes_s6_cov_full_p22.pkl ===
+ Run 1/5... best_val_loss=0.11721
+ Run 2/5... best_val_loss=0.11703
+ Run 3/5... best_val_loss=0.11751
+ Run 4/5... best_val_loss=0.11809
+ Run 5/5... best_val_loss=0.11633
+ → mean val_loss = 0.11723 ± 0.00058
+
+=== Dataset: paquetes_s6_cov_full_p23.pkl ===
+ Run 1/5... best_val_loss=0.11461
+ Run 2/5... best_val_loss=0.11239
+ Run 3/5... best_val_loss=0.11306
+ Run 4/5... best_val_loss=0.11477
+ Run 5/5... best_val_loss=0.11317
+ → mean val_loss = 0.11360 ± 0.00093
+
+=== Dataset: paquetes_s6_cov_full_p24.pkl ===
+ Run 1/5... best_val_loss=0.11464
+ Run 2/5... best_val_loss=0.11547
+ Run 3/5... best_val_loss=0.11650
+ Run 4/5... best_val_loss=0.11530
+ Run 5/5... best_val_loss=0.11505
+ → mean val_loss = 0.11539 ± 0.00062
+
+=== Dataset: paquetes_s6_cov_full_p25.pkl ===
+ Run 1/5... best_val_loss=0.10346
+ Run 2/5... best_val_loss=0.10462
+ Run 3/5... best_val_loss=0.10197
+ Run 4/5... best_val_loss=0.10480
+ Run 5/5... best_val_loss=0.10491
+ → mean val_loss = 0.10395 ± 0.00112
+
+=== Dataset: paquetes_s6_cov_full_p26.pkl ===
+ Run 1/5... best_val_loss=0.10964
+ Run 2/5... best_val_loss=0.11183
+ Run 3/5... best_val_loss=0.11112
+ Run 4/5... best_val_loss=0.11143
+ Run 5/5... best_val_loss=0.11033
+ → mean val_loss = 0.11087 ± 0.00079
+
+=== Dataset: paquetes_s6_cov_full_p27.pkl ===
+ Run 1/5... best_val_loss=0.10854
+ Run 2/5... best_val_loss=0.10811
+ Run 3/5... best_val_loss=0.10867
+ Run 4/5... best_val_loss=0.10848
+ Run 5/5... best_val_loss=0.10861
+ → mean val_loss = 0.10848 ± 0.00020
+
+=== Dataset: paquetes_s6_cov_full_p28.pkl ===
+ Run 1/5... best_val_loss=0.10292
+ Run 2/5... best_val_loss=0.10390
+ Run 3/5... best_val_loss=0.10407
+ Run 4/5... best_val_loss=0.10382
+ Run 5/5... best_val_loss=0.10382
+ → mean val_loss = 0.10371 ± 0.00040
+
+=== Dataset: paquetes_s6_cov_full_p29.pkl ===
+ Run 1/5... best_val_loss=0.10986
+ Run 2/5... best_val_loss=0.10903
+ Run 3/5... best_val_loss=0.11023
+ Run 4/5... best_val_loss=0.10832
+ Run 5/5... best_val_loss=0.10888
+ → mean val_loss = 0.10926 ± 0.00069
+
+=== Dataset: paquetes_s6_cov_full_p30.pkl ===
+ Run 1/5... best_val_loss=0.12825
+ Run 2/5... best_val_loss=0.12594
+ Run 3/5... best_val_loss=0.12760
+ Run 4/5... best_val_loss=0.12737
+ Run 5/5... best_val_loss=0.12761
+ → mean val_loss = 0.12735 ± 0.00076
+
+=== Dataset: paquetes_s6_cov_full_p31.pkl ===
+ Run 1/5... best_val_loss=0.11674
+ Run 2/5... best_val_loss=0.11536
+ Run 3/5... best_val_loss=0.11397
+ Run 4/5... best_val_loss=0.11382
+ Run 5/5... best_val_loss=0.11491
+ → mean val_loss = 0.11496 ± 0.00106
+
+=== Dataset: paquetes_s6_cov_full_p32.pkl ===
+ Run 1/5... best_val_loss=0.12360
+ Run 2/5... best_val_loss=0.12198
+ Run 3/5... best_val_loss=0.12325
+ Run 4/5... best_val_loss=0.12322
+ Run 5/5... best_val_loss=0.12360
+ → mean val_loss = 0.12313 ± 0.00060
+
+=== Dataset: paquetes_s6_cov_full_p33.pkl ===
+ Run 1/5... best_val_loss=0.12123
+ Run 2/5... best_val_loss=0.11986
+ Run 3/5... best_val_loss=0.12211
+ Run 4/5... best_val_loss=0.11962
+ Run 5/5... best_val_loss=0.11991
+ → mean val_loss = 0.12055 ± 0.00097
+
+=== Dataset: paquetes_s6_cov_full_p34.pkl ===
+ Run 1/5... best_val_loss=0.13283
+ Run 2/5... best_val_loss=0.13130
+ Run 3/5... best_val_loss=0.13312
+ Run 4/5... best_val_loss=0.13081
+ Run 5/5... best_val_loss=0.13477
+ → mean val_loss = 0.13257 ± 0.00141
+
+=== Dataset: paquetes_s6_cov_full_p35.pkl ===
+ Run 1/5... best_val_loss=0.13254
+ Run 2/5... best_val_loss=0.12808
+ Run 3/5... best_val_loss=0.13102
+ Run 4/5... best_val_loss=0.13149
+ Run 5/5... best_val_loss=0.13126
+ → mean val_loss = 0.13088 ± 0.00149
+
+=== Dataset: paquetes_s6_cov_full_p36.pkl ===
+ Run 1/5... best_val_loss=0.13820
+ Run 2/5... best_val_loss=0.13866
+ Run 3/5... best_val_loss=0.14061
+ Run 4/5... best_val_loss=0.13875
+ Run 5/5... best_val_loss=0.13899
+ → mean val_loss = 0.13904 ± 0.00083
+
+=== Dataset: paquetes_s6_cov_full_p37.pkl ===
+2025-05-20 16:15:31.543861: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.11616
+ Run 2/5... best_val_loss=0.11757
+ Run 3/5... best_val_loss=0.11529
+ Run 4/5... best_val_loss=0.11656
+ Run 5/5... best_val_loss=0.11489
+ → mean val_loss = 0.11609 ± 0.00095
+
+=== Dataset: paquetes_s6_cov_full_p38.pkl ===
+ Run 1/5... best_val_loss=0.11384
+ Run 2/5... best_val_loss=0.11126
+ Run 3/5... best_val_loss=0.11284
+ Run 4/5... best_val_loss=0.11466
+ Run 5/5... best_val_loss=0.11212
+ → mean val_loss = 0.11294 ± 0.00121
+
+=== Dataset: paquetes_s6_cov_full_p39.pkl ===
+ Run 1/5... best_val_loss=0.12117
+ Run 2/5... best_val_loss=0.11834
+ Run 3/5... best_val_loss=0.11776
+ Run 4/5... best_val_loss=0.11850
+ Run 5/5... best_val_loss=0.11922
+ → mean val_loss = 0.11900 ± 0.00118
+
+=== Dataset: paquetes_s6_cov_full_p40.pkl ===
+ Run 1/5... best_val_loss=0.12132
+ Run 2/5... best_val_loss=0.12020
+ Run 3/5... best_val_loss=0.12045
+ Run 4/5... best_val_loss=0.12016
+ Run 5/5... best_val_loss=0.12021
+ → mean val_loss = 0.12047 ± 0.00044
+
+=== Dataset: paquetes_s6_cov_full_p41.pkl ===
+ Run 1/5... best_val_loss=0.11320
+ Run 2/5... best_val_loss=0.11488
+ Run 3/5... best_val_loss=0.11480
+ Run 4/5... best_val_loss=0.11423
+ Run 5/5... best_val_loss=0.11541
+ → mean val_loss = 0.11451 ± 0.00075
+
+=== Dataset: paquetes_s6_cov_full_p42.pkl ===
+2025-05-20 17:32:10.220725: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.13038
+ Run 2/5... best_val_loss=0.12888
+ Run 3/5... best_val_loss=0.13075
+ Run 4/5... best_val_loss=0.13100
+ Run 5/5... best_val_loss=0.12941
+ → mean val_loss = 0.13008 ± 0.00081
+
+=== Dataset: paquetes_s6_cov_full_p43.pkl ===
+ Run 1/5... best_val_loss=0.11692
+ Run 2/5... best_val_loss=0.11697
+ Run 3/5... best_val_loss=0.11681
+ Run 4/5... best_val_loss=0.11788
+ Run 5/5... best_val_loss=0.11805
+ → mean val_loss = 0.11732 ± 0.00053
+
+=== Dataset: paquetes_s6_cov_full_p44.pkl ===
+2025-05-20 17:38:14.095256: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+ Run 1/5... best_val_loss=0.12182
+ Run 2/5... best_val_loss=0.12266
+ Run 3/5... best_val_loss=0.12183
+ Run 4/5... best_val_loss=0.12346
+ Run 5/5... best_val_loss=0.12235
+ → mean val_loss = 0.12242 ± 0.00061
+
+=== Dataset: paquetes_s6_cov_full_p45.pkl ===
+ Run 1/5... best_val_loss=0.11588
+ Run 2/5... best_val_loss=0.11756
+ Run 3/5... best_val_loss=0.11650
+ Run 4/5... best_val_loss=0.11690
+ Run 5/5... best_val_loss=0.11651
+ → mean val_loss = 0.11667 ± 0.00055
+
+ === Dataset: paquetes_s6_cov_full_p46.pkl ===
+ Run 1/5... best_val_loss=0.11949
+ Run 2/5... best_val_loss=0.11822
+ Run 3/5... best_val_loss=0.11810
+ Run 4/5... best_val_loss=0.11631
+ Run 5/5... best_val_loss=0.11858
+ → mean val_loss = 0.11814 ± 0.00104
+
+=== Dataset: paquetes_s6_cov_full_p47.pkl ===
+ Run 1/5... best_val_loss=0.10526
+ Run 2/5... best_val_loss=0.10654
+ Run 3/5... best_val_loss=0.10681
+ Run 4/5... best_val_loss=0.10601
+ Run 5/5... best_val_loss=0.10475
+ → mean val_loss = 0.10587 ± 0.00077
+
+=== Dataset: paquetes_s6_cov_full_p48.pkl ===
+ Run 1/5... best_val_loss=0.11338
+ Run 2/5... best_val_loss=0.11392
+ Run 3/5... best_val_loss=0.11233
+ Run 4/5... best_val_loss=0.11137
+ Run 5/5... best_val_loss=0.11453
+ → mean val_loss = 0.11311 ± 0.00113
+ *** Best dataset is paquetes_s6_cov_full_p28.pkl with mean val_loss = 0.10371 (std=0.00040)

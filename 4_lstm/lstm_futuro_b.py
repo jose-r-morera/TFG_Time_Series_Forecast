@@ -21,7 +21,7 @@ from custom_attention import CustomAttention
 
 DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p17.pkl"
 
-DATASET = "relative_humidity"  # atmospheric_pressure or relative_humidity or air_temperature
+DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -30,7 +30,7 @@ PRINT = False
 
 # Model #
 learning_rate = 0.002
-EPOCHS = 700
+EPOCHS = 300
 
 #################################################################
 # Avoid memory issues with TensorFlow
@@ -104,7 +104,7 @@ def build_and_train_model(dataset_train):
     merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])#, future_residue])
 
     # Final output layer
-    merged = tf.keras.layers.Dense(6* output_units)(merged) 
+    merged = tf.keras.layers.Dense(7* output_units)(merged) 
     outputs = tf.keras.layers.Dense(output_units)(merged)
 
     model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
@@ -117,12 +117,12 @@ def build_and_train_model(dataset_train):
 # train_data, val_data = load_data("atmospheric_pressure")
 train_data, val_data = load_data(DATASET)
 # Ejecutar n veces y promediar el val_loss
-n_runs = 10
+n_runs = 6
 val_losses = []
 
 ## Callbacks
 path_checkpoint = "lstm_future_checkpoint.weights.h5"
-es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=10, restore_best_weights=True)
+es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0.000001, patience=10, restore_best_weights=True)
 reduce_lr_callback = tf.keras.callbacks.ReduceLROnPlateau(
     monitor='val_loss', 
     factor=0.4,         

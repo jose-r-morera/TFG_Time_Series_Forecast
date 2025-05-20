@@ -27,15 +27,14 @@ def build_model(past_shape, future_shape, target_dim):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_data_layer)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
     
     # Future exogenous features
-    future_data_layer = tf.keras.layers.Input(shape=future_in, name="future_data")
-    future_dense = tf.keras.layers.Flatten()(future_data_layer)
+    future_dense = tf.keras.layers.Flatten()(future_in)
     future_dense = tf.keras.layers.Dense(4)(future_dense)
 
     # Combine the outputs of past and future
-    future_residue = tf.keras.layers.Flatten()(future_data_layer)
+    future_residue = tf.keras.layers.Flatten()(future_in)
     merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
 
     # Final output layer
@@ -122,8 +121,8 @@ def evaluate_with_trials(data_path, min_file, max_file, trials=5):
 if __name__ == "__main__":
     # list your datasets here:
     DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p"
-    min_i = 6
-    max_i = 40
+    min_i = 41
+    max_i = 48
     best_ds, all_scores = evaluate_with_trials(DATA_PATH, min_i, max_i)
     print(f"Best dataset: {best_ds}")
     print(f"All scores: {all_scores}")

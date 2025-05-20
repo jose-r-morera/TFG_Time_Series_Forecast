@@ -17,7 +17,7 @@ import gc # garbage collector
 # VARIABLES #
 #DATA_PATH = "./paquetes_s6.pkl"
 #DATA_PATH = "../3_data_windows/paquetes_s6_augmented.pkl"
-DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p17.pkl"
+DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p24.pkl"
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -83,9 +83,9 @@ for batch in dataset_train.take(1):
     past_data, future_data = inputs
     
 # Define the model
-past_data_shape = (past_data.shape[1], past_data.shape[2])
-future_data_shape = (future_data.shape[1], future_data.shape[2])    
-target_shape = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
+past_shape = (past_data.shape[1], past_data.shape[2])
+future_shape = (future_data.shape[1], future_data.shape[2])    
+target_dim = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
 
 
 ####################################################
@@ -94,30 +94,26 @@ def build_model(hp):
     K.clear_session() # clear memory
     gc.collect() # garbage collector
     # Encoder part (LSTM for past data)
-    past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    past_units = hp.Int('past_units', min_value=55, max_value=100, step=1)
-    #past_units = 65
-    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(past_units, return_sequences=False))(past_data_layer)
+    past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
+    future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
-    # Decoder part (LSTM for future exogenous features)
-    #future_units = hp.Int('future_units', min_value=1, max_value=30, step=1)
-    future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
-    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
-    # decoder_lstm = tf.keras.layers.Flatten()(future_data_layer)
-    # decoder_lstm = tf.keras.layers.Dense(4, activation='relu')(decoder_lstm)
+    # Past data 
+    past_units = hp.Int('past_units', min_value=18, max_value=64, step=1)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(past_units, return_sequences=False))(past_in)
+    
+    # Future exogenous features
+    future_dense = tf.keras.layers.Flatten()(future_in)
+    future_dense = tf.keras.layers.Dense(4)(future_dense)
 
-    # Combine the outputs of encoder and decoder (you can concatenate or merge them)
-    merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])
+    # Combine the outputs of past and future
+    future_residue = tf.keras.layers.Flatten()(future_in)
+    merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
 
     # Final output layer
-    output_units = target_shape # Output shape should match the target sequence
-    outputs = tf.keras.layers.Dense(output_units)(merged)
+    merged = tf.keras.layers.Dense(6* target_dim)(merged) 
+    out = tf.keras.layers.Dense(target_dim)(merged)
 
-    # Create the model
-    model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs, name='past_future_model')
-    
-    # learning_rate = hp.Float('learning_rate', min_value=0.0001, max_value=0.1, step=0.0001, sampling='linear')
-
+    model = tf.keras.Model([past_in, future_in], out)
     # Compile the model
     model.compile(
         optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate),
@@ -140,9 +136,9 @@ tuner = kt.GridSearch(
     build_model,
     objective='val_mse',
     max_trials=500,
-    executions_per_trial=10,
+    executions_per_trial=6,
     directory='../output/tuner',
-    project_name='lstm_fut_grid'
+    project_name='lstm_fut_grid_h'
 )
 
 # Define tunable patience and min_delta for ReduceLROnPlateau

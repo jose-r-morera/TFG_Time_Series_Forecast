@@ -190,7 +190,7 @@ la distancia euclídea. Se elige el modelo que mejor resultados da en la mayorí
 
 \begin{table}[h!]
 \centering
-\caption{Métricas de similitud con Grafcan para Arona}
+\caption{Métricas de similitud de modelos Open-Meteo con Grafcan para Arona}
 \label{tab:sim_metrics}
 \footnotesize {
 \begin{tabular}{l  cc  cc  cc}
@@ -468,7 +468,8 @@ De esta forma, todas las ventanas previas que estén solapadas con una ventana d
 
 De todas las ventanas creadas originalmente, se escogen un 10\% para el conjunto de test. Como se descartan las ventanas solapadas, según los parámetros empleados, la división resultantes
 es de alrededor de un 14\% de ventanas de test y un 86\% de ventanas de entrenamiento. Se eligen estos porcentajes puesto que se comprueba empíricamente que a un mayor número de 
-ventanas de entrenamiento el rendiemiento del modelo mejora, pero se fija el límite del 10\% para conseguir un conjunto de test representativo y diverso. 
+ventanas de entrenamiento el rendiemiento del modelo mejora, pero se fija el límite del 10\% para conseguir un conjunto de test representativo y diverso. Esto supone unas 2.300 ventanas
+de validación y entre 13.900 y 12.500 de entrenamiento según las características de la ventana elegidas. 
 
 \subsection{Normalización}
 Se utilizan las ventanas del conjunto de entremaniento para calcular las características de la normalización.

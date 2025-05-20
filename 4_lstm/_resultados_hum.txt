@@ -12,9 +12,11 @@ Con segunda densa y 8x neuronas:
   Average val_loss over 10 runs: 0.121721 ± 0.000630
   Minimum val_loss over 10 runs: 0.120843
 
+#######################################################
   Con segunda densa y 6x neuronas:
   Average val_loss over 10 runs: 0.121327 ± 0.001071
   Minimum val_loss over 10 runs: 0.118715
+####################################################
 
   Con segunda densa y 5x neuronas:
   Average val_loss over 10 runs: 0.121555 ± 0.000857
@@ -33,24 +35,23 @@ Con segunda densa y 8x neuronas:
   Minimum val_loss over 10 runs: 0.120813
   ##################################################
   ###################################################
-    past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_data_layer)
+    past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
+    future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
-    # Decoder part (LSTM for future exogenous features)
-    future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
-    future_dense = tf.keras.layers.Flatten()(future_data_layer)
+    # Past data 
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
+    
+    # Future exogenous features
+    future_dense = tf.keras.layers.Flatten()(future_in)
     future_dense = tf.keras.layers.Dense(4)(future_dense)
 
-    # Combine the outputs of past and decoder (you can concatenate or merge them)
-    future_residue = tf.keras.layers.Flatten()(future_data_layer)
+    # Combine the outputs of past and future
+    future_residue = tf.keras.layers.Flatten()(future_in)
     merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
 
     # Final output layer
-    merged = tf.keras.layers.Dense(6* output_units)(merged) 
-    outputs = tf.keras.layers.Dense(output_units)(merged)
+    merged = tf.keras.layers.Dense(6* target_dim)(merged) 
+    out = tf.keras.layers.Dense(target_dim)(merged)
 
-    model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
-    model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
-    
-    return model
+    model = tf.keras.Model([past_in, future_in], out)
     ######################################################

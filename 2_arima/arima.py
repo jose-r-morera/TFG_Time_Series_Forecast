@@ -6,21 +6,23 @@ from statsmodels.tsa.arima.model import ARIMA
 ###################################################
 
 FILES = [
-    "openmeteo_arona_features.csv", "openmeteo_la_orotava_features.csv",
-    "openmeteo_la_laguna_features.csv", "openmeteo_punta_hidalgo_features.csv",
-    "openmeteo_garachico_features.csv", "openmeteo_santa_cruz_features.csv",
-    "grafcan_arona_features.csv", "grafcan_la_orotava_features.csv",
-    "grafcan_la_laguna_features.csv", "grafcan_punta_hidalgo_features.csv",
-    "grafcan_garachico_features.csv", "grafcan_santa_cruz_features.csv"]
+    "openmeteo_arona_features.csv" ] #, "openmeteo_la_orotava_features.csv",
+    # "openmeteo_la_laguna_features.csv", "openmeteo_punta_hidalgo_features.csv",
+    # "openmeteo_garachico_features.csv", "openmeteo_santa_cruz_features.csv",
+    # "grafcan_arona_features.csv", "grafcan_la_orotava_features.csv",
+    # "grafcan_la_laguna_features.csv", "grafcan_punta_hidalgo_features.csv",
+    # "grafcan_garachico_features.csv", "grafcan_santa_cruz_features.csv"]
 TRAIN_DATASET_PATH = "../1_data_preprocessing/processed_data/"
 TEST_DATASET_PATH = "../1_data_preprocessing/test_data/"
 
-PLOT = False
-DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
+PLOT = True
+DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
 
 FORECAST_STEPS = 3  # Number of steps to forecast
 # ARIMA parameters
-ARIMA_P = 8  # Autoregressive order
+
+#### OJO P = 8 para presion; 4 para el resto
+ARIMA_P = 4  # Autoregressive order
 ARIMA_D = 0  # Integrated order
 ARIMA_Q = 0  # Moving average order
 
