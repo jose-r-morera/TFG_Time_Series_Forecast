@@ -4,6 +4,14 @@ Bidirectional de 42:
   Average val_loss over 10 runs: 0.122418 ± 0.000994
   Minimum val_loss over 10 runs: 0.121305
 
+Con segunda densa y 8x neuronas:
+  Average val_loss over 10 runs: 0.122589 ± 0.000596
+  Minimum val_loss over 10 runs: 0.121431
+
+  Con segunda densa y 7x neuronas:
+  Average val_loss over 10 runs: 0.121721 ± 0.000630
+  Minimum val_loss over 10 runs: 0.120843
+
   Con segunda densa y 6x neuronas:
   Average val_loss over 10 runs: 0.121327 ± 0.001071
   Minimum val_loss over 10 runs: 0.118715
@@ -23,3 +31,26 @@ Bidirectional de 42:
   Con segunda densa y 2x neuronas:
   Average val_loss over 10 runs: 0.122233 ± 0.000855
   Minimum val_loss over 10 runs: 0.120813
+  ##################################################
+  ###################################################
+    past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_data_layer)
+
+    # Decoder part (LSTM for future exogenous features)
+    future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
+    future_dense = tf.keras.layers.Flatten()(future_data_layer)
+    future_dense = tf.keras.layers.Dense(4)(future_dense)
+
+    # Combine the outputs of past and decoder (you can concatenate or merge them)
+    future_residue = tf.keras.layers.Flatten()(future_data_layer)
+    merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
+
+    # Final output layer
+    merged = tf.keras.layers.Dense(6* output_units)(merged) 
+    outputs = tf.keras.layers.Dense(output_units)(merged)
+
+    model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
+    model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
+    
+    return model
+    ######################################################

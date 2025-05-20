@@ -16,14 +16,14 @@ dataset = "air_temperature"  # Change this to the dataset you want to use
 
 BATCH_SIZE = 64
 
-PLOT = False  # If plotting, set shuffle to False
-SHUFFLE = True
+PLOT = True  # If plotting, set shuffle to False
+SHUFFLE = False
 PRINT = False
 
 learning_rate = 0.002
 EPOCHS = 700
 
-NOISE_STD = 0.01
+NOISE_STD = 0.15
 print("NOISE_STD", NOISE_STD)
 
 #################################################################
@@ -150,8 +150,8 @@ if PLOT:
         if n_plot == 1:
             axes = [axes]
         for i, ax in enumerate(axes):
-            ax.plot(np.arange(past.shape[1]), past[i],    label='Original past')
-            ax.plot(np.arange(past.shape[1]), past_noisy[i],  '--', label='Noisy past')
+            ax.plot(np.arange(past.shape[1]), past[i])
+            ax.plot(np.arange(past.shape[1]), past_noisy[i],  '--')
             ax.set_ylabel(f"Sample {i}")
             ax.legend()
         axes[-1].set_xlabel("Time step")

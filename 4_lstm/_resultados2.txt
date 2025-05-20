@@ -18,6 +18,15 @@
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
 
 min val_loss: 2849
+
+Sin capa densa extra
+Average val_loss over 10 runs: 0.029085 ± 0.000234
+Minimum val_loss over 10 runs: 0.028746
+
+Capa densa extra * 4
+Average val_loss over 10 runs: 0.028924 ± 0.000218
+Minimum val_loss over 10 runs: 0.028571
+
  
 ## f6 temperatura
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")

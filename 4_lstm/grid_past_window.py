@@ -26,19 +26,21 @@ def build_model(past_shape, future_shape, target_dim):
     past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
-    # encoder
-    e = tf.keras.layers.Bidirectional(
-        tf.keras.layers.LSTM(42, return_sequences=False)
-    )(past_in)
+    # Past data 
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_data_layer)
+    
+    # Future exogenous features
+    future_data_layer = tf.keras.layers.Input(shape=future_in, name="future_data")
+    future_dense = tf.keras.layers.Flatten()(future_data_layer)
+    future_dense = tf.keras.layers.Dense(4)(future_dense)
 
-    # decoder
-    d = tf.keras.layers.Flatten()(future_in)
-    d =  tf.keras.layers.Dense(4, activation='relu')(d)
+    # Combine the outputs of past and future
+    future_residue = tf.keras.layers.Flatten()(future_data_layer)
+    merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
 
-    # merge & output
-    m = tf.keras.layers.concatenate([e, d])
-    #m = tf.keras.layers.Dense(2*target_dim)(m)
-    out = tf.keras.layers.Dense(target_dim)(m)
+    # Final output layer
+    merged = tf.keras.layers.Dense(6* target_dim)(merged) 
+    out = tf.keras.layers.Dense(target_dim)(merged)
 
     model = tf.keras.Model([past_in, future_in], out)
     model.compile(

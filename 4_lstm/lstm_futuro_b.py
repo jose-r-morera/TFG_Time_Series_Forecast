@@ -92,7 +92,7 @@ def build_and_train_model(dataset_train):
     ########################################################################################
     # Encoder part (LSTM for past data)
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    encoder_lstm = tf.keras.layers.LSTM(84, return_sequences=False)(past_data_layer)
+    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_data_layer)
 
     # Decoder part (LSTM for future exogenous features)
     future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
@@ -100,8 +100,8 @@ def build_and_train_model(dataset_train):
     decoder_lstm = tf.keras.layers.Dense(4)(decoder_lstm)
 
     # Combine the outputs of encoder and decoder (you can concatenate or merge them)
-    future_residue = tf.keras.layers.Flatten()(future_data_layer)
-    merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm, future_residue])
+    #future_residue = tf.keras.layers.Flatten()(future_data_layer)
+    merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm])#, future_residue])
 
     # Final output layer
     merged = tf.keras.layers.Dense(6* output_units)(merged) 
