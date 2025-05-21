@@ -42,6 +42,6 @@ Minimum val_loss over 6 runs: 0.000175
 
 ##############################################################
 #############################################################
-Densa despues de lstm: 
+Densa despues de lstm (42): 
 Average val_loss over 10 runs: 0.000178 ± 0.000019
 Minimum val_loss over 10 runs: 0.000151

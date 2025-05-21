@@ -306,9 +306,34 @@ Se prueba el uso de diferentes elementos para evitar el sobreajuste y mejorar la
 por lotes (batch normalization) o la normalización de capas (layer normalization). También se emplea el abandono recurrente, que consiste en aplicar el abandono a las conexiones recurrentes de la red LSTM, lo que ayuda a prevenir el sobreajuste al forzar a la red a aprender representaciones más robustas y generalizables.
 Sin embargo, se observa que ninguna de estas técnicas mejora el rendimiento de los modelos, por lo que se opta por no incluirlas en las arquitecturas finales.
 
+Por otra parte, también se evalúa el uso de conexiones residuales (residual connections) en las capas LSTM. Estas conexiones permiten que la salida de una capa no se sume a la
+ entrada de otra capa no directamente adyacente (eg. dos capas por debajo), lo que ayuda a mitigar el problema de la desaparición del gradiente y facilita el entrenamiento de redes más profundas.
+Se observa que su uso mejora ligeramente el rendimiento de los modelos, por lo que se opta por incluirlas en las arquitecturas finales.
+
 \subsection{Número de estaciones}
-Se estudia el impacto del número de estaciones en la precisión de los modelos. Se entrena un modelo LSTM con diferente número de estaciones. Los resultados se muestran en la tabla XXX.
-Para evaluarlo, se mide el desempeño frente a las estaciones de test. Observamos que el rendimiento mejora a medida que se añaden más estaciones.
+Se estudia el impacto del número de estaciones en la precisión de los modelos. Se entrena un modelo LSTM con diferente número de estaciones. Para evaluarlos, se mide el RMSE de validación de cada modelo.
+Los resultados se muestran en la tabla \ref{estaciones_y_error}. Observamos que cuando se entrena utilizando 2 estaciones los resultados son peores que el promedio de ambas.
+Esto puede explicarse porque cuando se entrenaba con una sola estación el modelo se especializaba en su comportamiento. Sin embargo, vemos que a medida que se añaden estaciones la 
+diferencia entre los resultados del modelo entrenado con todas las estaciones y el promedio de cada estación se reduce, lo que refleja el aumento de la capacidad de generalización del modelo.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Ubicaciones} & \textbf{rmse} & \textbf{media} \\
+\midrule
+Arona                    & 0.6766677965 & \\
+Orotava                  & 0.7597793601 & \\
+La Laguna                & 0.5974298339 & \\
+Punta Hidalgo            & 0.6190961388 & \\
+Arona + Orotava          & 0.7563391658 & 0.7182235783 \\
+Arona + Orotava + Laguna & 0.7068679189 & 0.6779589968 \\
+TODOS                    & 0.6851888257 & 0.6632432823 \\
+\bottomrule
+\end{tabular}
+\caption{Error de validación en función de las estaciones usadas}
+\label{estaciones_y_error}
+\end{table}
 
 \subsection{Tamaño de la ventana}
 Se estudia exhaustivamente el número de horas previas $P$ que contiene la ventana. Para ello, se construyen datasets desde $P$=6 hasta $P$=48 y se evalúan en los modelos 

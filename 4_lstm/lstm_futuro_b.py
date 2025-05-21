@@ -95,8 +95,9 @@ def build_and_train_model(dataset_train):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=True))(past_in)
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42))(past_lstm)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Dense(42)(past_lstm)
+    
     
     # Future exogenous features
     future_dense = tf.keras.layers.Flatten()(future_in)

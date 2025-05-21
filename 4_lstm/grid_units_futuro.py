@@ -26,7 +26,7 @@ PRINT = False
 
 learning_rate = 0.002
 EPOCHS = 700
-DATASET = "relative_humidity"  # atmospheric_pressure or relative_humidity or air_temperature
+DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
 
 #################################################################
 # Avoid memory issues with TensorFlow
@@ -99,13 +99,15 @@ def build_model(hp):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-   
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
+    lstm_units = hp.Int('past_units', min_value=12, max_value=64, step=2)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm_units, return_sequences=False))(past_in)
+    dense_units = hp.Int('dense_units', min_value=12, max_value=64, step=2)
+    past_lstm = tf.keras.layers.Dense(dense_units)(past_lstm)
+    
     
     # Future exogenous features
     future_dense = tf.keras.layers.Flatten()(future_in)
-    future_units = hp.Int('future_units', min_value=1, max_value=8, step=1)
-    future_dense = tf.keras.layers.Dense(future_units)(future_dense)
+    future_dense = tf.keras.layers.Dense(4)(future_dense)
 
     # Combine the outputs of past and future
     future_residue = tf.keras.layers.Flatten()(future_in)
@@ -140,7 +142,7 @@ tuner = kt.GridSearch(
     max_trials=500,
     executions_per_trial=6,
     directory='../output/tuner',
-    project_name='lstm_fut_grid_h2'
+    project_name='lstm_fut_grid_p'
 )
 
 # Define tunable patience and min_delta for ReduceLROnPlateau
