@@ -376,15 +376,15 @@ Como datos pasados empleamos la variable meteorológica estudiada, así como las
 añadir estas covariables mejora el rendimiento del modelo. También se emplea como datos pasados las variables de codificación temporal. 
 
 Es decir, la estructura de una ventana es:
-\itemize{
+\begin{itemize}
     \item X: un vector de tamaño P * 7, que contiene los valores de la variable objetivo y las covariables en los pasos previos.
     \item F: un vector de tamaño N * 4, que contiene las variables de codificación temporal para cada paso a predecir.
     \item Y: un vector de tamaño N, que contiene los valores a predecir.
-}
+\end{itemize}
 
 \subsection{Implementación}
 En primer lugar, se define una función \textit{df\_raw\_windows} que recibe como parámetros:
-\itemize{
+\begin{itemize}
     \item df: un dataframe de pandas, que es una estructura de datos de python similar a una tabla, correspondiente a un dataset de una ubicación,
     \item P: el número de pasos pasados.
     \item N: el número de pasos a predecir.
@@ -392,7 +392,7 @@ En primer lugar, se define una función \textit{df\_raw\_windows} que recibe com
     \item past\_features: un array con los nombres de las variables usadas como entradas.
     \item future\_features: un array con los nombres de las variables exógenas usadas como datos futuros.
     \item target: el nombre de la variable objetivo a predecir.
-}
+\end{itemize}
 
 La función devuelve un objeto con 3 atributos,\textit{past\_variables}, \textit{future\_variables} e \textit{y}.
 Siendo cada uno un arreglo con los datos de cada componente de las ventanas de datos. Es decir, la ventana i ésima
@@ -454,7 +454,7 @@ El comportamiento de la función principal es el siguiente:
 \hrule
 }
 \caption{Pseudocódigo Creación de Ventanas de Datos}
-\label{branch_and_bound_max_diversity}
+\label{code_data_windows}
 \end{figure}
 
 La construcción del conjunto de entrenamiento y test se realiza de forma aleatoria, algo poco común en el ámbito de la predicción de series temporales, puesto que habitualmente 

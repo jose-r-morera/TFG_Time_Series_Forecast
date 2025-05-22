@@ -202,12 +202,12 @@ En el caso del conjunto de entrenamiento, tras crear los lotes se baraja, para e
 Se emplea como métrica de pérdida el error mse de las ventanas de validación.
 
 Además, para controlar el entrenamiento se emplean dos funciones de retorno (callbacks): 
-\itemize{
+\begin{itemize}
 \item \texttt{EarlyStopping}: detiene el entrenamiento si no se observa mejora en la métrica de validación durante un número determinado de épocas (patience). 
 De esta forma se intenta evitar el sobreajuste. Además, se guarda el modelo con la mejor métrica de validación.
 \item \texttt{ReduceLORonPlateau}: reduce la tasa de aprendizaje por un factor si no se observa mejora en la métrica de validación durante un número determinado de épocas (patience).
 Se basa en la idea de que cuando el modelo no mejora, es posible que se encuentre cerca de un mínimo local y que una tasa de aprendizaje más baja pueda ayudar a acercarse más.
-}
+\end{itemize}
 
 Para determinar estas variables, además de otros hiperparámetros como el ratio de aprendizaje, se hace uso de una herramienta de ajuste fino (fine-tuning). En particular, se emplea Keras Tuner, y el método de búsqueda
 en rejilla (grid search), que consiste en definir un espacio de búsqueda para los hiperparámetros y evaluar todas las combinaciones posibles. Se realizan 5 ejecuciones por prueba y se 
@@ -227,11 +227,11 @@ Las redes LSTM (Long Short-Term Memory) son un tipo de red neuronal recurrente (
 Las LSTM son capaces de aprender patrones a largo plazo en los datos, lo que las hace adecuadas para tareas de predicción de series temporales.
 Se basan en la idea de utilizar celdas de memoria que pueden almacenar información durante períodos prolongados, lo que les permite recordar información relevante de entradas anteriores.
 Cada unidad LSTM incluye una celda de memoria y tres puertas que regulan el flujo de información:
-\itemize{
+\begin{itemize}
 \item Puerta de entrada: decide qué información nueva se añade a la celda de memoria.
 \item Puerta de olvido: determina qué información de la celda de memoria se olvida.
 \item  Puerta de salida: controla qué información de la celda de memoria se envía como salida.
-}
+\end{itemize}
 
 Son relevantes también las capas bidireccionales. Introducidas en 2005 por Graves y Schmidhuber \cite{graves_schmidhuber2005}, las LSTM bidireccionales permiten que la red procese la secuencia de 
 entrada en ambas direcciones (hacia adelante y hacia atrás), lo que mejora la capacidad de capturar dependencias a largo plazo en los datos, ayudando, por ejemplo, a evitar

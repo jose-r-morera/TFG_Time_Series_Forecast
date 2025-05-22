@@ -94,8 +94,8 @@ def build_and_train_model(dataset_train):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_in)
-    past_lstm = tf.keras.layers.Dense(65)(past_lstm)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(67, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Dense(67)(past_lstm)
     
     # Future
     decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
@@ -105,7 +105,7 @@ def build_and_train_model(dataset_train):
     merged = tf.keras.layers.concatenate([past_lstm, decoder_lstm, future_residue])
 
     # Final output layer
-    #merged = tf.keras.layers.Dense(4* output_units)(merged)
+    # merged = tf.keras.layers.Dense(6* target_dim)(merged)
     outputs = tf.keras.layers.Dense(target_dim)(merged)
 
     model = tf.keras.Model(inputs=[past_in, future_in], outputs=outputs)

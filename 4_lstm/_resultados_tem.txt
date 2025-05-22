@@ -58,7 +58,7 @@ OJO no lo he podido replicar; muy aleatorio
 
     model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
 
-
+** NOTA ** VALORES SIN USAR LA DENSA *4 FINAL
 Average val_loss over 6 runs: 0.045904 ± 0.000183
 Minimum val_loss over 6 runs: 0.045578
 
@@ -72,6 +72,8 @@ LSTM 64 tb empeora
 /// DENSE despues de lstm a 65
 Average val_loss over 6 runs: 0.045820 ± 0.000480
 Minimum val_loss over 6 runs: 0.045374
+
+*** DENSA FINAL ***
 
 *** DEFINITIVO f6 ***
     past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
@@ -89,7 +91,60 @@ Minimum val_loss over 6 runs: 0.045374
     merged = tf.keras.layers.concatenate([past_lstm, decoder_lstm, future_residue])
 
     # Final output layer
-    #merged = tf.keras.layers.Dense(4* output_units)(merged)
+    merged = tf.keras.layers.Dense(4* target_dim)(merged)
     outputs = tf.keras.layers.Dense(target_dim)(merged)
     
     model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
+#############################################################################################
+###############################################################
+f12
+    past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
+    future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
+
+    # Past data 
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Dense(65)(past_lstm)
+    
+    # Future
+    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
+
+    # Combine the outputs of encoder and decoder (you can concatenate or merge them)
+    future_residue = tf.keras.layers.Flatten()(future_in)
+    merged = tf.keras.layers.concatenate([past_lstm, decoder_lstm, future_residue])
+
+    # Final output layer
+    ####### merged = tf.keras.layers.Dense(4* target_dim)(merged)
+    outputs = tf.keras.layers.Dense(target_dim)(merged)
+
+    model = tf.keras.Model(inputs=[past_in, future_in], outputs=outputs)
+    model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
+
+(=f6; empiezo sin la densa final pq me olvide en f6)
+Average val_loss over 6 runs: 0.070450 ± 0.000688
+Minimum val_loss over 6 runs: 0.069250
+
+// sin densa despues lstm (solo 1 lstm para pasado, otra fut ,  y 1 densa en concatenate)
+Average val_loss over 6 runs: 0.070614 ± 0.000493
+Minimum val_loss over 6 runs: 0.069731
+
+// añadir densa final * 4
+Average val_loss over 6 runs: 0.070927 ± 0.000869
+Minimum val_loss over 6 runs: 0.070135
+
+// densa despues de lstm y densa*4 al final
+Average val_loss over 6 runs: 0.070518 ± 0.000421
+Minimum val_loss over 6 runs: 0.069980
+
+// lstm + densa  con 69 ambas (y solo 1 densa final) 
+Average val_loss over 6 runs: 0.069672 ± 0.000462
+Minimum val_loss over 6 runs: 0.069123
+
+// ambas 73 
+Average val_loss over 6 runs: 0.070571 ± 0.000679
+Minimum val_loss over 6 runs: 0.069540
+
+// ambas 71
+Average val_loss over 6 runs: 0.070023 ± 0.000542
+Minimum val_loss over 6 runs: 0.069581
+
+// ambas 67
