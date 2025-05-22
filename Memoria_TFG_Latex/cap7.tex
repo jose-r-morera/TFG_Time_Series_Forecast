@@ -1,25 +1,39 @@
 Este capítulo es obligatorio. Toda memoria de Trabajo de Fin de Grado debe incluir un presupuesto.
 
-\section{Sección Uno}
+\section{Gastos de desarrollo}
+Los gastos estimados en los que se ha incurrido para el desarrollo del proyecto, con una duración de de cuatro meses,
+ se resumen en la tabla \ref{tabla_presupuesto_desarrollo}. 
 
-\begin{center}
-\begin{tabu} to 0.8\textwidth { | X[l] | X[l] | }
- \hline
- \multicolumn{1}{|c|}{\bf Tipos} & \multicolumn{1}{|c|}{\bf Descripción} \\
- \hline
- AAAA  & BBBB \\
- \hline
- CCCC  & DDDD \\
- \hline
- EEEE  & FFFF \\
- \hline
- GGGG  & HHHH \\
- \hline
-\end{tabu}
-\end{center}
-
-\begin{table}[htb]
+\begin{table}[h]
    \centering
-   \caption{Resumen de tipos}
-   \label{tabla_presupuesto}
+   \small
+   \caption{Resumen de gastos}
+   \begin{tabular}{|l|l|c|c|c|}
+      \hline
+      \textbf{Concepto} & \textbf{Descripción} & \textbf{Unidades} & \textbf{Coste unitario} & \textbf{Coste total} \\ \hline
+      Recursos humanos & Ingeniero Informático & 200 h & 20 €/h & 4000 € \\ \hline
+      Ordenador & Para el desarrollo del proyecto & 1 & 1000 € & 1000 € \\ \hline
+      Servidor con GPU & Para el entrenamiento de modelos & 1 & 600 € & 600 € \\ \hline
+      \textbf{Total} & & & & \textbf{5600 €} \\ \hline
+   \end{tabular}
+   \label{tabla_presupuesto_desarrollo}
+\end{table}
+
+\section{Gastos de despliegue}
+Si se decidiera desplegar el sistema para su uso en producción, se estiman los gastos indicados
+en la tabla \ref{tabla_presupuesto_despliegue}.
+
+\begin{table}[h]
+   \centering
+   \small
+   \caption{Resumen de gastos}
+   \begin{tabular}{|l|l|c|c|c|}
+      \hline
+      \textbf{Concepto} & \textbf{Descripción} & \textbf{Coste} \\ \hline
+      Servidor con GPU & Para la ejecución de modelos  & 600 € \\ \hline
+      Servidor web & Para el despliegue del sistema  & 200 € \\ \hline
+      Dominio y hosting & Para el acceso al sistema  & 50 € \\ \hline
+      \textbf{Total}  & & \textbf{850 €} \\ \hline
+   \end{tabular}
+   \label{tabla_presupuesto_despliegue}
 \end{table}

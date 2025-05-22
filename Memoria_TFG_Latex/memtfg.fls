@@ -507,6 +507,11 @@ INPUT ./images/arima_result.png
 INPUT ./images/arima_result.png
 INPUT ./images/arima_result.png
 INPUT ./images/arima_result.png
+INPUT ./images/past_window_size.png
+INPUT ./images/past_window_size.png
+INPUT ./images/past_window_size.png
+INPUT ./images/past_window_size.png
+INPUT ./images/past_window_size.png
 INPUT ./images/noise_past_data.png
 INPUT ./images/noise_past_data.png
 INPUT ./images/noise_past_data.png
@@ -529,6 +534,12 @@ INPUT cap6.tex
 INPUT ./cap7.tex
 INPUT ./cap7.tex
 INPUT cap7.tex
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fver8t.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fveb8t.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/bera/fver8t.vf
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fver8r.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/bera/fveb8t.vf
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/bera/fveb8r.tfm
 INPUT ./apendice1.tex
 INPUT ./apendice1.tex
 INPUT apendice1.tex

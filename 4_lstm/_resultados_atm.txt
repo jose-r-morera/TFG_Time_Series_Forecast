@@ -67,3 +67,28 @@ LSTM 48, densa 56
 
 LSTM 56, densa 58
 0.00014860860392218456
+
+58, 54
+Best val_mse So Far: 0.00014882334168457115
+
+####################################################################################
+    past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
+    future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
+
+    # Past data 
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(56, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Dense(58)(past_lstm)
+    
+    # Future exogenous features
+    future_dense = tf.keras.layers.Flatten()(future_in)
+    future_dense = tf.keras.layers.Dense(4)(future_dense)
+
+    # Combine the outputs of past and future
+    future_residue = tf.keras.layers.Flatten()(future_in)
+    merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
+
+    # Final output layer
+    merged = tf.keras.layers.Dense(6* target_dim)(merged) 
+    out = tf.keras.layers.Dense(target_dim)(merged)
+
+    model = tf.keras.Model([past_in, future_in], out)

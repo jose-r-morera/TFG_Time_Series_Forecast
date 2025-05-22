@@ -254,6 +254,7 @@ Debido a estas limitaciones, los ARIMA se suelen evaluar sobre el periodo poster
 en los modelos neuronales, usando un muestreo aleatorio de las ventanas en todo el período contemplado.
 Para comparar ambos modelos, se opta por emplear el mes de marzo de 2025, siendo ambos modelos entrenados con el intervalo de marzo de 2023 a febrero de 2025.  
 
+En el caso de los modelos LSTM, se selecciona el mejor de 6 entrenamientos. 
 
 Los resultados se muestran en la tabla \ref{comparativa_inicial}.
 
@@ -310,6 +311,9 @@ Por otra parte, también se evalúa el uso de conexiones residuales (residual co
  entrada de otra capa no directamente adyacente (eg. dos capas por debajo), lo que ayuda a mitigar el problema de la desaparición del gradiente y facilita el entrenamiento de redes más profundas.
 Se observa que su uso mejora ligeramente el rendimiento de los modelos, por lo que se opta por incluirlas en las arquitecturas finales.
 
+Finalmente, se estudia el uso de capas de atención (attention layers) en los modelos LSTM. Introducidas por Bahdanau et al. \cite{bahdanau2014}, estas capas permiten que el modelo se enfoque en diferentes partes de la secuencia de entrada al hacer predicciones, lo que puede mejorar la capacidad del modelo para capturar patrones a largo plazo.
+estas capas permiten que el modelo se enfoque en diferentes partes de la secuencia de entrada al hacer predicciones, lo que puede mejorar la capacidad del modelo para capturar patrones a largo plazo. Sin embargo, tras probar distintos tipos de atención en distintos puntos de la red, no se detecta mejora.
+
 \subsection{Número de estaciones}
 Se estudia el impacto del número de estaciones en la precisión de los modelos. Se entrena un modelo LSTM con diferente número de estaciones. Para evaluarlos, se mide el RMSE de validación de cada modelo.
 Los resultados se muestran en la tabla \ref{estaciones_y_error}. Observamos que cuando se entrena utilizando 2 estaciones los resultados son peores que el promedio de ambas.
@@ -337,8 +341,19 @@ TODOS                    & 0.6851888257 & 0.6632432823 \\
 
 \subsection{Tamaño de la ventana}
 Se estudia exhaustivamente el número de horas previas $P$ que contiene la ventana. Para ello, se construyen datasets desde $P$=6 hasta $P$=48 y se evalúan en los modelos 
-desarrollados. Se observan distintos valores óptimos de $P$ según las variables: $P$=17 para la temperatura del aire, $P$=24 para la humedad relativa y 
-$P$=?? para la presión atmosférica.
+desarrollados, eligiendo para cada valor de $P$ el mejor modelo de 5 entrenamientos. Se observan distintos valores óptimos de $P$ según las variables: $P$=17 para la temperatura del aire, $P$=24 para la humedad relativa y 
+$P$=20 para la presión atmosférica. En la tabla \ref{window_size} se muestran los resultados obtenidos para el modelo LSTM y un horizonte de predicción de 3 horas,
+en un gradiente en el que rojo indica el peor RMSE y verde el mejor.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/past_window_size.png}
+    \caption{Resultados del estudio del error RMSE del modelo LSTM en función del tamaño de la ventana }
+    \label{window_size}
+\end{figure}
+
+Observando estos datos, se puede detectar un patrón en el que los modelos de 12 o menos horas dan peores resultados, 
+mientras que el intervalo óptimo parece estar entre 15 y 26 horas, descendiendo los resultados a partir de las 30 horas.
 
 
 \subsection{Uso de ruido}

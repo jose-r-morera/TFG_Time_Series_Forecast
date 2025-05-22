@@ -10,12 +10,12 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 BATCH_SIZE    = 64
 SHUFFLE       = True
 LEARNING_RATE = 0.002
-EPOCHS        = 700
+EPOCHS        = 300
 
 DATASET = "air_temperature"  # air_temperature, "atmospheric_pressure" or "relative_humidity"
 
 es_callback = tf.keras.callbacks.EarlyStopping(
-    monitor="val_loss", patience=10, restore_best_weights=True
+    monitor="val_loss", patience=10, min_delta=0.000001, restore_best_weights=True
 )
 reduce_lr = tf.keras.callbacks.ReduceLROnPlateau(
     monitor='val_loss', factor=0.4, patience=3, min_lr=1e-7, verbose=0
@@ -38,9 +38,9 @@ def build_model(past_shape, future_shape, target_dim):
 
     # Final output layer
     #merged = tf.keras.layers.Dense(4* output_units)(merged)
-    outputs = tf.keras.layers.Dense(target_dim)(merged)
+    out = tf.keras.layers.Dense(target_dim)(merged)
 
-    model = tf.keras.Model([past_in, future_in], outputs)
+    model = tf.keras.Model([past_in, future_in], out)
     model.compile(
         optimizer=tf.keras.optimizers.Adam(LEARNING_RATE),
         loss="mse"
@@ -119,9 +119,9 @@ def evaluate_with_trials(data_path, min_file, max_file, trials=5):
 
 if __name__ == "__main__":
     # list your datasets here:
-    DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p"
+    DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_full_p"
     min_i = 6
-    max_i = 48
+    max_i = 36
     best_ds, all_scores = evaluate_with_trials(DATA_PATH, min_i, max_i)
     print(f"Best dataset: {best_ds}")
     print(f"All scores: {all_scores}")

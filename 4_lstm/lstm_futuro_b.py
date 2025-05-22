@@ -19,7 +19,7 @@ from custom_attention import CustomAttention
 # DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_orotava_p17.pkl"
 # DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_laguna_orotava_p17.pkl"
 
-DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p17.pkl"
+DATA_PATH = "../3_data_windows/f12/paquetes_s6_cov_full_p17.pkl"
 
 DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
 
@@ -95,6 +95,7 @@ def build_and_train_model(dataset_train):
 
     # Past data 
     past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Dense(65)(past_lstm)
     
     # Future
     decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
@@ -117,7 +118,7 @@ def build_and_train_model(dataset_train):
 # train_data, val_data = load_data("atmospheric_pressure")
 train_data, val_data = load_data(DATASET)
 # Ejecutar n veces y promediar el val_loss
-n_runs = 10
+n_runs = 6
 val_losses = []
 
 ## Callbacks
