@@ -12,7 +12,7 @@ SHUFFLE       = True
 LEARNING_RATE = 0.002
 EPOCHS        = 700
 
-DATASET = "relative_humidity"  # air_temperature, "atmospheric_pressure" or "relative_humidity"
+DATASET = "air_temperature"  # air_temperature, "atmospheric_pressure" or "relative_humidity"
 
 es_callback = tf.keras.callbacks.EarlyStopping(
     monitor="val_loss", patience=10, restore_best_weights=True
@@ -27,21 +27,20 @@ def build_model(past_shape, future_shape, target_dim):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
-    
-    # Future exogenous features
-    future_dense = tf.keras.layers.Flatten()(future_in)
-    future_dense = tf.keras.layers.Dense(4)(future_dense)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_in)
 
-    # Combine the outputs of past and future
+    # Future
+    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
+
+    # Combine the outputs of encoder and decoder (you can concatenate or merge them)
     future_residue = tf.keras.layers.Flatten()(future_in)
-    merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
+    merged = tf.keras.layers.concatenate([past_lstm, decoder_lstm, future_residue])
 
     # Final output layer
-    merged = tf.keras.layers.Dense(6* target_dim)(merged) 
-    out = tf.keras.layers.Dense(target_dim)(merged)
+    #merged = tf.keras.layers.Dense(4* output_units)(merged)
+    outputs = tf.keras.layers.Dense(target_dim)(merged)
 
-    model = tf.keras.Model([past_in, future_in], out)
+    model = tf.keras.Model([past_in, future_in], outputs)
     model.compile(
         optimizer=tf.keras.optimizers.Adam(LEARNING_RATE),
         loss="mse"
@@ -121,7 +120,7 @@ def evaluate_with_trials(data_path, min_file, max_file, trials=5):
 if __name__ == "__main__":
     # list your datasets here:
     DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p"
-    min_i = 41
+    min_i = 6
     max_i = 48
     best_ds, all_scores = evaluate_with_trials(DATA_PATH, min_i, max_i)
     print(f"Best dataset: {best_ds}")

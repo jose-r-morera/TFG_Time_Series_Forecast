@@ -99,9 +99,9 @@ def build_model(hp):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    lstm_units = hp.Int('past_units', min_value=12, max_value=64, step=2)
+    lstm_units = hp.Int('past_units', min_value=54, max_value=58, step=1)
     past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm_units, return_sequences=False))(past_in)
-    dense_units = hp.Int('dense_units', min_value=12, max_value=64, step=2)
+    dense_units = hp.Int('dense_units', min_value=54, max_value=58, step=1)
     past_lstm = tf.keras.layers.Dense(dense_units)(past_lstm)
     
     
@@ -139,10 +139,10 @@ def build_model(hp):
 tuner = kt.GridSearch(
     build_model,
     objective='val_mse',
-    max_trials=500,
+    max_trials=300,
     executions_per_trial=6,
     directory='../output/tuner',
-    project_name='lstm_fut_grid_p'
+    project_name='lstm_fut_grid_p5'
 )
 
 # Define tunable patience and min_delta for ReduceLROnPlateau
@@ -151,7 +151,7 @@ def get_callbacks(hp):
     factor = 0.4
 
     reduce_lr_callback = tf.keras.callbacks.ReduceLROnPlateau(
-        min_delta=0.0001,  # Minimum change to be considered an improvement
+        min_delta=0.000001,  # Minimum change to be considered an improvement
         monitor='val_loss', 
         factor=factor,  # Reduce LR by a factor of 0.5
         patience=patience,  # Wait for `patience` epochs before reducing
@@ -159,7 +159,7 @@ def get_callbacks(hp):
         min_lr=5e-7
     )
     
-    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0.0001, patience=10, restore_best_weights=True)
+    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0.00001, patience=10, restore_best_weights=True)
 
     return [reduce_lr_callback, es_callback]
 

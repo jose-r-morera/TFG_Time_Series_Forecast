@@ -56,4 +56,46 @@ Con segunda densa y 8x neuronas:
     model = tf.keras.Model([past_in, future_in], out)
     ######################################################
 
+  Future -> 4 neuronas dense: 0.11539
+
     Future -> 1 neurona dense (probar quitar capa)
+    Average val_loss over 10 runs: 0.115238 ± 0.000710
+    Minimum val_loss over 10 runs: 0.113870
+--------------------------------------------------
+************************************************************
+Dense 20
+Average val_loss over 10 runs: 0.114899 ± 0.000638
+Minimum val_loss over 10 runs: 0.113198
+Average val_loss over 10 runs: 0.115258 ± 0.001040
+Minimum val_loss over 10 runs: 0.113512
+********************************************************
+
+Dense 10 da peores resultados
+
+Dense 24 (peor)
+Average val_loss over 10 runs: 0.115440 ± 0.000622
+Minimum val_loss over 10 runs: 0.114607
+
+##################################################
+###################################################
+  past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
+  future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
+
+  # Past data 
+  past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
+  past_lstm = tf.keras.layers.Dense(20)(past_lstm)
+  
+  # Future exogenous features
+  future_dense = tf.keras.layers.Flatten()(future_in)
+  future_dense = tf.keras.layers.Dense(4)(future_dense)
+
+  # Combine the outputs of past and future
+  future_residue = tf.keras.layers.Flatten()(future_in)
+  merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
+
+  # Final output layer
+  merged = tf.keras.layers.Dense(6* target_dim)(merged) 
+  out = tf.keras.layers.Dense(target_dim)(merged)
+
+  model = tf.keras.Model([past_in, future_in], out)
+  ######################################################

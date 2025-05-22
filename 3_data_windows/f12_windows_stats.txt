@@ -1,0 +1,946 @@
+Generating windows for past_n =  6
+Data shape:
+Train air_temperature: (15438, 6, 7) samples
+TEST air_temperature: (2336, 6, 7) samples
+Train relative_humidity: (15306, 6, 7) samples
+TEST relative_humidity: (2336, 6, 7) samples
+Train atmospheric_pressure: (15288, 6, 7) samples
+TEST atmospheric_pressure: (2336, 6, 7) samples
+Data shape after augmentation:
+Train air_temperature: (15438, 6, 7) samples
+TEST air_temperature: (2336, 6, 7) samples
+Train relative_humidity: (15306, 6, 7) samples
+TEST relative_humidity: (2336, 6, 7) samples
+Train atmospheric_pressure: (15288, 6, 7) samples
+TEST atmospheric_pressure: (2336, 6, 7) samples
+air_temperature mean: [ 69.9913085  983.25035153  20.11735067]
+air_temperature std: [16.57676009 36.10153407  4.03068392]
+relative_humidity mean: [ 20.23314285 983.24890064  69.81092697]
+relative_humidity std: [ 4.02208699 36.01185468 17.00658474]
+atmospheric_pressure mean: [ 20.23945283  69.83646442 983.24763985]
+atmospheric_pressure std: [ 4.04222439 16.86019455 36.01938104]
+Data saved to f12/paquetes_s6_cov_full_p6.pkl
+Generating windows for past_n =  7
+Data shape:
+Train air_temperature: (13912, 7, 7) samples
+TEST air_temperature: (2336, 7, 7) samples
+Train relative_humidity: (13732, 7, 7) samples
+TEST relative_humidity: (2336, 7, 7) samples
+Train atmospheric_pressure: (13710, 7, 7) samples
+TEST atmospheric_pressure: (2336, 7, 7) samples
+Data shape after augmentation:
+Train air_temperature: (13912, 7, 7) samples
+TEST air_temperature: (2336, 7, 7) samples
+Train relative_humidity: (13732, 7, 7) samples
+TEST relative_humidity: (2336, 7, 7) samples
+Train atmospheric_pressure: (13710, 7, 7) samples
+TEST atmospheric_pressure: (2336, 7, 7) samples
+air_temperature mean: [ 69.96739135 983.24296713  20.11554312]
+air_temperature std: [16.53042809 36.13899962  4.02483953]
+relative_humidity mean: [ 20.24427377 983.25998629  69.74595708]
+relative_humidity std: [ 4.02483751 36.01734813 17.04757673]
+atmospheric_pressure mean: [ 20.25633662  69.75934158 983.25163319]
+atmospheric_pressure std: [ 4.04909364 16.92698298 36.02636163]
+Data saved to f12/paquetes_s6_cov_full_p7.pkl
+Generating windows for past_n =  8
+Data shape:
+Train air_temperature: (13912, 8, 7) samples
+TEST air_temperature: (2336, 8, 7) samples
+Train relative_humidity: (13732, 8, 7) samples
+TEST relative_humidity: (2336, 8, 7) samples
+Train atmospheric_pressure: (13710, 8, 7) samples
+TEST atmospheric_pressure: (2336, 8, 7) samples
+Data shape after augmentation:
+Train air_temperature: (13912, 8, 7) samples
+TEST air_temperature: (2336, 8, 7) samples
+Train relative_humidity: (13732, 8, 7) samples
+TEST relative_humidity: (2336, 8, 7) samples
+Train atmospheric_pressure: (13710, 8, 7) samples
+TEST atmospheric_pressure: (2336, 8, 7) samples
+air_temperature mean: [ 70.02611508 983.23555691  20.09650862]
+air_temperature std: [16.53441925 36.13870314  4.0248402 ]
+relative_humidity mean: [ 20.22568492 983.2521235   69.80912352]
+relative_humidity std: [ 4.02564581 36.01769754 17.05637867]
+atmospheric_pressure mean: [ 20.23793789  69.81691644 983.24572513]
+atmospheric_pressure std: [ 4.05070991 16.94067767 36.02719196]
+Data saved to f12/paquetes_s6_cov_full_p8.pkl
+Generating windows for past_n =  9
+Data shape:
+Train air_temperature: (13912, 9, 7) samples
+TEST air_temperature: (2336, 9, 7) samples
+Train relative_humidity: (13732, 9, 7) samples
+TEST relative_humidity: (2336, 9, 7) samples
+Train atmospheric_pressure: (13710, 9, 7) samples
+TEST atmospheric_pressure: (2336, 9, 7) samples
+Data shape after augmentation:
+Train air_temperature: (13912, 9, 7) samples
+TEST air_temperature: (2336, 9, 7) samples
+Train relative_humidity: (13732, 9, 7) samples
+TEST relative_humidity: (2336, 9, 7) samples
+Train atmospheric_pressure: (13710, 9, 7) samples
+TEST atmospheric_pressure: (2336, 9, 7) samples
+air_temperature mean: [ 70.08338094 983.22610848  20.08205408]
+air_temperature std: [16.52765036 36.13877871  4.02174935]
+relative_humidity mean: [ 20.21134294 983.24242797  69.8744348 ]
+relative_humidity std: [ 4.02346099 36.01861662 17.0553344 ]
+atmospheric_pressure mean: [ 20.22453431  69.86987953 983.23810323]
+atmospheric_pressure std: [ 4.04913753 16.94104268 36.02801079]
+Data saved to f12/paquetes_s6_cov_full_p9.pkl
+Generating windows for past_n =  10
+Data shape:
+Train air_temperature: (13912, 10, 7) samples
+TEST air_temperature: (2336, 10, 7) samples
+Train relative_humidity: (13732, 10, 7) samples
+TEST relative_humidity: (2336, 10, 7) samples
+Train atmospheric_pressure: (13710, 10, 7) samples
+TEST atmospheric_pressure: (2336, 10, 7) samples
+Data shape after augmentation:
+Train air_temperature: (13912, 10, 7) samples
+TEST air_temperature: (2336, 10, 7) samples
+Train relative_humidity: (13732, 10, 7) samples
+TEST relative_humidity: (2336, 10, 7) samples
+Train atmospheric_pressure: (13710, 10, 7) samples
+TEST atmospheric_pressure: (2336, 10, 7) samples
+air_temperature mean: [ 70.08817792 983.22347051  20.08492743]
+air_temperature std: [16.51194855 36.13836536  4.01868185]
+relative_humidity mean: [ 20.21528024 983.2397472   69.88472535]
+relative_humidity std: [ 4.02025574 36.01888008 17.04261289]
+atmospheric_pressure mean: [ 20.22894578  69.86710788 983.23750679]
+atmospheric_pressure std: [ 4.04682644 16.92922645 36.02803563]
+Data saved to f12/paquetes_s6_cov_full_p10.pkl
+Generating windows for past_n =  11
+Data shape:
+Train air_temperature: (13912, 11, 7) samples
+TEST air_temperature: (2336, 11, 7) samples
+Train relative_humidity: (13732, 11, 7) samples
+TEST relative_humidity: (2336, 11, 7) samples
+Train atmospheric_pressure: (13710, 11, 7) samples
+TEST atmospheric_pressure: (2336, 11, 7) samples
+Data shape after augmentation:
+Train air_temperature: (13912, 11, 7) samples
+TEST air_temperature: (2336, 11, 7) samples
+Train relative_humidity: (13732, 11, 7) samples
+TEST relative_humidity: (2336, 11, 7) samples
+Train atmospheric_pressure: (13710, 11, 7) samples
+TEST atmospheric_pressure: (2336, 11, 7) samples
+air_temperature mean: [ 70.04590996 983.2289608   20.09818103]
+air_temperature std: [16.50727226 36.13772948  4.0176789 ]
+relative_humidity mean: [ 20.22962247 983.24512328  69.85239483]
+relative_humidity std: [ 4.01806181 36.01864606 17.03159491]
+atmospheric_pressure mean: [ 20.24377753  69.8223455  983.24498356]
+atmospheric_pressure std: [ 4.04560715 16.92260249 36.02791537]
+Data saved to f12/paquetes_s6_cov_full_p11.pkl
+Generating windows for past_n =  12
+Data shape:
+Train air_temperature: (13912, 12, 7) samples
+TEST air_temperature: (2336, 12, 7) samples
+Train relative_humidity: (13732, 12, 7) samples
+TEST relative_humidity: (2336, 12, 7) samples
+Train atmospheric_pressure: (13710, 12, 7) samples
+TEST atmospheric_pressure: (2336, 12, 7) samples
+Data shape after augmentation:
+Train air_temperature: (13912, 12, 7) samples
+TEST air_temperature: (2336, 12, 7) samples
+Train relative_humidity: (13732, 12, 7) samples
+TEST relative_humidity: (2336, 12, 7) samples
+Train atmospheric_pressure: (13710, 12, 7) samples
+TEST atmospheric_pressure: (2336, 12, 7) samples
+air_temperature mean: [ 70.01024896 983.23523664  20.1078678 ]
+air_temperature std: [16.51168803 36.13718403  4.0189187 ]
+relative_humidity mean: [ 20.23991118 983.25133841  69.82838348]
+relative_humidity std: [ 4.01798906 36.01856522 17.02529368]
+atmospheric_pressure mean: [ 20.25461347  69.78706731 983.25300189]
+atmospheric_pressure std: [ 4.04665951 16.92383464 36.02794656]
+Data saved to f12/paquetes_s6_cov_full_p12.pkl
+Generating windows for past_n =  13
+Data shape:
+Train air_temperature: (12566, 13, 7) samples
+TEST air_temperature: (2328, 13, 7) samples
+Train relative_humidity: (12360, 13, 7) samples
+TEST relative_humidity: (2328, 13, 7) samples
+Train atmospheric_pressure: (12330, 13, 7) samples
+TEST atmospheric_pressure: (2328, 13, 7) samples
+Data shape after augmentation:
+Train air_temperature: (12566, 13, 7) samples
+TEST air_temperature: (2328, 13, 7) samples
+Train relative_humidity: (12360, 13, 7) samples
+TEST relative_humidity: (2328, 13, 7) samples
+Train atmospheric_pressure: (12330, 13, 7) samples
+TEST atmospheric_pressure: (2328, 13, 7) samples
+air_temperature mean: [ 70.00431446 983.15915062  20.08345791]
+air_temperature std: [16.48873144 36.15210631  4.02913501]
+relative_humidity mean: [ 20.25842327 983.37007741  69.87409813]
+relative_humidity std: [ 4.01587262 35.99422693 17.07148199]
+atmospheric_pressure mean: [ 20.29299581  69.71032392 983.31653995]
+atmospheric_pressure std: [ 4.06039981 17.03044612 36.10970161]
+Data saved to f12/paquetes_s6_cov_full_p13.pkl
+Generating windows for past_n =  14
+Data shape:
+Train air_temperature: (12566, 14, 7) samples
+TEST air_temperature: (2328, 14, 7) samples
+Train relative_humidity: (12360, 14, 7) samples
+TEST relative_humidity: (2328, 14, 7) samples
+Train atmospheric_pressure: (12330, 14, 7) samples
+TEST atmospheric_pressure: (2328, 14, 7) samples
+Data shape after augmentation:
+Train air_temperature: (12566, 14, 7) samples
+TEST air_temperature: (2328, 14, 7) samples
+Train relative_humidity: (12360, 14, 7) samples
+TEST relative_humidity: (2328, 14, 7) samples
+Train atmospheric_pressure: (12330, 14, 7) samples
+TEST atmospheric_pressure: (2328, 14, 7) samples
+air_temperature mean: [ 70.02718421 983.15476789  20.07355051]
+air_temperature std: [16.49979285 36.15151749  4.03156882]
+relative_humidity mean: [ 20.24880621 983.36546208  69.91199069]
+relative_humidity std: [ 4.01567778 35.99415823 17.07483355]
+atmospheric_pressure mean: [ 20.28268983  69.74090105 983.31357675]
+atmospheric_pressure std: [ 4.06117267 17.03132482 36.10999573]
+Data saved to f12/paquetes_s6_cov_full_p14.pkl
+Generating windows for past_n =  15
+Data shape:
+Train air_temperature: (12566, 15, 7) samples
+TEST air_temperature: (2328, 15, 7) samples
+Train relative_humidity: (12360, 15, 7) samples
+TEST relative_humidity: (2328, 15, 7) samples
+Train atmospheric_pressure: (12330, 15, 7) samples
+TEST atmospheric_pressure: (2328, 15, 7) samples
+Data shape after augmentation:
+Train air_temperature: (12566, 15, 7) samples
+TEST air_temperature: (2328, 15, 7) samples
+Train relative_humidity: (12360, 15, 7) samples
+TEST relative_humidity: (2328, 15, 7) samples
+Train atmospheric_pressure: (12330, 15, 7) samples
+TEST atmospheric_pressure: (2328, 15, 7) samples
+air_temperature mean: [ 70.05522392 983.14874126  20.06527861]
+air_temperature std: [16.50204303 36.15113888  4.03210281]
+relative_humidity mean: [ 20.24037821 983.35923142  69.95606076]
+relative_humidity std: [ 4.0139749  35.99445235 17.07270299]
+atmospheric_pressure mean: [ 20.27400951  69.77482064 983.30904507]
+atmospheric_pressure std: [ 4.06039052 17.02700905 36.11042707]
+Data saved to f12/paquetes_s6_cov_full_p15.pkl
+Generating windows for past_n =  16
+Data shape:
+Train air_temperature: (12566, 16, 7) samples
+TEST air_temperature: (2328, 16, 7) samples
+Train relative_humidity: (12360, 16, 7) samples
+TEST relative_humidity: (2328, 16, 7) samples
+Train atmospheric_pressure: (12330, 16, 7) samples
+TEST atmospheric_pressure: (2328, 16, 7) samples
+Data shape after augmentation:
+Train air_temperature: (12566, 16, 7) samples
+TEST air_temperature: (2328, 16, 7) samples
+Train relative_humidity: (12360, 16, 7) samples
+TEST relative_humidity: (2328, 16, 7) samples
+Train atmospheric_pressure: (12330, 16, 7) samples
+TEST atmospheric_pressure: (2328, 16, 7) samples
+air_temperature mean: [ 70.05391311 983.14654554  20.06737786]
+air_temperature std: [16.49471044 36.15037813  4.03207913]
+relative_humidity mean: [ 20.24233219 983.3569146   69.96755525]
+relative_humidity std: [ 4.01180444 35.99448439 17.06399436]
+atmospheric_pressure mean: [ 20.27539265  69.77986911 983.30848178]
+atmospheric_pressure std: [ 4.05878511 17.01846489 36.11046665]
+Data saved to f12/paquetes_s6_cov_full_p16.pkl
+Generating windows for past_n =  17
+Data shape:
+Train air_temperature: (12566, 17, 7) samples
+TEST air_temperature: (2328, 17, 7) samples
+Train relative_humidity: (12360, 17, 7) samples
+TEST relative_humidity: (2328, 17, 7) samples
+Train atmospheric_pressure: (12330, 17, 7) samples
+TEST atmospheric_pressure: (2328, 17, 7) samples
+Data shape after augmentation:
+Train air_temperature: (12566, 17, 7) samples
+TEST air_temperature: (2328, 17, 7) samples
+Train relative_humidity: (12360, 17, 7) samples
+TEST relative_humidity: (2328, 17, 7) samples
+Train atmospheric_pressure: (12330, 17, 7) samples
+TEST atmospheric_pressure: (2328, 17, 7) samples
+air_temperature mean: [ 70.02335191 983.14956786  20.07664523]
+air_temperature std: [16.49223533 36.14928115  4.03222583]
+relative_humidity mean: [ 20.25115927 983.35973308  69.9497285 ]
+relative_humidity std: [ 4.01023079 35.99421295 17.05460965]
+atmospheric_pressure mean: [ 20.28367824  69.757629   983.31318897]
+atmospheric_pressure std: [ 4.05767129 17.01128025 36.11040093]
+Data saved to f12/paquetes_s6_cov_full_p17.pkl
+Generating windows for past_n =  18
+Data shape:
+Train air_temperature: (12566, 18, 7) samples
+TEST air_temperature: (2328, 18, 7) samples
+Train relative_humidity: (12360, 18, 7) samples
+TEST relative_humidity: (2328, 18, 7) samples
+Train atmospheric_pressure: (12330, 18, 7) samples
+TEST atmospheric_pressure: (2328, 18, 7) samples
+Data shape after augmentation:
+Train air_temperature: (12566, 18, 7) samples
+TEST air_temperature: (2328, 18, 7) samples
+Train relative_humidity: (12360, 18, 7) samples
+TEST relative_humidity: (2328, 18, 7) samples
+Train atmospheric_pressure: (12330, 18, 7) samples
+TEST atmospheric_pressure: (2328, 18, 7) samples
+air_temperature mean: [ 69.99699819 983.15337819  20.08410939]
+air_temperature std: [16.49572716 36.1481459   4.03331791]
+relative_humidity mean: [ 20.25779218 983.36348956  69.93334497]
+relative_humidity std: [ 4.00991075 35.99405932 17.04824159]
+atmospheric_pressure mean: [ 20.28968498  69.74063387 983.31859851]
+atmospheric_pressure std: [ 4.05769665 17.00549658 36.11041322]
+Data saved to f12/paquetes_s6_cov_full_p18.pkl
+Generating windows for past_n =  19
+Data shape:
+Train air_temperature: (11336, 19, 7) samples
+TEST air_temperature: (2328, 19, 7) samples
+Train relative_humidity: (11140, 19, 7) samples
+TEST relative_humidity: (2328, 19, 7) samples
+Train atmospheric_pressure: (11046, 19, 7) samples
+TEST atmospheric_pressure: (2328, 19, 7) samples
+Data shape after augmentation:
+Train air_temperature: (11336, 19, 7) samples
+TEST air_temperature: (2328, 19, 7) samples
+Train relative_humidity: (11140, 19, 7) samples
+TEST relative_humidity: (2328, 19, 7) samples
+Train atmospheric_pressure: (11046, 19, 7) samples
+TEST atmospheric_pressure: (2328, 19, 7) samples
+air_temperature mean: [ 69.95051019 983.154316    20.07151583]
+air_temperature std: [16.52091513 36.14537853  4.0416771 ]
+relative_humidity mean: [ 20.27306369 983.42659409  69.92813209]
+relative_humidity std: [ 4.01503186 36.00101423 17.08760789]
+atmospheric_pressure mean: [ 20.31789534  69.68271288 983.33185235]
+atmospheric_pressure std: [ 4.0525597  17.03110201 36.15561356]
+Data saved to f12/paquetes_s6_cov_full_p19.pkl
+Generating windows for past_n =  20
+Data shape:
+Train air_temperature: (11336, 20, 7) samples
+TEST air_temperature: (2328, 20, 7) samples
+Train relative_humidity: (11140, 20, 7) samples
+TEST relative_humidity: (2328, 20, 7) samples
+Train atmospheric_pressure: (11046, 20, 7) samples
+TEST atmospheric_pressure: (2328, 20, 7) samples
+Data shape after augmentation:
+Train air_temperature: (11336, 20, 7) samples
+TEST air_temperature: (2328, 20, 7) samples
+Train relative_humidity: (11140, 20, 7) samples
+TEST relative_humidity: (2328, 20, 7) samples
+Train atmospheric_pressure: (11046, 20, 7) samples
+TEST atmospheric_pressure: (2328, 20, 7) samples
+air_temperature mean: [ 69.96751293 983.15113898  20.06486167]
+air_temperature std: [16.52675168 36.14401336  4.04187231]
+relative_humidity mean: [ 20.2647646  983.42288888  69.95440903]
+relative_humidity std: [ 4.01527812 36.00133956 17.08855661]
+atmospheric_pressure mean: [ 20.30942994  69.70872055 983.33026966]
+atmospheric_pressure std: [ 4.05254614 17.03091489 36.15583918]
+Data saved to f12/paquetes_s6_cov_full_p20.pkl
+Generating windows for past_n =  21
+Data shape:
+Train air_temperature: (11336, 21, 7) samples
+TEST air_temperature: (2328, 21, 7) samples
+Train relative_humidity: (11140, 21, 7) samples
+TEST relative_humidity: (2328, 21, 7) samples
+Train atmospheric_pressure: (11046, 21, 7) samples
+TEST atmospheric_pressure: (2328, 21, 7) samples
+Data shape after augmentation:
+Train air_temperature: (11336, 21, 7) samples
+TEST air_temperature: (2328, 21, 7) samples
+Train relative_humidity: (11140, 21, 7) samples
+TEST relative_humidity: (2328, 21, 7) samples
+Train atmospheric_pressure: (11046, 21, 7) samples
+TEST atmospheric_pressure: (2328, 21, 7) samples
+air_temperature mean: [ 69.9891188  983.14672719  20.05872672]
+air_temperature std: [16.52739052 36.14299143  4.04059428]
+relative_humidity mean: [ 20.2571075  983.41805608  69.98634633]
+relative_humidity std: [ 4.0144759  36.00197178 17.0847889 ]
+atmospheric_pressure mean: [ 20.30210985  69.73738957 983.32758657]
+atmospheric_pressure std: [ 4.05141116 17.02729932 36.15610948]
+Data saved to f12/paquetes_s6_cov_full_p21.pkl
+Generating windows for past_n =  22
+Data shape:
+Train air_temperature: (11336, 22, 7) samples
+TEST air_temperature: (2328, 22, 7) samples
+Train relative_humidity: (11140, 22, 7) samples
+TEST relative_humidity: (2328, 22, 7) samples
+Train atmospheric_pressure: (11046, 22, 7) samples
+TEST atmospheric_pressure: (2328, 22, 7) samples
+Data shape after augmentation:
+Train air_temperature: (11336, 22, 7) samples
+TEST air_temperature: (2328, 22, 7) samples
+Train relative_humidity: (11140, 22, 7) samples
+TEST relative_humidity: (2328, 22, 7) samples
+Train atmospheric_pressure: (11046, 22, 7) samples
+TEST atmospheric_pressure: (2328, 22, 7) samples
+air_temperature mean: [ 69.99007438 983.14498666  20.05977361]
+air_temperature std: [16.52376263 36.14190568  4.03907628]
+relative_humidity mean: [ 20.25682317 983.41593472  69.99674616]
+relative_humidity std: [ 4.01328858 36.00252621 17.07775973]
+atmospheric_pressure mean: [ 20.30225763  69.74375954 983.32771907]
+atmospheric_pressure std: [ 4.04968603 17.02034377 36.15598729]
+Data saved to f12/paquetes_s6_cov_full_p22.pkl
+Generating windows for past_n =  23
+Data shape:
+Train air_temperature: (11336, 23, 7) samples
+TEST air_temperature: (2328, 23, 7) samples
+Train relative_humidity: (11140, 23, 7) samples
+TEST relative_humidity: (2328, 23, 7) samples
+Train atmospheric_pressure: (11046, 23, 7) samples
+TEST atmospheric_pressure: (2328, 23, 7) samples
+Data shape after augmentation:
+Train air_temperature: (11336, 23, 7) samples
+TEST air_temperature: (2328, 23, 7) samples
+Train relative_humidity: (11140, 23, 7) samples
+TEST relative_humidity: (2328, 23, 7) samples
+Train atmospheric_pressure: (11046, 23, 7) samples
+TEST atmospheric_pressure: (2328, 23, 7) samples
+air_temperature mean: [ 69.96989537 983.14707729  20.0658832 ]
+air_temperature std: [16.52366656 36.14075336  4.03825263]
+relative_humidity mean: [ 20.26175405 983.41762136  69.98606254]
+relative_humidity std: [ 4.01256949 36.00296574 17.07161397]
+atmospheric_pressure mean: [ 20.30774171  69.72839111 983.33180266]
+atmospheric_pressure std: [ 4.04837956 17.01397506 36.15568719]
+Data saved to f12/paquetes_s6_cov_full_p23.pkl
+Generating windows for past_n =  24
+Data shape:
+Train air_temperature: (11336, 24, 7) samples
+TEST air_temperature: (2328, 24, 7) samples
+Train relative_humidity: (11140, 24, 7) samples
+TEST relative_humidity: (2328, 24, 7) samples
+Train atmospheric_pressure: (11046, 24, 7) samples
+TEST atmospheric_pressure: (2328, 24, 7) samples
+Data shape after augmentation:
+Train air_temperature: (11336, 24, 7) samples
+TEST air_temperature: (2328, 24, 7) samples
+Train relative_humidity: (11140, 24, 7) samples
+TEST relative_humidity: (2328, 24, 7) samples
+Train atmospheric_pressure: (11046, 24, 7) samples
+TEST atmospheric_pressure: (2328, 24, 7) samples
+air_temperature mean: [ 69.95251366 983.14983971  20.07069291]
+air_temperature std: [16.5270088  36.13966174  4.03835471]
+relative_humidity mean: [ 20.26555542 983.42008363  69.97553217]
+relative_humidity std: [ 4.01288743 36.00349708 17.06842685]
+atmospheric_pressure mean: [ 20.31185008  69.71633929 983.33650912]
+atmospheric_pressure std: [ 4.04800907 17.0079241  36.15540983]
+Data saved to f12/paquetes_s6_cov_full_p24.pkl
+Generating windows for past_n =  25
+Data shape:
+Train air_temperature: (10214, 25, 7) samples
+TEST air_temperature: (2328, 25, 7) samples
+Train relative_humidity: (10066, 25, 7) samples
+TEST relative_humidity: (2328, 25, 7) samples
+Train atmospheric_pressure: (9908, 25, 7) samples
+TEST atmospheric_pressure: (2328, 25, 7) samples
+Data shape after augmentation:
+Train air_temperature: (10214, 25, 7) samples
+TEST air_temperature: (2328, 25, 7) samples
+Train relative_humidity: (10066, 25, 7) samples
+TEST relative_humidity: (2328, 25, 7) samples
+Train atmospheric_pressure: (9908, 25, 7) samples
+TEST atmospheric_pressure: (2328, 25, 7) samples
+air_temperature mean: [ 69.90839755 983.13792877  20.05409564]
+air_temperature std: [16.55148049 36.15399841  4.04867276]
+relative_humidity mean: [ 20.28635903 983.55482447  69.98948755]
+relative_humidity std: [ 4.02174005 35.99656543 17.14212055]
+atmospheric_pressure mean: [ 20.32725178  69.71589502 983.28721757]
+atmospheric_pressure std: [ 4.04727187 17.01627832 36.22012745]
+Data saved to f12/paquetes_s6_cov_full_p25.pkl
+Generating windows for past_n =  26
+Data shape:
+Train air_temperature: (10214, 26, 7) samples
+TEST air_temperature: (2328, 26, 7) samples
+Train relative_humidity: (10066, 26, 7) samples
+TEST relative_humidity: (2328, 26, 7) samples
+Train atmospheric_pressure: (9908, 26, 7) samples
+TEST atmospheric_pressure: (2328, 26, 7) samples
+Data shape after augmentation:
+Train air_temperature: (10214, 26, 7) samples
+TEST air_temperature: (2328, 26, 7) samples
+Train relative_humidity: (10066, 26, 7) samples
+TEST relative_humidity: (2328, 26, 7) samples
+Train atmospheric_pressure: (9908, 26, 7) samples
+TEST atmospheric_pressure: (2328, 26, 7) samples
+air_temperature mean: [ 69.92314562 983.13541081  20.04832246]
+air_temperature std: [16.55687426 36.15302261  4.04954073]
+relative_humidity mean: [ 20.28039679 983.55203452  70.00908147]
+relative_humidity std: [ 4.02284889 35.99713874 17.14568484]
+atmospheric_pressure mean: [ 20.32079576  69.73866984 983.28674872]
+atmospheric_pressure std: [ 4.04724458 17.0119456  36.2201354 ]
+Data saved to f12/paquetes_s6_cov_full_p26.pkl
+Generating windows for past_n =  27
+Data shape:
+Train air_temperature: (10214, 27, 7) samples
+TEST air_temperature: (2328, 27, 7) samples
+Train relative_humidity: (10066, 27, 7) samples
+TEST relative_humidity: (2328, 27, 7) samples
+Train atmospheric_pressure: (9908, 27, 7) samples
+TEST atmospheric_pressure: (2328, 27, 7) samples
+Data shape after augmentation:
+Train air_temperature: (10214, 27, 7) samples
+TEST air_temperature: (2328, 27, 7) samples
+Train relative_humidity: (10066, 27, 7) samples
+TEST relative_humidity: (2328, 27, 7) samples
+Train atmospheric_pressure: (9908, 27, 7) samples
+TEST atmospheric_pressure: (2328, 27, 7) samples
+air_temperature mean: [ 69.94119008 983.13183118  20.04306538]
+air_temperature std: [16.55746931 36.15214442  4.04923199]
+relative_humidity mean: [ 20.27485396 983.54832887  70.03304575]
+relative_humidity std: [ 4.02302676 35.99786868 17.14480105]
+atmospheric_pressure mean: [ 20.3149524  69.7640597 983.2853446]
+atmospheric_pressure std: [ 4.04632207 17.00563292 36.22028507]
+Data saved to f12/paquetes_s6_cov_full_p27.pkl
+Generating windows for past_n =  28
+Data shape:
+Train air_temperature: (10214, 28, 7) samples
+TEST air_temperature: (2328, 28, 7) samples
+Train relative_humidity: (10066, 28, 7) samples
+TEST relative_humidity: (2328, 28, 7) samples
+Train atmospheric_pressure: (9908, 28, 7) samples
+TEST atmospheric_pressure: (2328, 28, 7) samples
+Data shape after augmentation:
+Train air_temperature: (10214, 28, 7) samples
+TEST air_temperature: (2328, 28, 7) samples
+Train relative_humidity: (10066, 28, 7) samples
+TEST relative_humidity: (2328, 28, 7) samples
+Train atmospheric_pressure: (9908, 28, 7) samples
+TEST atmospheric_pressure: (2328, 28, 7) samples
+air_temperature mean: [ 69.94288599 983.13029757  20.04351605]
+air_temperature std: [16.55247139 36.15118559  4.04849556]
+relative_humidity mean: [ 20.2748978  983.5466923   70.04101735]
+relative_humidity std: [ 4.02253225 35.9983958  17.13935878]
+atmospheric_pressure mean: [ 20.31476677  69.7734216  983.28608964]
+atmospheric_pressure std: [ 4.04498638 16.99778911 36.22018657]
+Data saved to f12/paquetes_s6_cov_full_p28.pkl
+Generating windows for past_n =  29
+Data shape:
+Train air_temperature: (10214, 29, 7) samples
+TEST air_temperature: (2328, 29, 7) samples
+Train relative_humidity: (10066, 29, 7) samples
+TEST relative_humidity: (2328, 29, 7) samples
+Train atmospheric_pressure: (9908, 29, 7) samples
+TEST atmospheric_pressure: (2328, 29, 7) samples
+Data shape after augmentation:
+Train air_temperature: (10214, 29, 7) samples
+TEST air_temperature: (2328, 29, 7) samples
+Train relative_humidity: (10066, 29, 7) samples
+TEST relative_humidity: (2328, 29, 7) samples
+Train atmospheric_pressure: (9908, 29, 7) samples
+TEST atmospheric_pressure: (2328, 29, 7) samples
+air_temperature mean: [ 69.9266736  983.13181603  20.04813601]
+air_temperature std: [16.54982049 36.15020505  4.04803591]
+relative_humidity mean: [ 20.27907774 983.54809433  70.03291397]
+relative_humidity std: [ 4.02206059 35.99878919 17.13417476]
+atmospheric_pressure mean: [ 20.31873185  69.76608236 983.2899861 ]
+atmospheric_pressure std: [ 4.0439008  16.98981335 36.21996578]
+Data saved to f12/paquetes_s6_cov_full_p29.pkl
+Generating windows for past_n =  30
+Data shape:
+Train air_temperature: (10214, 30, 7) samples
+TEST air_temperature: (2328, 30, 7) samples
+Train relative_humidity: (10066, 30, 7) samples
+TEST relative_humidity: (2328, 30, 7) samples
+Train atmospheric_pressure: (9908, 30, 7) samples
+TEST atmospheric_pressure: (2328, 30, 7) samples
+Data shape after augmentation:
+Train air_temperature: (10214, 30, 7) samples
+TEST air_temperature: (2328, 30, 7) samples
+Train relative_humidity: (10066, 30, 7) samples
+TEST relative_humidity: (2328, 30, 7) samples
+Train atmospheric_pressure: (9908, 30, 7) samples
+TEST atmospheric_pressure: (2328, 30, 7) samples
+air_temperature mean: [ 69.91146932 983.13392398  20.05188586]
+air_temperature std: [16.55076687 36.14931444  4.0481624 ]
+relative_humidity mean: [ 20.28235386 983.55020448  70.02520757]
+relative_humidity std: [ 4.02221991 35.99922877 17.13080385]
+atmospheric_pressure mean: [ 20.32169026  69.76136804 983.29444696]
+atmospheric_pressure std: [ 4.04344282 16.98141632 36.21979159]
+Data saved to f12/paquetes_s6_cov_full_p30.pkl
+Generating windows for past_n =  31
+Data shape:
+Train air_temperature: (9202, 31, 7) samples
+TEST air_temperature: (2328, 31, 7) samples
+Train relative_humidity: (9054, 31, 7) samples
+TEST relative_humidity: (2328, 31, 7) samples
+Train atmospheric_pressure: (8818, 31, 7) samples
+TEST atmospheric_pressure: (2328, 31, 7) samples
+Data shape after augmentation:
+Train air_temperature: (9202, 31, 7) samples
+TEST air_temperature: (2328, 31, 7) samples
+Train relative_humidity: (9054, 31, 7) samples
+TEST relative_humidity: (2328, 31, 7) samples
+Train atmospheric_pressure: (8818, 31, 7) samples
+TEST atmospheric_pressure: (2328, 31, 7) samples
+air_temperature mean: [ 69.87830204 983.38658343  20.06181957]
+air_temperature std: [16.55600577 36.09814647  4.03859129]
+relative_humidity mean: [ 20.29464206 983.76911429  70.02636752]
+relative_humidity std: [ 4.02471661 35.99880719 17.16361439]
+atmospheric_pressure mean: [ 20.32331502  69.74970131 983.23795201]
+atmospheric_pressure std: [ 4.04086093 17.00378656 36.32363171]
+Data saved to f12/paquetes_s6_cov_full_p31.pkl
+Generating windows for past_n =  32
+Data shape:
+Train air_temperature: (9202, 32, 7) samples
+TEST air_temperature: (2328, 32, 7) samples
+Train relative_humidity: (9054, 32, 7) samples
+TEST relative_humidity: (2328, 32, 7) samples
+Train atmospheric_pressure: (8818, 32, 7) samples
+TEST atmospheric_pressure: (2328, 32, 7) samples
+Data shape after augmentation:
+Train air_temperature: (9202, 32, 7) samples
+TEST air_temperature: (2328, 32, 7) samples
+Train relative_humidity: (9054, 32, 7) samples
+TEST relative_humidity: (2328, 32, 7) samples
+Train atmospheric_pressure: (8818, 32, 7) samples
+TEST atmospheric_pressure: (2328, 32, 7) samples
+air_temperature mean: [ 69.88860147 983.3844342   20.05758255]
+air_temperature std: [16.56143582 36.09712017  4.03821377]
+relative_humidity mean: [ 20.28941454 983.76688148  70.04244954]
+relative_humidity std: [ 4.02505305 35.99967588 17.16359055]
+atmospheric_pressure mean: [ 20.31732344  69.77129151 983.23815778]
+atmospheric_pressure std: [ 4.04067937 17.00131893 36.3236252 ]
+Data saved to f12/paquetes_s6_cov_full_p32.pkl
+Generating windows for past_n =  33
+Data shape:
+Train air_temperature: (9202, 33, 7) samples
+TEST air_temperature: (2328, 33, 7) samples
+Train relative_humidity: (9054, 33, 7) samples
+TEST relative_humidity: (2328, 33, 7) samples
+Train atmospheric_pressure: (8818, 33, 7) samples
+TEST atmospheric_pressure: (2328, 33, 7) samples
+Data shape after augmentation:
+Train air_temperature: (9202, 33, 7) samples
+TEST air_temperature: (2328, 33, 7) samples
+Train relative_humidity: (9054, 33, 7) samples
+TEST relative_humidity: (2328, 33, 7) samples
+Train atmospheric_pressure: (8818, 33, 7) samples
+TEST atmospheric_pressure: (2328, 33, 7) samples
+air_temperature mean: [ 69.90292232 983.38149754  20.05372702]
+air_temperature std: [16.56250989 36.09619244  4.03700391]
+relative_humidity mean: [ 20.28440102 983.76391849  70.06156962]
+relative_humidity std: [ 4.02463994 36.0007302  17.16104799]
+atmospheric_pressure mean: [ 20.31184487  69.79353255 983.23759439]
+atmospheric_pressure std: [ 4.03981189 16.99722602 36.32370237]
+Data saved to f12/paquetes_s6_cov_full_p33.pkl
+Generating windows for past_n =  34
+Data shape:
+Train air_temperature: (9202, 34, 7) samples
+TEST air_temperature: (2328, 34, 7) samples
+Train relative_humidity: (9054, 34, 7) samples
+TEST relative_humidity: (2328, 34, 7) samples
+Train atmospheric_pressure: (8818, 34, 7) samples
+TEST atmospheric_pressure: (2328, 34, 7) samples
+Data shape after augmentation:
+Train air_temperature: (9202, 34, 7) samples
+TEST air_temperature: (2328, 34, 7) samples
+Train relative_humidity: (9054, 34, 7) samples
+TEST relative_humidity: (2328, 34, 7) samples
+Train atmospheric_pressure: (8818, 34, 7) samples
+TEST atmospheric_pressure: (2328, 34, 7) samples
+air_temperature mean: [ 69.90315122 983.3802543   20.05461354]
+air_temperature std: [16.55924024 36.09524471  4.0356556 ]
+relative_humidity mean: [ 20.28400791 983.76263111  70.06676019]
+relative_humidity std: [ 4.02370694 36.00166123 17.15537312]
+atmospheric_pressure mean: [ 20.31088005  69.80313678 983.23889804]
+atmospheric_pressure std: [ 4.03859275 16.99022793 36.32350234]
+Data saved to f12/paquetes_s6_cov_full_p34.pkl
+Generating windows for past_n =  35
+Data shape:
+Train air_temperature: (9202, 35, 7) samples
+TEST air_temperature: (2328, 35, 7) samples
+Train relative_humidity: (9054, 35, 7) samples
+TEST relative_humidity: (2328, 35, 7) samples
+Train atmospheric_pressure: (8818, 35, 7) samples
+TEST atmospheric_pressure: (2328, 35, 7) samples
+Data shape after augmentation:
+Train air_temperature: (9202, 35, 7) samples
+TEST air_temperature: (2328, 35, 7) samples
+Train relative_humidity: (9054, 35, 7) samples
+TEST relative_humidity: (2328, 35, 7) samples
+Train atmospheric_pressure: (8818, 35, 7) samples
+TEST atmospheric_pressure: (2328, 35, 7) samples
+air_temperature mean: [ 69.8896076  983.38150939  20.05881803]
+air_temperature std: [16.55756055 36.09429397  4.03477971]
+relative_humidity mean: [ 20.28702488 983.76383967  70.05957464]
+relative_humidity std: [ 4.02267943 36.00259142 17.14885601]
+atmospheric_pressure mean: [ 20.31359766  69.79705515 983.24280091]
+atmospheric_pressure std: [ 4.03765821 16.98291319 36.32314814]
+Data saved to f12/paquetes_s6_cov_full_p35.pkl
+Generating windows for past_n =  36
+Data shape:
+Train air_temperature: (9202, 36, 7) samples
+TEST air_temperature: (2328, 36, 7) samples
+Train relative_humidity: (9054, 36, 7) samples
+TEST relative_humidity: (2328, 36, 7) samples
+Train atmospheric_pressure: (8818, 36, 7) samples
+TEST atmospheric_pressure: (2328, 36, 7) samples
+Data shape after augmentation:
+Train air_temperature: (9202, 36, 7) samples
+TEST air_temperature: (2328, 36, 7) samples
+Train relative_humidity: (9054, 36, 7) samples
+TEST relative_humidity: (2328, 36, 7) samples
+Train atmospheric_pressure: (8818, 36, 7) samples
+TEST atmospheric_pressure: (2328, 36, 7) samples
+air_temperature mean: [ 69.87768272 983.38330227  20.06219659]
+air_temperature std: [16.55736324 36.09338415  4.0344745 ]
+relative_humidity mean: [ 20.28941459 983.76566676  70.0516535 ]
+relative_humidity std: [ 4.02212249 36.00356044 17.14437751]
+atmospheric_pressure mean: [ 20.31585203  69.79113308 983.24717479]
+atmospheric_pressure std: [ 4.03741779 16.97636723 36.32285778]
+Data saved to f12/paquetes_s6_cov_full_p36.pkl
+Generating windows for past_n =  37
+Data shape:
+Train air_temperature: (8268, 37, 7) samples
+TEST air_temperature: (2328, 37, 7) samples
+Train relative_humidity: (8134, 37, 7) samples
+TEST relative_humidity: (2328, 37, 7) samples
+Train atmospheric_pressure: (7950, 37, 7) samples
+TEST atmospheric_pressure: (2328, 37, 7) samples
+Data shape after augmentation:
+Train air_temperature: (8268, 37, 7) samples
+TEST air_temperature: (2328, 37, 7) samples
+Train relative_humidity: (8134, 37, 7) samples
+TEST relative_humidity: (2328, 37, 7) samples
+Train atmospheric_pressure: (7950, 37, 7) samples
+TEST atmospheric_pressure: (2328, 37, 7) samples
+air_temperature mean: [ 69.92934672 983.65320832  20.05263297]
+air_temperature std: [16.51321703 36.02733283  4.02899833]
+relative_humidity mean: [ 20.29937289 983.97853494  69.95242152]
+relative_humidity std: [ 4.01708736 35.99587642 17.22483803]
+atmospheric_pressure mean: [ 20.30088793  69.82051762 982.816791  ]
+atmospheric_pressure std: [ 4.04534277 16.97666116 36.49209374]
+Data saved to f12/paquetes_s6_cov_full_p37.pkl
+Generating windows for past_n =  38
+Data shape:
+Train air_temperature: (8268, 38, 7) samples
+TEST air_temperature: (2328, 38, 7) samples
+Train relative_humidity: (8134, 38, 7) samples
+TEST relative_humidity: (2328, 38, 7) samples
+Train atmospheric_pressure: (7950, 38, 7) samples
+TEST atmospheric_pressure: (2328, 38, 7) samples
+Data shape after augmentation:
+Train air_temperature: (8268, 38, 7) samples
+TEST air_temperature: (2328, 38, 7) samples
+Train relative_humidity: (8134, 38, 7) samples
+TEST relative_humidity: (2328, 38, 7) samples
+Train atmospheric_pressure: (7950, 38, 7) samples
+TEST atmospheric_pressure: (2328, 38, 7) samples
+air_temperature mean: [ 69.94167497 983.65133368  20.04875818]
+air_temperature std: [16.51574653 36.02642733  4.02900935]
+relative_humidity mean: [ 20.29500649 983.97706141  69.96431991]
+relative_humidity std: [ 4.01640872 35.99714119 17.22333225]
+atmospheric_pressure mean: [ 20.29679324  69.83300568 982.81748087]
+atmospheric_pressure std: [ 4.04566439 16.97621441 36.49183017]
+Data saved to f12/paquetes_s6_cov_full_p38.pkl
+Generating windows for past_n =  39
+Data shape:
+Train air_temperature: (8268, 39, 7) samples
+TEST air_temperature: (2328, 39, 7) samples
+Train relative_humidity: (8134, 39, 7) samples
+TEST relative_humidity: (2328, 39, 7) samples
+Train atmospheric_pressure: (7950, 39, 7) samples
+TEST atmospheric_pressure: (2328, 39, 7) samples
+Data shape after augmentation:
+Train air_temperature: (8268, 39, 7) samples
+TEST air_temperature: (2328, 39, 7) samples
+Train relative_humidity: (8134, 39, 7) samples
+TEST relative_humidity: (2328, 39, 7) samples
+Train atmospheric_pressure: (7950, 39, 7) samples
+TEST atmospheric_pressure: (2328, 39, 7) samples
+air_temperature mean: [ 69.95742657 983.64873162  20.04524188]
+air_temperature std: [16.51428372 36.02556644  4.02830488]
+relative_humidity mean: [ 20.29069547 983.97488638  69.97814937]
+relative_humidity std: [ 4.01524924 35.9984728  17.22048747]
+atmospheric_pressure mean: [ 20.2930274   69.84785969 982.81734341]
+atmospheric_pressure std: [ 4.0453597  16.97421363 36.4916822 ]
+Data saved to f12/paquetes_s6_cov_full_p39.pkl
+Generating windows for past_n =  40
+Data shape:
+Train air_temperature: (8268, 40, 7) samples
+TEST air_temperature: (2328, 40, 7) samples
+Train relative_humidity: (8134, 40, 7) samples
+TEST relative_humidity: (2328, 40, 7) samples
+Train atmospheric_pressure: (7950, 40, 7) samples
+TEST atmospheric_pressure: (2328, 40, 7) samples
+Data shape after augmentation:
+Train air_temperature: (8268, 40, 7) samples
+TEST air_temperature: (2328, 40, 7) samples
+Train relative_humidity: (8134, 40, 7) samples
+TEST relative_humidity: (2328, 40, 7) samples
+Train atmospheric_pressure: (7950, 40, 7) samples
+TEST atmospheric_pressure: (2328, 40, 7) samples
+air_temperature mean: [ 69.96086803 983.64750697  20.04583127]
+air_temperature std: [16.50957883 36.02462943  4.02736217]
+relative_humidity mean: [ 20.29020965 983.97405696  69.97984054]
+relative_humidity std: [ 4.01381648 35.99967642 17.2156374 ]
+atmospheric_pressure mean: [ 20.29284436  69.85335015 982.8186201 ]
+atmospheric_pressure std: [ 4.04464031 16.96944618 36.49136717]
+Data saved to f12/paquetes_s6_cov_full_p40.pkl
+Generating windows for past_n =  41
+Data shape:
+Train air_temperature: (8268, 41, 7) samples
+TEST air_temperature: (2328, 41, 7) samples
+Train relative_humidity: (8134, 41, 7) samples
+TEST relative_humidity: (2328, 41, 7) samples
+Train atmospheric_pressure: (7950, 41, 7) samples
+TEST atmospheric_pressure: (2328, 41, 7) samples
+Data shape after augmentation:
+Train air_temperature: (8268, 41, 7) samples
+TEST air_temperature: (2328, 41, 7) samples
+Train relative_humidity: (8134, 41, 7) samples
+TEST relative_humidity: (2328, 41, 7) samples
+Train atmospheric_pressure: (7950, 41, 7) samples
+TEST atmospheric_pressure: (2328, 41, 7) samples
+air_temperature mean: [ 69.9516722  983.64837482  20.04951789]
+air_temperature std: [16.50570582 36.02365685  4.02661505]
+relative_humidity mean: [ 20.2925313  983.97535214  69.97122318]
+relative_humidity std: [ 4.01224457 36.00088143 17.20904704]
+atmospheric_pressure mean: [ 20.29557458  69.84680037 982.82206916]
+atmospheric_pressure std: [ 4.04386403 16.96361537 36.49092083]
+Data saved to f12/paquetes_s6_cov_full_p41.pkl
+Generating windows for past_n =  42
+Data shape:
+Train air_temperature: (8268, 42, 7) samples
+TEST air_temperature: (2328, 42, 7) samples
+Train relative_humidity: (8134, 42, 7) samples
+TEST relative_humidity: (2328, 42, 7) samples
+Train atmospheric_pressure: (7950, 42, 7) samples
+TEST atmospheric_pressure: (2328, 42, 7) samples
+Data shape after augmentation:
+Train air_temperature: (8268, 42, 7) samples
+TEST air_temperature: (2328, 42, 7) samples
+Train relative_humidity: (8134, 42, 7) samples
+TEST relative_humidity: (2328, 42, 7) samples
+Train atmospheric_pressure: (7950, 42, 7) samples
+TEST atmospheric_pressure: (2328, 42, 7) samples
+air_temperature mean: [ 69.94504977 983.64972064  20.05241112]
+air_temperature std: [16.50236849 36.02268621  4.02614046]
+relative_humidity mean: [ 20.29422607 983.9772217   69.96247218]
+relative_humidity std: [ 4.01099245 36.0021363  17.20310103]
+atmospheric_pressure mean: [ 20.29773479  69.84093853 982.82592648]
+atmospheric_pressure std: [ 4.04365511 16.95831817 36.4905089 ]
+Data saved to f12/paquetes_s6_cov_full_p42.pkl
+Generating windows for past_n =  43
+Data shape:
+Train air_temperature: (7450, 43, 7) samples
+TEST air_temperature: (2328, 43, 7) samples
+Train relative_humidity: (7302, 43, 7) samples
+TEST relative_humidity: (2328, 43, 7) samples
+Train atmospheric_pressure: (7138, 43, 7) samples
+TEST atmospheric_pressure: (2328, 43, 7) samples
+Data shape after augmentation:
+Train air_temperature: (7450, 43, 7) samples
+TEST air_temperature: (2328, 43, 7) samples
+Train relative_humidity: (7302, 43, 7) samples
+TEST relative_humidity: (2328, 43, 7) samples
+Train atmospheric_pressure: (7138, 43, 7) samples
+TEST atmospheric_pressure: (2328, 43, 7) samples
+air_temperature mean: [ 70.0065623  983.95205996  20.04983684]
+air_temperature std: [16.45121938 35.96690708  4.02111141]
+relative_humidity mean: [ 20.31179355 984.27339839  69.86382261]
+relative_humidity std: [ 3.99744894 35.95139566 17.25956487]
+atmospheric_pressure mean: [ 20.29165319  69.84333534 982.55291222]
+atmospheric_pressure std: [ 4.04700845 16.98395834 36.5969477 ]
+Data saved to f12/paquetes_s6_cov_full_p43.pkl
+Generating windows for past_n =  44
+Data shape:
+Train air_temperature: (7450, 44, 7) samples
+TEST air_temperature: (2328, 44, 7) samples
+Train relative_humidity: (7302, 44, 7) samples
+TEST relative_humidity: (2328, 44, 7) samples
+Train atmospheric_pressure: (7138, 44, 7) samples
+TEST atmospheric_pressure: (2328, 44, 7) samples
+Data shape after augmentation:
+Train air_temperature: (7450, 44, 7) samples
+TEST air_temperature: (2328, 44, 7) samples
+Train relative_humidity: (7302, 44, 7) samples
+TEST relative_humidity: (2328, 44, 7) samples
+Train atmospheric_pressure: (7138, 44, 7) samples
+TEST atmospheric_pressure: (2328, 44, 7) samples
+air_temperature mean: [ 70.02221989 983.95013541  20.04659718]
+air_temperature std: [16.45141324 35.96574344  4.02019475]
+relative_humidity mean: [ 20.30722136 984.27238427  69.87454455]
+relative_humidity std: [ 3.9963644  35.9529186  17.25377131]
+atmospheric_pressure mean: [ 20.28715036  69.85711867 982.55363424]
+atmospheric_pressure std: [ 4.0465051  16.98313229 36.59657902]
+Data saved to f12/paquetes_s6_cov_full_p44.pkl
+Generating windows for past_n =  45
+Data shape:
+Train air_temperature: (7450, 45, 7) samples
+TEST air_temperature: (2328, 45, 7) samples
+Train relative_humidity: (7302, 45, 7) samples
+TEST relative_humidity: (2328, 45, 7) samples
+Train atmospheric_pressure: (7138, 45, 7) samples
+TEST atmospheric_pressure: (2328, 45, 7) samples
+Data shape after augmentation:
+Train air_temperature: (7450, 45, 7) samples
+TEST air_temperature: (2328, 45, 7) samples
+Train relative_humidity: (7302, 45, 7) samples
+TEST relative_humidity: (2328, 45, 7) samples
+Train atmospheric_pressure: (7138, 45, 7) samples
+TEST atmospheric_pressure: (2328, 45, 7) samples
+air_temperature mean: [ 70.04017093 983.94762442  20.04351382]
+air_temperature std: [16.44853993 35.96463089  4.01865834]
+relative_humidity mean: [ 20.30283913 984.27081843  69.88650058]
+relative_humidity std: [ 3.99480809 35.95443852 17.24690833]
+atmospheric_pressure mean: [ 20.2827942   69.87316788 982.55369026]
+atmospheric_pressure std: [ 4.04546957 16.98080431 36.59628519]
+Data saved to f12/paquetes_s6_cov_full_p45.pkl
+Generating windows for past_n =  46
+Data shape:
+Train air_temperature: (7450, 46, 7) samples
+TEST air_temperature: (2328, 46, 7) samples
+Train relative_humidity: (7302, 46, 7) samples
+TEST relative_humidity: (2328, 46, 7) samples
+Train atmospheric_pressure: (7138, 46, 7) samples
+TEST atmospheric_pressure: (2328, 46, 7) samples
+Data shape after augmentation:
+Train air_temperature: (7450, 46, 7) samples
+TEST air_temperature: (2328, 46, 7) samples
+Train relative_humidity: (7302, 46, 7) samples
+TEST relative_humidity: (2328, 46, 7) samples
+Train atmospheric_pressure: (7138, 46, 7) samples
+TEST atmospheric_pressure: (2328, 46, 7) samples
+air_temperature mean: [ 70.04823161 983.94630965  20.04372947]
+air_temperature std: [16.44288778 35.96342905  4.01691105]
+relative_humidity mean: [ 20.3018402  984.2704269   69.88879072]
+relative_humidity std: [ 3.99293209 35.95583679 17.23764318]
+atmospheric_pressure mean: [ 20.28170888  69.87924409 982.55502305]
+atmospheric_pressure std: [ 4.04410465 16.97652212 36.59585761]
+Data saved to f12/paquetes_s6_cov_full_p46.pkl
+Generating windows for past_n =  47
+Data shape:
+Train air_temperature: (7450, 47, 7) samples
+TEST air_temperature: (2328, 47, 7) samples
+Train relative_humidity: (7302, 47, 7) samples
+TEST relative_humidity: (2328, 47, 7) samples
+Train atmospheric_pressure: (7138, 47, 7) samples
+TEST atmospheric_pressure: (2328, 47, 7) samples
+Data shape after augmentation:
+Train air_temperature: (7450, 47, 7) samples
+TEST air_temperature: (2328, 47, 7) samples
+Train relative_humidity: (7302, 47, 7) samples
+TEST relative_humidity: (2328, 47, 7) samples
+Train atmospheric_pressure: (7138, 47, 7) samples
+TEST atmospheric_pressure: (2328, 47, 7) samples
+air_temperature mean: [ 70.04579237 983.94679707  20.04639759]
+air_temperature std: [16.43910977 35.96221184  4.01561536]
+relative_humidity mean: [ 20.30336012 984.2718477   69.88234371]
+relative_humidity std: [ 3.99116066 35.95713167 17.22654578]
+atmospheric_pressure mean: [ 20.28326788  69.87379671 982.55824343]
+atmospheric_pressure std: [ 4.04289315 16.97157793 36.59530487]
+Data saved to f12/paquetes_s6_cov_full_p47.pkl
+Generating windows for past_n =  48
+Data shape:
+Train air_temperature: (7450, 48, 7) samples
+TEST air_temperature: (2328, 48, 7) samples
+Train relative_humidity: (7302, 48, 7) samples
+TEST relative_humidity: (2328, 48, 7) samples
+Train atmospheric_pressure: (7138, 48, 7) samples
+TEST atmospheric_pressure: (2328, 48, 7) samples
+Data shape after augmentation:
+Train air_temperature: (7450, 48, 7) samples
+TEST air_temperature: (2328, 48, 7) samples
+Train relative_humidity: (7302, 48, 7) samples
+TEST relative_humidity: (2328, 48, 7) samples
+Train atmospheric_pressure: (7138, 48, 7) samples
+TEST atmospheric_pressure: (2328, 48, 7) samples
+air_temperature mean: [ 70.04546111 983.94771901  20.04819164]
+air_temperature std: [16.4357035  35.96105792  4.01467547]
+relative_humidity mean: [ 20.30440791 984.27369619  69.87610321]
+relative_humidity std: [ 3.98991832 35.95840611 17.21689173]
+atmospheric_pressure mean: [ 20.28433283  69.86882228 982.56178742]
+atmospheric_pressure std: [ 4.04229581 16.96774958 36.59477271]
+Data saved to f12/paquetes_s6_cov_full_p48.pkl

@@ -45,3 +45,25 @@ Minimum val_loss over 6 runs: 0.000175
 Densa despues de lstm (42): 
 Average val_loss over 10 runs: 0.000178 ± 0.000019
 Minimum val_loss over 10 runs: 0.000151
+##########################################
+##################################
+LSTM 20, Densa 22
+Best val_mse So Far: 0.00015892426987799504 (media)
+
+LSTM 20, densa 26
+0.00015724736052410057
+
+LSTM 20, densa 32
+0.00015498966725620752
+
+LSTM 24, densa 40
+0.0001548695630238702
+
+LSTM 44, densa 60
+0.00015162751030099267
+
+LSTM 48, densa 56
+0.0001508316175507692
+
+LSTM 56, densa 58
+0.00014860860392218456

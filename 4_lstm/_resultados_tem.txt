@@ -1,23 +1,26 @@
 ## f3 temperatura
-    past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    encoder_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
+------------------------------------------------------------------------------------------
+    past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
+    future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
-    # Decoder part (LSTM for future exogenous features)
-    future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
-    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
+    # Past data 
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_in)
+
+    # Future
+    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
 
     # Combine the outputs of encoder and decoder (you can concatenate or merge them)
-    future_residue = tf.keras.layers.Flatten()(future_data_layer)
-    merged = tf.keras.layers.concatenate([encoder_lstm, decoder_lstm, future_residue])
+    future_residue = tf.keras.layers.Flatten()(future_in)
+    merged = tf.keras.layers.concatenate([past_lstm, decoder_lstm, future_residue])
 
     # Final output layer
-    #merged = tf.keras.layers.Dense(2* output_units)(merged)
-    outputs = tf.keras.layers.Dense(output_units)(merged)
+    #merged = tf.keras.layers.Dense(4* output_units)(merged)
+    outputs = tf.keras.layers.Dense(target_dim)(merged)
 
-    model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
+    model = tf.keras.Model(inputs=[past_in, future_in], outputs=outputs)
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
-
-min val_loss: 2849
+------------------------------------------------------------------------------------------------
+min val_loss: 2849 (con densa = 2; pero da peor media)
 
 Sin capa densa extra
 Average val_loss over 10 runs: 0.029085 ± 0.000234
@@ -27,6 +30,14 @@ Capa densa extra * 4
 Average val_loss over 10 runs: 0.028924 ± 0.000218
 Minimum val_loss over 10 runs: 0.028571
 
+****************************************
+Capa densa dps lstm a 65 
+
+Average val_loss over 10 runs: 0.028834 ± 0.000224
+Minimum val_loss over 10 runs: 0.028339
+
+OJO no lo he podido replicar; muy aleatorio
+*****************************************
  
 ## f6 temperatura
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")

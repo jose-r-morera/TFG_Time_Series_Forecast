@@ -21,7 +21,7 @@ from custom_attention import CustomAttention
 
 DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p17.pkl"
 
-DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
+DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -90,28 +90,24 @@ def build_and_train_model(dataset_train):
     future_shape = (future_data.shape[1], future_data.shape[2])    
     target_dim = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
     ########################################################################################
-    # Encoder part (LSTM for past data)
     past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
-    past_lstm = tf.keras.layers.Dense(42)(past_lstm)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_in)
     
-    
-    # Future exogenous features
-    future_dense = tf.keras.layers.Flatten()(future_in)
-    future_dense = tf.keras.layers.Dense(4)(future_dense)
+    # Future
+    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
 
-    # Combine the outputs of past and future
+    # Combine the outputs of encoder and decoder (you can concatenate or merge them)
     future_residue = tf.keras.layers.Flatten()(future_in)
-    merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
+    merged = tf.keras.layers.concatenate([past_lstm, decoder_lstm, future_residue])
 
     # Final output layer
-    merged = tf.keras.layers.Dense(6* target_dim)(merged) 
-    out = tf.keras.layers.Dense(target_dim)(merged)
+    #merged = tf.keras.layers.Dense(4* output_units)(merged)
+    outputs = tf.keras.layers.Dense(target_dim)(merged)
 
-    model = tf.keras.Model([past_in, future_in], out)
+    model = tf.keras.Model(inputs=[past_in, future_in], outputs=outputs)
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
     
     return model
