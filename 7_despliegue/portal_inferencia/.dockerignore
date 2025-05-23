@@ -1,0 +1,27 @@
+# .dockerignore
+
+# Ignore node_modules, as it should be installed within the container
+node_modules
+
+# Ignore build outputs, if any are generated locally and not needed in context
+dist
+build
+.next # Next.js build output, usually not needed in the build context if built inside
+
+# Ignore Docker and Git files
+Dockerfile
+.dockerignore
+.git
+.gitignore
+
+# Ignore logs
+npm-debug.log
+yarn-error.log
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE specific files
+.vscode
+.idea

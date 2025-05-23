@@ -20,6 +20,14 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # ──────────────────────────────────────────────────────────────
+def denormalize_temp_prediction(temp_array: np.ndarray):
+    mean_temp = 20.09918054
+    std_temp = 4.02342859
+    for i in range(len(temp_array)):
+        temp_array[i] = temp_array[i] * std_temp + mean_temp
+    return temp_array
+# ──────────────────────────────────────────────────────────────
+
 # Global model variable
 model = None
 input_shape = None
@@ -31,15 +39,29 @@ def init_worker(**kwargs):
 
     try:
         # Build the same architecture before loading weights
-        past_data_input = tf.keras.layers.Input(shape=(72, 7), name="past_data")
-        x = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(30, return_sequences=True))(past_data_input)
-        x = tf.keras.layers.LSTM(16, return_sequences=False)(x)
-        outputs = tf.keras.layers.Dense(3)(x)  # adjust this to match output dim
+        past_data_shape = [17, 7]  # (time_steps, num_features)
+        future_data_shape = [3, 4]  # (time_steps, num_features)
+        input_shape = (past_data_shape, future_data_shape)
+        target_shape=3
+        # Encoder part (LSTM for past data)
+        past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
+        past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
 
-        model = tf.keras.Model(inputs=past_data_input, outputs=outputs)
+        # Decoder part (LSTM for future exogenous features)
+        future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
+        future_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
+
+        # Combine the outputs of encoder and decoder (you can concatenate or merge them)
+        future_residue = tf.keras.layers.Flatten()(future_data_layer)
+        merged = tf.keras.layers.concatenate([past_lstm, future_lstm, future_residue])
+
+        # Final output layer
+        outputs = tf.keras.layers.Dense(target_shape)(merged)
+
+        # Create the model
+        model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
         model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.002), loss="mse")
-        model.load_weights("lstm_future_checkpoint.weights.h5")
-        input_shape = (72, 7)
+        model.load_weights("t_f3_2849.weights.h5")
 
         logger.info("✅ Model loaded successfully with shape %s", input_shape)
     except Exception as e:
@@ -57,17 +79,24 @@ def predict_task(self, input_tensor):
         if model is None or input_shape is None:
             raise ValueError("Model is not loaded properly.")
 
+        past_input, future_input = input_tensor
         # Convert list to numpy array and validate shape
-        input_array = np.array(input_tensor)
-        if input_array.shape != (1, *input_shape):
-            raise ValueError(f"Expected input shape (1, {input_shape}), but got {input_array.shape}")
+        past_input = np.array(past_input)
+        future_input = np.array(future_input)
+        if past_input.shape != (1, *input_shape[0]):
+            raise ValueError(f"Expected past input shape (1, {input_shape[0]}), but got {past_input.shape}")
+        if future_input.shape != (1, *input_shape[1]):
+            raise ValueError(f"Expected future input shape (1, {input_shape[1]}), but got {future_input.shape}")
+    
 
         logger.info("🚀 Running model inference...")
-        prediction = model.predict(input_array, verbose=0)[0]
-
+        prediction = model.predict((past_input, future_input), verbose=0)[0]
+        prediction = [round(float(p), 3) for p in prediction]
+        prediction = denormalize_temp_prediction(prediction)
+        
         result = {
             "status": "completed",
-            "predictions": [round(float(p), 3) for p in prediction]
+            "predictions": prediction
         }
         logger.info("✅ Inference complete.")
         return result

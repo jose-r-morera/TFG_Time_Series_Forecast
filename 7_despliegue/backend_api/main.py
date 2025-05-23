@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, List, Optional
-from datetime import datetime
+from datetime import datetime, timedelta
 from celery.result import AsyncResult
 from celery_worker import predict_task
 import uuid
@@ -45,8 +45,7 @@ class PredictionRequest(BaseModel):
     allSensorsData: Dict[int, SensorData]
 
 # Time feature computation
-def compute_time_features(timestamp: str):
-    dt = datetime.fromisoformat(timestamp.replace("Z", ""))
+def compute_time_features(dt: datetime):
     hour = dt.hour
     minute = dt.minute
     hour_fraction = hour + minute / 60.0
@@ -93,16 +92,33 @@ def save_input_tensor_channels(input_tensor: np.ndarray, job_id: str, output_dir
         path = output_dir / f"{job_id}_channel_{channel_idx + 1}.png"
         plt.savefig(path, dpi=150)
         plt.close()
+        
+def normalize_sensor(val: float, name: str) -> np.ndarray:
+    """
+    Apply z-score normalization to the input tensor using the stored mean and std.
+    """
+    if name == "relative humidity (avg.)":
+        mean = 70.01980283
+        std = 16.52443657
+    elif name == "atmosferic pressure (avg.)":
+        mean = 983.22582669
+        std = 36.1337416 
+    elif name == "air temperature (avg.)":
+        mean = 20.09918054
+        std = 4.02342859
+    else:
+        raise ValueError(f"Unknown sensor name: {name}")
+    return (val - mean) / std
 
 @app.post("/predict")
 async def submit_prediction(request: PredictionRequest):
-    past_timesteps = 47 # if we want to pass 48 point to the model
+    past_timesteps = 17 # if we want to pass 18 point to the model
 
-    # Define the sensors to extract (match lowercased names)
+    # Define the sensors to extract (match lowercased names). Order matters!
     feature_names = [
-        "air temperature (avg.)",
         "relative humidity (avg.)",
-        "atmosferic pressure (avg.)"
+        "atmosferic pressure (avg.)",
+        "air temperature (avg.)"
     ]
 
     # Build map of sensor name -> ID (case-insensitive)
@@ -117,11 +133,11 @@ async def submit_prediction(request: PredictionRequest):
     # Validate presence of required features
     missing = [name for name in feature_names if name not in name_to_id]
     if missing:
-        print("me falta algo brotha")
+        print("Missing feature")
         raise HTTPException(status_code=400, detail=f"Missing required sensors: {missing}")
 
 
-    # Build input tensor
+    # Build past data input tensor
     feature_tensor = []
     for t in range(past_timesteps):
         timestep_features = []
@@ -129,10 +145,11 @@ async def submit_prediction(request: PredictionRequest):
         # Use target sensor’s timestamp for time features
         try:
             timestamp = request.allSensorsData[request.targetSensorId].hourlyData[-past_timesteps + t].timestamp
+            date = datetime.fromisoformat(timestamp.replace("Z", ""))
         except IndexError:
             raise HTTPException(status_code=400, detail=f"Not enough historical data for timestep {t}")
 
-        timestep_features.extend(compute_time_features(timestamp))
+        timestep_features.extend(compute_time_features(date))
 
         # Add sensor values
         for name in feature_names:
@@ -143,16 +160,31 @@ async def submit_prediction(request: PredictionRequest):
                 val = 0.0
             else:
                 val = hd[-past_timesteps + t].average or 0.0
+            # Normalize the value
+            val = normalize_sensor(val, name)
 
             timestep_features.append(val)
 
         feature_tensor.append(timestep_features)
 
-    input_tensor = np.array(feature_tensor, dtype=np.float32).reshape(1, past_timesteps, -1)
-    save_input_tensor_channels(input_tensor, "0000", Path("debug_inputs"))
+    past_input_tensor = np.array(feature_tensor, dtype=np.float32).reshape(1, past_timesteps, -1)
+    save_input_tensor_channels(past_input_tensor, "0000", Path("debug_inputs"))
+    
+    # Build future data input tensor
+    future_timesteps = 3
+    future_tensor = []
+    for t in range(future_timesteps):
+        timestep_features = []
+        # add 1 hour to last timestamp
+        date = date + timedelta(hours=t+1)
+        timestep_features.extend(compute_time_features(date))
+        future_tensor.append(timestep_features)
+        
+    future_input_tensor = np.array(future_tensor, dtype=np.float32).reshape(1, future_timesteps, -1)
+    save_input_tensor_channels(future_input_tensor, "0001", Path("debug_inputs"))
 
     job_id = str(uuid.uuid4())
-    task = predict_task.apply_async(args=[input_tensor.tolist()], task_id=job_id)
+    task = predict_task.apply_async(args=[(past_input_tensor.tolist(), future_input_tensor.tolist())], task_id=job_id)
 
     return {"job_id": job_id, "status": "submitted"}
 
