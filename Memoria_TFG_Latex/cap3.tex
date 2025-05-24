@@ -532,18 +532,252 @@ que la inclusión del ruido no es capaz de modificar, puesto que sería necesari
 \label{sec:resultados}
 Cada variable tiene sus propias características y patrones, por lo que se desarrollan modelos LSTM específicos para cada una de ellas. 
 Además, en el caso de la temperatura del aire, se estudia con mayor profundidad y se desarrollan modelos específicos para cada horizonte de predicción.
-Los resultados obtenidos corresponden al mejor modelo de 10 entrenamientos.
+Los resultados obtenidos corresponden al mejor modelo de 10 entrenamientos. Se muestra el error RMSE de la validación cruzada, así como sobre los conjuntos de test.
+
 \subsection{Temperatura del aire}
 Los modelos, ajustados para cada horizonte de predicción, se muestran en los pseudocódigos \ref{lstm_model_temp_3h}, \ref{lstm_model_temp_6h}, \ref{lstm_model_temp_12h} y \ref{lstm_model_temp_24h}.
 Los resultados obtenidos se muestran en la tabla \ref{temp_results}.
+
+\begin{figure}[H]
+{\small
+\hrule
+{\bf\small Pseudocódigo para el modelo de temperatura a 3 horas}
+\hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun}\={\bf ción construir\_modelo}($past\_shape$, $future\_shape$, $forecast_length$, $learning\_rate$): \\
+\ 2: \> \# Definir capas de entrada \\
+\ 3: \> $entrada\_pasado$ = Input(shape=$past\_shape$) \\
+\ 4: \> $entrada\_futuro$ = Input(shape=$future\_shape$) \\
+\ 5: \> \# Procesar datos pasados con BiLSTM \\
+\ 6: \> $past\_lstm$ = BiLSTM(unidades=65, return\_sequences=False)($entrada\_pasado$) \\
+\ 7: \> \# Procesar datos futuros con LSTM \\
+\ 8: \> $future\_lstm$ = LSTM(unidades=4, return\_sequences=False)($entrada\_futuro$) \\
+\ 9: \> \# Aplanar la entrada futura como residuo \\
+10: \> $residuo\_futuro$ = Flatten()($entrada\_futuro$) \\
+11: \> \# Combinar todas las salidas \\
+12: \> $merged$ = concatenar($past\_lstm$, $future\_lstm$, $residuo\_futuro$) \\
+13: \> $salida$ = Dense(unidades=$forecast_length$)($merged$) \\
+14: \> \# Construir y compilar el modelo \\
+15: \> modelo = Modelo(entradas=[ $entrada\_pasado$, $entrada\_futuro$ ], salidas=$salida$) \\
+\end{tabbing}
+\end{center}
+}
+\hrule
+\caption{Pseudocódigo para el modelo de temperatura a 3 horas}
+\label{lstm_model_temp_3h}
+\end{figure}
+
+\begin{figure}[H]
+{\small
+\hrule
+{\bf\small Pseudocódigo para el modelo de temperatura a 6 horas}
+\hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun}\={\bf ción construir\_modelo}($past\_shape$, $future\_shape$, $forecast\_length$, $learning\_rate$): \\
+\ 2: \> \# Definir capas de entrada \\
+\ 3: \> $entrada\_pasado$ = Input(shape=$past\_shape$) \\
+\ 4: \> $entrada\_futuro$ = Input(shape=$future\_shape$) \\
+\ 5: \> \# Procesar datos pasados con BiLSTM y proyección densa \\
+\ 6: \> $past\_lstm$ = BiLSTM(unidades=65, return\_sequences=False)($entrada\_pasado$) \\
+\ 7: \> $past\_lstm$ = Dense(unidades=65)($past\_lstm$) \\
+\ 8: \> \# Procesar datos futuros con LSTM \\
+\ 9: \> $decoder\_lstm$ = LSTM(unidades=4, return\_sequences=False)($entrada\_futuro$) \\
+10: \> \# Aplanar la entrada futura como residuo \\
+11: \> $residuo\_futuro$ = Flatten()($entrada\_futuro$) \\
+12: \> \# Combinar todas las salidas \\
+13: \> $merged$ = concatenar($past\_lstm$, $decoder\_lstm$, $residuo\_futuro$) \\
+14: \> \# Capas densas finales \\
+15: \> $merged$ = Dense(unidades=$4 \times forecast\_length$)($merged$) \\
+16: \> $salida$ = Dense(unidades=$forecast\_length$)($merged$) \\
+17: \> \# Construir y compilar el modelo \\
+18: \> modelo = Modelo(entradas=[ $entrada\_pasado$, $entrada\_futuro$ ], salidas=$salida$) \\
+19: \> compilar(modelo, optimizador=Adam($learning\_rate$), pérdida='MSE') \\
+20: \> {\bf Retornar} modelo \\
+\end{tabbing}
+\end{center}
+}
+\hrule
+\caption{Pseudocódigo para el modelo de temperatura a 6horas}
+\label{lstm_model_temp_6h}
+\end{figure}
+
+\begin{figure}[H]
+{\small
+\hrule
+{\bf\small Pseudocódigo para el modelo de temperatura a 12 horas}
+\hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun}\={\bf ción construir\_modelo}($past\_shape$, $future\_shape$, $forecast\_length$, $learning\_rate$): \\
+\ 2: \> \# Definir capas de entrada \\
+\ 3: \> $entrada\_pasado$ = Input(shape=$past\_shape$) \\
+\ 4: \> $entrada\_futuro$ = Input(shape=$future\_shape$) \\
+\ 5: \> \# Procesar datos pasados con BiLSTM y proyección densa \\
+\ 6: \> $past\_lstm$ = BiLSTM(unidades=65, return\_sequences=False)($entrada\_pasado$) \\
+\ 7: \> $past\_lstm$ = Dense(unidades=65)($past\_lstm$) \\
+\ 8: \> \# Procesar datos futuros con LSTM \\
+\ 9: \> $future\_lstm$ = LSTM(unidades=4, return\_sequences=False)($entrada\_futuro$) \\
+10: \> \# Aplanar la entrada futura como residuo \\
+11: \> $residuo\_futuro$ = Flatten()($entrada\_futuro$) \\
+12: \> \# Combinar todas las salidas \\
+13: \> $merged$ = concatenar($past\_lstm$, $future\_lstm$ , $residuo\_futuro$) \\
+14: \> \# Capa densa de salida \\
+15: \> $salida$ = Dense(unidades=$forecast\_length$)($merged$) \\
+\end{tabbing}
+\end{center}
+}
+\hrule
+\caption{Pseudocódigo para el modelo de temperatura a 12 horas}
+\label{lstm_model_temp_12h}
+\end{figure}
+
 
 % \begin{figure}[H]
 % {\small
 % \hrule
 % {\bf\small Pseudocódigo para el modelo LSTM de temperatura del aire}
 % }
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Horizonte de predicción (horas)}} \\
+\hline
+\textbf{Datos} & \textbf{3} & \textbf{6} & \textbf{12} \\
+\hline
+Validación   &      0.6792           &     0.8543       &         1.0632            \\
+\hline
+Garachico    &        0.8234         &      1.0677            &         1.3423            \\
+\hline
+Santa Cruz &       0.6711          &    0.7892          &          0.9244           \\
+\hline
+\end{tabular}
+\caption{Resultados del modelo LSTM para la temperatura del aire}
+\label{temp_results}
+\end{table}
 
 
 \subsection{Humedad relativa}
-\subsection{Presión atmosférica}
 
+Se emplea el modelo descrito en la figura \ref{lstm_model_hum}, que consiste en una LSTM bidireccional seguida de una capa densa para los datos pasados, una
+capa densa para los datos futuros y dos capa densas apiladas para la salida.
+
+\begin{figure}[H]
+{\small
+\hrule
+{\bf\small Pseudocódigo del modelo BiLSTM para la humedad relativa}
+\hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun}\={\bf ción construir\_modelo}($past\_shape$, $future\_shape$, $forecast\_length$, $learning\_rate$): \\
+\ 2: \> \# Definir capas de entrada \\
+\ 3: \> $entrada\_pasado$ = Input(shape=$past\_shape$) \\
+\ 4: \> $entrada\_futuro$ = Input(shape=$future\_shape$) \\
+\ 5: \> \# Codificador del pasado con BiLSTM y proyección \\
+\ 6: \> $past\_lstm$ = BiLSTM(unidades=42, return\_sequences=False)($entrada\_pasado$) \\
+\ 7: \> $past\_lstm$ = Dense(unidades=20)($past\_lstm$) \\
+\ 8: \> \# Variables futuras: aplanar y proyectar \\
+\ 9: \> $future\_dense$ = Flatten()($entrada\_futuro$) \\
+10: \> $future\_dense$ = Dense(unidades=4)($future\_dense$) \\
+11: \> \# Residuo adicional de variables exógenas \\
+12: \> $residuo\_futuro$ = Flatten()($entrada\_futuro$) \\
+13: \> \# Combinar todas las salidas \\
+14: \> $merged$ = concatenar($past\_lstm$, $future\_dense$, $residuo\_futuro$) \\
+15: \> \# Capas densas finales para predicción \\
+16: \> $merged$ = Dense(unidades=6 $\times$ $forecast\_length$)($merged$) \\
+17: \> $salida$ = Dense(unidades=$forecast\_length$)($merged$) \\
+\end{tabbing}
+\end{center}
+}
+\hrule
+\caption{Pseudocódigo del modelo BiLSTM para la humedad relativa}
+\label{lstm_model_hum}
+\end{figure}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Horizonte de predicción (horas)}} \\
+\hline
+\textbf{Datos} & \textbf{3} & \textbf{6} & \textbf{12} \\
+\hline
+Validación   &     5.7526            &                  &                     \\
+\hline
+Garachico    &     5.7889            &                  &                     \\
+\hline
+Santa Cruz &       4.6226          &                  &                     \\
+\hline
+\end{tabular}
+\caption{Resultados del modelo LSTM para la humedad relativa}
+\label{hum_results}
+\end{table}
+
+
+\subsection{Presión atmosférica}
+Se emplea el modelo descrito en la figura \ref{lstm_model_pres}, similar al empleado para la humedad relativa.
+\begin{figure}[H]
+{\small
+\hrule
+{\bf\small Pseudocódigo del modelo BiLSTM para la presión atmosférica}
+\hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun}\={\bf ción construir\_modelo}($past\_shape$, $future\_shape$, $forecast\_length$, $learning\_rate$): \\
+\ 2: \> \# Definir capas de entrada \\
+\ 3: \> $entrada\_pasado$ = Input(shape=$past\_shape$) \\
+\ 4: \> $entrada\_futuro$ = Input(shape=$future\_shape$) \\
+\ 5: \> \# Codificador pasado con BiLSTM + capa densa \\
+\ 6: \> $past\_lstm$ = BiLSTM(unidades=56, return\_sequences=False)($entrada\_pasado$) \\
+\ 7: \> $past\_lstm$ = Dense(unidades=58)($past\_lstm$) \\
+\ 8: \> \# Variables futuras: aplanar y proyectar con Dense \\
+\ 9: \> $future\_dense$ = Flatten()($entrada\_futuro$) \\
+10: \> $future\_dense$ = Dense(unidades=4)($future\_dense$) \\
+11: \> \# Aplanar también como residuo \\
+12: \> $residuo\_futuro$ = Flatten()($entrada\_futuro$) \\
+13: \> \# Combinar todas las salidas \\
+14: \> $merged$ = concatenar($past\_lstm$, $future\_dense$, $residuo\_futuro$) \\
+15: \> \# Capa densa intermedia y salida final \\
+16: \> $merged$ = Dense(unidades=6 $\times$ $forecast\_length$)($merged$) \\
+17: \> $salida$ = Dense(unidades=$forecast\_length$)($merged$) \\
+\end{tabbing}
+\end{center}
+}
+\hrule
+\caption{Pseudocódigo del modelo BiLSTM para la presión atmosférica}
+\label{lstm_model_pres}
+\end{figure}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Horizonte de predicción (horas)}} \\
+\hline
+\textbf{Datos} & \textbf{3} & \textbf{6} & \textbf{12} \\
+\hline
+Validación   &   0.3908           &                  &                     \\
+\hline
+Garachico    & 0.6783             &                  &                    \\
+\hline
+Santa Cruz &    0.4077            &                  &                     \\
+\hline
+\end{tabular}
+\caption{Resultados del modelo LSTM para la presión atmosférica}
+\label{pres_results}
+\end{table}
+
+
+\subsection{Evaluación de los resultados}
+Es dificil evaluar los resultados debido a que las condiciones meteorológicas pueden variar entre distintas ubicaciones.
+
+Orientativamente, se toman como referencia los resultados del estudio de Haque et al. \cite{haque2021}, que emplea modelos de aprendizaje profundo para la predicción de la temperatura 
+en las próximas 6 horas en la ciudad de Pekín. Además, se evalúa el mismo modelo en otras ciudades, como Toronto o Las Vegas. 
+
+En dicho estudio, el mejor RMSE para 6 horas obtenido era de 1.691, mientras que con nuestro modelo se obtiene un RMSE de 0.8543, lo que sugiere que el modelo es capaz de predecir la temperatura del aire con una precisión considerablemente mayor. 
+Además, en el estudio citado, para las ciudades no usadas en el entrenamiento, el RMSE se sitúa entre 1.4 y 2.7, siendo en nuestro caso de 1.0677 y 0.7892 para las estaciones consideradas,
+lo que valida la capacidad de nuestro modelo para generalizar a otras ubicaciones.
