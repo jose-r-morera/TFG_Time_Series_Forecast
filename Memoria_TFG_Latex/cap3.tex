@@ -223,7 +223,7 @@ Tras las capas convolucionales, es común intercalar capas de pooling (submuestr
 Durante el entrenamiento de la red, los pesos de los filtros se ajustan para minimizar el error de predicción.
 
 Se muestra el pseudocódigo del modelo CNN desarrollado para este trabajo en la figura \ref{cnn_model}. Se descarta el uso de pooling tras estudiar varias alternativas, ya que no se observa mejora en 
-el rendimiento del modelo. También se contempla el uso de múltiples capas de convolución, tanto en el flujo de datos pasado, como en el futuro o depués de concatenarlo, así como apiladadas. 
+el rendimiento del modelo. También se contempla el uso de múltiples capas de convolución, tanto en el flujo de datos pasado, como en el futuro o después de concatenarlo, así como apiladadas. 
 Sin embargo, el mejor modelo es el que se muestra, con una sola capa de convolución en los datos pasados, una capa densa para los futuros y otra densa para la salida.
 Cabe destacar el uso de relleno o padding de tipo causal que evita que la red vea datos futuros al realizar la convolución, lo que es especialmente importante en series temporales, puesto que es 
 importante que la red no tenga acceso a información futura y entienda la causalidad.

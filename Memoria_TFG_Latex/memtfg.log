@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  24 MAY 2025 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  24 MAY 2025 22:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -821,17 +821,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.238 \end{abstract}
+l.251 \end{abstract}
                      [1]
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.256 \newpage
+l.273 \newpage
               {\pagestyle{empty}} [1]
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 277.
+(Font)              scaled to size 22.39185pt on input line 294.
  (./memtfg.toc
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 (Font)              scaled to size 18.66588pt on input line 2.
@@ -902,31 +902,31 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 280.
+(hyperref)                removing `\hbox' on input line 297.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 280.
+(hyperref)                removing `\<def>-command' on input line 297.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tf@size' on input line 280.
+(hyperref)                removing `\tf@size' on input line 297.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 280.
+(hyperref)                removing `\<def>-command' on input line 297.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sf@size' on input line 280.
+(hyperref)                removing `\sf@size' on input line 297.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 280.
+(hyperref)                removing `\<def>-command' on input line 297.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\ssf@size' on input line 280.
+(hyperref)                removing `\ssf@size' on input line 297.
 
 [2] (./memtfg.lof
 Overfull \hbox (2.63512pt too wide) detected at line 13
@@ -1093,31 +1093,31 @@ Overfull \hbox (2.63512pt too wide) detected at line 45
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 285.
+(hyperref)                removing `\hbox' on input line 302.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 285.
+(hyperref)                removing `\<def>-command' on input line 302.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tf@size' on input line 285.
+(hyperref)                removing `\tf@size' on input line 302.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 285.
+(hyperref)                removing `\<def>-command' on input line 302.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sf@size' on input line 285.
+(hyperref)                removing `\sf@size' on input line 302.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 285.
+(hyperref)                removing `\<def>-command' on input line 302.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\ssf@size' on input line 285.
+(hyperref)                removing `\ssf@size' on input line 302.
 
 [4] (./memtfg.lot)
 \tf@lot=\write6
@@ -1127,31 +1127,31 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 290.
+(hyperref)                removing `\hbox' on input line 307.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 290.
+(hyperref)                removing `\<def>-command' on input line 307.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tf@size' on input line 290.
+(hyperref)                removing `\tf@size' on input line 307.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 290.
+(hyperref)                removing `\<def>-command' on input line 307.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sf@size' on input line 290.
+(hyperref)                removing `\sf@size' on input line 307.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 290.
+(hyperref)                removing `\<def>-command' on input line 307.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\ssf@size' on input line 290.
+(hyperref)                removing `\ssf@size' on input line 307.
 
 [5
 
@@ -1554,41 +1554,81 @@ LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 ]
 
 [48]
+Underfull \hbox (badness 1281) in paragraph at lines 428--430
+[]\T1/fve/m/sc/12 (+20) Weyn, J. A., Du-rran, D. R., & Ca-rua-na, R. (2020). \T1/fve/m/sl/12 (+20) Im-pro-ving Data-Driven
+ []
+
+
+Underfull \hbox (badness 2478) in paragraph at lines 428--430
+\T1/fve/m/sl/12 (+20) Glo-bal Weather Pre-dic-tion Using Deep Con-vo-lu-tio-nal Neu-ral Net-works on
+ []
+
+
+Underfull \hbox (badness 2608) in paragraph at lines 428--430
+\T1/fve/m/sl/12 (+20) a Cu-bed Sphe-re\T1/fve/m/sc/12 (+20) . Jour-nal of Ad-van-ces in Mo-de-ling Earth Sys-tems, 12(9).
+ []
+
+
+Underfull \hbox (badness 2913) in paragraph at lines 432--434
+[]\T1/fve/m/sc/12 (+20) Fu, Y., Wang, F., Shao, Z., Yu, C., Li, Y., Chen, Z., An, Z., & Xu, Y.
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 432--434
+\T1/fve/m/sc/12 (+20) (2024). \T1/fve/m/sl/12 (+20) Light-Weather: Har-nes-sing Ab-so-lu-te Po-si-tio-nal En-co-ding to Ef-fi-cient
+ []
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 432--434
+\T1/fve/m/sl/12 (+20) and Sca-la-ble Glo-bal Weather Fo-re-cas-ting\T1/fve/m/sc/12 (+20) . ar-Xiv pre-print ar-Xiv:2408.09695.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+[]\T1/fve/m/sc/12 (+20) Deznabi, I., Ku-mar, P., & Fi-te-rau, M. (2024). \T1/fve/m/sl/12 (+20) Zero-shot Mi-cro-cli-ma-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+\T1/fve/m/sl/12 (+20) te Pre-dic-tion with Deep Lear-ning\T1/fve/m/sc/12 (+20) . ar-Xiv pre-print ar-Xiv:2401.02665.
+ []
+
+
 
 [49
 
 ]
-Underfull \hbox (badness 5175) in paragraph at lines 434--435
+Underfull \hbox (badness 5175) in paragraph at lines 451--452
 []\T1/fve/m/sc/12 (+20) Gu, X., Ako-glu, L., & Ri-nal-do, A. (2019). \T1/fve/m/sl/12 (+20) Sta-tis-ti-cal analy-sis of nea-
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 434--435
+Underfull \hbox (badness 3407) in paragraph at lines 451--452
 \T1/fve/m/sl/12 (+20) rest neigh-bor methods for ano-maly de-tec-tion\T1/fve/m/sc/12 (+20) . Ad-van-ces in Neu-ral In-for-
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 434--435
+Underfull \hbox (badness 1975) in paragraph at lines 451--452
 \T1/fve/m/sc/12 (+20) ma-tion Pro-ces-sing Sys-tems, 32 (pp. 10921^^U10931). Cu-rran As-so-cia-tes, Inc.
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 440--441
-[]\T1/fve/m/sc/12 (+20) Graves, A. and Sch-midhu-ber, J. (2005). \T1/fve/m/sl/12 (+20) Fra-me-wi-se pho-ne-me clas-si-fi-ca-
+Underfull \hbox (badness 3547) in paragraph at lines 457--458
+[]\T1/fve/m/sc/12 (+20) Graves, A. & Sch-midhu-ber, J. (2005). \T1/fve/m/sl/12 (+20) Fra-me-wi-se pho-ne-me clas-si-fi-ca-tion
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 440--441
-\T1/fve/m/sl/12 (+20) tion with bi-di-rec-tio-nal LSTM net-works\T1/fve/m/sc/12 (+20) . Neu-ral Net-works, 18(5-6), 602^^U610.
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+\T1/fve/m/sl/12 (+20) with bi-di-rec-tio-nal LSTM net-works\T1/fve/m/sc/12 (+20) . Neu-ral Net-works, 18(5-6), 602^^U610.
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 443--444
+Underfull \hbox (badness 2080) in paragraph at lines 460--461
 []\T1/fve/m/sc/12 (+20) Bahdanau, D., Cho, K., & Ben-gio, Y. (2014). \T1/fve/m/sl/12 (+20) Neu-ral ma-chi-ne trans-la-tion
  []
 
 
-Underfull \hbox (badness 2393) in paragraph at lines 443--444
+Underfull \hbox (badness 2393) in paragraph at lines 460--461
 \T1/fve/m/sl/12 (+20) by jointly lear-ning to align and trans-la-te\T1/fve/m/sc/12 (+20) . ar-Xiv pre-print ar-Xiv:1409.0473.
  []
 
@@ -1604,18 +1644,18 @@ L3 programming layer <2024-12-09>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `memtfg.out' has not changed.
-(rerunfilecheck)             Checksum: 6443AA475FE33303F89F04F8D55DCD4B;9432.
+(rerunfilecheck)             Checksum: 832E878E0D2801345C29D7D7F8BCAEC0;9432.
  ) 
 Here is how much of TeX's memory you used:
- 22574 strings out of 473254
- 367977 string characters out of 5717961
+ 22568 strings out of 473254
+ 367914 string characters out of 5717961
  918507 words of memory out of 5000000
  44783 multiletter control sequences out of 15000+600000
- 671926 words of font info for 372 fonts, out of 8000000 for 9000
+ 671244 words of font info for 368 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,13n,93p,1244b,709s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,13n,93p,1075b,709s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (61 pages, 2906260 bytes).
+Output written on memtfg.pdf (61 pages, 2907051 bytes).
 PDF statistics:
  942 PDF objects out of 1000 (max. 8388607)
  780 compressed objects within 8 object streams

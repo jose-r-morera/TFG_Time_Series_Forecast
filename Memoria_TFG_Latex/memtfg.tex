@@ -148,10 +148,10 @@
 \newpage
 \thispagestyle{empty}
 
-D. {\bf Leopoldo Acosta Sánchez}, profesor Catedrático de Universidad adscrito al Departamento de Nombre del Departamento de la Universidad de La Laguna, como tutor
+D. {\bf Leopoldo Acosta Sánchez}, profesor Catedrático de Universidad adscrito al Departamento de Ingeniería Informática y de Sistemas de la Universidad de La Laguna, como tutor
 
 \bigskip
-D. {\bf Daniel Acosta Hernández}, profesor Titular de Universidad adscrito al Departamento de Nombre del Departamento de la Universidad de La Laguna, como cotutor\pagestyle{empty}
+D. {\bf Daniel Acosta Hernández}, investigador adscrito al Departamento de Ingeniería Informática y de Sistemas de la Universidad de La Laguna, como cotutor\pagestyle{empty}
 
 \bigskip
 \bigskip
@@ -192,7 +192,7 @@ Quisiera agradecer a todas las personas que han contribuido de forma directa o i
 En primer lugar, agradezco a mis tutores, Leopoldo Acosta y Daniel Acosta, por su orientación y disponibilidad a lo largo del desarrollo del trabajo. 
 Su apoyo ha sido fundamental para alcanzar los objetivos propuestos. \\
 
-También deseo expresar mi agradecimiento a los profesores y al personal de la universidad por la formación recibida durante estos años, que se ve reflejada en este proyecto final. \\
+También deseo expresar mi agradecimiento a los profesores y al personal de la Universidad por la formación recibida durante estos años, que se ve reflejada en este proyecto final. \\
 
 Agradezco igualmente a mis compañeros y compañeras de grado por su colaboración y por el intercambio de ideas y experiencias que enriquecieron el proceso de aprendizaje. \\
 
@@ -228,7 +228,20 @@ Licencia
 
 \begin{abstract}
 {\em
-Este trabajo presenta el desarrollo de un sistema de predicción meteorológica a corto plazo basado en técnicas de aprendizaje profundo, utilizando series temporales procedentes de múltiples estaciones meteorológicas de la isla de Tenerife. El objetivo principal es diseñar y evaluar modelos capaces de generalizar a ubicaciones nuevas, no vistas durante el entrenamiento, sin necesidad de reentrenamiento. Se estudian distintas arquitecturas de redes neuronales, incluyendo modelos LSTM, CNN y un híbrido CNN-LSTM, comparándolos con enfoques tradicionales como ARIMA. Se desarrolla un exhaustivo proceso de preprocesamiento de datos, que incluye la imputación de valores faltantes, codificación temporal y normalización. Los resultados muestran que los modelos LSTM ofrecen una mayor precisión, especialmente para horizontes de predicción cortos, superando a los modelos convencionales. Además, se implementa una aplicación web que permite a los usuarios generar pronósticos de temperatura en tiempo real a partir de datos recientes. El sistema demuestra ser modular y escalable, con potencial para su aplicación práctica.
+Este trabajo presenta el desarrollo de un sistema de predicción a corto plazo de series temporales meteorológicas, basado en técnicas de aprendizaje profundo, 
+utilizando datos procedentes de múltiples estaciones meteorológicas de la isla de Tenerife. El objetivo principal es diseñar y
+evaluar modelos capaces de generalizar a ubicaciones nuevas, no vistas durante el entrenamiento, sin necesidad de reentrenamiento. Este enfoque corresponde al
+problema conocido como zero-shot, un ámbito aún poco explorado en la literatura de predicción de series temporales.
+
+Se estudian distintas arquitecturas de redes neuronales, incluyendo modelos LSTM, CNN y un híbrido CNN-LSTM, comparándolos con enfoques tradicionales como ARIMA.
+Se lleva a cabo un exhaustivo proceso de preprocesamiento de datos, que incluye la imputación de valores faltantes, codificación temporal y normalización,
+así como la construcción de conjuntos de datos mediante ventanas deslizantes. Además, se realizan diversos experimentos para explorar técnicas y configuraciones
+tanto en el tratamiento de los datos como en la arquitectura de los modelos, con el objetivo de optimizar los resultados.
+
+Los experimentos muestran que los modelos LSTM alcanzan una alta precisión en horizontes de predicción cortos, superando a los modelos convencionales.
+Finalmente, se implementa una aplicación web que permite a los usuarios generar pronósticos a partir de datos en tiempo real.
+El sistema demuestra ser modular, escalable y con potencial para su aplicación práctica.
+
 }
 
 \begin{palabrasClave}
@@ -243,7 +256,11 @@ predicción de series temporales, aprendizaje profundo, LSTM, redes neuronales, 
 
 \begin{summary}
 {
-This work presents the development of a deep learning-based system for short-term weather forecasting using time series data from multiple meteorological stations located on the island of Tenerife. The main objective is to design and evaluate models capable of generalizing to new, unseen locations without the need for retraining. The project explores various deep learning architectures, including LSTM, CNN, and hybrid CNN-LSTM models, and compares their performance against traditional forecasting techniques such as ARIMA. A thorough data preprocessing pipeline is developed, including handling missing data, temporal encoding, and normalization. The results demonstrate that LSTM models achieve superior forecasting accuracy, especially for short prediction horizons, and outperform conventional models. Additionally, a web-based application is implemented to allow users to generate temperature forecasts using real-time data. The system proves to be scalable and modular, showing potential for real-world deployment.
+This work presents the development of a short-term prediction system for meteorological time series, based on deep learning techniques, using data from multiple weather stations on the island of Tenerife. The main objective is to design and evaluate models capable of generalizing to new locations, not seen during training, without the need for retraining. This approach corresponds to the problem known as zero-shot, a domain still scarcely explored in the time series prediction literature.
+
+Different neural network architectures are studied, including LSTM, CNN, and a CNN-LSTM hybrid model, comparing them with traditional approaches such as ARIMA. A thorough data preprocessing process is carried out, which includes missing value imputation, temporal encoding, and normalization, as well as the construction of datasets using sliding windows. Additionally, various experiments are conducted to explore techniques and configurations both in data treatment and model architecture, aiming to optimize the results.
+
+The experiments show that LSTM models achieve high accuracy in short-term prediction horizons, outperforming conventional models. Finally, a web application is implemented that allows users to generate forecasts based on real-time data. The system proves to be modular, scalable, and with potential for practical application.
 }
 
 \em
@@ -390,33 +407,33 @@ Rosenblatt, F. (1958). \emph{The perceptron: A probabilistic model for informati
 Werbos, P. J. (1982). \emph{Applications of advances in nonlinear sensitivity analysis}. R. F. Drenick \& F. Kozin (Eds.), System Modeling and Optimization (Vol. 38, pp. 762–770). Springer-Verlag. https://doi.org/10.1007/BFb0006203
 
 \bibitem{elman1990}
-Elman, J. L. (1990). \emph{Finding structure in time}. Cognitive Science
+Elman, J. L. (1990). \emph{Finding structure in time}. Cognitive Science, 14(2), 179–211. https://doi.org/10.1207/s15516709cog1402\_1
 
 \bibitem{hochreiter1997}
-Hochreiter, S.; Schmidhuber, J. (1997). \emph{Long Short-Term Memory}. Neural Computation
+Hochreiter, S., \& Schmidhuber, J. (1997). \emph{Long Short-Term Memory}. Neural Computation, 9(8), 1735–1780.  https://doi.org/10.1162/neco.1997.9.8.1735
 
 \bibitem{cho2014}
 Cho, K., Van Merriënboer, B., Gulcehre, C., et al. (2014). \emph{Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation}. 
-Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (pp. 1724–1734)
+Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (pp. 1724–1734). https://doi.org/10.3115/v1/D14-1179
 
 \bibitem{vaswani2017}
 Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gómez, A. N., Kaiser, Ł., \& Polosukhin, I. (2017). 
-\emph{Attention Is All You Need}.  Advances in Neural Information Processing Systems, 30, 5998–6008
+\emph{Attention Is All You Need}.  Advances in Neural Information Processing Systems, 30, 5998–6008. https://doi.org/10.48550/arXiv.1706.03762
 
 \bibitem{shi2015}
 Shi, X., Chen, Z., Wang, H., Yeung, D.-Y., Wong, W.-K., \& Woo, W.-c. (2015). 
-\emph{Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting}. Advances in Neural Information Processing Systems, 28, 802–810
+\emph{Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting}. Advances in Neural Information Processing Systems, 28, 802–810. https://doi.org/10.48550/arXiv.1506.04214
 
 \bibitem{weyn2019}
 Weyn, J. A., Durran, D. R., \& Caruana, R. (2020). \emph{Improving Data-Driven Global Weather Prediction Using Deep Convolutional Neural Networks on a Cubed Sphere}. 
-Journal of Advances in Modeling Earth Systems, 12(9)
+Journal of Advances in Modeling Earth Systems, 12(9). https://doi.org/10.1029/2020MS002109
 
 \bibitem{fu2019}
 Fu, Y., Wang, F., Shao, Z., Yu, C., Li, Y., Chen, Z., An, Z., \& Xu, Y. (2024). 
-\emph{LightWeather: Harnessing Absolute Positional Encoding to Efficient and Scalable Global Weather Forecasting}. arXiv:2408.09695.
+\emph{LightWeather: Harnessing Absolute Positional Encoding to Efficient and Scalable Global Weather Forecasting}. arXiv preprint arXiv:2408.09695. https://doi.org/10.48550/arXiv.2408.09695
 
 \bibitem{deznabi2024}
-Deznabi, I., Kumar, P., \& Fiterau, M. (2024). \emph{Zero-shot Microclimate Prediction with Deep Learning}. arXiv:2401.02665
+Deznabi, I., Kumar, P., \& Fiterau, M. (2024). \emph{Zero-shot Microclimate Prediction with Deep Learning}. arXiv preprint arXiv:2401.02665. https://doi.org/10.48550/arXiv.2401.02665
 
 \bibitem{grafcan_sensores} 
 Cartográfica de Canarias, S.A. \emph{Sistema de Observación Meteorológica de Canarias} [Sitio web]. Recuperado el 12 de mayo de 2025, de https://sensores.grafcan.es/
@@ -437,13 +454,13 @@ Gu, X., Akoglu, L., \& Rinaldo, A. (2019). \emph{Statistical analysis of nearest
 Chapman, S., \& Lindzen, R.~S. (1970). \textit{Atmospheric Tides}. D. Reidel Publishing Company. https://doi.org/10.1007/978-94-010-3399-2
 
 \bibitem{graves_schmidhuber2005}
-Graves, A. and Schmidhuber, J. (2005). \textit{Framewise phoneme classification with bidirectional LSTM networks}. Neural Networks, 18(5-6), 602–610. https://doi.org/10.1016/j.neunet.2005.06.042
+Graves, A. \& Schmidhuber, J. (2005). \textit{Framewise phoneme classification with bidirectional LSTM networks}. Neural Networks, 18(5-6), 602–610. https://doi.org/10.1016/j.neunet.2005.06.042
 
 \bibitem{bahdanau2014}
 Bahdanau, D., Cho, K., \& Bengio, Y. (2014). \emph{Neural machine translation by jointly learning to align and translate}. arXiv preprint arXiv:1409.0473. https://doi.org/10.48550/arXiv.1409.0473
 
 \bibitem{haque2021}
-Haque, E., Tabassum, S., \& Hossain, E. (2021). \textit{A Comparative Analysis of Deep Neural Networks for Hourly Temperature Forecasting}. IEEE Access, 9, 160646–160660. https://doi.org/10.1109/ACCESS.2021.3131533
+Haque, E., Tabassum, S., \& Hossain, E. (2021). \emph{A Comparative Analysis of Deep Neural Networks for Hourly Temperature Forecasting}. IEEE Access, 9, 160646–160660. https://doi.org/10.1109/ACCESS.2021.3131533
 
 \end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
