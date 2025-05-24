@@ -1,6 +1,29 @@
-Este capítulo es obligatorio. Toda memoria de Trabajo de Fin de Grado debe incluir unas conclusiones y unas líneas de trabajo futuro 
 
-Estudiando el tamaño de la ventana de datos pasados, se oberva que empleando pocas mediciones, menos de un día, se obtienen mejores predicciones que con períodos más extensos.
+En este trabajo se ha desarrollado un sistema de predicción de variables meteorológicas, capaz de generalizar y realizar predicciones de ubicaciones no vistas. 
+Se han estudiado diversas alternativas en el ámbido del aprendizaje profundo, y se ha observado que los modelos LSTM son los que mejores resultados brindan de entre los modelos estudiados. Además,
+se ha comprobado que estos resultados son buenos. Son mejores que los de modelos tradicionales para predicción de series temporales, y superan a los resultados de otras investigaciones 
+recientes.
 
-El conjunto de tratamiento de los datos y selección de estructuras consigue unos modelos que mejoran significativamente los resultados obtenidos por los desarrollos comparables
-realizados hasta el momento.
+Se ha elaborado todo un flujo de trabajo, desde la obtención de datos, su tratamiento y limpieza, hasta la creación de los modelos de predicción. Y se han 
+realizado extensas pruebas de distintas teorías y configuraciones, con el fin de obtener los mejores resultados para este problema.
+
+Una de las consideraciones más llamativas, es que estudiando el tamaño de la ventana de datos pasados se observa que empleando pocas mediciones, máximoe un día, se obtienen mejores predicciones que
+con períodos más extensos. Esto es particularmente útil puesto que permite reducir el número de mediciones necesarias para realizar una predicción, haciendo los modelos 
+más prácticos para su uso en la vida real.
+
+Por otra parte, se ha desarrollado una aplicación web que pone al alcance de cualquier usuario realizar predicciones de forma sencilla. 
+Esta aplicación permite al usuario seleccionar una estación de Grafcan y obtener la predicción de temperatura para las próximas horas.
+Esto supone una prueba de concepto de la aplicabilidad del sistema desarrollado, y su potencial para ser utilizado en la vida real. La solución diseñada
+es modular y escalable, siendo una propuesta seria para su uso en producción real.
+
+\section{Líneas futuras}
+
+Se ha constatado que el uso de un mayor número de puntos de medición en la construcción del conjunto de entrenamiento mejora los resultados de predicción.
+La escalada inteligente de este conjunto, incluyendo información geográfica de las ubiaciones como la altitud y coordenadas, así como la construcción de una malla 
+de puntos de medición puede suponer una línea de trabajo futura.
+
+Por otra parte, se ha observado que la utilización de covairables adicionales, como la humedad o la presión atmosférica, en el caso de la temperatura, mejoran los resultados de predicción.
+El estudio de estas covariables y la inclusión de otras puede suponer una mejora en los resultados de predicción.
+
+Finalmente, si bien se han estudiado diversos modelos de aprendizaje profundo, existen múltiples alternativas que no se han estudiado en este trabajo.
+El estudio de modelos de última generación, como los transformers, supone otro ámbito de trabajo futuro.

@@ -11,7 +11,8 @@ import tensorflow as tf
 ######################################################################
 
 # VARIABLES #
-DATA_PATH = "../3_data_windows/processed_windows/paquetes_s6_cov_90_p17.pkl"
+DATA_PATH = "../3_data_windows/f3/paquetes_s6_cov_full_p20.pkl"
+DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -34,25 +35,21 @@ if gpus:
 with open(DATA_PATH, "rb") as f:
     data = pickle.load(f)
 
-x_train = data["train"]["air_temperature"]["past_variables"]
-future_train = data["train"]["air_temperature"]["future_variables"]
-y_train = data["train"]["air_temperature"]["y"]
+x_train = data["train"][DATASET]["past_variables"]
+future_train = data["train"][DATASET]["future_variables"]
+y_train = data["train"][DATASET]["y"]
 
-x_val = data["test"]["air_temperature"]["past_variables"]
-future_val = data["test"]["air_temperature"]["future_variables"]
-y_val = data["test"]["air_temperature"]["y"]
+x_val = data["test"][DATASET]["past_variables"]
+future_val = data["test"][DATASET]["future_variables"]
+y_val = data["test"][DATASET]["y"]
 
-#############
 # BATCH AND SHUFFLE
-#############
 dataset_train = tf.data.Dataset.from_tensor_slices(((x_train, future_train), y_train))
 if SHUFFLE:
-  dataset_train = dataset_train.shuffle(buffer_size=dataset_train.cardinality())
+    dataset_train = dataset_train.shuffle(buffer_size=dataset_train.cardinality())
 dataset_train = dataset_train.batch(BATCH_SIZE)
 
 dataset_val = tf.data.Dataset.from_tensor_slices(((x_val, future_val), y_val))
-if SHUFFLE:
-  dataset_val = dataset_val.shuffle(buffer_size=dataset_val.cardinality())
 dataset_val = dataset_val.batch(BATCH_SIZE)
 
 if PRINT:
@@ -80,29 +77,14 @@ target_shape = targets.shape[1]     # e.g., How many values to predict (e.g., 3-
 output_units = target_shape # Output shape should match the target sequence
 
 learning_rate = 0.002
-EPOCHS = 700
+EPOCHS = 300
 ####################################################
 def build_and_train_model(filters):
     # Reconstruye el modelo y entrena (todo igual que antes)
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
         # CNN before LSTM
     past = tf.keras.layers.Conv1D(filters=filters, kernel_size=2, activation="relu", padding="causal")(past_data_layer)
-    past = tf.keras.layers.Flatten()(past)
-    
-    #past = tf.keras.layers.Conv1D(filters=64, kernel_size=3, activation="relu", padding="causal")(past)
-    # past = tf.keras.layers.AveragePooling1D(pool_size=2)(past)
-
-    # LSTM after CNN
-    # past = tf.keras.layers.Bidirectional(
-    #     tf.keras.layers.LSTM(32, return_sequences=False)
-    # )(past)
-    
-    #  past = tf.keras.layers.Bidirectional(
-        # tf.keras.layers.LSTM(32, return_sequences=True)
-    # )(past_data_layer)
-    #past = tf.keras.layers.Conv1D(filters=filters, kernel_size=2, activation="relu", padding="causal")(past)
-    #past = tf.keras.layers.AveragePooling1D(pool_size=2)(past)
-    #past = tf.keras.layers.Flatten()(past)
+    past = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(49, return_sequences=False))(past)
 
     future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
     decoder_lstm = tf.keras.layers.Flatten()(future_data_layer)
@@ -115,7 +97,7 @@ def build_and_train_model(filters):
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
 
     path_checkpoint = "lstm_future_checkpoint.weights.h5"
-    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=10)
+    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0.000001, patience=10)
     modelckpt_callback = tf.keras.callbacks.ModelCheckpoint(
         monitor="val_loss",
         filepath=path_checkpoint,
@@ -142,7 +124,7 @@ def build_and_train_model(filters):
     return best_val_loss
 
 # Ejecutar n veces y promediar el val_loss
-n_runs = 5
+n_runs = 6
 for filters in range(32, 33):
     print(f"Filters: {filters}")
     val_losses = []

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  23 MAY 2025 00:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  24 MAY 2025 02:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -737,7 +737,7 @@ Package gensymb Info: Using \textmu for \micro on input line 106.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count357
-<images/escuela-ingenieria-tecnologia-original.png, id=241, 434.1018pt x 158.994pt>
+<images/escuela-ingenieria-tecnologia-original.png, id=217, 434.1018pt x 158.994pt>
 File: images/escuela-ingenieria-tecnologia-original.png Graphic file (type png)
 <use images/escuela-ingenieria-tecnologia-original.png>
 Package pdftex.def Info: images/escuela-ingenieria-tecnologia-original.png  used on input line 125.
@@ -773,7 +773,7 @@ LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 
 
 [3]
-<images/by-nc-sa_88x31.png, id=260, 88.33pt x 31.11626pt>
+<images/by-nc-sa_88x31.png, id=236, 88.33pt x 31.11626pt>
 File: images/by-nc-sa_88x31.png Graphic file (type png)
 <use images/by-nc-sa_88x31.png>
 Package pdftex.def Info: images/by-nc-sa_88x31.png  used on input line 211.
@@ -953,16 +953,6 @@ Overfull \hbox (2.63512pt too wide) detected at line 32
 \T1/fve/m/n/12 3.12. 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 32.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/bera/t1fvm.fd
-File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
-)
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 32.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `fvm' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
 
 Overfull \hbox (2.63512pt too wide) detected at line 33
 \T1/fve/m/n/12 3.13. 
@@ -973,43 +963,63 @@ Overfull \hbox (2.63512pt too wide) detected at line 34
 \T1/fve/m/n/12 3.14. 
  []
 
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 34.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 34.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `fvm' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Overfull \hbox (2.63512pt too wide) detected at line 35
+\T1/fve/m/n/12 3.15. 
+ []
+
+
+Overfull \hbox (2.63512pt too wide) detected at line 36
+\T1/fve/m/n/12 3.16. 
+ []
+
+
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\hbox' on input line 38.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 38.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\tf@size' on input line 38.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 38.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sf@size' on input line 38.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 38.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\ssf@size' on input line 38.
+
+[3
+
+])
 \tf@lof=\write5
 \openout5 = `memtfg.lof'.
 
 
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 276.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 276.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tf@size' on input line 276.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 276.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sf@size' on input line 276.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 276.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\ssf@size' on input line 276.
-
-[3
-
-]
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1115,20 +1125,15 @@ l.29 \end{itemize}
                    [4
 
 ]
-<images/mapa_estaciones.png, id=491, 578.16pt x 505.13719pt>
+<images/mapa_estaciones.png, id=467, 578.16pt x 505.13719pt>
 File: images/mapa_estaciones.png Graphic file (type png)
 <use images/mapa_estaciones.png>
 Package pdftex.def Info: images/mapa_estaciones.png  used on input line 43.
 (pdftex.def)             Requested size: 290.22107pt x 253.56227pt.
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 61.
-<images/node-red_grafcan.png, id=493, 1927.2pt x 1084.05pt>
+<images/node-red_grafcan.png, id=469, 1927.2pt x 1084.05pt>
 File: images/node-red_grafcan.png Graphic file (type png)
 <use images/node-red_grafcan.png>
 Package pdftex.def Info: images/node-red_grafcan.png  used on input line 66.
-(pdftex.def)             Requested size: 483.69687pt x 272.07048pt.
-
-
-[5 <./images/mapa_estaciones.png>]
-<images/node-red_open-meteo.png, id=501, 1927.2pt x 1084.05pt>
-File: images/node-red_open-meteo.png Graphic file (
+(pdftex.def)             Requested size: 483.69687pt x 272

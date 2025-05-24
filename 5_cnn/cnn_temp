@@ -1,0 +1,36 @@
+    past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
+    x1 = tf.keras.layers.Conv1D(42, 3, activation='relu', padding='causal')(past_data_layer)
+    #x1 = tf.keras.layers.Conv1D(8, 2, activation='relu', padding='causal')(x1)
+    
+    #x1 = tf.keras.layers.AveragePooling1D(pool_size=3)(x1)
+    x1 = tf.keras.layers.Flatten()(x1)
+
+    # Future data: Flatten + Dense compression
+    future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
+    x2 = tf.keras.layers.Flatten()(future_data_layer)
+    x2 = tf.keras.layers.Dense(4, activation='relu')(x2)
+
+    # Combine and predict
+    y = tf.keras.layers.concatenate([x1, x2])
+    outputs = tf.keras.layers.Dense(output_units, name='outputs')(y)
+
+    model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
+    model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
+    
+    
+#########
+# Kernel = 2
+Average val_loss over 6 runs: 0.029163 ± 0.000322
+Minimum val_loss over 6 runs: 0.028829
+
+# Kernel = 3
+Average val_loss over 6 runs: 0.029165 ± 0.000231
+Minimum val_loss over 6 runs: 0.028854
+
+# Kernel = 3; filtros = 49
+Average val_loss over 6 runs: 0.029232 ± 0.000237
+Minimum val_loss over 6 runs: 0.028992
+
+# Kernel = 3; filtros = 35
+Average val_loss over 6 runs: 0.029283 ± 0.000296
+Minimum val_loss over 6 runs: 0.028665

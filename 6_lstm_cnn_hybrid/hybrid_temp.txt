@@ -1,0 +1,12 @@
+LSTM 42
+Average val_loss over 6 runs: 0.029381 ± 0.000256
+Minimum val_loss over 6 runs: 0.028957
+
+
+LSTM 35
+Average val_loss over 6 runs: 0.029327 ± 0.000168
+Minimum val_loss over 6 runs: 0.029120
+ 
+
+ SIN LSTM:Average val_loss over 6 runs: 0.029306 ± 0.000220
+Minimum val_loss over 6 runs: 0.029036

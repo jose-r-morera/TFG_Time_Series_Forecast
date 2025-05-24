@@ -78,6 +78,7 @@ Minimum val_loss over 10 runs: 0.114607
 
 ##################################################
 ###################################################
+#####################################################
   past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
   future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 

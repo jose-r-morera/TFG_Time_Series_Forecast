@@ -96,7 +96,7 @@ def predict_task(self, input_tensor):
         
         result = {
             "status": "completed",
-            "predictions": prediction
+            "result": prediction
         }
         logger.info("✅ Inference complete.")
         return result

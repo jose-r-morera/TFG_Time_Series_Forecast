@@ -12,7 +12,7 @@ SHUFFLE       = True
 LEARNING_RATE = 0.002
 EPOCHS        = 300
 
-DATASET = "air_temperature"  # air_temperature, "atmospheric_pressure" or "relative_humidity"
+DATASET = "relative_humidity"  # air_temperature, "atmospheric_pressure" or "relative_humidity"
 
 es_callback = tf.keras.callbacks.EarlyStopping(
     monitor="val_loss", patience=10, min_delta=0.000001, restore_best_weights=True
@@ -27,17 +27,19 @@ def build_model(past_shape, future_shape, target_dim):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Dense(20)(past_lstm)
+    
+    # Future exogenous features
+    future_dense = tf.keras.layers.Flatten()(future_in)
+    future_dense = tf.keras.layers.Dense(4)(future_dense)
 
-    # Future
-    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
-
-    # Combine the outputs of encoder and decoder (you can concatenate or merge them)
+    # Combine the outputs of past and future
     future_residue = tf.keras.layers.Flatten()(future_in)
-    merged = tf.keras.layers.concatenate([past_lstm, decoder_lstm, future_residue])
+    merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
 
     # Final output layer
-    #merged = tf.keras.layers.Dense(4* output_units)(merged)
+    merged = tf.keras.layers.Dense(6* target_dim)(merged) 
     out = tf.keras.layers.Dense(target_dim)(merged)
 
     model = tf.keras.Model([past_in, future_in], out)

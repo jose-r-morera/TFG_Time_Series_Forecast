@@ -73,9 +73,13 @@ LSTM 64 tb empeora
 Average val_loss over 6 runs: 0.045820 ± 0.000480
 Minimum val_loss over 6 runs: 0.045374
 
-*** DENSA FINAL ***
+*** DENSA FINAL (x4) ***
+Average val_loss over 6 runs: 0.045434 ± 0.000190
+Minimum val_loss over 6 runs: 0.045076
 
 *** DEFINITIVO f6 ***
+############################################################################
+##############################################################################
     past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
@@ -148,3 +152,25 @@ Average val_loss over 6 runs: 0.070023 ± 0.000542
 Minimum val_loss over 6 runs: 0.069581
 
 // ambas 67
+Average val_loss over 6 runs: 0.070119 ± 0.000647
+Minimum val_loss over 6 runs: 0.069234
+
+*******************************************
+    past_in   = tf.keras.layers.Input(shape=past_shape,   name="past_data")
+    future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
+
+    # Past data 
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Dense(65)(past_lstm)
+    
+    # Future
+    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
+
+    # Combine the outputs of encoder and decoder (you can concatenate or merge them)
+    future_residue = tf.keras.layers.Flatten()(future_in)
+    merged = tf.keras.layers.concatenate([past_lstm, decoder_lstm, future_residue])
+
+    # Final output layer
+    # merged = tf.keras.layers.Dense(6* target_dim)(merged)
+    outputs = tf.keras.layers.Dense(target_dim)(merged)
+    **************************************************************

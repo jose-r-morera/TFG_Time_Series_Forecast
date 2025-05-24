@@ -1,0 +1,252 @@
+
+=== Dataset: paquetes_s6_cov_full_p6.pkl ===
+ Run 1/5... best_val_loss=0.00037
+ Run 2/5... best_val_loss=0.00040
+ Run 3/5... best_val_loss=0.00039
+ Run 4/5... best_val_loss=0.00038
+ Run 5/5... best_val_loss=0.00037
+ → mean val_loss = 0.00038 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p7.pkl ===
+ Run 1/5... best_val_loss=0.00037
+ Run 2/5... best_val_loss=0.00040
+ Run 3/5... best_val_loss=0.00038
+ Run 4/5... best_val_loss=0.00039
+ Run 5/5... best_val_loss=0.00040
+ → mean val_loss = 0.00039 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p8.pkl ===
+ Run 1/5... best_val_loss=0.00043
+ Run 2/5... best_val_loss=0.00042
+ Run 3/5... best_val_loss=0.00039
+ Run 4/5... best_val_loss=0.00044
+ Run 5/5... best_val_loss=0.00039
+ → mean val_loss = 0.00041 ± 0.00002
+
+=== Dataset: paquetes_s6_cov_full_p9.pkl ===
+ Run 1/5... best_val_loss=0.00047
+ Run 2/5... best_val_loss=0.00046
+ Run 3/5... best_val_loss=0.00031
+ Run 4/5... best_val_loss=0.00035
+ Run 5/5... best_val_loss=0.00039
+ → mean val_loss = 0.00039 ± 0.00006
+
+=== Dataset: paquetes_s6_cov_full_p10.pkl ===
+ Run 1/5... best_val_loss=0.00042
+ Run 2/5... best_val_loss=0.00042
+ Run 3/5... best_val_loss=0.00038
+ Run 4/5... best_val_loss=0.00041
+ Run 5/5... best_val_loss=0.00042
+ → mean val_loss = 0.00041 ± 0.00002
+
+=== Dataset: paquetes_s6_cov_full_p11.pkl ===
+ Run 1/5... best_val_loss=0.00031
+ Run 2/5... best_val_loss=0.00033
+ Run 3/5... best_val_loss=0.00028
+ Run 4/5... best_val_loss=0.00039
+ Run 5/5... best_val_loss=0.00029
+ → mean val_loss = 0.00032 ± 0.00004
+
+=== Dataset: paquetes_s6_cov_full_p12.pkl ===
+ Run 1/5... best_val_loss=0.00032
+ Run 2/5... best_val_loss=0.00031
+ Run 3/5... best_val_loss=0.00026
+ Run 4/5... best_val_loss=0.00026
+ Run 5/5... best_val_loss=0.00030
+ → mean val_loss = 0.00029 ± 0.00003
+
+=== Dataset: paquetes_s6_cov_full_p13.pkl ===
+ Run 1/5... best_val_loss=0.00024
+ Run 2/5... best_val_loss=0.00022
+ Run 3/5... best_val_loss=0.00036
+ Run 4/5... best_val_loss=0.00033
+ Run 5/5... best_val_loss=0.00030
+ → mean val_loss = 0.00029 ± 0.00005
+
+=== Dataset: paquetes_s6_cov_full_p14.pkl ===
+ Run 1/5... best_val_loss=0.00025
+ Run 2/5... best_val_loss=0.00026
+ Run 3/5... best_val_loss=0.00022
+ Run 4/5... best_val_loss=0.00037
+ Run 5/5... best_val_loss=0.00025
+ → mean val_loss = 0.00027 ± 0.00005
+
+=== Dataset: paquetes_s6_cov_full_p15.pkl ===
+ Run 1/5... best_val_loss=0.00027
+ Run 2/5... best_val_loss=0.00029
+ Run 3/5... best_val_loss=0.00024
+ Run 4/5... best_val_loss=0.00029
+ Run 5/5... best_val_loss=0.00032
+ → mean val_loss = 0.00028 ± 0.00003
+
+=== Dataset: paquetes_s6_cov_full_p16.pkl ===
+ Run 1/5... best_val_loss=0.00031
+ Run 2/5... best_val_loss=0.00029
+ Run 3/5... best_val_loss=0.00025
+ Run 4/5... best_val_loss=0.00027
+ Run 5/5... best_val_loss=0.00024
+ → mean val_loss = 0.00027 ± 0.00003
+
+=== Dataset: paquetes_s6_cov_full_p17.pkl ===
+ Run 1/5... best_val_loss=0.00027
+ Run 2/5... best_val_loss=0.00026
+ Run 3/5... best_val_loss=0.00027
+ Run 4/5... best_val_loss=0.00027
+ Run 5/5... best_val_loss=0.00025
+ → mean val_loss = 0.00026 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p18.pkl ===
+ Run 1/5... best_val_loss=0.00025
+ Run 2/5... best_val_loss=0.00024
+ Run 3/5... best_val_loss=0.00025
+ Run 4/5... best_val_loss=0.00025
+ Run 5/5... best_val_loss=0.00026
+ → mean val_loss = 0.00025 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p19.pkl ===
+ Run 1/5... best_val_loss=0.00027
+ Run 2/5... best_val_loss=0.00026
+ Run 3/5... best_val_loss=0.00024
+ Run 4/5... best_val_loss=0.00024
+ Run 5/5... best_val_loss=0.00024
+ → mean val_loss = 0.00025 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p20.pkl ===
+ Run 1/5... best_val_loss=0.00027
+ Run 2/5... best_val_loss=0.00026
+ Run 3/5... best_val_loss=0.00025
+ Run 4/5... best_val_loss=0.00026
+ Run 5/5... best_val_loss=0.00026
+ → mean val_loss = 0.00026 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p21.pkl ===
+ Run 1/5... best_val_loss=0.00027
+ Run 2/5... best_val_loss=0.00025
+ Run 3/5... best_val_loss=0.00026
+ Run 4/5... best_val_loss=0.00027
+ Run 5/5... best_val_loss=0.00032
+ → mean val_loss = 0.00027 ± 0.00002
+
+=== Dataset: paquetes_s6_cov_full_p22.pkl ===
+ Run 1/5... best_val_loss=0.00027
+ Run 2/5... best_val_loss=0.00026
+ Run 3/5... best_val_loss=0.00026
+ Run 4/5... best_val_loss=0.00026
+ Run 5/5... best_val_loss=0.00027
+ → mean val_loss = 0.00027 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p23.pkl ===
+ Run 1/5... best_val_loss=0.00027
+ Run 2/5... best_val_loss=0.00033
+ Run 3/5... best_val_loss=0.00027
+ Run 4/5... best_val_loss=0.00029
+ Run 5/5... best_val_loss=0.00027
+ → mean val_loss = 0.00029 ± 0.00002
+
+=== Dataset: paquetes_s6_cov_full_p24.pkl ===
+ Run 1/5... best_val_loss=0.00025
+ Run 2/5... best_val_loss=0.00026
+ Run 3/5... best_val_loss=0.00026
+ Run 4/5... best_val_loss=0.00026
+ Run 5/5... best_val_loss=0.00025
+ → mean val_loss = 0.00026 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p25.pkl ===
+ Run 1/5... best_val_loss=0.00027
+ Run 2/5... best_val_loss=0.00028
+ Run 3/5... best_val_loss=0.00026
+ Run 4/5... best_val_loss=0.00026
+ Run 5/5... best_val_loss=0.00025
+ → mean val_loss = 0.00026 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p26.pkl ===
+ Run 1/5... best_val_loss=0.00024
+ Run 2/5... best_val_loss=0.00025
+ Run 3/5... best_val_loss=0.00022
+ Run 4/5... best_val_loss=0.00024
+ Run 5/5... best_val_loss=0.00027
+ → mean val_loss = 0.00024 ± 0.00002
+
+=== Dataset: paquetes_s6_cov_full_p27.pkl ===
+ Run 1/5... best_val_loss=0.00024
+ Run 2/5... best_val_loss=0.00026
+ Run 3/5... best_val_loss=0.00024
+ Run 4/5... best_val_loss=0.00024
+ Run 5/5... best_val_loss=0.00027
+ → mean val_loss = 0.00025 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p28.pkl ===
+ Run 1/5... best_val_loss=0.00027
+ Run 2/5... best_val_loss=0.00027
+ Run 3/5... best_val_loss=0.00028
+ Run 4/5... best_val_loss=0.00028
+ Run 5/5... best_val_loss=0.00027
+ → mean val_loss = 0.00028 ± 0.00000
+
+=== Dataset: paquetes_s6_cov_full_p29.pkl ===
+ Run 1/5... best_val_loss=0.00026
+ Run 2/5... best_val_loss=0.00026
+ Run 3/5... best_val_loss=0.00026
+ Run 4/5... best_val_loss=0.00026
+ Run 5/5... best_val_loss=0.00025
+ → mean val_loss = 0.00026 ± 0.00000
+
+=== Dataset: paquetes_s6_cov_full_p30.pkl ===
+ Run 1/5... best_val_loss=0.00026
+ Run 2/5... best_val_loss=0.00027
+ Run 3/5... best_val_loss=0.00027
+ Run 4/5... best_val_loss=0.00028
+ Run 5/5... best_val_loss=0.00027
+ → mean val_loss = 0.00027 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p31.pkl ===
+ Run 1/5... best_val_loss=0.00026
+ Run 2/5... best_val_loss=0.00024
+ Run 3/5... best_val_loss=0.00025
+ Run 4/5... best_val_loss=0.00026
+ Run 5/5... best_val_loss=0.00029
+ → mean val_loss = 0.00026 ± 0.00002
+
+=== Dataset: paquetes_s6_cov_full_p32.pkl ===
+ Run 1/5... best_val_loss=0.00028
+ Run 2/5... best_val_loss=0.00029
+ Run 3/5... best_val_loss=0.00028
+ Run 4/5... best_val_loss=0.00027
+ Run 5/5... best_val_loss=0.00026
+ → mean val_loss = 0.00028 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p33.pkl ===
+ Run 1/5... best_val_loss=0.00030
+ Run 2/5... best_val_loss=0.00029
+ Run 3/5... best_val_loss=0.00029
+ Run 4/5... best_val_loss=0.00028
+ Run 5/5... best_val_loss=0.00029
+ → mean val_loss = 0.00029 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p34.pkl ===
+ Run 1/5... best_val_loss=0.00029
+ Run 2/5... best_val_loss=0.00029
+ Run 3/5... best_val_loss=0.00030
+ Run 4/5... best_val_loss=0.00032
+ Run 5/5... best_val_loss=0.00030
+ → mean val_loss = 0.00030 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p35.pkl ===
+ Run 1/5... best_val_loss=0.00030
+ Run 2/5... best_val_loss=0.00031
+ Run 3/5... best_val_loss=0.00029
+ Run 4/5... best_val_loss=0.00032
+ Run 5/5... best_val_loss=0.00032
+ → mean val_loss = 0.00031 ± 0.00001
+
+=== Dataset: paquetes_s6_cov_full_p36.pkl ===
+ Run 1/5... best_val_loss=0.00030
+ Run 2/5... best_val_loss=0.00029
+ Run 3/5... best_val_loss=0.00029
+ Run 4/5... best_val_loss=0.00031
+ Run 5/5... best_val_loss=0.00031
+ → mean val_loss = 0.00030 ± 0.00001
+
+*** Best dataset is paquetes_s6_cov_full_p26.pkl with mean val_loss = 0.00024 (std=0.00002)
+Best dataset: ../3_data_windows/f6/paquetes_s6_cov_full_p26.pkl
+All scores: {'../3_data_windows/f6/paquetes_s6_cov_full_p6.pkl': {'losses': [0.00037014615372754633, 0.0003971757832914591, 0.0003877452982123941, 0.0003797650570049882, 0.00036842701956629753], 'mean': 0.00038065186236053706, 'std': 1.0807033950900405e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p7.pkl': {'losses': [0.0003716134815476835, 0.00040147200343199074, 0.0003804140433203429, 0.00039497576653957367, 0.0003969697281718254], 'mean': 0.00038908900460228325, 'std': 1.1231627570191402e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p8.pkl': {'losses': [0.0004300048458389938, 0.0004155206261202693, 0.0003938605368603021, 0.0004400784382596612, 0.00039365398697555065], 'mean': 0.0004146236868109554, 'std': 1.8741214643379323e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p9.pkl': {'losses': [0.0004707635089289397, 0.0004566031275317073, 0.0003056563436985016, 0.00035350205143913627, 0.0003871997760143131], 'mean': 0.0003947449615225196, 'std': 6.212880416376223e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p10.pkl': {'losses': [0.0004232802602928132, 0.00042496187961660326, 0.0003776646626647562, 0.0004116363124921918, 0.00041970700840465724], 'mean': 0.0004114500246942043, 'std': 1.7505358427417523e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p11.pkl': {'losses': [0.00031392803066410124, 0.00033133759279735386, 0.00028141558868810534, 0.0003875908732879907, 0.00029306646320037544], 'mean': 0.0003214677097275853, 'std': 3.7248724315036266e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p12.pkl': {'losses': [0.0003229925059713423, 0.0003078407025896013, 0.00026473571779206395, 0.00025634380290284753, 0.00030063631129451096], 'mean': 0.0002905098081100732, 'std': 2.5650151165607318e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p13.pkl': {'losses': [0.00024315602786373347, 0.00022337639529723674, 0.0003586327366065234, 0.0003251075104344636, 0.00030405932920984924], 'mean': 0.0002908663998823613, 'std': 5.053704333684333e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p14.pkl': {'losses': [0.00025158366770483553, 0.00025524545344524086, 0.00022486766101792455, 0.00036941422149538994, 0.0002501336857676506], 'mean': 0.0002702489378862083, 'std': 5.0737232852398224e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p15.pkl': {'losses': [0.000266584858763963, 0.0002895821526180953, 0.00023920847161207348, 0.0002930964110419154, 0.0003245889092795551], 'mean': 0.00028261216066312046, 'std': 2.8500183675449302e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p16.pkl': {'losses': [0.00031346469768323004, 0.00029177864780649543, 0.0002540220448281616, 0.00026695043197833, 0.00024237415345851332], 'mean': 0.00027371799515094606, 'std': 2.5776556476719307e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p17.pkl': {'losses': [0.0002733368019107729, 0.0002636857971083373, 0.0002685292565729469, 0.0002651709655765444, 0.00024506024783477187], 'mean': 0.0002631566138006747, 'std': 9.636572311121607e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p18.pkl': {'losses': [0.0002530358615331352, 0.00023584981681779027, 0.0002528945915400982, 0.0002493778301868588, 0.00026100449031218886], 'mean': 0.0002504325180780143, 'std': 8.226461479772041e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p19.pkl': {'losses': [0.000266294606262818, 0.0002600603911560029, 0.00024263844534289092, 0.00024200810003094375, 0.00024135543208103627], 'mean': 0.00025047139497473835, 'std': 1.0567933610234193e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p20.pkl': {'losses': [0.00026821682695299387, 0.00025848246878013015, 0.0002522652212064713, 0.00026398253976367414, 0.0002556440304033458], 'mean': 0.00025971821742132306, 'std': 5.728595572241755e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p21.pkl': {'losses': [0.0002672509290277958, 0.0002532765211071819, 0.0002580338332336396, 0.0002661863691173494, 0.0003167691465932876], 'mean': 0.00027230335981585083, 'std': 2.282888874183868e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p22.pkl': {'losses': [0.00027496679103933275, 0.00025702768471091986, 0.000262153975199908, 0.00025911579723469913, 0.00027324934490025043], 'mean': 0.00026530271861702204, 'std': 7.392048870427829e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p23.pkl': {'losses': [0.0002704450162127614, 0.0003263987600803375, 0.00027486737235449255, 0.000293271237751469, 0.00026928377337753773], 'mean': 0.00028685323195531964, 'std': 2.157135063934318e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p24.pkl': {'losses': [0.00025355216348543763, 0.0002589202194940299, 0.00026188837364315987, 0.00026261131279170513, 0.0002482261334080249], 'mean': 0.0002570396405644715, 'std': 5.439314768606688e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p25.pkl': {'losses': [0.0002744942903518677, 0.0002787169942166656, 0.00025518250185996294, 0.0002576350816525519, 0.00025264875148423016], 'mean': 0.00026373552391305565, 'std': 1.0709636899968654e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p26.pkl': {'losses': [0.00024043064331635833, 0.00024987326469272375, 0.00022095549502409995, 0.00024336259230040014, 0.00027034315280616283], 'mean': 0.000244993029627949, 'std': 1.5923078873161227e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p27.pkl': {'losses': [0.00023958417295943946, 0.00025590279255993664, 0.00023862297530286014, 0.00023929303279146552, 0.00026792570133693516], 'mean': 0.00024826573499012736, 'std': 1.1778799968648209e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p28.pkl': {'losses': [0.00027354800840839744, 0.00027218504692427814, 0.0002789078571368009, 0.0002821139933075756, 0.0002696928568184376], 'mean': 0.0002752895525190979, 'std': 4.553219828330301e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p29.pkl': {'losses': [0.0002593722310848534, 0.00026046644779853523, 0.0002619945153128356, 0.00025661318795755506, 0.00024891141219995916], 'mean': 0.0002574715588707477, 'std': 4.627136505060324e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p30.pkl': {'losses': [0.0002550459757912904, 0.0002697428863029927, 0.0002713593712542206, 0.0002814770850818604, 0.00026893013273365796], 'mean': 0.0002693110902328044, 'std': 8.438387906488167e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p31.pkl': {'losses': [0.00025590017321519554, 0.00023954483913257718, 0.00024656200548633933, 0.0002636138233356178, 0.00028610738809220493], 'mean': 0.000258345645852387, 'std': 1.610448928837023e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p32.pkl': {'losses': [0.0002832853060681373, 0.00028637840296141803, 0.0002797540801111609, 0.0002729840634856373, 0.0002599993604235351], 'mean': 0.00027648024260997774, 'std': 9.3684921423827e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p33.pkl': {'losses': [0.00030124871409498155, 0.0002875446225516498, 0.00028516771271824837, 0.0002806748088914901, 0.00029134389478713274], 'mean': 0.0002891959506087005, 'std': 6.9490461628737385e-06}, '../3_data_windows/f6/paquetes_s6_cov_full_p34.pkl': {'losses': [0.00028904617647640407, 0.00029191671637818217, 0.00030071628862060606, 0.0003237303753849119, 0.0003020788135472685], 'mean': 0.0003014976740814745, 'std': 1.2182576383395903e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p35.pkl': {'losses': [0.0002962268772535026, 0.0003094266867265105, 0.0002885350550059229, 0.0003212535521015525, 0.00032426335383206606], 'mean': 0.00030794110498391094, 'std': 1.385396633389215e-05}, '../3_data_windows/f6/paquetes_s6_cov_full_p36.pkl': {'losses': [0.00029752281261608005, 0.0002878951490856707, 0.0002873769262805581, 0.0003099768655374646, 0.00030584962223656476], 'mean': 0.0002977242751512676, 'std': 9.163701996978382e-06}}

@@ -390,7 +390,7 @@ export function WeatherStationDashboard() {
       // Handle different job statuses
       if (jobResponse.status === "completed" && jobResponse.result) {
         // Job completed successfully, update predictions
-        setPredictions((prev) => ({
+         ((prev) => ({
           ...prev,
           [datastream.id]: jobResponse.result,
         }))

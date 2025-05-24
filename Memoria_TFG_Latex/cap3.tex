@@ -222,6 +222,45 @@ En una capa suelen existir múltiples filtros distintos, de manera que cada uno 
 Tras las capas convolucionales, es común intercalar capas de pooling (submuestreo), como max-pooling o average-pooling, para reducir dimensión, extraer características más robustas y controlar el sobreajuste.
 Durante el entrenamiento de la red, los pesos de los filtros se ajustan para minimizar el error de predicción.
 
+Se muestra el pseudocódigo del modelo CNN desarrollado para este trabajo en la figura \ref{cnn_model}. Se descarta el uso de pooling tras estudiar varias alternativas, ya que no se observa mejora en 
+el rendimiento del modelo. También se contempla el uso de múltiples capas de convolución, tanto en el flujo de datos pasado, como en el futuro o depués de concatenarlo, así como apiladadas. 
+Sin embargo, el mejor modelo es el que se muestra, con una sola capa de convolución en los datos pasados, una capa densa para los futuros y otra densa para la salida.
+Cabe destacar el uso de relleno o padding de tipo causal que evita que la red vea datos futuros al realizar la convolución, lo que es especialmente importante en series temporales, puesto que es 
+importante que la red no tenga acceso a información futura y entienda la causalidad.
+
+\begin{figure}[H]
+{\small
+\hrule
+{\bf\small Pseudocódigo para el modelo CNN}
+\hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun}\={\bf ción construir\_modelo}($past\_data\_shape$, \\
+\  \> $future\_data\_shape$, $forecast\_length$, $learning\_rate$): \\
+\ 3: \> $entrada\_pasado$ = Input(shape=$past\_data\_shape$) \\
+\ 4: \> $entrada\_futuro$ = Input(shape=$future\_data\_shape$) \\
+\ 5: \> \# Procesar datos pasados con una capa convolucional y flatten \\
+\ 6: \> $x1$ = Conv1D(filtros=42, kernel=3, activación='ReLU', padding='causal')($entrada\_pasado$) \\
+\ 7: \> $x1$ = Flatten()($x1$) \\
+\ 8: \> \# Procesar datos futuros con flatten y capa densa \\
+\ 9: \> $x2$ = Flatten()($entrada\_futuro$) \\
+10: \> $x2$ = Dense(unidades=4, activación='ReLU')($x2$) \\
+11: \> \# Combinar representaciones \\
+12: \> $y$ = concatenar($x1$, $x2$) \\
+13: \> $salida$ = Dense(unidades=$forecast\_length$)($y$) \\
+14: \> \# Construir y compilar el modelo \\
+15: \> modelo = Modelo(entradas=[ $entrada\_pasado$, $entrada\_futuro$ ], salidas=$salida$) \\
+16: \> compilar(modelo, optimizador=Adam($learning\_rate$), pérdida='MSE') \\
+17: \> {\bf Retornar} modelo \\
+\end{tabbing}
+\end{center}
+}
+\hrule
+\caption{Pseudocódigo del modelo CNN}
+\label{cnn_model}
+\end{figure}
+
+
 \subsection{LSTM}
 Las redes LSTM (Long Short-Term Memory) son un tipo de red neuronal recurrente (RNN) que se utilizan para modelar secuencias temporales.
 Las LSTM son capaces de aprender patrones a largo plazo en los datos, lo que las hace adecuadas para tareas de predicción de series temporales.
@@ -237,9 +276,47 @@ Son relevantes también las capas bidireccionales. Introducidas en 2005 por Grav
 entrada en ambas direcciones (hacia adelante y hacia atrás), lo que mejora la capacidad de capturar dependencias a largo plazo en los datos, ayudando, por ejemplo, a evitar
 ambigüedades debido al mayor contexto.
 
-\subsection{LSTM-CNN}
+La estructura de los modelos LSTM desarrollados puede observarse en el apartado \ref{sec:resultados}. 
+
+\subsection{Híbrido LSTM-CNN}
 Los modelos híbridos LSTM-CNN combinan las ventajas de las redes LSTM y las redes convolucionales. Intercalan capas convolucionales y LSTM para capturar tanto patrones locales como dependencias a largo plazo en los datos de series temporales.
 La arquitectura típica de un modelo LSTM-CNN incluye capas convolucionales iniciales para extraer características locales, seguidas de capas LSTM para capturar patrones temporales a largo plazo.
+
+Se desarrolla un modelo híbrido estudiando distintas combinaciones de capas LSTM y convolucionales, decidiendose por una capa convolucional seguida de una LSTM bidireccional para los datos pasados,
+una capa densa para los datos futuros y una capa densa para la salida. El modelo se describe en la figura \ref{cnn_bilstm_model}.
+
+\begin{figure}[H]
+{\small
+\hrule
+{\bf\small Pseudocódigo para el modelo hírbrido CNN + BiLSTM}
+\hrule
+\begin{center}
+\begin{tabbing}
+\ 1: {\bf Fun}\= {\bf ción construir\_modelo}($past\_data\_shape$, $future\_data\_shape$,$forecast\_length$, $learning\_rate$): \\
+\ 2: \> \# Definir capas de entrada \\
+\ 3: \> $entrada\_pasado$ = Input(shape=$past\_data\_shape$) \\
+\ 4: \> $entrada\_futuro$ = Input(shape=$future\_data\_shape$) \\
+\ 5: \> \# Procesar datos pasados con Conv1D y BiLSTM \\
+\ 6: \> $past$ = Conv1D(filtros=42, kernel=2, activación='ReLU', padding='causal')($entrada\_pasado$) \\
+\ 7: \> $past$ = BiLSTM(unidades=42, return\_sequences=False)($past$) \\
+\ 8: \> \# Procesar datos futuros con Flatten y Dense \\
+\ 9: \> $decoder\_lstm$ = Flatten()($entrada\_futuro$) \\
+10: \> $decoder\_lstm$ = Dense(unidades=4, activación='ReLU')($decoder\_lstm$) \\
+11: \> \# Combinar representaciones \\
+12: \> $merged$ = concatenar($past$, $decoder\_lstm$) \\
+13: \> $salida$ = Dense(unidades=$forecast\_length$)($merged$) \\
+14: \> \# Construir y compilar el modelo \\
+15: \> modelo = Modelo(entradas=[ $entrada\_pasado$, $entrada\_futuro$ ], salidas=$salida$) \\
+16: \> compilar(modelo, optimizador=Adam($learning\_rate$), pérdida='MSE') \\
+17: \> {\bf Retornar} modelo \\
+\end{tabbing}
+\end{center}
+}
+\hrule
+\caption{Pseudocódigo del modelo Híbrido CNN + BiLSTM}
+\label{cnn_bilstm_model}
+\end{figure}
+
 
 \section{Comparativa inicial}
 Para establecer una referencia del rendimiento de los modelos neuronales, se compara un modelo LSTM con un modelo ARIMA, ambos con un horizonte de predicción de 3 horas.
@@ -267,40 +344,75 @@ Los resultados se muestran en la tabla \ref{comparativa_inicial}.
 Ubicación & Fuente & ARIMA & LSTM & ARIMA & LSTM & ARIMA & LSTM \\
 \midrule
 \multirow{2}{*}{Arona}
-  & Open-Meteo    & 1,088 & 0,630 & 0 & 0 & 0 & 0 \\
-  & Grafcan & 1,263 & 0,697 & 0 & 0 & 0 & 0 \\
+  & Open-Meteo    & 1,088 & 0,630 & 0,634 & 0,486 & 7,149 & 6,047 \\
+  & Grafcan       & 1,263 & 0,697 & 0,556 & 0,446 & 6,242 & 4,935 \\
 \addlinespace
 \multirow{2}{*}{La Orotava}
-  & Open-Meteo    & 0,917 & 0,496 & 0 & 0 & 0 & 0 \\
-  & Grafcan & 1,344 & 0,832 & 0 & 0 & 0 & 0 \\
+  & Open-Meteo    & 0,917 & 0,496 & 0,685 & 0,446 & 6,672 & 5,664 \\
+  & Grafcan       & 1,344 & 0,832 & 0,592 & 0,500 & 4,961 & 4,789 \\
 \addlinespace
 \multirow{2}{*}{La Laguna 1}
-  & Open-Meteo    & 0,806 & 0,385 & 0 & 0 & 0 & 0 \\
-  & Grafcan & 0,902 & 0,699 & 0 & 0 & 0 & 0 \\
+  & Open-Meteo    & 0,806 & 0,385 & 0,617 & 0,376 & 5,606 & 4,102 \\
+  & Grafcan       & 0,902 & 0,699 & 0,507 & 0,408 & 5,419 & 5,236 \\
 \addlinespace
 \multirow{2}{*}{La Laguna 2}
-  & Open-Meteo    & 1,157 & 0,497 & 0 & 0 & 0 & 0 \\
-  & Grafcan & 1,049 & 0,621 & 0 & 0 & 0 & 0 \\
+  & Open-Meteo    & 1,157 & 0,497 & 0,605 & 0,378 & 7,472 & 5,710 \\
+  & Grafcan       & 1,049 & 0,621 & 0,563 & 0,404 & 5,707 & 5,011 \\
 \addlinespace
 \multirow{2}{*}{Santa Cruz}
-  & Open-Meteo    & 0,806 & 0,404 & 0 & 0 & 0 & 0 \\
-  & Grafcan & 1,335 & 0,832 & 0 & 0 & 0 & 0 \\
+  & Open-Meteo    & 0,806 & 0,404 & 0,609 & 0,375 & 5,606 & 4,058 \\
+  & Grafcan       & 1,335 & 0,832 & 1,192 & 0,437 & 4,973 & 5,125 \\
 \addlinespace
 \multirow{2}{*}{Garachico}
-  & Open-Meteo    & 0,850 & 0,612 & 0 & 0 & 0 & 0 \\
-  & Grafcan & 1,434 & 0,991 & 0 & 0 & 0 & 0 \\
+  & Open-Meteo    & 0,850 & 0,612 & 0,628 & 0,666 & 6,331 & 5,817 \\
+  & Grafcan       & 1,434 & 0,991 & 0,513 & 0,690 & 5,461 & 5,760 \\
 \bottomrule
 \end{tabular}
 \caption{Comparativa inicial de modelos ARIMA y LSTM con predicciones de 3 horas} 
 \label{comparativa_inicial}
 \end{table}
 
-TODO: Conclusiones.
+Observamos que el modelo LSTM supera en la gran mayoría de casos al modelo ARIMA. La principal excepción son las estaciones de test en el caso de la serie de humedad.
+Al no haberse entrenado con estos datos, el modelo LSTM está en desventaja frente al ARIMA, pero la diferencia con el resto de variables podría indicar que la generalización en el caso de la humedad 
+es más complicada, o que el comportamiento de esta variable depende en mayor medida de la ubicación. 
 
-A continuación, se comparan los modelos LSTM, CNN y el híbrido. En este caso, emplearemos el RMSE obtenido en la validación cruzada del entrenamiento.
+A continuación, se comparan los modelos LSTM, CNN y el híbrido, también para un horizonte de predicción de 3 horas. En este caso,
+emplearemos el RMSE obtenido en la validación cruzada del entrenamiento, con el promedio de 6 entrenamientos.
+
+Los modelos LSTM empleados son los que se muestran en el apartado \ref{sec:resultados}, mientras que los CNN e híbridos siguen la arquitectura de las figuras
+\ref{cnn_model} y \ref{cnn_bilstm_model}, respectivamente. Las características empleadas son las siguientes para ambos:
+\begin{itemize}
+    \item \textbf{Temperatura del aire}: 35 filtros y kernel de tamaño 3.
+    \item \textbf{Humedad relativa}: 42 filtros y kernel de tamaño 2.
+    \item \textbf{Presión atmosférica}: 49 filtros y kernel de tamaño 2.
+\end{itemize}
+
+
+Los resultados se muestran en la tabla \ref{comparativa_inicial_neuronal}.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Modelo} & \textbf{Temperatura del aire} & \textbf{Humedad relativa} & \textbf{Presión atmosférica} \\
+\hline
+LSTM   &     0.6792          &      5.7526          &       0.3906            \\
+\hline
+CNN    &      0.6885         &     5.8191         &       0.5731         \\
+\hline
+Hybrid &       0.6897        &      5.7855           &   0.5258                  \\
+\hline
+\end{tabular}
+\caption{Comparación de modelos según RMSE}
+\label{comparativa_inicial_neuronal}
+\end{table}  
+
+El modelo LSTM se muestra como el mejor en todas las variables, destacando en la presión atmosférica. Si bien, las otras alternativas tienen unos resultados reslativamente similares,
+lo cual es razonable puesto que las arquitecturas también son similares.
+El modelo híbrido no se muestra como una mejora significativa respecto a los modelos LSTM o CNN, lo que sugiere que la combinación de ambos enfoques no aporta beneficios adicionales en este caso.
 
 \section{Estudios empíricos}
-Se realizan diferentes experimentos sobre los modelos neuronales de cara a obtener el mejor rendimiento posible.
+Se realizan diferentes experimentos sobre los modelos neuronales de cara a obtener el mejor rendimiento posible. Estas prueba se realizan sobre los modelos LSTM, al haberse
+elegido como el mejor modelo en la comparativa inicial. Se estudian los siguientes aspectos:
 
 \subsection{Características de los modelos}
 Se prueba el uso de diferentes elementos para evitar el sobreajuste y mejorar la generalización de los modelos, como las capas de abandono (dropout) y la normalización 
@@ -315,8 +427,8 @@ Finalmente, se estudia el uso de capas de atención (attention layers) en los mo
 estas capas permiten que el modelo se enfoque en diferentes partes de la secuencia de entrada al hacer predicciones, lo que puede mejorar la capacidad del modelo para capturar patrones a largo plazo. Sin embargo, tras probar distintos tipos de atención en distintos puntos de la red, no se detecta mejora.
 
 \subsection{Número de estaciones}
-Se estudia el impacto del número de estaciones en la precisión de los modelos. Se entrena un modelo LSTM con diferente número de estaciones. Para evaluarlos, se mide el RMSE de validación de cada modelo.
-Los resultados se muestran en la tabla \ref{estaciones_y_error}. Observamos que cuando se entrena utilizando 2 estaciones los resultados son peores que el promedio de ambas.
+Se estudia el impacto del número de estaciones en la precisión de los modelos. Se entrena un modelo LSTM sobre la serie de temperatura empleando diferente número de estaciones.
+Para realizar la comparativa, se mide el RMSE de validación de cada modelo obtenido. Los resultados se muestran en la tabla \ref{estaciones_y_error}. Observamos que cuando se entrena utilizando 2 estaciones los resultados son peores que el promedio de ambas.
 Esto puede explicarse porque cuando se entrenaba con una sola estación el modelo se especializaba en su comportamiento. Sin embargo, vemos que a medida que se añaden estaciones la 
 diferencia entre los resultados del modelo entrenado con todas las estaciones y el promedio de cada estación se reduce, lo que refleja el aumento de la capacidad de generalización del modelo.
 
@@ -341,8 +453,8 @@ TODOS                    & 0.6851888257 & 0.6632432823 \\
 
 \subsection{Tamaño de la ventana}
 Se estudia exhaustivamente el número de horas previas $P$ que contiene la ventana. Para ello, se construyen datasets desde $P$=6 hasta $P$=48 y se evalúan en los modelos 
-desarrollados, eligiendo para cada valor de $P$ el mejor modelo de 5 entrenamientos. Se observan distintos valores óptimos de $P$ según las variables: $P$=17 para la temperatura del aire, $P$=24 para la humedad relativa y 
-$P$=20 para la presión atmosférica. En la tabla \ref{window_size} se muestran los resultados obtenidos para el modelo LSTM y un horizonte de predicción de 3 horas,
+desarrollados, usando como referencia para cada valor de $P$ el error RMSE medio de 5 entrenamientos. Se observan distintos valores óptimos de $P$ según las variables: $P$=17 para la temperatura del aire, $P$=24 para la humedad relativa y 
+$P$=20 para la presión atmosférica. Estos valores son consistentes entre los diferentes horizontes de predicción. En la tabla \ref{window_size} se muestran los resultados obtenidos para el modelo LSTM y un horizonte de predicción de 3 horas,
 en un gradiente en el que rojo indica el peor RMSE y verde el mejor.
 
 \begin{figure}[H]
@@ -417,7 +529,21 @@ Sin embargo, en la práctica se constata que el ruido no mejora los resultados d
 que la inclusión del ruido no es capaz de modificar, puesto que sería necesario un ruido tan elevado que se perdería el valor de los datos.
 
 \section{Modelos y Resultados}
+\label{sec:resultados}
+Cada variable tiene sus propias características y patrones, por lo que se desarrollan modelos LSTM específicos para cada una de ellas. 
+Además, en el caso de la temperatura del aire, se estudia con mayor profundidad y se desarrollan modelos específicos para cada horizonte de predicción.
+Los resultados obtenidos corresponden al mejor modelo de 10 entrenamientos.
 \subsection{Temperatura del aire}
+Los modelos, ajustados para cada horizonte de predicción, se muestran en los pseudocódigos \ref{lstm_model_temp_3h}, \ref{lstm_model_temp_6h}, \ref{lstm_model_temp_12h} y \ref{lstm_model_temp_24h}.
+Los resultados obtenidos se muestran en la tabla \ref{temp_results}.
+
+% \begin{figure}[H]
+% {\small
+% \hrule
+% {\bf\small Pseudocódigo para el modelo LSTM de temperatura del aire}
+% }
+
+
 \subsection{Humedad relativa}
 \subsection{Presión atmosférica}
 
