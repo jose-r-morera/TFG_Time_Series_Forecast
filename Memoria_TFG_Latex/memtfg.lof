@@ -32,8 +32,8 @@
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Pseudocódigo del modelo Híbrido CNN + BiLSTM}}{27}{figure.caption.34}%
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Resultados del estudio del error RMSE del modelo LSTM en función del tamaño de la ventana }}{31}{figure.caption.38}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Pseudocódigo de la función \texttt {add\_noise}}}{32}{figure.caption.39}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Datos pasados de 2 muestras. Datos originales en continua y con el ruido en discontinua.}}{33}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Valores objetivo de 2 muestras. Datos originales en continua y con el ruido en discontinua.}}{33}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Datos pasados de 2 muestras con ruido.}}{33}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Valores objetivo de 2 muestras con ruido.}}{33}{figure.caption.41}%
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Pseudocódigo para el modelo de temperatura a 3 horas}}{34}{figure.caption.42}%
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Pseudocódigo para el modelo de temperatura a 6horas}}{34}{figure.caption.43}%
 \contentsline {figure}{\numberline {3.19}{\ignorespaces Pseudocódigo para el modelo de temperatura a 12 horas}}{35}{figure.caption.44}%
