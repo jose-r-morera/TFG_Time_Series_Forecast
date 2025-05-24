@@ -184,7 +184,8 @@ async def submit_prediction(request: PredictionRequest):
     save_input_tensor_channels(future_input_tensor, "0001", Path("debug_inputs"))
 
     job_id = str(uuid.uuid4())
-    task = predict_task.apply_async(args=[(past_input_tensor.tolist(), future_input_tensor.tolist())], task_id=job_id)
+    last_timestamp = request.allSensorsData[request.targetSensorId].hourlyData[-1].endTime
+    task = predict_task.apply_async(args=[(past_input_tensor.tolist(), future_input_tensor.tolist()), last_timestamp], task_id=job_id)
 
     return {"job_id": job_id, "status": "submitted"}
 

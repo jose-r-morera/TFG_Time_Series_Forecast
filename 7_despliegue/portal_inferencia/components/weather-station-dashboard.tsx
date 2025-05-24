@@ -374,7 +374,7 @@ export function WeatherStationDashboard() {
       // Check the job status
       const jobResponse = await checkPredictionJobStatus(jobId, datastream, hourlyAverages[datastream.id] || [])
 
-      console.log(`Job ${jobId} status: ${jobResponse.status}`)
+      console.log(`Job ${jobId} status: ${jobResponse.status}, response: `, jobResponse)
 
       // Update the job status
       setPredictionJobs((prev) => ({
@@ -390,7 +390,7 @@ export function WeatherStationDashboard() {
       // Handle different job statuses
       if (jobResponse.status === "completed" && jobResponse.result) {
         // Job completed successfully, update predictions
-         ((prev) => ({
+        setPredictions((prev) => ({
           ...prev,
           [datastream.id]: jobResponse.result,
         }))

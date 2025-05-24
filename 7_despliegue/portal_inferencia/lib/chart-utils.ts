@@ -36,6 +36,7 @@ export function prepareChartDatasets(
     chartColor: string,
 ) {
     const hasPredictions = predictionData.length > 0
+    console.log("HAs prediction: ", predictionData)
 
     // Basic dataset for historical data
     const datasets = [

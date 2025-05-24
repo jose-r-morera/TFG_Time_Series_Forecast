@@ -4,6 +4,7 @@ import tensorflow as tf
 import numpy as np
 import logging
 import json
+from datetime import datetime, timedelta
 
 # ──────────────────────────────────────────────────────────────
 # Configure Celery
@@ -72,7 +73,7 @@ def init_worker(**kwargs):
 # ──────────────────────────────────────────────────────────────
 # Celery task
 @celery.task(bind=True)
-def predict_task(self, input_tensor):
+def predict_task(self, input_tensor, base_time_str):
     logger.info("📥 Received prediction task.")
 
     try:
@@ -94,12 +95,25 @@ def predict_task(self, input_tensor):
         prediction = [round(float(p), 3) for p in prediction]
         prediction = denormalize_temp_prediction(prediction)
         
-        result = {
-            "status": "completed",
-            "result": prediction
-        }
+        # Determine base time from input (assumes model input ends at t0)
+        base_time = datetime.fromisoformat(base_time_str.replace("Z", "")).replace(minute=0, second=0, microsecond=0)
+
+        results = []
+        for i, value in enumerate(prediction):
+            start = base_time + timedelta(hours=i + 1)
+            end = start + timedelta(minutes=59, seconds=59, milliseconds=999)
+            results.append({
+                "hour": f"{start.month}/{start.day} {start.hour}:00",
+                "timestamp": start.isoformat() + "Z",
+                "startTime": start.isoformat() + "Z",
+                "endTime": end.isoformat() + "Z",
+                "predicted": True,
+                "values": [],
+                "average": round(float(value), 3),
+            })
+        
         logger.info("✅ Inference complete.")
-        return result
+        return results
 
     except Exception as e:
         logger.exception("❌ Prediction failed.")
