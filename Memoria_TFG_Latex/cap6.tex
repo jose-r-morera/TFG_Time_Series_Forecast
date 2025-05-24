@@ -1,1 +1,15 @@
-This chapter is compulsory. The memory should include an extended summary and conclusions in english. 
+In this work, a weather variable forecasting system has been developed, capable of generalizing and making predictions for previously unseen locations. Various alternatives in the field of deep learning have been studied, and it has been observed that LSTM models provide the best results among the models evaluated. Furthermore, these results have proven to be strong—surpassing those of traditional time series forecasting models, and even outperforming recent research efforts.
+
+A complete workflow has been established, from data acquisition, processing, and cleaning, to the design and implementation of forecasting models. Extensive testing of different hypotheses and configurations has been conducted, with the aim of achieving optimal performance for the problem at hand.
+
+One of the most notable findings is that, when analyzing the size of the input data window, better predictions are obtained using a small number of past measurements—up to one day—than with longer periods. This is particularly useful, as it allows the number of required measurements for making a prediction to be reduced, making the models more practical for real-world applications.
+
+In addition, a web application has been developed, enabling any user to easily generate forecasts. This application allows the user to select a Grafcan station and obtain a temperature forecast for the upcoming hours. This serves as a proof of concept for the applicability of the developed system and its potential for real-world deployment. The solution is modular and scalable, representing a serious proposal for production use.
+
+\section{Future Work}
+
+It has been demonstrated that increasing the number of measurement points used in the construction of the training set improves forecasting accuracy. The intelligent scaling of this set, including geographic information such as altitude and coordinates, as well as the construction of a mesh of measurement points, represents a promising direction for future research.
+
+Additionally, it has been observed that the use of additional covariates—such as humidity or atmospheric pressure, in the case of temperature forecasting—improves prediction accuracy. Further exploration of these and other covariates may enhance forecasting results.
+
+Finally, although several deep learning models have been evaluated, many other approaches were not explored in this study. The investigation of state-of-the-art models, such as Transformers, constitutes another promising area for future work.
