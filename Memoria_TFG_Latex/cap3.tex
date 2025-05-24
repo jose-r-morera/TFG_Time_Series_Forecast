@@ -535,8 +535,9 @@ Además, en el caso de la temperatura del aire, se estudia con mayor profundidad
 Los resultados obtenidos corresponden al mejor modelo de 10 entrenamientos. Se muestra el error RMSE de la validación cruzada, así como sobre los conjuntos de test.
 
 \subsection{Temperatura del aire}
-Los modelos, ajustados para cada horizonte de predicción, se muestran en los pseudocódigos \ref{lstm_model_temp_3h}, \ref{lstm_model_temp_6h}, \ref{lstm_model_temp_12h} y \ref{lstm_model_temp_24h}.
-Los resultados obtenidos se muestran en la tabla \ref{temp_results}.
+Los modelos, ajustados para cada horizonte de predicción, se muestran en los pseudocódigos \ref{lstm_model_temp_3h}, \ref{lstm_model_temp_6h}, \ref{lstm_model_temp_12h}.
+Los resultados obtenidos se muestran en la tabla \ref{temp_results}. Observamos que los datos de test son similares a los de validación, 
+lo que indica que el modelo generaliza bien.
 
 \begin{figure}[H]
 {\small
@@ -705,11 +706,11 @@ capa densa para los datos futuros y dos capa densas apiladas para la salida.
 \hline
 \textbf{Datos} & \textbf{3} & \textbf{6} & \textbf{12} \\
 \hline
-Validación   &     5.7526            &                  &                     \\
+Validación   &     5.7526            &    7.0293            &    8.5234                 \\
 \hline
-Garachico    &     5.7889            &                  &                     \\
+Garachico    &     5.7889            &     7.7114           &    9.1482                 \\
 \hline
-Santa Cruz &       4.6226          &                  &                     \\
+Santa Cruz &       4.6226          &   5.0627               &    6.0066                 \\
 \hline
 \end{tabular}
 \caption{Resultados del modelo LSTM para la humedad relativa}
@@ -760,11 +761,11 @@ Se emplea el modelo descrito en la figura \ref{lstm_model_pres}, similar al empl
 \hline
 \textbf{Datos} & \textbf{3} & \textbf{6} & \textbf{12} \\
 \hline
-Validación   &   0.3908           &                  &                     \\
+Validación   &   0.3908           &    0.5541        &   0.7963          \\
 \hline
-Garachico    & 0.6783             &                  &                    \\
+Garachico    & 0.6783             &     0.8761       &     1.2887               \\
 \hline
-Santa Cruz &    0.4077            &                  &                     \\
+Santa Cruz &    0.4077            &     0.6341       &    0.9809                 \\
 \hline
 \end{tabular}
 \caption{Resultados del modelo LSTM para la presión atmosférica}
@@ -773,9 +774,46 @@ Santa Cruz &    0.4077            &                  &                     \\
 
 
 \subsection{Evaluación de los resultados}
-Es dificil evaluar los resultados debido a que las condiciones meteorológicas pueden variar entre distintas ubicaciones.
+Se decide graficar las predicciones para tener una mejor comprensión de los resultados obtenidos. Se muestran comparativas entre las predicciones a 12 horas y los valores
+reales para el conjunto de test de Santa Cruz de Tenerife. En las figuras \ref{temp_sct}, \ref{pres_sct} se ven ejemplos de predicciones muy acertadas. 
+En el caso de la figura \ref{hum_sct}, se observa que el modelo predice adecuadamente la tendencia, si bien existe un valle repentino, que quizás pudiera ser ruido del sensor.
+Por otra parte, existen situaciones en las que los resultados se alejan de los valores reales, como se observa en la figura \ref{temp_sct_error}. Esto puede deberse
+a la naturaleza de las variables, con comportamientos difíciles de predecir en ocasiones, o por otra parte, a la falta de contexto e información necesaria para hacer una predicción precisa.
 
-Orientativamente, se toman como referencia los resultados del estudio de Haque et al. \cite{haque2021}, que emplea modelos de aprendizaje profundo para la predicción de la temperatura 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/grafico_f12_temp.png}
+    \caption{Predicciones de temperatura del aire en Santa Cruz de Tenerife}
+    \label{temp_sct}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/grafico_f12_pres.png}
+    \caption{Predicciones de presión atmosférica en Santa Cruz de Tenerife}
+    \label{pres_sct}
+\end{figure}    
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/grafico_f12_hum.png}
+    \caption{Predicciones de humedad relativa en Santa Cruz de Tenerife}
+    \label{hum_sct}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/grafico_f12_temp_mal.png}
+    \caption{Predicciones de temperatura del aire en Santa Cruz de Tenerife 2}
+    \label{temp_sct_error}
+\end{figure}
+
+En general, los resultados son satisfactorios, destacando la capacidad de los modelos para predecir adecuadamente las tendencias de las varibales.
+
+Para contextualizar los resultados obtenidos, se comparan con otros trabajos similares.
+Esta comparativa es meramente orientativa, debido a que las condiciones meteorológicas pueden variar entre distintas ubicaciones.
+
+Se toman como referencia los resultados del estudio de Haque et al. \cite{haque2021}, que emplea modelos de aprendizaje profundo para la predicción de la temperatura 
 en las próximas 6 horas en la ciudad de Pekín. Además, se evalúa el mismo modelo en otras ciudades, como Toronto o Las Vegas. 
 
 En dicho estudio, el mejor RMSE para 6 horas obtenido era de 1.691, mientras que con nuestro modelo se obtiene un RMSE de 0.8543, lo que sugiere que el modelo es capaz de predecir la temperatura del aire con una precisión considerablemente mayor. 

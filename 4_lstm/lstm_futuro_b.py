@@ -19,9 +19,9 @@ from custom_attention import CustomAttention
 # DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_orotava_p17.pkl"
 # DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_laguna_orotava_p17.pkl"
 
-DATA_PATH = "../3_data_windows/f12/paquetes_s6_cov_full_p17.pkl"
+DATA_PATH = "../3_data_windows/f12/paquetes_s6_cov_full_p20.pkl"
 
-DATASET = "air_temperature"  # atmospheric_pressure or relative_humidity or air_temperature
+DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -94,20 +94,21 @@ def build_and_train_model(dataset_train):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_in)
-    past_lstm = tf.keras.layers.Dense(65)(past_lstm)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(56, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Dense(58)(past_lstm)
     
-    # Future
-    decoder_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_in)
+    # Future exogenous features
+    future_dense = tf.keras.layers.Flatten()(future_in)
+    future_dense = tf.keras.layers.Dense(4)(future_dense)
 
-    # Combine the outputs of encoder and decoder (you can concatenate or merge them)
+    # Combine the outputs of past and future
     future_residue = tf.keras.layers.Flatten()(future_in)
-    merged = tf.keras.layers.concatenate([past_lstm, decoder_lstm, future_residue])
+    merged = tf.keras.layers.concatenate([past_lstm, future_dense, future_residue])
 
     # Final output layer
-    # merged = tf.keras.layers.Dense(6* target_dim)(merged)
-    out= tf.keras.layers.Dense(target_dim)(merged)
-    
+    merged = tf.keras.layers.Dense(6* target_dim)(merged) 
+    out = tf.keras.layers.Dense(target_dim)(merged)
+
     model = tf.keras.Model([past_in, future_in], out)
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate), loss="mse")
     
