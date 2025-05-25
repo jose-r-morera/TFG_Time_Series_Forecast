@@ -437,6 +437,7 @@ un mayor número de puntos de información puede ayudar a mejorar los resultados
 
 \begin{table}[h!]
 \centering
+\small
 \begin{tabular}{lccccccccc}
 \toprule
 \textbf{Ubicaciones} & \multicolumn{2}{c}{\textbf{Temperatura del aire}} & \multicolumn{2}{c}{\textbf{Humedad relativa}} & \multicolumn{2}{c}{\textbf{Presión atmosférica}} \\
@@ -502,8 +503,7 @@ a los datos pasados de la variable y las covariables, sin alterar la codificaci�
 12: \> $past\_noise$ = $cov\_noise \times mask$ \\
 13: \> \# Generar ruido sobre la variable objetivo. \\
 14: \> $target\_noise$ = noise\_distribution($y$, NOISE\_STD) \\
-15: \> \# Retornar tupla con datos ruidosos y futuro sin modificar \\
-16: \> {\bf Retornar}\ ( $(past + past\_noise),\, fut$ ),\ $y + target\_noise$ \\
+15: \> {\bf Retornar}\ ( $(past + past\_noise),\, fut$ ),\ $y + target\_noise$
 \end{tabbing}
 \end{center}
 }
@@ -520,17 +520,18 @@ y a la variable objetivo. Se observa que un ruido menor al de las covariables en
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/noise_past_data.png}
-    \caption{Datos pasados de 2 muestras con ruido.}
+    \includegraphics[width=0.5\textwidth]{images/noise_y.png}
+    \caption{Valores objetivo de 2 muestras con ruido.}
     \label{noise1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/noise_y.png}
-    \caption{Valores objetivo de 2 muestras con ruido.}
+    \includegraphics[width=0.7\textwidth]{images/noise_past_data.png}
+    \caption{Datos pasados de 2 muestras con ruido.}
     \label{noise2}
 \end{figure}
+
 
 Sin embargo, en la práctica se constata que el ruido no mejora los resultados de los modelos. Esto puede deberse a que las series exhiben una tendencia muy fuerte, 
 que la inclusión del ruido no es capaz de modificar, puesto que sería necesario un ruido tan elevado que se perdería el valor de los datos.
@@ -545,6 +546,25 @@ Los resultados obtenidos corresponden al mejor modelo de 10 entrenamientos. Se m
 Los modelos, ajustados para cada horizonte de predicción, se muestran en los pseudocódigos \ref{lstm_model_temp_3h}, \ref{lstm_model_temp_6h}, \ref{lstm_model_temp_12h}.
 Los resultados obtenidos se muestran en la tabla \ref{temp_results}. Observamos que los datos de test son similares a los de validación, 
 lo que indica que el modelo generaliza bien.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Horizonte de predicción (horas)}} \\
+\hline
+\textbf{Datos} & \textbf{3} & \textbf{6} & \textbf{12} \\
+\hline
+Validación   &      0.6792           &     0.8543       &         1.0632            \\
+\hline
+Garachico    &        0.8234         &      1.0677            &         1.3423            \\
+\hline
+Santa Cruz &       0.6711          &    0.7892          &          0.9244           \\
+\hline
+\end{tabular}
+\caption{Resultados del modelo LSTM para la temperatura del aire}
+\label{temp_results}
+\end{table}
 
 \begin{figure}[H]
 {\small
@@ -638,26 +658,6 @@ lo que indica que el modelo generaliza bien.
 \caption{Pseudocódigo para el modelo de temperatura a 12 horas}
 \label{lstm_model_temp_12h}
 \end{figure}
-
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|l|c|c|c|}
-\hline
-\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Horizonte de predicción (horas)}} \\
-\hline
-\textbf{Datos} & \textbf{3} & \textbf{6} & \textbf{12} \\
-\hline
-Validación   &      0.6792           &     0.8543       &         1.0632            \\
-\hline
-Garachico    &        0.8234         &      1.0677            &         1.3423            \\
-\hline
-Santa Cruz &       0.6711          &    0.7892          &          0.9244           \\
-\hline
-\end{tabular}
-\caption{Resultados del modelo LSTM para la temperatura del aire}
-\label{temp_results}
-\end{table}
 
 
 \subsection{Humedad relativa}

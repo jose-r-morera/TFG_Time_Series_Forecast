@@ -32,22 +32,22 @@
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Pseudocódigo del modelo Híbrido CNN + BiLSTM}}{27}{figure.caption.34}%
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Resultados del estudio del error RMSE del modelo LSTM en función del tamaño de la ventana }}{31}{figure.caption.38}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Pseudocódigo de la función \texttt {add\_noise}}}{32}{figure.caption.39}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Datos pasados de 2 muestras con ruido.}}{33}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Valores objetivo de 2 muestras con ruido.}}{33}{figure.caption.41}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Pseudocódigo para el modelo de temperatura a 3 horas}}{34}{figure.caption.42}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Pseudocódigo para el modelo de temperatura a 6 horas}}{34}{figure.caption.43}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Pseudocódigo para el modelo de temperatura a 12 horas}}{35}{figure.caption.44}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Pseudocódigo del modelo BiLSTM para la humedad relativa}}{36}{figure.caption.46}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Pseudocódigo del modelo BiLSTM para la presión atmosférica}}{37}{figure.caption.48}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Predicciones de presión atmosférica en Santa Cruz de Tenerife}}{38}{figure.caption.50}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Predicciones de temperatura del aire en Santa Cruz de Tenerife}}{38}{figure.caption.51}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Predicciones de humedad relativa en Santa Cruz de Tenerife}}{38}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Valores objetivo de 2 muestras con ruido.}}{32}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Datos pasados de 2 muestras con ruido.}}{33}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Pseudocódigo para el modelo de temperatura a 3 horas}}{34}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Pseudocódigo para el modelo de temperatura a 6 horas}}{34}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Pseudocódigo para el modelo de temperatura a 12 horas}}{35}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Pseudocódigo del modelo BiLSTM para la humedad relativa}}{35}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Pseudocódigo del modelo BiLSTM para la presión atmosférica}}{36}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Predicciones de presión atmosférica en Santa Cruz de Tenerife}}{37}{figure.caption.50}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Predicciones de temperatura del aire en Santa Cruz de Tenerife}}{37}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Predicciones de humedad relativa en Santa Cruz de Tenerife}}{37}{figure.caption.52}%
 \contentsline {figure}{\numberline {3.25}{\ignorespaces Predicciones de temperatura del aire en Santa Cruz de Tenerife 2}}{38}{figure.caption.53}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Interfaz web. Carga de datos de una estación}}{41}{figure.caption.54}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Interfaz web. Gráfica con datos de una estación}}{41}{figure.caption.55}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Interfaz web. Resultado de una predicción}}{42}{figure.caption.56}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Esquema de la lógica del despliegue}}{43}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Interfaz web. Carga de datos de una estación}}{40}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Interfaz web. Gráfica con datos de una estación}}{40}{figure.caption.55}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Interfaz web. Resultado de una predicción}}{41}{figure.caption.56}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Esquema de la lógica del despliegue}}{42}{figure.caption.57}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

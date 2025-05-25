@@ -8,12 +8,12 @@
 \contentsline {table}{\numberline {3.1}{\ignorespaces Comparativa inicial de modelos ARIMA y LSTM con predicciones de 3 horas}}{28}{table.caption.35}%
 \contentsline {table}{\numberline {3.2}{\ignorespaces Comparación de modelos según RMSE}}{29}{table.caption.36}%
 \contentsline {table}{\numberline {3.3}{\ignorespaces Error de validación en función de las estaciones usadas para temperatura, humedad y presión}}{30}{table.caption.37}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Resultados del modelo LSTM para la temperatura del aire}}{35}{table.caption.45}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Resultados del modelo LSTM para la temperatura del aire}}{33}{table.caption.42}%
 \contentsline {table}{\numberline {3.5}{\ignorespaces Resultados del modelo LSTM para la humedad relativa}}{36}{table.caption.47}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces Resultados del modelo LSTM para la presión atmosférica}}{37}{table.caption.49}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Resultados del modelo LSTM para la presión atmosférica}}{36}{table.caption.49}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Resumen de gastos}}{48}{table.caption.58}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Resumen de gastos anuales}}{48}{table.caption.59}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Resumen de gastos}}{47}{table.caption.58}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Resumen de gastos anuales}}{47}{table.caption.59}%

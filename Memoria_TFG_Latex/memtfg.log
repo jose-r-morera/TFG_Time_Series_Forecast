@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  25 MAY 2025 20:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  25 MAY 2025 20:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1187,10 +1187,6 @@ l.88 \newpage
 Cap\'{\i }tulo 2.
 (./cap2.tex
 
-Package natbib Warning: Citation `GRAFCAN_sensores' on page 4 undefined on input line 15.
-
-
-
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
@@ -1199,14 +1195,14 @@ l.29 \end{itemize}
                    [4
 
 ]
-<images/mapa_estaciones.png, id=507, 578.16pt x 505.13719pt>
+<images/mapa_estaciones.png, id=509, 578.16pt x 505.13719pt>
 File: images/mapa_estaciones.png Graphic file (type png)
 <use images/mapa_estaciones.png>
 Package pdftex.def Info: images/mapa_estaciones.png  used on input line 43.
 (pdftex.def)             Requested size: 290.22107pt x 253.56227pt.
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 61.
-<images/node-red_GRAFCAN.png, id=509, 1927.2pt x 1084.05pt>
+<images/node-red_GRAFCAN.png, id=511, 1927.2pt x 1084.05pt>
 File: images/node-red_GRAFCAN.png Graphic file (type png)
 <use images/node-red_GRAFCAN.png>
 Package pdftex.def Info: images/node-red_GRAFCAN.png  used on input line 66.
@@ -1214,7 +1210,7 @@ Package pdftex.def Info: images/node-red_GRAFCAN.png  used on input line 66.
 
 
 [5 <./images/mapa_estaciones.png>]
-<images/node-red_open-meteo.png, id=516, 1927.2pt x 1084.05pt>
+<images/node-red_open-meteo.png, id=518, 1927.2pt x 1084.05pt>
 File: images/node-red_open-meteo.png Graphic file (type png)
 <use images/node-red_open-meteo.png>
 Package pdftex.def Info: images/node-red_open-meteo.png  used on input line 81.
@@ -1222,17 +1218,17 @@ Package pdftex.def Info: images/node-red_open-meteo.png  used on input line 81.
 
 
 [6 <./images/node-red_grafcan.png>]
-<images/visualizacion_1.png, id=525, 620.7993pt x 395.3169pt>
+<images/visualizacion_1.png, id=527, 620.7993pt x 395.3169pt>
 File: images/visualizacion_1.png Graphic file (type png)
 <use images/visualizacion_1.png>
 Package pdftex.def Info: images/visualizacion_1.png  used on input line 116.
 (pdftex.def)             Requested size: 386.95897pt x 246.41495pt.
-<images/visualizacion_2.png, id=526, 607.7907pt x 395.3169pt>
+<images/visualizacion_2.png, id=528, 607.7907pt x 395.3169pt>
 File: images/visualizacion_2.png Graphic file (type png)
 <use images/visualizacion_2.png>
 Package pdftex.def Info: images/visualizacion_2.png  used on input line 122.
 (pdftex.def)             Requested size: 386.95897pt x 251.68695pt.
-<images/visualizacion_3.png, id=527, 617.9085pt x 395.3169pt>
+<images/visualizacion_3.png, id=529, 617.9085pt x 395.3169pt>
 File: images/visualizacion_3.png Graphic file (type png)
 <use images/visualizacion_3.png>
 Package pdftex.def Info: images/visualizacion_3.png  used on input line 128.
@@ -1259,12 +1255,12 @@ LaTeX Font Info:    Font shape `TS1/fve/m/n' will be
 (Font)              scaled to size 4.49997pt on input line 196.
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 198.
-<images/histogram_humidity.png, id=553, 622.325pt x 391.4625pt>
+<images/histogram_humidity.png, id=555, 622.325pt x 391.4625pt>
 File: images/histogram_humidity.png Graphic file (type png)
 <use images/histogram_humidity.png>
 Package pdftex.def Info: images/histogram_humidity.png  used on input line 234.
 (pdftex.def)             Requested size: 241.84843pt x 152.13216pt.
-<images/histogram_temperature.png, id=554, 621.32124pt x 391.4625pt>
+<images/histogram_temperature.png, id=556, 621.32124pt x 391.4625pt>
 File: images/histogram_temperature.png Graphic file (type png)
 <use images/histogram_temperature.png>
 Package pdftex.def Info: images/histogram_temperature.png  used on input line 241.
@@ -1272,17 +1268,17 @@ Package pdftex.def Info: images/histogram_temperature.png  used on input line 24
 
 
 [10]
-<images/knn_distances_temperature_arona.png, id=564, 499.3857pt x 339.669pt>
+<images/knn_distances_temperature_arona.png, id=566, 499.3857pt x 339.669pt>
 File: images/knn_distances_temperature_arona.png Graphic file (type png)
 <use images/knn_distances_temperature_arona.png>
 Package pdftex.def Info: images/knn_distances_temperature_arona.png  used on input line 261.
 (pdftex.def)             Requested size: 241.84843pt x 164.50084pt.
-<images/histogram_humidity_knn.png, id=565, 620.7993pt x 395.3169pt>
+<images/histogram_humidity_knn.png, id=567, 620.7993pt x 395.3169pt>
 File: images/histogram_humidity_knn.png Graphic file (type png)
 <use images/histogram_humidity_knn.png>
 Package pdftex.def Info: images/histogram_humidity_knn.png  used on input line 268.
 (pdftex.def)             Requested size: 241.84843pt x 154.00406pt.
-<images/histogram_temperature_knn.png, id=566, 620.7993pt x 395.3169pt>
+<images/histogram_temperature_knn.png, id=568, 620.7993pt x 395.3169pt>
 File: images/histogram_temperature_knn.png Graphic file (type png)
 <use images/histogram_temperature_knn.png>
 Package pdftex.def Info: images/histogram_temperature_knn.png  used on input line 275.
@@ -1298,12 +1294,12 @@ LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 295.
 LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 (Font)              scaled to size 5.39996pt on input line 295.
-<images/fft_temperature.png, id=586, 715.473pt x 426.393pt>
+<images/fft_temperature.png, id=588, 715.473pt x 426.393pt>
 File: images/fft_temperature.png Graphic file (type png)
 <use images/fft_temperature.png>
 Package pdftex.def Info: images/fft_temperature.png  used on input line 320.
 (pdftex.def)             Requested size: 241.84843pt x 144.12589pt.
-<images/fft_pressure.png, id=587, 715.473pt x 426.393pt>
+<images/fft_pressure.png, id=589, 715.473pt x 426.393pt>
 File: images/fft_pressure.png Graphic file (type png)
 <use images/fft_pressure.png>
 Package pdftex.def Info: images/fft_pressure.png  used on input line 327.
@@ -1311,7 +1307,7 @@ Package pdftex.def Info: images/fft_pressure.png  used on input line 327.
 
 
 [13 <./images/fft_temperature.png> <./images/fft_pressure.png>]
-<images/correlation_heatmap.png, id=597, 481.3182pt x 415.5525pt>
+<images/correlation_heatmap.png, id=599, 481.3182pt x 415.5525pt>
 File: images/correlation_heatmap.png Graphic file (type png)
 <use images/correlation_heatmap.png>
 Package pdftex.def Info: images/correlation_heatmap.png  used on input line 353.
@@ -1332,7 +1328,7 @@ LaTeX Font Info:    Font shape `T1/fve/m/sl' will be
 [17]
 Cap\'{\i }tulo 3.
 (./cap3.tex
-<images/arima_pacf_hum.png, id=620, 462.528pt x 346.896pt>
+<images/arima_pacf_hum.png, id=622, 462.528pt x 346.896pt>
 File: images/arima_pacf_hum.png Graphic file (type png)
 <use images/arima_pacf_hum.png>
 Package pdftex.def Info: images/arima_pacf_hum.png  used on input line 22.
@@ -1342,7 +1338,7 @@ Package pdftex.def Info: images/arima_pacf_hum.png  used on input line 22.
 [18
 
 ]
-<images/arima_pacf_pres.png, id=626, 462.528pt x 346.896pt>
+<images/arima_pacf_pres.png, id=628, 462.528pt x 346.896pt>
 File: images/arima_pacf_pres.png Graphic file (type png)
 <use images/arima_pacf_pres.png>
 Package pdftex.def Info: images/arima_pacf_pres.png  used on input line 29.
@@ -1352,12 +1348,12 @@ Package pdftex.def Info: images/arima_pacf_pres.png  used on input line 29.
 [19 <./images/arima_pacf_hum.png> <./images/arima_pacf_pres.png>]
 
 [20]
-<images/arima_acf_temp.png, id=645, 462.528pt x 346.896pt>
+<images/arima_acf_temp.png, id=647, 462.528pt x 346.896pt>
 File: images/arima_acf_temp.png Graphic file (type png)
 <use images/arima_acf_temp.png>
 Package pdftex.def Info: images/arima_acf_temp.png  used on input line 117.
 (pdftex.def)             Requested size: 241.84843pt x 181.38736pt.
-<images/arima_acf_pres.png, id=646, 462.528pt x 346.896pt>
+<images/arima_acf_pres.png, id=648, 462.528pt x 346.896pt>
 File: images/arima_acf_pres.png Graphic file (type png)
 <use images/arima_acf_pres.png>
 Package pdftex.def Info: images/arima_acf_pres.png  used on input line 124.
@@ -1365,7 +1361,7 @@ Package pdftex.def Info: images/arima_acf_pres.png  used on input line 124.
 
 
 [21 <./images/arima_acf_temp.png>]
-<images/arima_residuals.png, id=656, 462.528pt x 346.896pt>
+<images/arima_residuals.png, id=658, 462.528pt x 346.896pt>
 File: images/arima_residuals.png Graphic file (type png)
 <use images/arima_residuals.png>
 Package pdftex.def Info: images/arima_residuals.png  used on input line 167.
@@ -1373,12 +1369,12 @@ Package pdftex.def Info: images/arima_residuals.png  used on input line 167.
 
 
 [22 <./images/arima_acf_pres.png>]
-<images/arima_residuals_density.png, id=662, 462.528pt x 346.896pt>
+<images/arima_residuals_density.png, id=664, 462.528pt x 346.896pt>
 File: images/arima_residuals_density.png Graphic file (type png)
 <use images/arima_residuals_density.png>
 Package pdftex.def Info: images/arima_residuals_density.png  used on input line 174.
 (pdftex.def)             Requested size: 338.58632pt x 253.95184pt.
-<images/arima_result.png, id=663, 462.528pt x 346.896pt>
+<images/arima_result.png, id=665, 462.528pt x 346.896pt>
 File: images/arima_result.png Graphic file (type png)
 <use images/arima_result.png>
 Package pdftex.def Info: images/arima_result.png  used on input line 181.
@@ -1407,119 +1403,120 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [28]
 
 [29]
-Overfull \hbox (70.62485pt too wide) in paragraph at lines 440--455
+Overfull \hbox (26.32083pt too wide) in paragraph at lines 441--456
  [][] 
  []
 
-<images/past_window_size.png, id=710, 1124.2pt x 1960.32375pt>
+<images/past_window_size.png, id=712, 1124.2pt x 1960.32375pt>
 File: images/past_window_size.png Graphic file (type png)
 <use images/past_window_size.png>
-Package pdftex.def Info: images/past_window_size.png  used on input line 468.
+Package pdftex.def Info: images/past_window_size.png  used on input line 469.
 (pdftex.def)             Requested size: 338.58632pt x 590.4049pt.
 
 
 [30]
 
 [31 <./images/past_window_size.png>]
-<images/noise_past_data.png, id=722, 803.0pt x 375.4025pt>
+<images/noise_y.png, id=724, 803.0pt x 378.41376pt>
+File: images/noise_y.png Graphic file (type png)
+<use images/noise_y.png>
+Package pdftex.def Info: images/noise_y.png  used on input line 523.
+(pdftex.def)             Requested size: 241.84843pt x 113.9696pt.
+<images/noise_past_data.png, id=725, 803.0pt x 375.4025pt>
 File: images/noise_past_data.png Graphic file (type png)
 <use images/noise_past_data.png>
-Package pdftex.def Info: images/noise_past_data.png  used on input line 523.
+Package pdftex.def Info: images/noise_past_data.png  used on input line 530.
 (pdftex.def)             Requested size: 338.58632pt x 158.29234pt.
 
 
-[32]
-<images/noise_y.png, id=729, 803.0pt x 378.41376pt>
-File: images/noise_y.png Graphic file (type png)
-<use images/noise_y.png>
-Package pdftex.def Info: images/noise_y.png  used on input line 530.
-(pdftex.def)             Requested size: 338.58632pt x 159.56207pt.
+[32 <./images/noise_y.png>]
 
-
-[33 <./images/noise_past_data.png> <./images/noise_y.png>]
+[33 <./images/noise_past_data.png>]
 
 [34]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 
 [35]
 
 [36]
-<images/grafico_f12_pres.png, id=758, 1003.8303pt x 426.393pt>
+<images/grafico_f12_pres.png, id=760, 1003.8303pt x 426.393pt>
 File: images/grafico_f12_pres.png Graphic file (type png)
 <use images/grafico_f12_pres.png>
 Package pdftex.def Info: images/grafico_f12_pres.png  used on input line 785.
 (pdftex.def)             Requested size: 338.58632pt x 143.8201pt.
-<images/grafico_f12_temp.png, id=759, 1003.8303pt x 426.393pt>
+<images/grafico_f12_temp.png, id=761, 1003.8303pt x 426.393pt>
 File: images/grafico_f12_temp.png Graphic file (type png)
 <use images/grafico_f12_temp.png>
 Package pdftex.def Info: images/grafico_f12_temp.png  used on input line 792.
 (pdftex.def)             Requested size: 338.58632pt x 143.8201pt.
-<images/grafico_f12_hum.png, id=760, 1003.8303pt x 426.393pt>
+<images/grafico_f12_hum.png, id=762, 1003.8303pt x 426.393pt>
 File: images/grafico_f12_hum.png Graphic file (type png)
 <use images/grafico_f12_hum.png>
 Package pdftex.def Info: images/grafico_f12_hum.png  used on input line 800.
 (pdftex.def)             Requested size: 338.58632pt x 143.8201pt.
-<images/grafico_f12_temp_mal.png, id=761, 1003.8303pt x 426.393pt>
+<images/grafico_f12_temp_mal.png, id=763, 1003.8303pt x 426.393pt>
 File: images/grafico_f12_temp_mal.png Graphic file (type png)
 <use images/grafico_f12_temp_mal.png>
 Package pdftex.def Info: images/grafico_f12_temp_mal.png  used on input line 807.
 (pdftex.def)             Requested size: 338.58632pt x 143.8201pt.
 
 
-[37]
+[37 <./images/grafico_f12_pres.png> <./images/grafico_f12_temp.png> <./images/grafico_f12_hum.png>])
 
-[38 <./images/grafico_f12_pres.png> <./images/grafico_f12_temp.png> <./images/grafico_f12_hum.png> <./images/grafico_f12_temp_mal.png>])
-
-[39]
+[38 <./images/grafico_f12_temp_mal.png>]
 Cap\'{\i }tulo 4.
 (./cap4.tex
 
-[40
+[39
 
 ]
-<images/frontend_loading.png, id=788, 1848.9075pt x 640.3925pt>
+<images/frontend_loading.png, id=786, 1848.9075pt x 640.3925pt>
 File: images/frontend_loading.png Graphic file (type png)
 <use images/frontend_loading.png>
 Package pdftex.def Info: images/frontend_loading.png  used on input line 39.
 (pdftex.def)             Requested size: 435.32422pt x 150.77563pt.
-<images/frontend_loaded.png, id=789, 1849.91125pt x 1012.78375pt>
+<images/frontend_loaded.png, id=787, 1849.91125pt x 1012.78375pt>
 File: images/frontend_loaded.png Graphic file (type png)
 <use images/frontend_loaded.png>
 Package pdftex.def Info: images/frontend_loaded.png  used on input line 46.
 (pdftex.def)             Requested size: 435.32422pt x 238.32874pt.
-<images/frontend_prediction_6.png, id=790, 1849.91125pt x 1015.795pt>
+<images/frontend_prediction_6.png, id=788, 1849.91125pt x 1015.795pt>
 File: images/frontend_prediction_6.png Graphic file (type png)
 <use images/frontend_prediction_6.png>
 Package pdftex.def Info: images/frontend_prediction_6.png  used on input line 53.
 (pdftex.def)             Requested size: 435.32422pt x 239.03735pt.
 
 
-[41 <./images/frontend_loading.png> <./images/frontend_loaded.png>]
-<images/esquema_despliegue.png, id=798, 1351.0475pt x 596.2275pt>
+[40 <./images/frontend_loading.png> <./images/frontend_loaded.png>]
+<images/esquema_despliegue.png, id=796, 1351.0475pt x 596.2275pt>
 File: images/esquema_despliegue.png Graphic file (type png)
 <use images/esquema_despliegue.png>
 Package pdftex.def Info: images/esquema_despliegue.png  used on input line 71.
 (pdftex.def)             Requested size: 435.32422pt x 192.10677pt.
 
 
-[42 <./images/frontend_prediction_6.png>])
+[41 <./images/frontend_prediction_6.png>])
 
-[43 <./images/esquema_despliegue.png>]
+[42 <./images/esquema_despliegue.png>]
 Cap\'{\i }tulo 5.
 (./cap5.tex
 
-[44
+[43
 
 ])
 
-[45]
+[44]
 Cap\'{\i }tulo 6.
 (./cap6.tex
 
-[46
+[45
 
 ])
 
-[47]
+[46]
 Cap\'{\i }tulo 7.
 (./cap7.tex
 LaTeX Font Info:    Faking \texteuro for font family fve
@@ -1559,11 +1556,11 @@ LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 (Font)              scaled to size 7.5599pt on input line 48.
 )
 
-[48
+[47
 
 ]
 
-[49]
+[48]
 Underfull \hbox (badness 1755) in paragraph at lines 400--401
 []\T1/fve/m/sc/12 (+20) W. S. Mc-Cu-lloch and W. Pitts, "A lo-gi-cal cal-cu-lus of the ideas im-ma-nent
  []
@@ -1600,7 +1597,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
 
 
-[50
+[49
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 439--440
@@ -1623,11 +1620,8 @@ Underfull \hbox (badness 4792) in paragraph at lines 457--458
  []
 
 
-Package natbib Warning: There were undefined citations.
 
-
-
-[51] (./memtfg.aux)
+[50] (./memtfg.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
@@ -1640,18 +1634,18 @@ Package rerunfilecheck Info: File `memtfg.out' has not changed.
 (rerunfilecheck)             Checksum: 2A7D36F69CA687B23BBEBFE566BA12D9;9432.
  ) 
 Here is how much of TeX's memory you used:
- 22556 strings out of 473254
- 367812 string characters out of 5717961
+ 22555 strings out of 473254
+ 367805 string characters out of 5717961
  918445 words of memory out of 5000000
  44782 multiletter control sequences out of 15000+600000
  670200 words of font info for 360 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1075b,709s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (62 pages, 2916590 bytes).
+Output written on memtfg.pdf (61 pages, 2915576 bytes).
 PDF statistics:
- 946 PDF objects out of 1000 (max. 8388607)
- 783 compressed objects within 8 object streams
- 201 named destinations out of 1000 (max. 500000)
+ 943 PDF objects out of 1000 (max. 8388607)
+ 781 compressed objects within 8 object streams
+ 200 named destinations out of 1000 (max. 500000)
  109155 words of extra memory for PDF output out of 128383 (max. 10000000)
 
