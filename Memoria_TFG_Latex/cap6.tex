@@ -1,15 +1,31 @@
-In this work, a weather variable forecasting system has been developed, capable of generalizing and making predictions for previously unseen locations. Various alternatives in the field of deep learning have been studied, and it has been observed that LSTM models provide the best results among the models evaluated. Furthermore, these results have proven to be strong—surpassing those of traditional time series forecasting models, and even outperforming recent research efforts.
+In this work, a system for predicting meteorological variables has been developed, capable of generalizing and making predictions in previously unseen locations.
+Various alternatives within the field of deep learning have been studied, and it has been observed that LSTM models provide the best results among all the models analyzed.
+Furthermore, it has been verified that these results are solid — they outperform traditional models for time series prediction and exceed the results of other recent research efforts.
 
-A complete workflow has been established, from data acquisition, processing, and cleaning, to the design and implementation of forecasting models. Extensive testing of different hypotheses and configurations has been conducted, with the aim of achieving optimal performance for the problem at hand.
+A complete workflow has been implemented, from data acquisition, processing, and cleaning, to the creation of predictive models.
+Extensive testing of different theories and configurations has been carried out in order to obtain the best possible results for this problem.
 
-One of the most notable findings is that, when analyzing the size of the input data window, better predictions are obtained using a small number of past measurements—up to one day—than with longer periods. This is particularly useful, as it allows the number of required measurements for making a prediction to be reduced, making the models more practical for real-world applications.
+One of the most relevant findings is that, when analyzing the size of the input time window, using only a few measurements — at most one day — results in better predictions than using longer periods.
+This is particularly useful, as it reduces the number of required measurements for making a prediction, making the models more practical for real-world use.
 
-In addition, a web application has been developed, enabling any user to easily generate forecasts. This application allows the user to select a Grafcan station and obtain a temperature forecast for the upcoming hours. This serves as a proof of concept for the applicability of the developed system and its potential for real-world deployment. The solution is modular and scalable, representing a serious proposal for production use.
+Additionally, it has been observed that using a greater number of measurement points in the training set improves prediction accuracy.
+In contrast, the use of synthetic noise to augment the training set has been discarded, at least for the meteorological variables analyzed.
+
+Regarding model architecture, it is concluded that the most effective configurations are relatively simple, consisting of a bidirectional LSTM layer followed by dense layers with few neurons, without the need for regularization techniques such as dropout.
+This simplicity facilitates both efficient training and inference.
+
+Finally, a web application has been developed to allow any user to make predictions easily.
+This application enables users to select a GRAFCAN station and obtain the temperature forecast for the upcoming hours.
+This represents a proof of concept for the applicability of the developed system and its potential for real-world deployment.
+The solution is modular and scalable, making it a serious candidate for production use.
 
 \section{Future Work}
 
-It has been demonstrated that increasing the number of measurement points used in the construction of the training set improves forecasting accuracy. The intelligent scaling of this set, including geographic information such as altitude and coordinates, as well as the construction of a mesh of measurement points, represents a promising direction for future research.
+It has been confirmed that increasing the number of measurement points in the training dataset improves prediction results.
+The intelligent scaling of this dataset, including geographic information such as altitude and coordinates, as well as the construction of a grid of measurement points, could constitute a future line of work.
 
-Additionally, it has been observed that the use of additional covariates—such as humidity or atmospheric pressure, in the case of temperature forecasting—improves prediction accuracy. Further exploration of these and other covariates may enhance forecasting results.
+Moreover, it has been observed that the inclusion of additional covariates, such as humidity or atmospheric pressure (in the case of temperature prediction), enhances model accuracy.
+Studying these covariates and incorporating others could further improve results.
 
-Finally, although several deep learning models have been evaluated, many other approaches were not explored in this study. The investigation of state-of-the-art models, such as Transformers, constitutes another promising area for future work.
+Finally, although several deep learning models have been studied, many alternatives were not explored in this work.
+Investigating state-of-the-art models such as transformers represents another promising direction for future research.

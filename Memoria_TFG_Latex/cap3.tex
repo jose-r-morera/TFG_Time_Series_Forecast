@@ -1,7 +1,7 @@
 Se desarrollan 4 modelos: un modelo ARIMA como base de comparación, un modelo LSTM, un modelo CNN y un híbrido LSTM-CNN.
 
 \section{ARIMA}
-Los modelos ARIMA (Autoregressive Integrated Moving Average) son una tipo de modelos estadísticos utilizados históricamente para el análisis y la predicción de series temporales
+Los modelos ARIMA (Autoregressive Integrated Moving Average) son un tipo de modelos estadísticos utilizados históricamente para el análisis y la predicción de series temporales
 univariable. 
 
 Utilizamos como base de comparación los resultados de un ARIMA para cada serie temporal: cada variable en cada ubicación y cada fuente de datos.
@@ -20,14 +20,14 @@ que permite visualizar la función de autocorrelación parcial (PACF) de la seri
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/arima_pacf_hum.png}
-    \caption{Gráfico de PACF para la serie de humedad relativa en La Laguna de Grafcan}
+    \caption{Gráfico de PACF para la serie de humedad relativa en La Laguna de GRAFCAN}
     \label{arima_pacf_hum}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/arima_pacf_pres.png}
-    \caption{Gráfico de PACF para la serie de presión atmosférica en La Laguna de Grafcan}
+    \caption{Gráfico de PACF para la serie de presión atmosférica en La Laguna de GRAFCAN}
     \label{arima_pacf_pres}
 \end{figure}
 
@@ -115,14 +115,14 @@ no existe un punto de corte claro, sino que existe un descenso suave y progresiv
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/arima_acf_temp.png}
-    \caption{Gráfico de ACF para la serie de temperatura del aire en La Laguna de Grafcan}
+    \caption{Gráfico de ACF para la serie de temperatura del aire en La Laguna de GRAFCAN}
     \label{acf_arima_temp}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/arima_acf_pres.png}
-    \caption{Gráfico de ACF para la serie de presión atmosférica en La Laguna de Grafcan}
+    \caption{Gráfico de ACF para la serie de presión atmosférica en La Laguna de GRAFCAN}
     \label{acf_arima_pres}
 \end{figure}
 
@@ -214,7 +214,7 @@ en rejilla (grid search), que consiste en definir un espacio de búsqueda para l
 emplea la media de los resultados.
 
 \subsection{CNN}
-Las redes convolucionales (CNN) son un tipo de red neuronal diseñadas originalmente para procesar datos con estructura de cuadrícula (como imágenes), pero también se pueden aplicar a series temporales (1D).
+Las redes convolucionales (CNN) son un tipo de red neuronal diseñada originalmente para procesar datos con estructura de cuadrícula (como imágenes), pero también se pueden aplicar a series temporales (1D).
 Su base es la convolución, una operación en la que uno o varios filtros (o núcleos) se deslizan sobre la entrada, calculando productos escalares para extraer características locales relevantes.
 Cada filtro tiene un tamaño (kernel size) y avanza con un paso (stride) determinado; además, puede aplicarse padding (relleno) para controlar las dimensiones de la salida.
 En una capa suelen existir múltiples filtros distintos, de manera que cada uno aprende a detectar un patrón diferente (por ejemplo, tendencias, picos o frecuencias concretas en series temporales).
@@ -223,7 +223,7 @@ Tras las capas convolucionales, es común intercalar capas de pooling (submuestr
 Durante el entrenamiento de la red, los pesos de los filtros se ajustan para minimizar el error de predicción.
 
 Se muestra el pseudocódigo del modelo CNN desarrollado para este trabajo en la figura \ref{cnn_model}. Se descarta el uso de pooling tras estudiar varias alternativas, ya que no se observa mejora en 
-el rendimiento del modelo. También se contempla el uso de múltiples capas de convolución, tanto en el flujo de datos pasado, como en el futuro o después de concatenarlo, así como apiladadas. 
+el rendimiento del modelo. También se contempla el uso de múltiples capas de convolución, tanto en el flujo de datos pasado, como en el futuro o después de concatenarlo, así como apiladas. 
 Sin embargo, el mejor modelo es el que se muestra, con una sola capa de convolución en los datos pasados, una capa densa para los futuros y otra densa para la salida.
 Cabe destacar el uso de relleno o padding de tipo causal que evita que la red vea datos futuros al realizar la convolución, lo que es especialmente importante en series temporales, puesto que es 
 importante que la red no tenga acceso a información futura y entienda la causalidad.
@@ -288,7 +288,7 @@ una capa densa para los datos futuros y una capa densa para la salida. El modelo
 \begin{figure}[H]
 {\small
 \hrule
-{\bf\small Pseudocódigo para el modelo hírbrido CNN + BiLSTM}
+{\bf\small Pseudocódigo para el modelo híbrido CNN + BiLSTM}
 \hrule
 \begin{center}
 \begin{tabbing}
@@ -345,27 +345,27 @@ Ubicación & Fuente & ARIMA & LSTM & ARIMA & LSTM & ARIMA & LSTM \\
 \midrule
 \multirow{2}{*}{Arona}
   & Open-Meteo    & 1,088 & 0,630 & 0,634 & 0,486 & 7,149 & 6,047 \\
-  & Grafcan       & 1,263 & 0,697 & 0,556 & 0,446 & 6,242 & 4,935 \\
+  & GRAFCAN       & 1,263 & 0,697 & 0,556 & 0,446 & 6,242 & 4,935 \\
 \addlinespace
 \multirow{2}{*}{La Orotava}
   & Open-Meteo    & 0,917 & 0,496 & 0,685 & 0,446 & 6,672 & 5,664 \\
-  & Grafcan       & 1,344 & 0,832 & 0,592 & 0,500 & 4,961 & 4,789 \\
+  & GRAFCAN       & 1,344 & 0,832 & 0,592 & 0,500 & 4,961 & 4,789 \\
 \addlinespace
 \multirow{2}{*}{La Laguna 1}
   & Open-Meteo    & 0,806 & 0,385 & 0,617 & 0,376 & 5,606 & 4,102 \\
-  & Grafcan       & 0,902 & 0,699 & 0,507 & 0,408 & 5,419 & 5,236 \\
+  & GRAFCAN       & 0,902 & 0,699 & 0,507 & 0,408 & 5,419 & 5,236 \\
 \addlinespace
 \multirow{2}{*}{La Laguna 2}
   & Open-Meteo    & 1,157 & 0,497 & 0,605 & 0,378 & 7,472 & 5,710 \\
-  & Grafcan       & 1,049 & 0,621 & 0,563 & 0,404 & 5,707 & 5,011 \\
+  & GRAFCAN       & 1,049 & 0,621 & 0,563 & 0,404 & 5,707 & 5,011 \\
 \addlinespace
 \multirow{2}{*}{Santa Cruz}
   & Open-Meteo    & 0,806 & 0,404 & 0,609 & 0,375 & 5,606 & 4,058 \\
-  & Grafcan       & 1,335 & 0,832 & 1,192 & 0,437 & 4,973 & 5,125 \\
+  & GRAFCAN       & 1,335 & 0,832 & 1,192 & 0,437 & 4,973 & 5,125 \\
 \addlinespace
 \multirow{2}{*}{Garachico}
   & Open-Meteo    & 0,850 & 0,612 & 0,628 & 0,666 & 6,331 & 5,817 \\
-  & Grafcan       & 1,434 & 0,991 & 0,513 & 0,690 & 5,461 & 5,760 \\
+  & GRAFCAN       & 1,434 & 0,991 & 0,513 & 0,690 & 5,461 & 5,760 \\
 \bottomrule
 \end{tabular}
 \caption{Comparativa inicial de modelos ARIMA y LSTM con predicciones de 3 horas} 
@@ -406,7 +406,7 @@ Hybrid &       0.6897        &      5.7855           &   0.5258                 
 \label{comparativa_inicial_neuronal}
 \end{table}  
 
-El modelo LSTM se muestra como el mejor en todas las variables, destacando en la presión atmosférica. Si bien, las otras alternativas tienen unos resultados reslativamente similares,
+El modelo LSTM se muestra como el mejor en todas las variables, destacando en la presión atmosférica. Si bien, las otras alternativas tienen unos resultados relativamente similares,
 lo cual es razonable puesto que las arquitecturas también son similares.
 El modelo híbrido no se muestra como una mejora significativa respecto a los modelos LSTM o CNN, lo que sugiere que la combinación de ambos enfoques no aporta beneficios adicionales en este caso.
 
@@ -562,6 +562,8 @@ lo que indica que el modelo generaliza bien.
 13: \> $salida$ = Dense(unidades=$forecast_length$)($merged$) \\
 14: \> \# Construir y compilar el modelo \\
 15: \> modelo = Modelo(entradas=[ $entrada\_pasado$, $entrada\_futuro$ ], salidas=$salida$) \\
+16: \> compilar(modelo, optimizador=Adam($learning\_rate$), pérdida='MSE') \\
+27: \> {\bf Retornar} modelo \\
 \end{tabbing}
 \end{center}
 }
@@ -593,15 +595,11 @@ lo que indica que el modelo generaliza bien.
 14: \> \# Capas densas finales \\
 15: \> $merged$ = Dense(unidades=$4 \times forecast\_length$)($merged$) \\
 16: \> $salida$ = Dense(unidades=$forecast\_length$)($merged$) \\
-17: \> \# Construir y compilar el modelo \\
-18: \> modelo = Modelo(entradas=[ $entrada\_pasado$, $entrada\_futuro$ ], salidas=$salida$) \\
-19: \> compilar(modelo, optimizador=Adam($learning\_rate$), pérdida='MSE') \\
-20: \> {\bf Retornar} modelo \\
 \end{tabbing}
 \end{center}
 }
 \hrule
-\caption{Pseudocódigo para el modelo de temperatura a 6horas}
+\caption{Pseudocódigo para el modelo de temperatura a 6 horas}
 \label{lstm_model_temp_6h}
 \end{figure}
 
@@ -636,11 +634,6 @@ lo que indica que el modelo generaliza bien.
 \end{figure}
 
 
-% \begin{figure}[H]
-% {\small
-% \hrule
-% {\bf\small Pseudocódigo para el modelo LSTM de temperatura del aire}
-% }
 \begin{table}[h!]
 \centering
 \begin{tabular}{|l|c|c|c|}
@@ -809,7 +802,7 @@ a la naturaleza de las variables, con comportamientos difíciles de predecir en 
     \label{temp_sct_error}
 \end{figure}
 
-En general, los resultados son satisfactorios, destacando la capacidad de los modelos para predecir adecuadamente las tendencias de las varibales.
+En general, los resultados son satisfactorios, destacando la capacidad de los modelos para predecir adecuadamente las tendencias de las variables.
 
 Para contextualizar los resultados obtenidos, se comparan con otros trabajos similares.
 Esta comparativa es meramente orientativa, debido a que las condiciones meteorológicas pueden variar entre distintas ubicaciones.

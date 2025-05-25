@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  24 MAY 2025 23:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  25 MAY 2025 01:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1004,6 +1004,38 @@ Overfull \hbox (2.63512pt too wide) detected at line 35
  []
 
 
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\hbox' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\tf@size' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sf@size' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\ssf@size' on input line 36.
+
+[3
+
+]
 Overfull \hbox (2.63512pt too wide) detected at line 36
 \T1/fve/m/n/12 3.16. 
  []
@@ -1014,38 +1046,6 @@ Overfull \hbox (2.63512pt too wide) detected at line 37
  []
 
 
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 38.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 38.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\tf@size' on input line 38.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 38.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sf@size' on input line 38.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<def>-command' on input line 38.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\ssf@size' on input line 38.
-
-[3
-
-]
 Overfull \hbox (2.63512pt too wide) detected at line 38
 \T1/fve/m/n/12 3.18. 
  []
@@ -1187,6 +1187,10 @@ l.88 \newpage
 Cap\'{\i }tulo 2.
 (./cap2.tex
 
+Package natbib Warning: Citation `GRAFCAN_sensores' on page 4 undefined on input line 15.
+
+
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
@@ -1202,10 +1206,10 @@ Package pdftex.def Info: images/mapa_estaciones.png  used on input line 43.
 (pdftex.def)             Requested size: 290.22107pt x 253.56227pt.
 LaTeX Font Info:    Font shape `T1/fve/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 61.
-<images/node-red_grafcan.png, id=508, 1927.2pt x 1084.05pt>
-File: images/node-red_grafcan.png Graphic file (type png)
-<use images/node-red_grafcan.png>
-Package pdftex.def Info: images/node-red_grafcan.png  used on input line 66.
+<images/node-red_GRAFCAN.png, id=508, 1927.2pt x 1084.05pt>
+File: images/node-red_GRAFCAN.png Graphic file (type png)
+<use images/node-red_GRAFCAN.png>
+Package pdftex.def Info: images/node-red_GRAFCAN.png  used on input line 66.
 (pdftex.def)             Requested size: 483.69687pt x 272.07048pt.
 
 
@@ -1421,7 +1425,7 @@ Package pdftex.def Info: images/noise_past_data.png  used on input line 517.
 
 
 [32]
-<images/noise_y.png, id=727, 803.0pt x 378.41376pt>
+<images/noise_y.png, id=728, 803.0pt x 378.41376pt>
 File: images/noise_y.png Graphic file (type png)
 <use images/noise_y.png>
 Package pdftex.def Info: images/noise_y.png  used on input line 524.
@@ -1438,22 +1442,22 @@ Package pdftex.def Info: images/noise_y.png  used on input line 524.
 <images/grafico_f12_temp.png, id=757, 1003.8303pt x 426.393pt>
 File: images/grafico_f12_temp.png Graphic file (type png)
 <use images/grafico_f12_temp.png>
-Package pdftex.def Info: images/grafico_f12_temp.png  used on input line 786.
+Package pdftex.def Info: images/grafico_f12_temp.png  used on input line 779.
 (pdftex.def)             Requested size: 338.58632pt x 143.8201pt.
 <images/grafico_f12_pres.png, id=758, 1003.8303pt x 426.393pt>
 File: images/grafico_f12_pres.png Graphic file (type png)
 <use images/grafico_f12_pres.png>
-Package pdftex.def Info: images/grafico_f12_pres.png  used on input line 793.
+Package pdftex.def Info: images/grafico_f12_pres.png  used on input line 786.
 (pdftex.def)             Requested size: 338.58632pt x 143.8201pt.
 <images/grafico_f12_hum.png, id=759, 1003.8303pt x 426.393pt>
 File: images/grafico_f12_hum.png Graphic file (type png)
 <use images/grafico_f12_hum.png>
-Package pdftex.def Info: images/grafico_f12_hum.png  used on input line 800.
+Package pdftex.def Info: images/grafico_f12_hum.png  used on input line 793.
 (pdftex.def)             Requested size: 338.58632pt x 143.8201pt.
 <images/grafico_f12_temp_mal.png, id=760, 1003.8303pt x 426.393pt>
 File: images/grafico_f12_temp_mal.png Graphic file (type png)
 <use images/grafico_f12_temp_mal.png>
-Package pdftex.def Info: images/grafico_f12_temp_mal.png  used on input line 807.
+Package pdftex.def Info: images/grafico_f12_temp_mal.png  used on input line 800.
 (pdftex.def)             Requested size: 338.58632pt x 143.8201pt.
 
 
@@ -1497,19 +1501,21 @@ Package pdftex.def Info: images/esquema_despliegue.png  used on input line 71.
 
 [43 <./images/esquema_despliegue.png>]
 Cap\'{\i }tulo 5.
-(./cap5.tex)
+(./cap5.tex
 
 [44
 
-]
+])
 
 [45]
 Cap\'{\i }tulo 6.
-(./cap6.tex)
+(./cap6.tex
 
 [46
 
-]
+])
+
+[47]
 Cap\'{\i }tulo 7.
 (./cap7.tex
 LaTeX Font Info:    Faking \texteuro for font family fve
@@ -1549,11 +1555,11 @@ LaTeX Font Info:    Font shape `T1/fve/m/n' will be
 (Font)              scaled to size 7.5599pt on input line 48.
 )
 
-[47
+[48
 
 ]
 
-[48]
+[49]
 Underfull \hbox (badness 1755) in paragraph at lines 398--399
 []\T1/fve/m/sc/12 (+20) W. S. Mc-Cu-lloch and W. Pitts, "A lo-gi-cal cal-cu-lus of the ideas im-ma-nent
  []
@@ -1590,7 +1596,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 431--432
 
 
 
-[49
+[50
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 437--438
@@ -1613,8 +1619,11 @@ Underfull \hbox (badness 4792) in paragraph at lines 455--456
  []
 
 
+Package natbib Warning: There were undefined citations.
 
-[50] (./memtfg.aux)
+
+
+[51] (./memtfg.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
@@ -1624,21 +1633,21 @@ L3 programming layer <2024-12-09>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `memtfg.out' has not changed.
-(rerunfilecheck)             Checksum: 832E878E0D2801345C29D7D7F8BCAEC0;9432.
+(rerunfilecheck)             Checksum: 2A7D36F69CA687B23BBEBFE566BA12D9;9432.
  ) 
 Here is how much of TeX's memory you used:
- 22564 strings out of 473254
- 367869 string characters out of 5717961
- 917407 words of memory out of 5000000
+ 22559 strings out of 473254
+ 367825 string characters out of 5717961
+ 918408 words of memory out of 5000000
  44782 multiletter control sequences out of 15000+600000
- 670935 words of font info for 366 fonts, out of 8000000 for 9000
+ 670445 words of font info for 362 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,13n,93p,1075b,709s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fveb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fver8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
-Output written on memtfg.pdf (61 pages, 2906180 bytes).
+Output written on memtfg.pdf (62 pages, 2907914 bytes).
 PDF statistics:
- 940 PDF objects out of 1000 (max. 8388607)
- 778 compressed objects within 8 object streams
- 200 named destinations out of 1000 (max. 500000)
+ 945 PDF objects out of 1000 (max. 8388607)
+ 782 compressed objects within 8 object streams
+ 201 named destinations out of 1000 (max. 500000)
  109155 words of extra memory for PDF output out of 128383 (max. 10000000)
 
