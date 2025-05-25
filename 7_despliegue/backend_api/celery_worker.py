@@ -41,15 +41,19 @@ def init_worker(**kwargs):
     try:
         # Build the same architecture before loading weights
         past_data_shape = [17, 7]  # (time_steps, num_features)
-        future_data_shape = [3, 4]  # (time_steps, num_features)
+        future_data_shape = [6, 4]  # (time_steps, num_features)
         input_shape = (past_data_shape, future_data_shape)
-        target_shape=3
-        # Encoder part (LSTM for past data)
-        past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-        past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
-
-        # Decoder part (LSTM for future exogenous features)
+        target_shape=6
+        
+        # Input layers
+        past_data_layer   = tf.keras.layers.Input(shape=past_data_shape,   name="past_data")
         future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
+
+        # Past data 
+        past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(65, return_sequences=False))(past_data_layer)
+        past_lstm = tf.keras.layers.Dense(65)(past_lstm)
+
+        # Future
         future_lstm = tf.keras.layers.LSTM(4, return_sequences=False)(future_data_layer)
 
         # Combine the outputs of encoder and decoder (you can concatenate or merge them)
@@ -57,12 +61,13 @@ def init_worker(**kwargs):
         merged = tf.keras.layers.concatenate([past_lstm, future_lstm, future_residue])
 
         # Final output layer
+        merged = tf.keras.layers.Dense(4* target_shape)(merged)
         outputs = tf.keras.layers.Dense(target_shape)(merged)
 
         # Create the model
         model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)
         model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.002), loss="mse")
-        model.load_weights("t_f3_2849.weights.h5")
+        model.load_weights("t_f6_4508.weights.h5")
 
         logger.info("✅ Model loaded successfully with shape %s", input_shape)
     except Exception as e:

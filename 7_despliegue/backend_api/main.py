@@ -171,15 +171,17 @@ async def submit_prediction(request: PredictionRequest):
     save_input_tensor_channels(past_input_tensor, "0000", Path("debug_inputs"))
     
     # Build future data input tensor
-    future_timesteps = 3
+    future_timesteps = 6
     future_tensor = []
     for t in range(future_timesteps):
         timestep_features = []
         # add 1 hour to last timestamp
-        date = date + timedelta(hours=t+1)
+        date = date + timedelta(hours=1)
+        ## print("Future date ",t, ": ", date)
         timestep_features.extend(compute_time_features(date))
         future_tensor.append(timestep_features)
-        
+    
+    # print("Future tensor", future_tensor)
     future_input_tensor = np.array(future_tensor, dtype=np.float32).reshape(1, future_timesteps, -1)
     save_input_tensor_channels(future_input_tensor, "0001", Path("debug_inputs"))
 
