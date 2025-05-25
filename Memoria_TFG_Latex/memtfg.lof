@@ -39,8 +39,8 @@
 \contentsline {figure}{\numberline {3.19}{\ignorespaces Pseudocódigo para el modelo de temperatura a 12 horas}}{35}{figure.caption.44}%
 \contentsline {figure}{\numberline {3.20}{\ignorespaces Pseudocódigo del modelo BiLSTM para la humedad relativa}}{36}{figure.caption.46}%
 \contentsline {figure}{\numberline {3.21}{\ignorespaces Pseudocódigo del modelo BiLSTM para la presión atmosférica}}{37}{figure.caption.48}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Predicciones de temperatura del aire en Santa Cruz de Tenerife}}{38}{figure.caption.50}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Predicciones de presión atmosférica en Santa Cruz de Tenerife}}{38}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Predicciones de presión atmosférica en Santa Cruz de Tenerife}}{38}{figure.caption.50}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Predicciones de temperatura del aire en Santa Cruz de Tenerife}}{38}{figure.caption.51}%
 \contentsline {figure}{\numberline {3.24}{\ignorespaces Predicciones de humedad relativa en Santa Cruz de Tenerife}}{38}{figure.caption.52}%
 \contentsline {figure}{\numberline {3.25}{\ignorespaces Predicciones de temperatura del aire en Santa Cruz de Tenerife 2}}{38}{figure.caption.53}%
 \addvspace {10\p@ }

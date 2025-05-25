@@ -427,29 +427,35 @@ Finalmente, se estudia el uso de capas de atención (attention layers) en los mo
 Sin embargo, tras probar distintos tipos de atención en distintos puntos de la red, no se detecta mejora.
 
 \subsection{Número de estaciones}
-Se estudia el impacto del número de estaciones en la precisión de los modelos. Se entrena un modelo LSTM sobre la serie de temperatura empleando diferente número de estaciones.
-Para realizar la comparativa, se mide el RMSE de validación de cada modelo obtenido. Los resultados se muestran en la tabla \ref{estaciones_y_error}. Observamos que cuando se entrena utilizando 2 estaciones los resultados son peores que el promedio de ambas.
-Esto puede explicarse porque cuando se entrenaba con una sola estación el modelo se especializaba en su comportamiento. Sin embargo, vemos que a medida que se añaden estaciones la 
-diferencia entre los resultados del modelo entrenado con todas las estaciones y el promedio de cada estación se reduce, lo que refleja el aumento de la capacidad de generalización del modelo.
+Se estudia el impacto del número de estaciones en la precisión de los modelos. Se entrena un modelo LSTM sobre cada variable con un horizonte de 3 horas y empleando diferente número de estaciones.
+Para realizar la comparativa, se mide el RMSE de validación de cada modelo obtenido y en el caso de los modelos de más de una estación, se muestra la media de los errores de los modelos específicos de cada
+estación que los compone como referencia. Los resultados se muestran en la tabla \ref{estaciones_y_error}. Observamos que cuando se entrena utilizando 2 estaciones los resultados son peores que el promedio de ambas.
+Esto podría explicarse debido a que cuando el modelo se entrena con una sola estación se especializa en el comportamiento de esta, mientras que al combinar estaciones estos patrones son más complejos.
+Vemos que a medida que se añaden estaciones la diferencia entre los resultados del modelo entrenado con varias estaciones y el promedio de cada estación se reduce, lo que refleja el aumento de la capacidad de generalización del modelo.
+En particular, en el caso de la humedad, vemos que la precisión del modelo que se ha entrenado con todas las estaciones consigue superar el rendimiento de los modelos individuales, lo que refuerza la teoría de que 
+un mayor número de puntos de información puede ayudar a mejorar los resultados del modelo.
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{lcccc}
+\begin{tabular}{lccccccccc}
 \toprule
-\textbf{Ubicaciones} & \textbf{rmse} & \textbf{media} \\
+\textbf{Ubicaciones} & \multicolumn{2}{c}{\textbf{Temperatura del aire}} & \multicolumn{2}{c}{\textbf{Humedad relativa}} & \multicolumn{2}{c}{\textbf{Presión atmosférica}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+& \textbf{RMSE} & \textbf{Media} & \textbf{RMSE} & \textbf{Media} & \textbf{RMSE} & \textbf{Media} \\
 \midrule
-Arona                    & 0.6766677965 & \\
-Orotava                  & 0.7597793601 & \\
-La Laguna                & 0.5974298339 & \\
-Punta Hidalgo            & 0.6190961388 & \\
-Arona + Orotava          & 0.7563391658 & 0.7182235783 \\
-Arona + Orotava + Laguna & 0.7068679189 & 0.6779589968 \\
-TODOS                    & 0.6851888257 & 0.6632432823 \\
+Arona                    & 0.6767 &         & 6.2273 &        &  0.3603 &        \\
+Orotava                  & 0.7598 &         & 7.0478 &        &  0.3427  &        \\
+La Laguna                & 0.5974 &         & 5.6471 &        &  0.3187 &        \\
+Punta Hidalgo            & 0.6191 &         & 5.9706 &        &  0.3264 &        \\
+Arona + Orotava          & 0.7563 & 0.7182 & 6.8952 & 6.6375 &  0.6017 &  0.3515 \\
+Arona + Orotava + Laguna & 0.7069 & 0.6780 & 6.2442 & 6.3074 & 0.4451 & 0.3406 \\
+TODOS                    & 0.6852 & 0.6632 & 5.7934 & 6.2232 & 0.4202 & 0.3370 \\
 \bottomrule
 \end{tabular}
-\caption{Error de validación en función de las estaciones usadas}
+\caption{Error de validación en función de las estaciones usadas para temperatura, humedad y presión}
 \label{estaciones_y_error}
 \end{table}
+
 
 \subsection{Tamaño de la ventana}
 Se estudia exhaustivamente el número de horas previas $P$ que contiene la ventana. Para ello, se construyen datasets desde $P$=6 hasta $P$=48 y se evalúan en los modelos 
@@ -769,10 +775,17 @@ Santa Cruz &    0.4077            &     0.6341       &    0.9809                
 
 \subsection{Evaluación de los resultados}
 Se decide graficar las predicciones para tener una mejor comprensión de los resultados obtenidos. Se muestran comparativas entre las predicciones a 12 horas y los valores
-reales para el conjunto de test de Santa Cruz de Tenerife. En las figuras \ref{temp_sct}, \ref{pres_sct} se ven ejemplos de predicciones muy acertadas. 
+reales para el conjunto de test de Santa Cruz de Tenerife. En las figuras \ref{pres_sct}, \ref{temp_sct} se ven ejemplos de predicciones bastante acertadas. 
 En el caso de la figura \ref{hum_sct}, se observa que el modelo predice adecuadamente la tendencia, si bien existe un valle repentino, que quizás pudiera ser ruido del sensor.
 Por otra parte, existen situaciones en las que los resultados se alejan de los valores reales, como se observa en la figura \ref{temp_sct_error}. Esto puede deberse
 a la naturaleza de las variables, con comportamientos difíciles de predecir en ocasiones, o por otra parte, a la falta de contexto e información necesaria para hacer una predicción precisa.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/grafico_f12_pres.png}
+    \caption{Predicciones de presión atmosférica en Santa Cruz de Tenerife}
+    \label{pres_sct}
+\end{figure}    
 
 \begin{figure}
     \centering
@@ -781,12 +794,6 @@ a la naturaleza de las variables, con comportamientos difíciles de predecir en 
     \label{temp_sct}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/grafico_f12_pres.png}
-    \caption{Predicciones de presión atmosférica en Santa Cruz de Tenerife}
-    \label{pres_sct}
-\end{figure}    
 
 \begin{figure}
     \centering

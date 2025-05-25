@@ -8,15 +8,15 @@ import matplotlib.pyplot as plt
 # VARIABLES #
 
 # FILES = { "santa_cruz": ["grafcan_santa_cruz_features.csv", "openmeteo_santa_cruz_features.csv"]}
-#FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],}
-#FILES = {"la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],}
-#FILES = {"la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],}
+
+# FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],}
+# FILES = {"la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],}
+# FILES = {"la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],}
 # FILES = {"punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],}
 
 # FILES = {"arona": ["grafcan_arona_features.csv", "openmeteo_arona_features.csv"],
 #         "la_orotava": ["grafcan_la_orotava_features.csv", "openmeteo_la_orotava_features.csv"],
-#         # "la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"],
-# #          "punta_hidalgo": ["grafcan_punta_hidalgo_features.csv", "openmeteo_punta_hidalgo_features.csv"],
+#         # "la_laguna": ["grafcan_la_laguna_features.csv", "openmeteo_la_laguna_features.csv"], 
 # }
 
 FILES = {
@@ -30,7 +30,7 @@ FILES = {
 DATASETS_PATH = "../1_data_preprocessing/processed_data/"
 
 #PAST_N = 13 # Number of past time steps to use as input
-FUTURE_N = 12 # Number of future time steps to predict
+FUTURE_N = 3 # Number of future time steps to predict
 STEP = 6 # Number of time steps to skip between each input sequence
 TRAIN_SPLIT = 0.9 # Percentage of data to use for training (0.85 = 85% train, 15% test)
 
@@ -40,7 +40,7 @@ NOISE_SAMPLE_RATE = 0 # Probability of adding a new synthetic sample to the trai
 NOISE_STD = 0.02 # Standard deviation of the noise to add to the samples
 
 # Output is stored as JSON
-OUTPUT_PATH = "f12/paquetes_s6_cov_full_"
+OUTPUT_PATH = "f3_estaciones/paquetes_s6_cov_full_"
 #OUTPUT_PATH = "paquetes_s6_augmented.pkl"
 
 ####################################################################################################
@@ -226,8 +226,8 @@ def create_processed_windows(past_n, future_n, step, train_percent, use_covariat
     pickle.dump({"train": train_data, "test": test_data}, f)
   print(f"Data saved to {out_path}")
 
-WINDOW_START = 6
-WINDOW_END = 48
+WINDOW_START = 24
+WINDOW_END = 24
 for past_n in range(WINDOW_START, WINDOW_END + 1):
   np.random.seed(17)
   random.seed(17)

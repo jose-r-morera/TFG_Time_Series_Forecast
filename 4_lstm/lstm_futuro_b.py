@@ -19,9 +19,9 @@ from custom_attention import CustomAttention
 # DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_orotava_p17.pkl"
 # DATA_PATH = "../3_data_windows/f6/paquetes_s6_cov_arona_laguna_orotava_p17.pkl"
 
-DATA_PATH = "../3_data_windows/f12/paquetes_s6_cov_full_p20.pkl"
+DATA_PATH = "../3_data_windows/f3_estaciones/paquetes_s6_cov_punta_hidalgo_p24.pkl"
 
-DATASET = "atmospheric_pressure"  # atmospheric_pressure or relative_humidity or air_temperature
+DATASET = "relative_humidity"  # atmospheric_pressure or relative_humidity or air_temperature
 
 BATCH_SIZE = 64
 SHUFFLE = True
@@ -94,8 +94,8 @@ def build_and_train_model(dataset_train):
     future_in = tf.keras.layers.Input(shape=future_shape, name="future_data")
 
     # Past data 
-    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(56, return_sequences=False))(past_in)
-    past_lstm = tf.keras.layers.Dense(58)(past_lstm)
+    past_lstm = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(42, return_sequences=False))(past_in)
+    past_lstm = tf.keras.layers.Dense(20)(past_lstm)
     
     # Future exogenous features
     future_dense = tf.keras.layers.Flatten()(future_in)
@@ -119,7 +119,7 @@ def build_and_train_model(dataset_train):
 # train_data, val_data = load_data("atmospheric_pressure")
 train_data, val_data = load_data(DATASET)
 # Ejecutar n veces y promediar el val_loss
-n_runs = 10
+n_runs = 6
 val_losses = []
 
 ## Callbacks
