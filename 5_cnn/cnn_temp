@@ -34,3 +34,8 @@ Minimum val_loss over 6 runs: 0.028992
 # Kernel = 3; filtros = 35
 Average val_loss over 6 runs: 0.029283 ± 0.000296
 Minimum val_loss over 6 runs: 0.028665
+
+################################
+con kernel = 2 y filtros = 42
+Average val_loss over 8 runs: 0.029275 ± 0.000161
+Minimum val_loss over 8 runs: 0.029033

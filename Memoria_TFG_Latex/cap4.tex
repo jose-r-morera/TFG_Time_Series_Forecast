@@ -1,7 +1,7 @@
 
 Se desea realizar un despliegue del proyecto, de forma que los modelos de predicción sean accesibles mediante una interfaz web. Específicamente, se plantea que cualquier usuario 
 pueda seleccionar una de las estaciones de GRAFCAN, y a partir de la misma, que la aplicación web devuelva la predicción de alguna de las variables meteorológicas en las próximas horas. 
-Se decide arbitrariamente acotar la predicción a la variable de temperatura y a las próximas 3 horas.
+Se decide arbitrariamente acotar la predicción a la variable de temperatura y a las próximas 6 horas.
 
 Se realiza una interfaz web sencilla como front-end, y un back-end que maneje la carga de trabajo de predicción. Las predicciones se ejecutan de forma asíncrona 
 para no bloquear la experiencia del usuario y permitir un cierto nivel de paralelismo.
@@ -21,7 +21,7 @@ Las características de la aplicación son las siguientes:
 \end{itemize}
 
 
-Para el desarrollo de la aplicación es necesario crear una serie de elementos denominados "componentes". Estos componentes son bloques de código que 
+Para el desarrollo de la aplicación es necesario crear una serie de elementos denominados \char`\"componentes". Estos componentes son bloques de código que 
 permiten crear una interfaz de usuario modular y reutilizable. En este caso, se crean, entre otros:
 \begin{itemize}
     \item \textbf{Dashboard}: Componente principal de la aplicación. Se encarga de gestionar el estado de la aplicación y de renderizar los demás componentes.
@@ -50,7 +50,7 @@ La figura \ref{frontend_loading} muestra un ejemplo de la interfaz web mientras 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/frontend_prediction.png}
+    \includegraphics[width=0.9\textwidth]{images/frontend_prediction_6.png}
     \caption{Interfaz web. Resultado de una predicción}
     \label{frontend_prediction}
 \end{figure}

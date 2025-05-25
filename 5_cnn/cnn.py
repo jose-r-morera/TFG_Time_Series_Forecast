@@ -90,19 +90,20 @@ def build_and_train_model(dataset_train):
     output_units = targets.shape[1]     # e.g., How many values to predict (e.g., 3-hour forecast)
     ########################################################################################
     past_data_layer = tf.keras.layers.Input(shape=past_data_shape, name="past_data")
-    x1 = tf.keras.layers.Conv1D(35, 3, activation='relu', padding='causal')(past_data_layer)
+    x1 = tf.keras.layers.Conv1D(42, 2, activation='relu', padding='causal')(past_data_layer)
     #x1 = tf.keras.layers.Conv1D(8, 2, activation='relu', padding='causal')(x1)
     
-    #x1 = tf.keras.layers.AveragePooling1D(pool_size=3)(x1)
+    x3 = tf.keras.layers.AveragePooling1D(pool_size=2)(x1)
+    x3 = tf.keras.layers.Flatten()(x3)
     x1 = tf.keras.layers.Flatten()(x1)
-
+    
     # Future data: Flatten + Dense compression
     future_data_layer = tf.keras.layers.Input(shape=future_data_shape, name="future_data")
     x2 = tf.keras.layers.Flatten()(future_data_layer)
     x2 = tf.keras.layers.Dense(4, activation='relu')(x2)
 
     # Combine and predict
-    y = tf.keras.layers.concatenate([x1, x2])
+    y = tf.keras.layers.concatenate([x1, x3, x2])
     outputs = tf.keras.layers.Dense(output_units, name='outputs')(y)
 
     model = tf.keras.Model(inputs=[past_data_layer, future_data_layer], outputs=outputs)

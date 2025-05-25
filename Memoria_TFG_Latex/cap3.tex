@@ -160,7 +160,7 @@ que se calcula como la raíz cuadrada de la media de los errores al cuadrado ent
 
 Se toma como ejemplo la serie de temperatura del aire en Arona de Open-Meteo, con un horizonte de predicción de 3 horas. En la figura \ref{arima_residuals} se observan los residuos (diferencia entre valor real y predicción), mientras que en \ref{arima_residuals_density} se observa la estimación de la distribución de la densidad de los residuos.
 Al estar centrada en 0 y tener una forma similar a la campana de Gauss, se puede concluir que el modelo ARIMA se ajusta bien a los datos. Finalmente, en la figura 
-\ref{arima_results_graph} se muestra un ejemplo de los resultados obtenidos.
+\ref{arima_results_graph} se muestra un ejemplo de los resultados obtenidos, comparando las predicciones, en rojo, con los valores reales, en azul.
 
 \begin{figure}
     \centering
@@ -205,7 +205,7 @@ Además, para controlar el entrenamiento se emplean dos funciones de retorno (ca
 \begin{itemize}
 \item \texttt{EarlyStopping}: detiene el entrenamiento si no se observa mejora en la métrica de validación durante un número determinado de épocas (patience). 
 De esta forma se intenta evitar el sobreajuste. Además, se guarda el modelo con la mejor métrica de validación.
-\item \texttt{ReduceLORonPlateau}: reduce la tasa de aprendizaje por un factor si no se observa mejora en la métrica de validación durante un número determinado de épocas (patience).
+\item \texttt{ReduceLRonPlateau}: reduce la tasa de aprendizaje por un factor si no se observa mejora en la métrica de validación durante un número determinado de épocas (patience).
 Se basa en la idea de que cuando el modelo no mejora, es posible que se encuentre cerca de un mínimo local y que una tasa de aprendizaje más baja pueda ayudar a acercarse más.
 \end{itemize}
 
@@ -327,7 +327,7 @@ Los ARIMA toman una serie temporal unidimensional para su entrenamiento, idealme
 una serie que no ha usado en su entrenamiento, a partir de una muestra pequeña, de menos de un día.  
 
 
-Debido a estas limitaciones, los ARIMA se suelen evaluar sobre el periodo posterior al entrenamiento, lo que contrata con el enfoque de validación que habíamos implementado 
+Debido a estas limitaciones, los ARIMA se suelen evaluar sobre el periodo posterior al entrenamiento, lo que contrasta con el enfoque de validación que habíamos implementado 
 en los modelos neuronales, usando un muestreo aleatorio de las ventanas en todo el período contemplado.
 Para comparar ambos modelos, se opta por emplear el mes de marzo de 2025, siendo ambos modelos entrenados con el intervalo de marzo de 2023 a febrero de 2025.  
 
@@ -411,7 +411,7 @@ lo cual es razonable puesto que las arquitecturas también son similares.
 El modelo híbrido no se muestra como una mejora significativa respecto a los modelos LSTM o CNN, lo que sugiere que la combinación de ambos enfoques no aporta beneficios adicionales en este caso.
 
 \section{Estudios empíricos}
-Se realizan diferentes experimentos sobre los modelos neuronales de cara a obtener el mejor rendimiento posible. Estas prueba se realizan sobre los modelos LSTM, al haberse
+Se realizan diferentes experimentos sobre los modelos neuronales de cara a obtener el mejor rendimiento posible. Estas pruebas se realizan sobre los modelos LSTM, al haberse
 elegido como el mejor modelo en la comparativa inicial. Se estudian los siguientes aspectos:
 
 \subsection{Características de los modelos}
@@ -424,7 +424,7 @@ Por otra parte, también se evalúa el uso de conexiones residuales (residual co
 Se observa que su uso mejora ligeramente el rendimiento de los modelos, por lo que se opta por incluirlas en las arquitecturas finales.
 
 Finalmente, se estudia el uso de capas de atención (attention layers) en los modelos LSTM. Introducidas por Bahdanau et al. \cite{bahdanau2014}, estas capas permiten que el modelo se enfoque en diferentes partes de la secuencia de entrada al hacer predicciones, lo que puede mejorar la capacidad del modelo para capturar patrones a largo plazo.
-estas capas permiten que el modelo se enfoque en diferentes partes de la secuencia de entrada al hacer predicciones, lo que puede mejorar la capacidad del modelo para capturar patrones a largo plazo. Sin embargo, tras probar distintos tipos de atención en distintos puntos de la red, no se detecta mejora.
+Sin embargo, tras probar distintos tipos de atención en distintos puntos de la red, no se detecta mejora.
 
 \subsection{Número de estaciones}
 Se estudia el impacto del número de estaciones en la precisión de los modelos. Se entrena un modelo LSTM sobre la serie de temperatura empleando diferente número de estaciones.
