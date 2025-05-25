@@ -16,8 +16,8 @@ Se han empleado 2 fuentes para recopilar las mediciones:
     \item \textbf{Open-Meteo}: API pública de código abierto que proporciona datos de múltiples proveedores de meteorología. Este servicio no dispone de estaciones de medición
     propias, sino que recopila pronósticos de diferentes modelos de predicción climatológica. 
 
-    Se emplea la API de predicciones pasadas\cite{open_meteo_api}. Se seleccionan los modelos ICON Global del servicio meteorológico alemán (DWD) y el modelo ARPEGE Europe de Météo-France. Ambos modelos se actualizan cada 3 horas. 
-    Se explora la posibilidad de emplear las predicciones del modelo HAROME de la AEMET, pero no están disponibles de forma pública
+    Se emplea la API de predicciones pasadas\cite{open_meteo_api}. Se seleccionan los modelos ICON Global del servicio meteorológico alemán (DWD) y el modelo ARPEGE Europe de Météo-France, al ser los de mayor resolución.
+    Ambos modelos generan predicciones horarias, actualizadas cada 3 horas. Se explora la posibilidad de emplear las predicciones del modelo HAROME de la AEMET, pero no están disponibles de forma pública
 \end{itemize}
 
 Se eligen 4 ubicaciones de la isla de Tenerife con distintas características climáticas para el conjunto de entrenamiento y evaluación:
@@ -129,8 +129,6 @@ en la temperatura del aire y la humedad relativa se aprecian diferencias entre l
     \caption{Visualización de la humedad relativa en Arona durante 2025.}
     \label{visualizacion_3}
 \end{figure}
-
-Cabe destacar que en la variable de humedad relativa se observa una gran variabilidad entre los datos de las distintas fuentes, que se constatará más adelante.
 
 \subsection{Manejo de datos faltantes}
 Se detectan los datos faltantes para cada fuente. Las estadísticas se muestran en la tabla \ref{tabla_datos_faltantes}. 
@@ -249,7 +247,7 @@ una alternativa robusta que permite detectar anomalías en distribuciones no gau
 Se aplica el método de KNN a cada variable por separado, con k=10 y límite de distancia 3 veces la desviación típica.
 Respecto al número de vecinos (K), se observa al graficar la distancia media de los K vecinos más cercanos frente a K que es poco relevante, por lo que se escoge arbitrariamente.
 Una vez fijado K, para determinar el límite se considera que en una distribución gaussiana el 99,7\% de los datos se encuentran dentro de 3 desviaciones típicas y se comprueba empíricamente
-este valor, así como otros cercanos, observando los histogramas de los datos detectados como anómalos.
+este valor, así como otros cercanos, observando en los histogramas los datos detectados como anómalos.
 
 Los valores anómalos son etiquetados como tales para poder ser identificados posteriormente. Se pueden observar ejemplos 
 de las distancias en la figura \ref{knn_distances}. En las figuras \ref{histogram_knn_humidity} y \ref{histogram_knn_temperature} se muestran ejemplos de los valores anómalos detectados. 
