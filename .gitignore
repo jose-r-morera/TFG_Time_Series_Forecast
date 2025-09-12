@@ -4,5 +4,6 @@
 *.json
 /trial*
 *.pkl
+timescale_docker.md
 
 !flows.json
