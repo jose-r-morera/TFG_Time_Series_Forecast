@@ -1,3 +1,5 @@
+# Helper file for fetching data from the PostgreSQL to a local CSV
+
 import psycopg2
 import csv
 
