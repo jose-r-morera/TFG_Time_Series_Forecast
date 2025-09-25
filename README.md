@@ -7,11 +7,13 @@ This repository contains the code and resources developed for the **Final Degree
 (*Weather time series forecasting using deep learning techniques*)  
 by **José Ramón Morera Campos**, Universidad de La Laguna, 2025.
 
+The published report is available [here](https://riull.ull.es/xmlui/handle/915/43055).
+
 ---
 
 ## 📌 Project Overview
 
-The goal of this project is to develop a **short-term weather forecasting system** using **deep learning**.  
+The goal of this project is to develop a **short-term weather forecasting system** (3-12h) using **Deep Learning**.  
 The models are trained on meteorological data from multiple weather stations in **Tenerife (Canary Islands, Spain)**, and evaluated for their ability to **generalize to unseen locations without retraining** (zero-shot setting).
 
 The system integrates:
@@ -38,6 +40,7 @@ The system integrates:
 1. **Data Acquisition**
    - GRAFCAN (official Canary Islands weather stations).  
    - Open-Meteo (ICON Global, ARPEGE Europe models).  
+   - Uses NodeRed to schedule data acquisition through REST APIs.
    - Stored in a **TimescaleDB** database (PostgreSQL extension for time series).
 
 2. **Preprocessing**
@@ -55,8 +58,8 @@ The system integrates:
    - Training with **TensorFlow/Keras**, hyperparameter tuning via **Keras Tuner**.
 
 4. **Deployment**
-   - **Backend**: Python + FastAPI.  
-   - **Frontend**: Web interface for uploading station data and visualizing forecasts.  
+   - **Backend**: Python + FastAPI + Celery.  
+   - **Frontend**: Next.js + React. Web interface for loading live station data and visualizing forecasts.  
    - Containerized with **Docker** for reproducibility.
 
 ---
@@ -65,6 +68,7 @@ The system integrates:
 
 - **LSTM models** achieved the best accuracy in short-term predictions (3–12h).  
 - Outperformed classical methods (ARIMA).  
+- Improved over existing solutions by reducing error 50%.
 - The system demonstrated the ability to forecast **unseen locations (zero-shot)** with good reliability.  
 - Final application is modular and scalable for real-world use.
 
@@ -79,17 +83,6 @@ The system integrates:
 - [Pandas](https://pandas.pydata.org/)
 - [TimescaleDB](https://www.timescale.com/) (for data storage)
 - [Docker](https://www.docker.com/) (optional, for deployment)
-
-Install dependencies:
-
-    pip install -r requirements.txt
-
-### Running Experiments
-Train models on preprocessed datasets:
-
-    python train_lstm.py
-    python train_cnn.py
-    python train_hybrid.py
 
 ### Launch Web Application
 

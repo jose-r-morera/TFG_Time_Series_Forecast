@@ -182,7 +182,7 @@ Aunque el despliegue actual es sencillo y con capacidad limitada de paralelizaci
 
 ## 📍 Autor
 
-Desarrollado por JR.
+Desarrollado por José Ramón Morera Campos.
 
 El proyecto implementa una arquitectura desacoplada, con procesamiento asincrónico, aprendizaje automático y visualización meteorológica con APIs estándar abiertas.
 
