@@ -1,136 +1,104 @@
-# Predicción de series temporales mediante técnicas de aprendizaje profundo 
+# Weather Time Series Forecasting with Deep Learning
+ 
+![License](https://img.shields.io/badge/license-GNU%20GPL-green.svg)
 
-## Estaciones GrafCan
-[Mapa](http://visor.grafcan.es/visorweb/default.php?svc=svcMeteo)  
-[API](https://sensores.grafcan.es/)
+This repository contains the code and resources developed for the **Final Degree Project (TFG)**:  
+**“Predicción de series temporales meteorológicas mediante técnicas de aprendizaje profundo”**  
+(*Weather time series forecasting using deep learning techniques*)  
+by **José Ramón Morera Campos**, Universidad de La Laguna, 2025.
 
-### Arona
-Estación CL:	**44** - MTD3016CP (SN: 0459)
-Descripción:	Geonica Data Acquisition Station METEODATA-3016CP (ID:4164)
-Localización:	Tenerife, Arona, Rasca (35 m) - Rasca en Arona (Tenerife)
-Coordenadas: -16.683871771694157, 28.005849724777484
+---
 
-### La Orotava
-Estación MP:	**22** - MTD3016CP (SN: 0399)
-Descripción:	Geonica Data Acquisition Station METEODATA-3016CP (ID:3713)
-Localización:	Tenerife, La Orotava, Camino de Chasna (812 m) - Centro Usos Múltiples Chasna (Camino de Chasna) en La Orotava (Tenerife)  
-Coordenadas: -16.528673321794106,  28.367153388517114
+## 📌 Project Overview
 
-### La Laguna
-Estación MP:	**9** - MTD3016CP (SN: 0386)  
-Descripción:	Geonica Data Acquisition Station METEODATA-3016CP (ID:3700)  
-Localización:	Tenerife, San Cristóbal de La Laguna, La Cuesta (350 m) - Centro Ciudadano La Cuesta (La Cuesta) en San Cristóbal de La Laguna (Tenerife)  
-Coordenadas: -16.292337071782708, 28.467173667455896
+The goal of this project is to develop a **short-term weather forecasting system** using **deep learning**.  
+The models are trained on meteorological data from multiple weather stations in **Tenerife (Canary Islands, Spain)**, and evaluated for their ability to **generalize to unseen locations without retraining** (zero-shot setting).
 
-### Punta del Hidalgo
-Estación CL:	49 - MTD3016CP (SN: 0461)
-Descripción:	Geonica Data Acquisition Station METEODATA-3016CP (ID:4166)
-Localización:	Tenerife, San Cristóbal de La Laguna, La Punta del Hidalgo (54 m) - La Punta del Hidalgo (Tenerife)
-    "type": "Point",
-    "coordinates": [
-      -16.32573868031188,
-      28.56950535030508
-    ]
--------------------------------------------------
-## Validación
+The system integrates:
+- **Data acquisition pipelines** (GRAFCAN and Open-Meteo APIs).  
+- **Data preprocessing** (missing value imputation, normalization, anomaly detection, temporal encoding).  
+- **Forecasting models** (ARIMA, LSTM, CNN, and CNN-LSTM hybrid).  
+- **Deployment** as a web application for real-time forecasting.
 
-### Santa Cruz de Tenerife
-Estación MP:	**56** - MTD3016CP
-Localización:	  	Tenerife, Santa Cruz de Tenerife, Polígono Costa Sur (92 m) - GRAFCAN (Tenerife)
-Coordenadas: -16.267797059024, 28.453829218127
+---
 
-### Garachico Faltan 20 días 4/5 2023 (usamos datos 2024/2025)
-18 - MTD3016CP (SN: 0395)
-Descripción:	Geonica Data Acquisition Station METEODATA-3016CP (ID:3709)
-Localización:	Tenerife, Garachico, La Montañeta (922 m) - Centro Cultural La Montañeta (La Montañeta) en Garachico (Tenerife)
-  "type": "Point",
-    "coordinates": [
-      -16.75689429313361,
-      28.340361823312847
-    ]
-  }
+## 🛠️ Tech Stack
 
-### Opcion extra: se podrían usar los cristianos con datos desde mayo 2024 a mayo 2025
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg) for data processing and ML models  
+- ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg) + Keras for deep learning  
+- ![FastAPI](https://img.shields.io/badge/FastAPI-backend-teal.svg) for serving predictions via REST API  
+- ![Docker](https://img.shields.io/badge/Docker-containerization-blue.svg) for deployment  
+- ![TimescaleDB](https://img.shields.io/badge/TimescaleDB-time%20series%20DB-purple.svg) for scalable time series storage  
+- ![Node-RED](https://img.shields.io/badge/Node--RED-data%20pipelines-red.svg) for data acquisition orchestration  
 
------------------------  
+---
 
-## Descartados
-### Santiago del Teide A  ?? (Faltan ~10 días consecutivos) + mucho error con OpenMeteo
-Estación MP: **3** - MTD3016CP (SN: 0380)
-Localización: Tenerife, Santiago del Teide, Tamaimo (574 m) - Casa Juventud Tamaimo (Tamaimo) en Santiago del Teide (Tenerife)
+## 🧪 Methodology
 
-    "coordinates": 
-      -16.819303793235154,
-      28.26829646942575
+1. **Data Acquisition**
+   - GRAFCAN (official Canary Islands weather stations).  
+   - Open-Meteo (ICON Global, ARPEGE Europe models).  
+   - Stored in a **TimescaleDB** database (PostgreSQL extension for time series).
 
-### Santiago del Teide B (Faltan ~10 días consecutivos)  + mucho error con OpenMeteo
-46 - MTD3016CP (SN: 0454)
-Descripción: 	Geonica Data Acquisition Station METEODATA-3016CP (ID:4159)
-Localización: 	Tenerife, Santiago del Teide, CEIP José Esquivel (46 m) - CEIP José Esquivel en Santiago del Teide (Tenerife)
-  "id": 46,
-  "name": "Tenerife, Santiago del Teide, CEIP José Esquivel (46 m)",
-  "description": "CEIP José Esquivel en Santiago del Teide (Tenerife)",
-  "encodingType": "application/vnd.geo+json",
-  "location": {
-    "type": "Point",
-    "coordinates": [
-      -16.838161919121422,
-      28.23341202494747
-    ]
-  }
+2. **Preprocessing**
+   - Missing data imputation (PCHIP & day-lag methods).  
+   - Outlier detection (KNN distance method).  
+   - Fourier analysis for periodicity (daily & yearly cycles).  
+   - Temporal encoding (sine/cosine for day/year cycles).  
+   - Sliding window dataset generation.
 
-### Buenavista del Norte - Muchos datos faltantes y error con OpenMeteo
-**50** - MTD3016CP (SN: 0462)
-Tenerife, Buenavista del Norte, Punta Teno (64 m) - Punta Teno (Tenerife)
-"id": 50,
-  "name": "Tenerife, Buenavista del Norte, Punta Teno (64 m)",
-  "description": "Punta Teno (Tenerife)",
-  "encodingType": "application/vnd.geo+json",
-  "location": {
-    "type": "Point",
-    "coordinates": [
-      -16.90852984008341,
-      28.356378540693843
-    ]
-  }
+3. **Models**
+   - **ARIMA** (baseline).  
+   - **CNN** (1D convolutions for local temporal patterns).  
+   - **LSTM** (long-term dependencies).  
+   - **Hybrid CNN-LSTM** (combines local + sequential learning).  
+   - Training with **TensorFlow/Keras**, hyperparameter tuning via **Keras Tuner**.
 
+4. **Deployment**
+   - **Backend**: Python + FastAPI.  
+   - **Frontend**: Web interface for uploading station data and visualizing forecasts.  
+   - Containerized with **Docker** for reproducibility.
 
-### Adeje Faltan 20 días (11/12 2024) + mucho error con OpenMeteo
-Estación MP:	54 - MTD3016CP (SN: 0447)
-Descripción:	Geonica Data Acquisition Station METEODATA-3016CP (ID:4152)
-Localización:	Tenerife, Adeje, Tijoco de arriba (965 m) - Tijoco de arriba en Adeje (Tenerife)
-  "coordinates": [
-      -16.73359612528364,
-      28.169011311312257
-    ]
-### Los Cristianos --> Faltan muchos días 2023 y 10 días 3 al 4/24
-Estación MP:	**47** - MTD3016CP (SN: 0455)  
-Descripción:	Geonica Data Acquisition Station METEODATA-3016CP (ID:4160)  
-Localización:	Tenerife, Arona, IES Los Cristianos (25 m) - IES Los Cristianos en Arona (Tenerife)  
-Coordenadas: -16.716917942488553, 28.057623302788404
+---
 
-### El Rosario
-Estación CL:	51 - MTD3016CP (SN: 0409)
-Descripción:	Geonica Data Acquisition Station METEODATA-3016CP (ID:3724)
-Localización:	Tenerife, El Rosario, El Chorrillo (234 m) - El Chorrillo (Tenerife)
-   "coordinates": [
-      -16.32394055672787,
-      28.41041988307398
-    ]
+## 📊 Results
 
-## Modelos meteorológicos 
-Openmeteo
-models=meteofrance_arpege_europe
-&models=icon_global
+- **LSTM models** achieved the best accuracy in short-term predictions (3–12h).  
+- Outperformed classical methods (ARIMA).  
+- The system demonstrated the ability to forecast **unseen locations (zero-shot)** with good reliability.  
+- Final application is modular and scalable for real-world use.
 
-NOTA: Solo existen registros desde el 24/11/2022
+---
 
+## 🚀 Getting Started
 
-OPCIONes:
+### Requirements
+- Python 3.10+
+- [TensorFlow](https://www.tensorflow.org/)
+- [Keras](https://keras.io/)
+- [Pandas](https://pandas.pydata.org/)
+- [TimescaleDB](https://www.timescale.com/) (for data storage)
+- [Docker](https://www.docker.com/) (optional, for deployment)
 
-- Cristianos desde 10/04/2024 (o más adelante)
-- Garchico desde feb 2024 (o mas adelante)
-- Teno          "
+Install dependencies:
 
-(Santiago descartado por inestable)
+    pip install -r requirements.txt
+
+### Running Experiments
+Train models on preprocessed datasets:
+
+    python train_lstm.py
+    python train_cnn.py
+    python train_hybrid.py
+
+### Launch Web Application
+
+    uvicorn app.main:app --reload
+
+Access the frontend at:  
+➡️ `http://127.0.0.1:8000`
+
+---
+
+## 📂 Repository Structure
 
