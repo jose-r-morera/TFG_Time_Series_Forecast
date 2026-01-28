@@ -17,10 +17,13 @@ The goal of this project is to develop a **short-term weather forecasting system
 The models are trained on meteorological data from multiple weather stations in **Tenerife (Canary Islands, Spain)**, and evaluated for their ability to **generalize to unseen locations without retraining** (zero-shot setting).
 
 The system integrates:
-- **Data acquisition pipelines** (GRAFCAN and Open-Meteo APIs).  
+- **Data acquisition pipelines** (GRAFCAN and Open-Meteo APIs).
 - **Data preprocessing** (missing value imputation, normalization, anomaly detection, temporal encoding).  
 - **Forecasting models** (ARIMA, LSTM, CNN, and CNN-LSTM hybrid).  
 - **Deployment** as a web application for real-time forecasting.
+
+## Contents 
+This repository contains the core forecasting models, preprocessing code, and deployment components. The acquisition pipelines are not included at the moment due to API key usage and deployment environment coupling (TODO).
 
 ---
 
@@ -74,6 +77,13 @@ The system integrates:
 
 ---
 
+## Data & Reproducibility
+Currently the data used is not available due to its volume.
+
+However, using the acquisition pipeline provided (TODO), and the relevant free API keys (GRAFCAN & Open-Meteo), it should be easy to retrieve using Node-RED.
+
+The trained model weights are currently not uploaded due to the size constraints, however, training from scratch should be easy using the provided notebooks and the parameter values specified in the report.
+
 ## 🚀 Getting Started
 
 ### Requirements
@@ -94,4 +104,10 @@ Access the frontend at:
 ---
 
 ## 📂 Repository Structure
+
+
+
+## ToDo
+1) Upload to the repo the data ingestion pipeline.
+2) Restructure using MLFlow or similar for clarity.
 
