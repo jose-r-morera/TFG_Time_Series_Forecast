@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+I (Integrated) component test
+===========
+
+Test to determine the best integrated order (I) using ADF test.
+
+Example:
+        $ python file.py
+
+"""
+
+__author__ = "José Ramón Morera Campos"
+__version__ = "1.0.1"
+#######################################################################
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.stattools import adfuller
+
+def test_stationarity(series):
+    """Realiza la prueba de Dickey-Fuller para verificar si la serie es estacionaria."""
+    result = adfuller(series)
+    return result[1]  # Devuelve el p-valor
+
+def make_stationary(series, alpha=0.05):
+    """
+    Aplica diferenciación a la serie hasta que sea estacionaria según la prueba ADF.
+    Devuelve la serie transformada y el número de diferencias aplicadas (d).
+    """
+    d = 0
+    while test_stationarity(series) > alpha:  # Si la serie no es estacionaria
+        series = series.diff().dropna()  # Aplica la diferenciación
+        d += 1
+        if len(series) < 2:  # Evitar errores en series muy cortas
+            break
+    return series, d
+
+
+if __name__ == "__main__":
+    # np.random.seed(42)
+    # n = 100
+    # time_series = np.cumsum(np.random.randn(n))  # Serie no estacionaria (caminata aleatoria)
+    
+    FILE_NAME = "openmeteo_la_laguna_features.csv"
+    DATASET_PATH = "../1_data_preprocessing/processed_data/"  + FILE_NAME
+    DATASET = "relative_humidity" # atmospheric_pressure or relative_humidity or air_temperature
+    df = pd.read_csv(DATASET_PATH, parse_dates=['time'])
+
+    # Visualización de la serie original
+    plt.figure(figsize=(10, 4))
+    plt.plot(df[DATASET], label="Serie Original")
+    plt.title("Serie Temporal No Estacionaria")
+    plt.legend()
+    plt.show()
+    
+    # Aplicar la diferenciación para hacerla estacionaria
+    stationary_series, d = make_stationary(df[DATASET])
+    
+    # Visualización de la serie diferenciada
+    plt.figure(figsize=(10, 4))
+    plt.plot(stationary_series, label=f"Serie Diferenciada (d={d})")
+    plt.title("Serie Temporal Estacionaria")
+    plt.legend()
+    plt.show()
+    
+    print(f"Número óptimo de diferencias (d): {d}")
