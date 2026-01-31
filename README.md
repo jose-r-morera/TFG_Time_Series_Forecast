@@ -104,7 +104,34 @@ Access the frontend at:
 ---
 
 ## 📂 Repository Structure
-
+├── app/                        # Full-stack application for model deployment
+│   ├── backend_api/            # REST API (FastAPI/Flask) to serve forecasts
+│   │   └── debug_inputs/       # Sample JSON payloads for testing API endpoints
+│   ├── frontend_inference/     # Web dashboard (React/Next.js) for visualizing results
+│   │   ├── app/                # Main application routing and pages
+│   │   ├── components/         # Reusable UI elements
+│   │   ├── lib/                # Frontend utility functions
+│   │   └── public/             # Static assets (icons, images)
+│   └── locust/                 # Load testing scripts to stress-test the API
+├── data/                       # Dataset storage (typically .gitignored)
+│   ├── raw/                    # Original, immutable time series data
+│   └── windows/                # Processed data split into sliding windows (Train/Val)
+├── notebooks/                  # Jupyter notebooks for experimentation & analysis
+│   ├── eda/                    # Exploratory Data Analysis & visual inspection
+│   └── eval/                   # Model performance evaluation & comparisons
+├── results/                    # Generated artifacts, logs, and metrics
+│   ├── ARIMA/                  # Forecast outputs/parameters for statistical models
+│   ├── CNN/                    # Training logs for Convolutional models
+│   ├── windows_gridsearch/     # Hyperparameter optimization logs
+│   └── windows_results/        # Final performance metrics on test sets
+├── src/                        # Core Python source code (The "Library")
+│   ├── data/                   # Scripts for preprocessing and window generation
+│   └── models/                 # Model architecture definitions
+│       ├── ARIMA/              # Statistical model logic
+│       ├── CNN/                # Deep Learning architecture (1D-CNN)
+│       └── LSTM/               # Recurrent Neural Network architecture
+└── TFG_Report_Latex/           # Bachelor's Thesis document source
+    └── images/                 # Plots and diagrams generated for the report
 
 
 ## ToDo
