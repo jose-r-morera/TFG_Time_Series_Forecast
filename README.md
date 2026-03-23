@@ -103,7 +103,9 @@ Access the frontend at:
 
 ---
 
+
 ## 📂 Repository Structure
+```
 ├── app/                        # Full-stack application for model deployment
 │   ├── backend_api/            # REST API (FastAPI/Flask) to serve forecasts
 │   │   └── debug_inputs/       # Sample JSON payloads for testing API endpoints
@@ -132,6 +134,7 @@ Access the frontend at:
 │       └── LSTM/               # Recurrent Neural Network architecture
 └── TFG_Report_Latex/           # Bachelor's Thesis document source
     └── images/                 # Plots and diagrams generated for the report
+    ```
 
 
 ## ToDo
